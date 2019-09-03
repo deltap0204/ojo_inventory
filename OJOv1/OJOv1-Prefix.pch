@@ -1,0 +1,24 @@
+//
+//  OJOv1-Prefix.pch
+//  OJOv1
+//
+//  Created by MilosHavel on 6/14/18.
+//  Copyright © 2018 MilosHavel. All rights reserved.
+//
+
+#ifndef OJOv1_Prefix_pch
+#define OJOv1_Prefix_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+
+#import "MBProgressHUD.h"
+#import "AppDelegate.h"
+#import "UIView+Toast.h"
+#import "define.h"
+#import "OJOClient.h"
+#import "IQKeyboardManager.h"
+
+
+#endif /* OJOv1_Prefix_pch */

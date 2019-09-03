@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="ipad9_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
+                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="l2l-3y-veh">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bottom_bar" translatesAutoresizingMaskIntoConstraints="NO" id="7QX-Y3-eL2">
+                                <rect key="frame" x="0.0" y="870.5" width="768" height="153.5"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OJO INVENTORY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="8Pe-AX-Pl9">
+                                <rect key="frame" x="263.5" y="926.5" width="242" height="42"/>
+                                <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="le8-tf-MEP">
+                                <rect key="frame" x="153.5" y="165.5" width="461" height="693"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Xel-Dl-nWi">
+                                        <rect key="frame" x="92.5" y="0.0" width="276" height="277"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Xel-Dl-nWi" secondAttribute="height" multiplier="1:1" id="ppz-6g-FMG"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bar_tipo" translatesAutoresizingMaskIntoConstraints="NO" id="8Yb-dP-xB3">
+                                        <rect key="frame" x="92.5" y="337" width="276" height="235.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="8Yb-dP-xB3" secondAttribute="height" multiplier="153:130" id="FeR-up-pwx"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Xel-Dl-nWi" firstAttribute="width" secondItem="le8-tf-MEP" secondAttribute="width" multiplier="0.6" id="3Ys-BJ-cJU"/>
+                                    <constraint firstItem="8Yb-dP-xB3" firstAttribute="centerX" secondItem="le8-tf-MEP" secondAttribute="centerX" id="IcY-m9-xMF"/>
+                                    <constraint firstItem="Xel-Dl-nWi" firstAttribute="centerX" secondItem="le8-tf-MEP" secondAttribute="centerX" id="ODh-UM-jMR"/>
+                                    <constraint firstItem="8Yb-dP-xB3" firstAttribute="width" secondItem="Xel-Dl-nWi" secondAttribute="width" id="bNH-M4-8Hd"/>
+                                    <constraint firstItem="Xel-Dl-nWi" firstAttribute="top" secondItem="le8-tf-MEP" secondAttribute="top" id="e6w-xJ-d15"/>
+                                    <constraint firstAttribute="width" secondItem="le8-tf-MEP" secondAttribute="height" multiplier="240:361" id="meC-Qb-Sp1"/>
+                                    <constraint firstItem="8Yb-dP-xB3" firstAttribute="top" secondItem="Xel-Dl-nWi" secondAttribute="bottom" constant="60" id="wC9-s9-hs4"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="le8-tf-MEP" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.6" id="7pe-Tk-dwA"/>
+                            <constraint firstAttribute="trailing" secondItem="l2l-3y-veh" secondAttribute="trailing" id="CUB-5N-wpB"/>
+                            <constraint firstItem="l2l-3y-veh" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="GwK-RC-nsL"/>
+                            <constraint firstItem="8Pe-AX-Pl9" firstAttribute="centerX" secondItem="7QX-Y3-eL2" secondAttribute="centerX" id="I4x-eX-cqI"/>
+                            <constraint firstItem="l2l-3y-veh" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="TuY-Qp-hIp"/>
+                            <constraint firstItem="7QX-Y3-eL2" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="UqL-7e-Nct"/>
+                            <constraint firstItem="le8-tf-MEP" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="c50-iO-NFy"/>
+                            <constraint firstItem="7QX-Y3-eL2" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="0.15" id="deZ-90-w6f"/>
+                            <constraint firstItem="le8-tf-MEP" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="hg0-vp-WyR"/>
+                            <constraint firstItem="8Pe-AX-Pl9" firstAttribute="centerY" secondItem="7QX-Y3-eL2" secondAttribute="centerY" id="nyB-V4-sze"/>
+                            <constraint firstAttribute="trailing" secondItem="7QX-Y3-eL2" secondAttribute="trailing" id="oWV-tY-Uxe"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="l2l-3y-veh" secondAttribute="bottom" id="rjD-Ii-w7r"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="7QX-Y3-eL2" secondAttribute="bottom" id="zAg-RE-vXR"/>
+                        </constraints>
+                    </view>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="79.200000000000003" y="-444.82758620689657"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="background" width="288" height="384"/>
+        <image name="bar_tipo" width="97" height="81"/>
+        <image name="bottom_bar" width="288" height="80"/>
+        <image name="logo" width="256" height="256"/>
+    </resources>
+</document>
