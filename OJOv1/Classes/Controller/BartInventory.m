@@ -725,16 +725,14 @@
                        andAmount:fullBtCountText
                         andPrice:priceStr
                   andFinishBlock:^(NSArray *data) {
+                      [hud hide:YES];
                       NSDictionary *dicData = (NSDictionary *)data;
                       NSString *stateCode = [dicData objectForKey:STATE];
                       if ([stateCode isEqualToString:@"200"])
                       {
-                          [hud hide:YES];
                           self.currentNum ++;
                           [self setCurrentUIChange];
                       } else{
-                          
-                          [hud hide:YES];
                           [self.view makeToast:[dicData objectForKey:MESSAGE] duration:1.5 position:CSToastPositionCenter];
                           
                       }

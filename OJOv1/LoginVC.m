@@ -231,6 +231,7 @@ static User *loggedInUser = nil;
 - (void) setInventoryType:(NSString *) serverTime{
     
     
+    
 }
 
 - (IBAction)onTabGesture:(id)sender {

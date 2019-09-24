@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="ipad10_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -6174,15 +6174,16 @@
                                             <constraint firstItem="f0w-Jp-RD4" firstAttribute="centerX" secondItem="puv-sR-rI9" secondAttribute="centerX" id="xgF-eC-Njv"/>
                                         </constraints>
                                     </view>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mGh-Ub-Xbc">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="mGh-Ub-Xbc">
                                         <rect key="frame" x="0.0" y="100" width="834" height="526"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="526" id="cQX-hD-tWH"/>
                                         </constraints>
+                                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="inventoriedItemCellHeader" rowHeight="120" id="Bpi-N6-lRN" userLabel="headerCell" customClass="BartenderCommentTHVC">
-                                                <rect key="frame" x="0.0" y="28" width="834" height="120"/>
+                                                <rect key="frame" x="0.0" y="55.5" width="834" height="120"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Bpi-N6-lRN" id="Uy7-3R-CPw">
                                                     <rect key="frame" x="0.0" y="0.0" width="834" height="120"/>
@@ -6223,7 +6224,7 @@
                                                 </connections>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="inventoriedItemCell" rowHeight="120" id="beE-Wz-twe" customClass="BartenderCommentTVC">
-                                                <rect key="frame" x="0.0" y="148" width="834" height="120"/>
+                                                <rect key="frame" x="0.0" y="175.5" width="834" height="120"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="beE-Wz-twe" id="bk8-bS-VaO">
                                                     <rect key="frame" x="0.0" y="0.0" width="834" height="120"/>
@@ -9840,21 +9841,21 @@
         </scene>
     </scenes>
     <resources>
-        <image name="S" width="34" height="33"/>
-        <image name="absolut_750ml.png" width="158" height="300"/>
+        <image name="S" width="34.5" height="33"/>
+        <image name="absolut_750ml.png" width="158.5" height="300"/>
         <image name="add_user" width="128" height="128"/>
         <image name="additionalBack" width="776" height="182"/>
         <image name="back" width="192" height="256"/>
-        <image name="background" width="288" height="384"/>
-        <image name="background_ipad" width="429" height="512"/>
+        <image name="background" width="288" height="384.5"/>
+        <image name="background_ipad" width="429.5" height="512"/>
         <image name="cancel-1" width="128" height="128"/>
         <image name="changePsw" width="200" height="150"/>
         <image name="close" width="600" height="600"/>
         <image name="coming_soon.png" width="1475" height="1475"/>
-        <image name="gotoNextButton" width="180" height="102"/>
+        <image name="gotoNextButton" width="180" height="102.5"/>
         <image name="left-arrow" width="64" height="64"/>
         <image name="logo" width="256" height="256"/>
-        <image name="logohd" width="510" height="341"/>
+        <image name="logohd" width="510.66665649414062" height="341.33334350585938"/>
         <image name="pending" width="64" height="64"/>
         <image name="rewind" width="64" height="64"/>
         <image name="right-arrow" width="64" height="64"/>

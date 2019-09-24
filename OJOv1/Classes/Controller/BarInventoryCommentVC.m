@@ -68,6 +68,7 @@
         self.countFullBottlesTextField.inputView  = [[[NSBundle mainBundle] loadNibNamed:@"LNNumberpad" owner:self options:nil] objectAtIndex:0];
     }
     
+    self.totalCash = appDelegate.totalCash;
 
     self.inventoriedItems = [[NSMutableArray alloc] init];
     self.inventoryReportArray = [[NSMutableArray alloc] init];
@@ -146,10 +147,11 @@
 - (IBAction)makeACommentAction:(id)sender {
     // To comment page
     
+    appDelegate.totalCash = self.totalCash;
+    
     BartenderCommentSendVC *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"BartenderCommentSendVC"];
     [svc setModalPresentationStyle:UIModalPresentationFullScreen];
     [self presentViewController:svc animated:YES completion:nil];
-    
     
 }
 
@@ -220,7 +222,7 @@
         NSInteger updatedTotalCash = self.totalCash.integerValue - self.previousItemPrice.integerValue + priceStr.integerValue;
         NSString *updatedTotalCashStr = [NSString stringWithFormat:@"%ld", (long)updatedTotalCash];
         self.totalCash = updatedTotalCashStr;
-        appDelegate.totalCash = updatedTotalCashStr;
+        
         
         [self.inventoriedItems replaceObjectAtIndex:self.selectedRow withObject:shiftReportModel];
         [appDelegate.shiftReport replaceObjectAtIndex:self.selectedRow withObject:shiftReportModel];
@@ -250,15 +252,15 @@
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSString *locationController = [userDefaults objectForKey:CONTROLLER];
     
-    
+    __weak BarInventoryCommentVC *wself = self;
     
     // send the modified data to server
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         OJOClient *ojoClient = [OJOClient sharedWebClient];
         NSString *url = [NSString stringWithFormat:@"%@%@%@", @"mobile/", locationController, @"/editInventory"];
         
-        NSString *weightOpenBottle = self.weightOpenBottleTextField.text;
-        NSString *countFullBottles = self.countFullBottlesTextField.text;
+        NSString *weightOpenBottle = wself.weightOpenBottleTextField.text;
+        NSString *countFullBottles = wself.countFullBottlesTextField.text;
         
         [ojoClient editInventory:url
                      andItemName:itemName
@@ -273,19 +275,19 @@
                       {
                           dispatch_async(dispatch_get_main_queue(), ^{
                               [hud hide:YES];
-                              [self.view makeToast:[dicData objectForKey:@"Edited Successfully"] duration:1.5 position:CSToastPositionCenter];
+                              [wself.view makeToast:[dicData objectForKey:@"Edited Successfully"] duration:1.5 position:CSToastPositionCenter];
                               
                           });
                       } else{
                           
                           [hud hide:YES];
-                          [self.view makeToast:[dicData objectForKey:MESSAGE] duration:1.5 position:CSToastPositionCenter];
+                          [wself.view makeToast:[dicData objectForKey:MESSAGE] duration:1.5 position:CSToastPositionCenter];
                           
                       }
                   }
                     andFailBlock:^(NSError *error) {
                         [hud hide:YES];
-                        [self.view makeToast:@"Please check internect connection" duration:1.5 position:CSToastPositionCenter];
+                        [wself.view makeToast:@"Please check internect connection" duration:1.5 position:CSToastPositionCenter];
                     }];
     });
 }
@@ -349,6 +351,7 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     BartenderCommentTHVC *headerCell = [tableView dequeueReusableCellWithIdentifier:@"inventoriedItemCellHeader"];
+    
     headerCell.locationLabel.text = self.location;
     return headerCell;
 }
@@ -448,7 +451,7 @@
      
     self.previousItemPrice = [[self calcuateSelctedItemValue:inventoryModel withCountFullBottle:countFullBottle withWeightOpenBottle:weightOpenBottle] objectAtIndex:0];
     
-    
+    NSLog("Previous Item Price ======= %@", self.previousItemPrice);
 }
 
 
