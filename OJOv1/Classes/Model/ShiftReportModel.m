@@ -18,6 +18,8 @@
                 andWithMovingTime:(NSString *) movingTIme
                   andWithItemFull:(NSString *) itemFull
                   andWithItemOpen:(NSString *) itemOpen
+               andWithItemPreFull:(NSString *) itemPreFull
+               andWithItemPreOpen:(NSString *) itempreOpen
               andWithMissingToPar:(NSString *) missingToPar
                andWithServingSold:(NSString *) servingSold
               andWithLiquidWeight:(NSString *) liquidWeight
@@ -36,6 +38,8 @@
         self.movingTime = movingTIme;
         self.itemFull = itemFull;
         self.itemOpen = itemOpen;
+        self.itemPreFull = itemPreFull;
+        self.itemPreOpen = itempreOpen;
         self.missingToPar = missingToPar;
         self.servingSold = servingSold;
         self.itemPrice = itemPrice;

@@ -18,11 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 @property (weak, nonatomic) IBOutlet UIButton *logoutButton;
 @property (weak, nonatomic) IBOutlet UILabel *userRealNameLabel;
-
-@property (weak, nonatomic) IBOutlet UIButton *startInvButton;
 @property (weak, nonatomic) IBOutlet UIButton *shiftInvButton;
-@property (weak, nonatomic) IBOutlet UIButton *endInvButton;
-
 @property (strong, nonatomic) NSString *location;
 @property (strong, nonatomic) NSString *username;
 @property (strong,nonatomic) NSString *userRealName;
@@ -72,16 +68,9 @@
     self.deviceType = [userDefault objectForKey:DEVICETYPE];
     
     //-------------  iPad ---------------
-    
-    self.startInvButton.layer.borderWidth = 5.0;
-    self.startInvButton.layer.borderColor = [UIColor blackColor].CGColor;
-    
+
     self.shiftInvButton.layer.borderWidth = 5.0;
     self.shiftInvButton.layer.borderColor = [UIColor blackColor].CGColor;
-    
-    self.endInvButton.layer.borderWidth = 5.0;
-    self.endInvButton.layer.borderColor = [UIColor blackColor].CGColor;
-    
     
     //--------------------------------------
 
@@ -198,27 +187,10 @@
 }
 
 - (IBAction)onInventory:(UIButton *)sender {
-    NSInteger tag = sender.tag;
-    switch (tag) {
-        case 1:
-            self.appDelegate.inventoryType = @"start";
-            [self performSegueWithIdentifier:@"startBartenderInventory_ipad" sender:nil];
-            
-            break;
-        case 2:
-            self.appDelegate.inventoryType = @"shift";
-            [self performSegueWithIdentifier:@"startBartenderInventory_ipad" sender:nil];
-            
-            break;
-        case 3:
-            self.appDelegate.inventoryType = @"end";
-            [self performSegueWithIdentifier:@"startBartenderInventory_ipad" sender:nil];
-            
-            break;
-        default:
-            
-            break;
-    }
+    
+    self.appDelegate.inventoryType = @"shift";
+    [self performSegueWithIdentifier:@"startBartenderInventory_ipad" sender:nil];
+    
 }
 
 - (void) showActionSheetView{

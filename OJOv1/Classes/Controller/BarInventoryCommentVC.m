@@ -81,21 +81,10 @@
     self.deviceType = [userDefaults objectForKey:DEVICETYPE];
     
     self.invtType = appDelegate.inventoryType;
+    self.navigationTopView.backgroundColor = [UIColor colorWithRed:54.0/255.0 green:128.0/255.0 blue:74.0/255.0 alpha:1.0];
+    self.inventoriedItems = appDelegate.shiftReport;
+    self.inventoryTypeLabel.text = @"";
     
-    if ([self.invtType isEqualToString:@"start"]) {
-        self.inventoriedItems = appDelegate.startReport;
-        self.inventoryTypeLabel.text = @"START";
-        self.navigationTopView.backgroundColor = [UIColor colorWithRed:54.0/255.0 green:128.0/255.0 blue:74.0/255.0 alpha:1.0];
-    }
-    else if ([self.invtType isEqualToString:@"shift"]) {
-        self.inventoriedItems = appDelegate.shiftReport;
-        self.inventoryTypeLabel.text = @"SHIFT";
-        self.navigationTopView.backgroundColor = [UIColor colorWithRed:141.0/255.0 green:141.0/255.0 blue:141.0/255.0 alpha:1.0];
-    } else {
-        self.inventoriedItems = appDelegate.shiftReport;
-        self.inventoryTypeLabel.text = @"END";
-        self.navigationTopView.backgroundColor = [UIColor colorWithRed:157.0/255.0 green:51.0/255.0 blue:30.0/255.0 alpha:1.0];
-    }
     
     [self.editView setHidden:YES];
     [self.editButton setHidden:YES];
@@ -178,55 +167,31 @@
     InventoryReport *inventoryModel = nil;
     inventoryModel = (InventoryReport *)self.inventoryReportArray[self.selectedRow];
     
-    if ([self.invtType isEqualToString:@"start"]) {
-        StartReportModel *startReportModel;
-        startReportModel = (StartReportModel*)self.inventoriedItems[self.selectedRow];
-        
-        NSInteger missingParInt =  self.countFullBottlesTextField.text.integerValue - inventoryModel.par.integerValue;
-        NSString *missingPar = [NSString stringWithFormat:@"%ld", (long)missingParInt];
-        NSInteger checkAmountInt = self.countFullBottlesTextField.text.integerValue - inventoryModel.amount.integerValue;
-        NSString *itemFullCheck = [NSString stringWithFormat:@"%ld", (long)checkAmountInt];
-        NSInteger checkOpenItemInt = self.weightOpenBottleTextField.text.integerValue - inventoryModel.openBottleWet.integerValue;
-        NSString *itemOpenCheck = [NSString stringWithFormat:@"%ld", (long)checkOpenItemInt];
-        
-        startReportModel.itemOpen = weightOpenBottle;
-        startReportModel.itemFull = countFullBottles;
-        startReportModel.missingToPar = missingPar;
-        startReportModel.itemFullCheck = itemFullCheck;
-        startReportModel.itemOpenCheck = itemOpenCheck;
-        
-        itemName = startReportModel.itemName;
-        priceStr = @"";
-        [self.inventoriedItems replaceObjectAtIndex:self.selectedRow withObject:startReportModel];
-        [appDelegate.startReport replaceObjectAtIndex:self.selectedRow withObject:startReportModel];
-        
-    } else {
-        
-        ShiftReportModel *shiftReportModel;
-        shiftReportModel = (ShiftReportModel*) self.inventoriedItems[self.selectedRow];
-        NSInteger missingParInt =  self.countFullBottlesTextField.text.integerValue - inventoryModel.par.integerValue;
-        NSString *missingPar = [NSString stringWithFormat:@"%ld", (long)missingParInt];
-        priceStr = [[self calcuateSelctedItemValue:inventoryModel withCountFullBottle:self.countFullBottlesTextField.text withWeightOpenBottle:self.weightOpenBottleTextField.text] objectAtIndex:0];
-        NSString *servingSold = [[self calcuateSelctedItemValue:inventoryModel withCountFullBottle:self.countFullBottlesTextField.text withWeightOpenBottle:self.weightOpenBottleTextField.text] objectAtIndex:1];
-        
-        
-        
-        shiftReportModel.itemOpen = weightOpenBottle;
-        shiftReportModel.itemFull = countFullBottles;
-        shiftReportModel.missingToPar = missingPar;
-        shiftReportModel.servingSold = servingSold;
-        shiftReportModel.cashDetail = priceStr;
-        itemName = shiftReportModel.itemName;
-        
-        // update total cash
-        NSInteger updatedTotalCash = self.totalCash.integerValue - self.previousItemPrice.integerValue + priceStr.integerValue;
-        NSString *updatedTotalCashStr = [NSString stringWithFormat:@"%ld", (long)updatedTotalCash];
-        self.totalCash = updatedTotalCashStr;
-        
-        
-        [self.inventoriedItems replaceObjectAtIndex:self.selectedRow withObject:shiftReportModel];
-        [appDelegate.shiftReport replaceObjectAtIndex:self.selectedRow withObject:shiftReportModel];
-    }
+    
+    ShiftReportModel *shiftReportModel;
+    shiftReportModel = (ShiftReportModel*) self.inventoriedItems[self.selectedRow];
+    NSInteger missingParInt =  self.countFullBottlesTextField.text.integerValue - inventoryModel.par.integerValue;
+    NSString *missingPar = [NSString stringWithFormat:@"%ld", (long)missingParInt];
+    priceStr = [[self calcuateSelctedItemValue:inventoryModel withCountFullBottle:self.countFullBottlesTextField.text withWeightOpenBottle:self.weightOpenBottleTextField.text] objectAtIndex:0];
+    NSString *servingSold = [[self calcuateSelctedItemValue:inventoryModel withCountFullBottle:self.countFullBottlesTextField.text withWeightOpenBottle:self.weightOpenBottleTextField.text] objectAtIndex:1];
+    
+    
+    
+    shiftReportModel.itemOpen = weightOpenBottle;
+    shiftReportModel.itemFull = countFullBottles;
+    shiftReportModel.missingToPar = missingPar;
+    shiftReportModel.servingSold = servingSold;
+    shiftReportModel.cashDetail = priceStr;
+    itemName = shiftReportModel.itemName;
+    
+    // update total cash
+    NSInteger updatedTotalCash = self.totalCash.integerValue - self.previousItemPrice.integerValue + priceStr.integerValue;
+    NSString *updatedTotalCashStr = [NSString stringWithFormat:@"%ld", (long)updatedTotalCash];
+    self.totalCash = updatedTotalCashStr;
+    
+    
+    [self.inventoriedItems replaceObjectAtIndex:self.selectedRow withObject:shiftReportModel];
+    [appDelegate.shiftReport replaceObjectAtIndex:self.selectedRow withObject:shiftReportModel];
     
     // edit table
     [self.tableView reloadData];
@@ -249,18 +214,21 @@
 
 
 -(void) serverUpdate:(NSString *)itemName withPrice:(NSString*)price withHud:(MBProgressHUD*)hud {
+    
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSString *locationController = [userDefaults objectForKey:CONTROLLER];
     
-    __weak BarInventoryCommentVC *wself = self;
+    
+    NSString *weightOpenBottle = self.weightOpenBottleTextField.text;
+    NSString *countFullBottles = self.countFullBottlesTextField.text;
+    
     
     // send the modified data to server
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         OJOClient *ojoClient = [OJOClient sharedWebClient];
         NSString *url = [NSString stringWithFormat:@"%@%@%@", @"mobile/", locationController, @"/editInventory"];
         
-        NSString *weightOpenBottle = wself.weightOpenBottleTextField.text;
-        NSString *countFullBottles = wself.countFullBottlesTextField.text;
+
         
         [ojoClient editInventory:url
                      andItemName:itemName
@@ -275,19 +243,19 @@
                       {
                           dispatch_async(dispatch_get_main_queue(), ^{
                               [hud hide:YES];
-                              [wself.view makeToast:[dicData objectForKey:@"Edited Successfully"] duration:1.5 position:CSToastPositionCenter];
+                              [self.view makeToast:[dicData objectForKey:@"Edited Successfully"] duration:1.5 position:CSToastPositionCenter];
                               
                           });
                       } else{
                           
                           [hud hide:YES];
-                          [wself.view makeToast:[dicData objectForKey:MESSAGE] duration:1.5 position:CSToastPositionCenter];
+                          [self.view makeToast:[dicData objectForKey:MESSAGE] duration:1.5 position:CSToastPositionCenter];
                           
                       }
                   }
                     andFailBlock:^(NSError *error) {
                         [hud hide:YES];
-                        [wself.view makeToast:@"Please check internect connection" duration:1.5 position:CSToastPositionCenter];
+                        [self.view makeToast:@"Please check internect connection" duration:1.5 position:CSToastPositionCenter];
                     }];
     });
 }
@@ -366,31 +334,14 @@
     inventoriedCell.cellView.layer.borderWidth = 3.0;
     inventoriedCell.cellView.layer.borderColor = [UIColor blackColor].CGColor;
     
-    NSString *itemName = @"";
-    NSString *full = @"";
-    NSString *open = @"";
     
+    ShiftReportModel *shiftReportModel;
+    shiftReportModel = (ShiftReportModel*) self.inventoriedItems[indexPath.row];
+ 
     
-    if ([self.invtType isEqualToString:@"start"]) {
-        StartReportModel *startReportModel;
-        startReportModel = (StartReportModel*) self.inventoriedItems[indexPath.row];
-        itemName = startReportModel.itemName;
-        full = startReportModel.itemFull;
-        open = startReportModel.itemOpen;
-
-    } else {
-        ShiftReportModel *shiftReportModel;
-        shiftReportModel = (ShiftReportModel*) self.inventoriedItems[indexPath.row];
-        itemName = shiftReportModel.itemName;
-        full = shiftReportModel.itemFull;
-        open = shiftReportModel.itemOpen;
-        
-    }
-    
-    inventoriedCell.itemTitle.text = itemName;
-    
-    inventoriedCell.weightOpenBottle.text = [NSString stringWithFormat:@"OPEN : %@", open];
-    inventoriedCell.countFullBottle.text = [NSString stringWithFormat:@"FULL : %@",  full];
+    inventoriedCell.itemTitle.text = shiftReportModel.itemName;;
+    inventoriedCell.weightOpenBottle.text = [NSString stringWithFormat:@"OPEN : %@", shiftReportModel.itemOpen];
+    inventoriedCell.countFullBottle.text = [NSString stringWithFormat:@"FULL : %@",  shiftReportModel.itemFull];
     
     
     inventoriedCell.backgroundColor = inventoriedCell.contentView.backgroundColor;
@@ -404,23 +355,14 @@
     [self.cancelButton setHidden:NO];
     self.selectedRow = indexPath.row;
     
-    NSString *itemName = @"";
-    NSString *weightOpenBottle = @"";
-    NSString *countFullBottle = @"";
+
     
-    if ([self.invtType isEqualToString:@"start"]) {
-        StartReportModel *startReportModel;
-        startReportModel = (StartReportModel*) self.inventoriedItems[self.selectedRow];
-        itemName = startReportModel.itemName;
-        weightOpenBottle = startReportModel.itemOpen;
-        countFullBottle = startReportModel.itemFull;
-    } else {
-        ShiftReportModel *shiftReportModel;
-        shiftReportModel = (ShiftReportModel*) self.inventoriedItems[self.selectedRow];
-        itemName = shiftReportModel.itemName;
-        weightOpenBottle = shiftReportModel.itemOpen;
-        countFullBottle = shiftReportModel.itemFull;
-    }
+    ShiftReportModel *shiftReportModel;
+    shiftReportModel = (ShiftReportModel*) self.inventoriedItems[self.selectedRow];
+    NSString *itemName = shiftReportModel.itemName;
+    NSString *weightOpenBottle = shiftReportModel.itemOpen;
+    NSString *countFullBottle = shiftReportModel.itemFull;
+    
     
     self.editItemLabel.text = itemName;
     

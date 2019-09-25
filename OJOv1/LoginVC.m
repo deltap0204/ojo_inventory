@@ -20,9 +20,6 @@ static User *loggedInUser = nil;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 
-
-
-
 @end
 
 @implementation LoginVC

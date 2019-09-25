@@ -40,19 +40,8 @@
     self.invtType = appDelegate.inventoryType;
     self.totalCash = appDelegate.totalCash;
     
-    
-    
-    if ([self.invtType isEqualToString:@"start"]) {
-        self.inventoryTypeLabel.text = @"START";
-        self.navigationView.backgroundColor = [UIColor colorWithRed:54.0/255.0 green:128.0/255.0 blue:74.0/255.0 alpha:1.0];
-    }
-    else if ([self.invtType isEqualToString:@"shift"]) {
-        self.inventoryTypeLabel.text = @"SHIFT";
-        self.navigationView.backgroundColor = [UIColor colorWithRed:141.0/255.0 green:141.0/255.0 blue:141.0/255.0 alpha:1.0];
-    } else {
-        self.inventoryTypeLabel.text = @"END";
-        self.navigationView.backgroundColor = [UIColor colorWithRed:157.0/255.0 green:51.0/255.0 blue:30.0/255.0 alpha:1.0];
-    }
+    self.navigationView.backgroundColor = [UIColor colorWithRed:54.0/255.0 green:128.0/255.0 blue:74.0/255.0 alpha:1.0];
+    self.inventoryTypeLabel.text = @"";
 
     _mailVar = NO;
     
@@ -85,18 +74,16 @@
     }
     
     NSString *location = [LoginVC getLoggedinUser].location;
-    NSString *startTime = appDelegate.startTime;
-    NSString *endTime = appDelegate.endTime;
+    //NSString *startTime = appDelegate.startTime;
+    //NSString *endTime = appDelegate.endTime;
     NSString *currentUserName = [LoginVC getLoggedinUser].username;
-    NSString *preUserName = appDelegate.preUserName;
+    //NSString *preUserName = appDelegate.preUserName;
     
     //    NSMutableArray *reportArray = appDelegate.bartInventoryArray;
     //    NSMutableArray *moveAllowArray = appDelegate.allowedArray;
     
     
-    NSMutableArray *startReport = appDelegate.startReport;
     NSMutableArray *shiftReport = appDelegate.shiftReport;
-    StartReportModel *startReportModel = nil;
     ShiftReportModel *shiftReportModel = nil;
     
     NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
@@ -109,156 +96,64 @@
     
     /*
      |_________________|
-     | START INVENTORY |
+     |   INVENTORY     |
      |_________________|
      */
     
     
-    if ([self.invtType isEqualToString:@"start"]) {
+    writeString = [NSString stringWithFormat:@"%@,%@,%@  %@,%@,%@   %@,%@,%@  %@,%@,%@   %@,%@,%@  %@,%@,%@,%@,%@,%@,%@,%@,%@,%@,%@,%@\n",
+                   
+                   @"#NAME OF LOCATION", location, @"\n",
+                   @"#NAME OF USER", currentUserName, @"\n",
+                   @"#DATE:", today, @"\n",
+                   @"#TOTAL CASH", self.totalCash, @"\n",
+                   @"      ", @"     ", @"\n",
+                   
+                   @"NO", @"ITEMS", @"PAR", @"PRICE", @"REFILL", @"FULL", @"OPEN", @"MOVED IN", @"MOVED OUT", @"FULL", @"OPEN",  @"SS"];
+    
+    
+    NSFileHandle *handle;
+    handle = [NSFileHandle fileHandleForWritingAtPath: [self dataFilePath]];
+    //say to handle where's the file fo write
+    [handle truncateFileAtOffset:[handle seekToEndOfFile]];
+    //position handle cursor to the end of file
+    [handle writeData:[writeString dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    
+    for (int i = 0; i < shiftReport.count; i++) {
+        shiftReportModel = (ShiftReportModel *) shiftReport[i];
         
-        //-----------------------------------------------n,------n,------n-,-----n,------n,------n,------n,------n,------------------------------n
-        writeString = [NSString stringWithFormat:@"%@,%@,%@%@,%@,%@%@,%@,%@%@,%@,%@%@,%@,%@%@,%@,%@%@,%@,%@%@,%@,%@%@,%@,%@,%@,%@,%@,%@,%@,%@,%@,%@",
-                       
-                       @"#Inventory type:", @"Start IV", @"\n" ,
-                       @"#location:", location, @"\n",
-                       @"#name:", currentUserName, @"\n",
-                       @"#Before User", preUserName, @"\n",
-                       @"#Date:", today, @"\n",
-                       @"#StartTime:", startTime, @"\n",
-                       @"#EndTime:", endTime, @"\n",
-                       @"", @"", @"\n",
-                       @"NO", @"ItemName", @"Move", @"Origin", @"Time", @"Full", @"Open",  @"CheckFull", @"CheckOpen", @"MtP", @"\n"];
+        /*
+         
+         || "NO" || "NAME" || "PAR" || "PRICE" || "REFILL" || "FULL" || "OPEN" || "MOVED IN" ||  "MOVED OUT" || "FULL" || "OPEN" || "SS"
+         
+         
+         */
+        double parInt = shiftReportModel.itemFull.doubleValue + (-1) * shiftReportModel.missingToPar.doubleValue;
         
+        NSString *movedIn = @"";
+        NSString *movedOut = @"";
         
-        NSFileHandle *handle;
-        handle = [NSFileHandle fileHandleForWritingAtPath: [self dataFilePath] ];
-        //say to handle where's the file fo write
-        [handle truncateFileAtOffset:[handle seekToEndOfFile]];
-        
-        //position handle cursor to the end of file
-        [handle writeData:[writeString dataUsingEncoding:NSUTF8StringEncoding]];
-        
-        for (int i = 0; i < startReport.count; i++) {
-            startReportModel = (StartReportModel*)startReport[i];
-            
-            /*
-             
-             || "NO" || "ItemName" || "Amount" || "Origin" || "Time" || "Full" || "Open" ||  "CheckFull" || "CheckOpen" || "MtP" || "\n"
-             
-             */
-            
-            
-            writeString = [NSString stringWithFormat:@"%d, %@, %@, %@, %@, %@, %@, %@, %@, %@, %@",
-                           
-                           i+1, startReportModel.itemName, startReportModel.movingAmount , startReportModel.movingOrigin, startReportModel.movingTime, startReportModel.itemFull, startReportModel.itemOpen, startReportModel.itemFullCheck, startReportModel.itemOpenCheck, startReportModel.missingToPar, @"\n"];
-            
-            
-            NSFileHandle *handle;
-            handle = [NSFileHandle fileHandleForWritingAtPath: [self dataFilePath] ];
-            //say to handle where's the file fo write
-            [handle truncateFileAtOffset:[handle seekToEndOfFile]];
-            //position handle cursor to the end of file
-            [handle writeData:[writeString dataUsingEncoding:NSUTF8StringEncoding]];
+        if (![shiftReportModel.movingAmount isEqualToString:@""]) {
+            if ([self.location isEqualToString:shiftReportModel.movingOrigin]) movedOut = shiftReportModel.movingAmount;
+            else movedIn = shiftReportModel.movingAmount;
         }
-    }
-    
-    /*
-     |_________________|
-     | SHIFT INVENTORY |
-     |_________________|
-     */
-    
-    
-    else if ([self.invtType isEqualToString:@"shift"]){
         
-        
-        //----------------------------------------(--1--)-(--2--)-(--3--)-(--4--)-(--5--)-(--6--)-(--7--)-(-----------------8-----------------)-
-        writeString = [NSString stringWithFormat:@"%@,%@,\n%@,%@,\n%@,%@,\n%@,%@,\n%@,%@,\n%@,%@,\n%@,%@,\n%@,%@,%@,%@,%@,%@,%@,%@,%@,%@,%@,%@,\n%@,%@,%@%@,%@,%@,%@,%@,%@,%@,%@,%@,%@,%@,%@,%@,\n",
+        writeString = [NSString stringWithFormat:@"%d, %@, %@, %@, %@, %@, %@, %@, %@, %@, %@, %@, %@, %@",
                        
-                       @"#Inventory type:", @"Shift IV",  //1
-                       @"#location:", location,           //2
-                       @"#name:", currentUserName,        //3
-                       @"#Before User:", preUserName,      //4
-                       @"#Date:", today,                  //5
-                       @"#StartTime:", startTime,         //6
-                       @"#EndTime:", endTime,             //7
-                       @"#TotalCash:", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", self.totalCash,     //8
-                       @"      ", @"     ", @"\n",               //9
-                       @"NO", @"ItemName", @"ItemPrice", @"LiquidWeight", @"Move", @"Origin", @"Time", @"Full", @"Open",  @"MtP", @"SS", @"CashDetail", @"LIGHTSPEED"];
-        
-        NSFileHandle *handle;
-        handle = [NSFileHandle fileHandleForWritingAtPath: [self dataFilePath]];
-        //say to handle where's the file fo write
-        [handle truncateFileAtOffset:[handle seekToEndOfFile]];
-        //position handle cursor to the end of file
-        [handle writeData:[writeString dataUsingEncoding:NSUTF8StringEncoding]];
-        
-        for (int i = 0; i < shiftReport.count; i++) {
-            shiftReportModel = (ShiftReportModel *) shiftReport[i];
-        
-            /*
-             
-             || "NO" || "ItemName" || "Amount" || "Origin" || "Time" || "Full" || "Open" ||  "MtP" || "SS" || "CashDetail" || "\n"
-             
-             
-             new
-             || "NO" || "ItemName" || ItemPrice || LiquidWeight || "Move" || "Origin" || "Time" || "Full" || "Open" ||  "MtP" || "SS" || "CashDetail" || LIGHTSPEED
-             
-             
-             */
-            
-            writeString = [NSString stringWithFormat:@"%d, %@, %@, %@, %@, %@, %@, %@, %@, %@, %@, %@, %@, %@",
-                           
-                           i+1,
-                           shiftReportModel.itemName,
-                           shiftReportModel.itemPrice,
-                           shiftReportModel.liquidWeight,
-                           shiftReportModel.movingAmount ,
-                           shiftReportModel.movingOrigin,
-                           shiftReportModel.movingTime,
-                           shiftReportModel.itemFull,
-                           shiftReportModel.itemOpen,
-                           shiftReportModel.missingToPar,
-                           shiftReportModel.servingSold,
-                           shiftReportModel.cashDetail,
-                           @"         ",@"\n"];
-            
-            NSFileHandle *handle;
-            handle = [NSFileHandle fileHandleForWritingAtPath: [self dataFilePath] ];
-            //say to handle where's the file fo write
-            [handle truncateFileAtOffset:[handle seekToEndOfFile]];
-            //position handle cursor to the end of file
-            [handle writeData:[writeString dataUsingEncoding:NSUTF8StringEncoding]];
-            
-        }
-    }
-    
-    
-    /*
-     
-     |_________________|
-     | END INVENTORY   |
-     |_________________|
-     
-     */
-    
-    
-    else{
-        
-        
-        //----------------------------------------(--1--)-(--2--)-(--3--)-(--4--)-(--5--)-(--6--)-(--7--)-(-----------------8-----------------)-
-        writeString = [NSString stringWithFormat:@"%@,%@,\n%@,%@,\n%@,%@,\n%@,%@,\n%@,%@,\n%@,%@,\n%@,%@,\n%@,%@,%@,%@,%@,%@,%@,%@,%@,%@,%@,%@,\n%@,%@,%@%@,%@,%@,%@,%@,%@,%@,%@,%@,%@,%@,%@,%@,\n",
-                       
-                       @"#Inventory type:", @"End IV",    //1
-                       @"#location:", location,           //2
-                       @"#name:", currentUserName,        //3
-                       @"#Before User:", preUserName,      //4
-                       @"#Date:", today,                  //5
-                       @"#StartTime:", startTime,         //6
-                       @"#EndTime:", endTime,             //7
-                       @"#TotalCash:", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", self.totalCash,     //8
-                       @"      ", @"     ", @"\n",               //9
-                       @"NO", @"ItemName", @"ItemPrice", @"LiquidWeight", @"Move", @"Origin", @"Time", @"Full", @"Open",  @"MtP", @"SS", @"CashDetail", @"LIGHTSPEED"];
+                       i+1,
+                       shiftReportModel.itemName,
+                       [NSString stringWithFormat:@"%ld", (long)parInt],
+                       shiftReportModel.itemPrice,
+                       shiftReportModel.missingToPar,
+                       shiftReportModel.itemFull,
+                       shiftReportModel.itemOpen ,
+                       movedIn,
+                       movedOut,
+                       shiftReportModel.itemPreFull,
+                       shiftReportModel.itemPreOpen,
+                       shiftReportModel.servingSold,
+                       @"         ",@"\n"];
         
         NSFileHandle *handle;
         handle = [NSFileHandle fileHandleForWritingAtPath: [self dataFilePath] ];
@@ -267,47 +162,10 @@
         //position handle cursor to the end of file
         [handle writeData:[writeString dataUsingEncoding:NSUTF8StringEncoding]];
         
-        for (int i = 0; i < shiftReport.count; i++) {
-            shiftReportModel = (ShiftReportModel *) shiftReport[i];
-            
-            /*
-             
-             || "NO" || "ItemName" || "Amount" || "Origin" || "Time" || "Full" || "Open" ||  "MtP" || "SS" || "CashDetail" || "\n"
-             
-             
-             new
-             || "NO" || "ItemName" || ItemPrice || LiquidWeight || "Move" || "Origin" || "Time" || "Full" || "Open" ||  "MtP" || "SS" || "CashDetail" || LIGHTSPEED
-             
-             
-             */
-            
-            writeString = [NSString stringWithFormat:@"%d, %@, %@, %@, %@, %@, %@, %@, %@, %@, %@, %@, %@, %@",
-                           
-                           i+1,
-                           shiftReportModel.itemName,
-                           shiftReportModel.itemPrice,
-                           shiftReportModel.liquidWeight,
-                           shiftReportModel.movingAmount ,
-                           shiftReportModel.movingOrigin,
-                           shiftReportModel.movingTime,
-                           shiftReportModel.itemFull,
-                           shiftReportModel.itemOpen,
-                           shiftReportModel.missingToPar,
-                           shiftReportModel.servingSold,
-                           shiftReportModel.cashDetail,
-                           @"       ",@"\n"];
-            
-            
-            
-            NSFileHandle *handle;
-            handle = [NSFileHandle fileHandleForWritingAtPath: [self dataFilePath] ];
-            //say to handle where's the file fo write
-            [handle truncateFileAtOffset:[handle seekToEndOfFile]];
-            //position handle cursor to the end of file
-            [handle writeData:[writeString dataUsingEncoding:NSUTF8StringEncoding]];
-            
-        }
     }
+    
+    
+    
     
     NSString *path = [self dataFilePath];
     [self sendMail:path withFileName:fileName];

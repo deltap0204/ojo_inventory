@@ -95,17 +95,9 @@
         self.fullBtCountTextField.inputView  = [[[NSBundle mainBundle] loadNibNamed:@"LNNumberpad" owner:self options:nil] objectAtIndex:0];
     }
     
-    NSString *inventoryType = appDelegate.inventoryType;
-    if ([inventoryType isEqualToString:@"start"]) {
-        self.navigationView.backgroundColor = [UIColor colorWithRed:54.0/255.0 green:128.0/255.0 blue:74.0/255.0 alpha:1.0];
-        self.titleLabel.text = @"START";
-    } else if ([inventoryType isEqualToString:@"shift"]) {
-        self.navigationView.backgroundColor = [UIColor colorWithRed:141.0/255.0 green:141.0/255.0 blue:141.0/255.0 alpha:1.0];
-        self.titleLabel.text = @"SHIFT";
-    } else {
-        self.navigationView.backgroundColor = [UIColor colorWithRed:157.0/255.0 green:51.0/255.0 blue:30.0/255.0 alpha:1.0];
-        self.titleLabel.text = @"END";
-    }
+    self.titleLabel.text = @"";
+    self.navigationView.backgroundColor = [UIColor colorWithRed:54.0/255.0 green:128.0/255.0 blue:74.0/255.0 alpha:1.0];
+    
     
     self.userRealNameLabel.text = [LoginVC getLoggedinUser].name;
     self.locationTitle.text = self.location;
@@ -114,6 +106,7 @@
     
     appDelegate.startTime = [self getCurrentTimeString];
     [self getAllItems];
+    
 }
 
 - (NSString*) getCurrentTimeString{
@@ -448,131 +441,14 @@
     [hud show:YES];
     InventoryReport *inventoryModel = nil;
     inventoryModel = (InventoryReport *)self.inventoryList[self.currentNum];
+    
+    
     NSInteger fullOpen = inventoryModel.fullOpen;
     NSString *priceStr = @"0";
     NSMutableArray *moveAllowArray = appDelegate.allowedArray;
     
-    NSString *inventoryType = appDelegate.inventoryType;
+    
     InventoryReport *inventoryCheckReport = nil;
-    
-    
-    
-    /*
-     |_________________|
-     | START INVENTORY |
-     |_________________|
-     */
-    
-    
-    
-    if ([inventoryType isEqualToString:@"start"]) {
-
-        inventoryCheckReport = [[InventoryReport alloc] initWithItemName:inventoryModel.itemName
-                                                        andWithFrequency:inventoryModel.frequency
-                                                         andWithFullOpen:inventoryModel.fullOpen
-                                                    andWithOpenBottleWet:inventoryModel.openBottleWet
-                                                           andWithAmount:inventoryModel.amount
-                                                              andWithPar:inventoryModel.par
-                                                andWithNewsOpenBottleWet:self.openBtWetTextField.text
-                                                       andWithNewsAmount:self.fullBtCountTextField.text
-                                                andWithItemBottleFullWet:inventoryModel.itemBottleFullWet
-                                                 andWithItemBottleEmpWet:inventoryModel.itemBottleEmpWet
-                                                       andWithItemLiqWet:inventoryModel.itemLiqWet
-                                                       andWithItemServBt:inventoryModel.itemServBt
-                                                      andWithItemServWet:inventoryModel.itemServWet
-                                                        andWithItemPrice:inventoryModel.itemPrice
-                                                       andWithCashDetail:priceStr];
-        
-        [self.inventoryReportArray addObject:inventoryCheckReport];
-        
-        NSString *movingAmount = @"";
-        NSString *movingOrigin = @"";
-        NSString *movingTime = @"";
-        
-        NSInteger missingParInt =  self.fullBtCountTextField.text.integerValue - inventoryModel.par.integerValue;
-        NSString *missingPar = [NSString stringWithFormat:@"%ld", (long)missingParInt];
-        NSInteger checkAmountInt = self.fullBtCountTextField.text.integerValue - inventoryModel.amount.integerValue;
-        NSString *itemFullCheck = [NSString stringWithFormat:@"%ld", (long)checkAmountInt];
-        NSInteger checkOpenItemInt = self.openBtWetTextField.text.integerValue - inventoryModel.openBottleWet.integerValue;
-        NSString *itemOpenCheck = [NSString stringWithFormat:@"%ld", (long)checkOpenItemInt];
-        
-        StartReportModel *startReport = nil;
-        int j = 0;
-        BOOL edited = false;
-        
-        // If there are some moved items....
-        if (moveAllowArray.count != 0) {
-            edited = true;
-            
-            // Find this item among moved items
-            for (int i = 0; i < moveAllowArray.count ; i++) {
-                
-                edited = true;
-                Confirm *moveAllowModel = (Confirm *)moveAllowArray[i];
-                
-                // If find...
-                if ([moveAllowModel.moveItemName isEqualToString:inventoryModel.itemName]) {
-                    movingAmount = moveAllowModel.moveAmount;
-                    movingOrigin = moveAllowModel.senderLocation;
-                    movingTime = moveAllowModel.acceptTime;
-                    NSString *fullItem = self.fullBtCountTextField.text;
-                    NSString *openWet = self.openBtWetTextField.text;
-                    NSString *mpTempValue = missingPar;
-                    NSString *iFCTempValue = itemFullCheck;
-                    NSString *iOCTempValue = itemOpenCheck;
-
-                    if (j != 0) {
-                        fullItem = @"";
-                        openWet = @"";
-                        missingPar= @"";
-                        mpTempValue = @"";
-                        iFCTempValue = @"";
-                        iOCTempValue = @"";
-                        
-                    }
-                    
-                    j++;
-                    
-                    startReport = [[StartReportModel alloc] initWithItemName:inventoryModel.itemName
-                                                         andWithMovingAmount:movingAmount
-                                                         andWithMovingOrigin:movingOrigin
-                                                           andWithMovingTime:movingTime
-                                                             andWithItemFull:fullItem
-                                                             andWithItemOpen:openWet
-                                                         andWithMissingToPar:mpTempValue
-                                                        andWithItemFullCheck:iFCTempValue
-                                                        andWithItemOpenCheck:iOCTempValue];
-                    [appDelegate.startReport addObject:startReport];
-                    
-                    break;
-                    
-                }
-                
-                // if not find
-                else{
-                    edited = false;
-                }
-            }
-        }
-        
-        // It there are not any moved items....
-        if (!edited) {
-            startReport = [[StartReportModel alloc] initWithItemName:inventoryModel.itemName
-                                                 andWithMovingAmount:movingAmount
-                                                 andWithMovingOrigin:movingOrigin
-                                                   andWithMovingTime:movingTime
-                                                     andWithItemFull:self.fullBtCountTextField.text
-                                                     andWithItemOpen:self.openBtWetTextField.text
-                                                 andWithMissingToPar:missingPar
-                                                andWithItemFullCheck:itemFullCheck
-                                                andWithItemOpenCheck:itemOpenCheck];
-            
-            [appDelegate.startReport addObject:startReport];
-        }
-    }
-    
-    
-    
     
     /*
      |_______________________|
@@ -581,36 +457,36 @@
      */
     
     
-    if ([inventoryType isEqualToString:@"shift"] || [inventoryType isEqualToString:@"end"]){
-        // sales report
-        float C2 = inventoryModel.amount.floatValue; // before count full bottle
-        float C1 = self.fullBtCountTextField.text.floatValue; // now count full bottle
-        float T = inventoryModel.itemLiqWet.floatValue;   // real liquid weight
-        float A2 = inventoryModel.openBottleWet.floatValue; // before open bottle weight
-        float A1 = self.openBtWetTextField.text.floatValue; // now open bottle weight
-        // NSInteger E = inventoryModel.itemBottleEmpWet.integerValue; // empty bottle weight
-        float W = inventoryModel.itemServWet.floatValue;  // weight of one serving (one cup weight)
-        float M = inventoryModel.itemPrice.floatValue;    // price of one serving (oen cup price)
+
+    // sales report
+    float C2 = inventoryModel.amount.floatValue; // before count full bottle
+    float C1 = self.fullBtCountTextField.text.floatValue; // now count full bottle
+    float T = inventoryModel.itemLiqWet.floatValue;   // real liquid weight
+    float A2 = inventoryModel.openBottleWet.floatValue; // before open bottle weight
+    float A1 = self.openBtWetTextField.text.floatValue; // now open bottle weight
+    // NSInteger E = inventoryModel.itemBottleEmpWet.integerValue; // empty bottle weight
+    float W = inventoryModel.itemServWet.floatValue;  // weight of one serving (one cup weight)
+    float M = inventoryModel.itemPrice.floatValue;    // price of one serving (oen cup price)
         
-        NSInteger price = 0;
-        float servingSoldFloat = 0.0f;
-        if (fullOpen == 0) {
-            // full   (C2 – C1) × M
-            price = (inventoryModel.amount.integerValue - self.fullBtCountTextField.text.integerValue) * inventoryModel.itemPrice.integerValue;
+    NSInteger price = 0;
+    float servingSoldFloat = 0.0f;
+    if (fullOpen == 0) {
+        // full   (C2 – C1) × M
+        price = (inventoryModel.amount.integerValue - self.fullBtCountTextField.text.integerValue) * inventoryModel.itemPrice.integerValue;
             servingSoldFloat = C2 - C1;
             
-        } else{
-            // FULL&OPEN ITEM   ([(C2 × T)+(A2-E)]-[(C1 × T)+(A1-E)])/W  ×M
-            price = (NSInteger)(((T * (C2-C1) + (A2-A1)) * M) / W);
-            servingSoldFloat = ((T * (C2 - C1) + (A2 - A1))/ W);
-        }
-        if (price < 0) price = 0;
-        if (servingSoldFloat < 0) servingSoldFloat = 0;
+    } else{
+        // FULL&OPEN ITEM   ([(C2 × T)+(A2-E)]-[(C1 × T)+(A1-E)])/W  ×M
+        price = (NSInteger)(((T * (C2-C1) + (A2-A1)) * M) / W);
+        servingSoldFloat = ((T * (C2 - C1) + (A2 - A1))/ W);
+    }
+    if (price < 0) price = 0;
+    if (servingSoldFloat < 0) servingSoldFloat = 0;
         
-        self.totalCash = self.totalCash + price;
-        priceStr = [NSString stringWithFormat:@"%ld", (long)price];
-        NSString *servingSold = [NSString stringWithFormat:@"%.02f", servingSoldFloat];
-        inventoryCheckReport = [[InventoryReport alloc] initWithItemName:inventoryModel.itemName
+    self.totalCash = self.totalCash + price;
+    priceStr = [NSString stringWithFormat:@"%ld", (long)price];
+    NSString *servingSold = [NSString stringWithFormat:@"%.02f", servingSoldFloat];
+    inventoryCheckReport = [[InventoryReport alloc] initWithItemName:inventoryModel.itemName
                                                        andWithFrequency:inventoryModel.frequency
                                                         andWithFullOpen:inventoryModel.fullOpen
                                                    andWithOpenBottleWet:inventoryModel.openBottleWet
@@ -626,84 +502,102 @@
                                                        andWithItemPrice:inventoryModel.itemPrice
                                                       andWithCashDetail:priceStr];
     
-        [self.inventoryReportArray addObject:inventoryCheckReport];
+    [self.inventoryReportArray addObject:inventoryCheckReport];
+    
+    NSString *movingAmount = @"";
+    NSString *movingOrigin = @"";
+    NSString *movingTime = @"";
+    NSInteger missingParInt =  self.fullBtCountTextField.text.integerValue - inventoryModel.par.integerValue;
+    NSString *missingPar = [NSString stringWithFormat:@"%ld", (long)missingParInt];
+    
+    NSString *fullItem = self.fullBtCountTextField.text;
+    NSString *openWet = self.openBtWetTextField.text;
+    
+    int j = 0;
+    BOOL edited = false;
         
-        NSString *movingAmount = @"";
-        NSString *movingOrigin = @"";
-        NSString *movingTime = @"";
-        NSInteger missingParInt =  self.fullBtCountTextField.text.integerValue - inventoryModel.par.integerValue;
-        NSString *missingPar = [NSString stringWithFormat:@"%ld", (long)missingParInt];
-        
-        int j = 0;
-        BOOL edited = false;
-        
-        if (moveAllowArray.count != 0) {
-            edited = true;
+    if (moveAllowArray.count != 0) {
+        edited = true;
             
-            for (int i = 0; i < moveAllowArray.count ; i++) {
+        for (int i = 0; i < moveAllowArray.count ; i++) {
                 
-                edited = true;
-                Confirm *moveAllowModel = (Confirm *)moveAllowArray[i];
-                if ([moveAllowModel.moveItemName isEqualToString:inventoryModel.itemName]) {
-                    movingAmount = moveAllowModel.moveAmount;
-                    movingOrigin = moveAllowModel.senderLocation;
-                    movingTime = moveAllowModel.acceptTime;
-                    NSString *fullItem = self.fullBtCountTextField.text;
-                    NSString *openWet = self.openBtWetTextField.text;
-                    NSString *mpTempValue = missingPar;
-                    NSString *ssTempValue = servingSold;
-                    NSString *psTempValue = priceStr;
+            edited = true;
+            Confirm *moveAllowModel = (Confirm *)moveAllowArray[i];
+            if ([moveAllowModel.moveItemName isEqualToString:inventoryModel.itemName]) {
+                movingAmount = moveAllowModel.moveAmount;
+                movingOrigin = moveAllowModel.senderLocation;
+                movingTime = moveAllowModel.acceptTime;
+                
+                NSString *mpTempValue = missingPar;
+                NSString *ssTempValue = servingSold;
+                NSString *psTempValue = priceStr;
                     
-                    if (j != 0) {
-                        fullItem = @"";
-                        openWet = @"";
-                        mpTempValue = @"";
-                        ssTempValue = @"";
-                        psTempValue = @"";
-                    }
-                    j++;
-                    
-                    
-                    ShiftReportModel *shiftReport = [[ShiftReportModel alloc] initWithItemName:inventoryModel.itemName
-                                                                           andWithMovingAmount:movingAmount
-                                                                           andWithMovingOrigin:movingOrigin
-                                                                             andWithMovingTime:movingTime
-                                                                               andWithItemFull:fullItem
-                                                                               andWithItemOpen:openWet
-                                                                           andWithMissingToPar:mpTempValue
-                                                                            andWithServingSold:ssTempValue
-                                                                           andWithLiquidWeight:inventoryModel.itemLiqWet
-                                                                              andWithItemPrice:inventoryModel.itemPrice
-                                                                             andWithCashDetail:psTempValue];
-                    
-                    [appDelegate.shiftReport addObject:shiftReport];
-                    
-                    break;
-
-                } else{
-                    edited = false;
+                if (j != 0) {
+                    fullItem = @"";
+                    openWet = @"";
+                    mpTempValue = @"";
+                    ssTempValue = @"";
+                    psTempValue = @"";
                 }
+                j++;
+                
+                NSInteger preFull;
+                if ([movingOrigin isEqualToString:self.location]) {
+                    preFull = inventoryCheckReport.amount.integerValue + movingAmount.integerValue;
+                } else {
+                    preFull = inventoryCheckReport.amount.integerValue - movingAmount.integerValue;
+                }
+                
+                
+                
+                ShiftReportModel *shiftReport = [[ShiftReportModel alloc] initWithItemName:inventoryModel.itemName
+                                                                       andWithMovingAmount:movingAmount
+                                                                       andWithMovingOrigin:movingOrigin
+                                                                         andWithMovingTime:movingTime
+                                                                           andWithItemFull:fullItem
+                                                                           andWithItemOpen:openWet
+                                                                        andWithItemPreFull:[NSString stringWithFormat:@"%ld", (long)preFull]
+                                                                        andWithItemPreOpen:openWet
+                                                                       andWithMissingToPar:mpTempValue
+                                                                        andWithServingSold:ssTempValue
+                                                                       andWithLiquidWeight:inventoryModel.itemLiqWet
+                                                                          andWithItemPrice:inventoryModel.itemPrice
+                                                                         andWithCashDetail:psTempValue];
+                
+                
+                    
+                [appDelegate.shiftReport addObject:shiftReport];
+                    
+                break;
+
+            } else{
+                edited = false;
             }
-            
         }
-        
-        if(!edited){
             
-            ShiftReportModel *shiftReport = [[ShiftReportModel alloc] initWithItemName:inventoryModel.itemName
-                                                                   andWithMovingAmount:movingAmount
-                                                                   andWithMovingOrigin:movingOrigin
-                                                                     andWithMovingTime:movingTime
-                                                                       andWithItemFull:self.fullBtCountTextField.text
-                                                                       andWithItemOpen:self.openBtWetTextField.text
-                                                                   andWithMissingToPar:missingPar
-                                                                    andWithServingSold:servingSold
-                                                                   andWithLiquidWeight:inventoryModel.itemLiqWet
-                                                                      andWithItemPrice:inventoryModel.itemPrice
-                                                                     andWithCashDetail:priceStr];
-            [appDelegate.shiftReport addObject:shiftReport];
-        
-        }
     }
+        
+    if(!edited){
+
+        
+        ShiftReportModel *shiftReport = [[ShiftReportModel alloc] initWithItemName:inventoryModel.itemName
+                                                               andWithMovingAmount:movingAmount
+                                                               andWithMovingOrigin:movingOrigin
+                                                                 andWithMovingTime:movingTime
+                                                                   andWithItemFull:fullItem
+                                                                   andWithItemOpen:openWet
+                                                                andWithItemPreFull:inventoryCheckReport.amount
+                                                                andWithItemPreOpen:openWet
+                                                               andWithMissingToPar:missingPar
+                                                                andWithServingSold:servingSold
+                                                               andWithLiquidWeight:inventoryModel.itemLiqWet
+                                                                  andWithItemPrice:inventoryModel.itemPrice
+                                                                 andWithCashDetail:priceStr];
+        
+        [appDelegate.shiftReport addObject:shiftReport];
+        
+    }
+    
     
     appDelegate.bartInventoryArray = self.inventoryReportArray;
     NSString *itemName = self.itemNameLabel.text;

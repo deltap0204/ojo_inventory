@@ -16,6 +16,10 @@
 @property (strong, nonatomic) NSString *movingTime;
 @property (strong, nonatomic) NSString *itemFull;
 @property (strong, nonatomic) NSString *itemOpen;
+
+@property (strong, nonatomic) NSString *itemPreFull;
+@property (strong, nonatomic) NSString *itemPreOpen;
+
 @property (strong, nonatomic) NSString *missingToPar;
 @property (strong, nonatomic) NSString *servingSold;
 @property (strong, nonatomic) NSString *cashDetail;
@@ -29,6 +33,8 @@
                 andWithMovingTime:(NSString *) movingTIme
                   andWithItemFull:(NSString *) itemFull
                   andWithItemOpen:(NSString *) itemOpen
+               andWithItemPreFull:(NSString *) itemPreFull
+               andWithItemPreOpen:(NSString *) itempreOpen
               andWithMissingToPar:(NSString *) missingToPar
                andWithServingSold:(NSString *) servingSold
               andWithLiquidWeight:(NSString *) liquidWeight

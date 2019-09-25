@@ -15,7 +15,7 @@
 
 #pragma mark - User Management
 
-#define BASE_URL                @"http://ojoinventory.com/ojo_test/"
+#define BASE_URL                @"http://ojoinventory.com/ojo/"
 #define LOGIN_URL               @"mobile/users/login"
 #define GET_ALL_USER_URL        @"mobile/users/getAllUser"
 #define ADD_USER                @"mobile/users/addUser"
