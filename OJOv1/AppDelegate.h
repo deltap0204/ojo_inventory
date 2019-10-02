@@ -13,7 +13,7 @@
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) NSMutableArray *allItemArray;
 @property (strong, nonatomic) NSMutableArray *movedTempArray;
-@property (strong, nonatomic) NSMutableArray *movedArray;
+
 @property (strong, nonatomic) NSMutableArray *refilledArray;
 @property (strong, nonatomic) NSMutableArray *bartInventoryArray;
 @property (strong, nonatomic) NSMutableArray *allowedArray;
@@ -27,6 +27,10 @@
 @property (strong, nonatomic) NSMutableArray *startReport;
 @property (strong, nonatomic) NSMutableArray *shiftReport;
 
+// This array is used for only bartender page
+@property (strong, nonatomic) NSMutableArray *unreadReceivedItemArray;
+@property (strong, nonatomic) NSMutableArray *unreadSentItemArray;
+@property (strong, nonatomic) NSMutableArray *unreportedArray;
 
 @end
 

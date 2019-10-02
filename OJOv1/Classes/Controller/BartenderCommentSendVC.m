@@ -58,6 +58,7 @@
 - (IBAction)onFinishAction:(id)sender {
     
     [self writeReport];
+    
 }
 
 
@@ -130,30 +131,35 @@
          
          */
         double parInt = shiftReportModel.itemFull.doubleValue + (-1) * shiftReportModel.missingToPar.doubleValue;
-        
-        NSString *movedIn = @"";
-        NSString *movedOut = @"";
-        
-        if (![shiftReportModel.movingAmount isEqualToString:@""]) {
-            if ([self.location isEqualToString:shiftReportModel.movingOrigin]) movedOut = shiftReportModel.movingAmount;
-            else movedIn = shiftReportModel.movingAmount;
-        }
+
         
         writeString = [NSString stringWithFormat:@"%d, %@, %@, %@, %@, %@, %@, %@, %@, %@, %@, %@, %@, %@",
-                       
+                       // NO
                        i+1,
+                       // Item name
                        shiftReportModel.itemName,
+                       // PAR
                        [NSString stringWithFormat:@"%ld", (long)parInt],
+                       // PRICE
                        shiftReportModel.itemPrice,
+                       // REFILL
                        shiftReportModel.missingToPar,
-                       shiftReportModel.itemFull,
-                       shiftReportModel.itemOpen ,
-                       movedIn,
-                       movedOut,
+                       // BEFORE FULL
                        shiftReportModel.itemPreFull,
+                       // BEFORE OPEN
                        shiftReportModel.itemPreOpen,
+                       // MOVE IN
+                       shiftReportModel.movedIn,
+                       // MOVE OUT
+                       shiftReportModel.movedOut,
+                       // CURRENT FULL
+                       shiftReportModel.itemFull,
+                       // CURRENT OPEN
+                       shiftReportModel.itemOpen ,
+                       // SS
                        shiftReportModel.servingSold,
                        @"         ",@"\n"];
+        
         
         NSFileHandle *handle;
         handle = [NSFileHandle fileHandleForWritingAtPath: [self dataFilePath] ];
@@ -163,8 +169,6 @@
         [handle writeData:[writeString dataUsingEncoding:NSUTF8StringEncoding]];
         
     }
-    
-    
     
     
     NSString *path = [self dataFilePath];
@@ -182,7 +186,7 @@
         [mail setSubject:subjectName];
         NSString *content = [NSString stringWithFormat:@"%@,%@", @"Comment : ", self.commentTextView.text];
         [mail setMessageBody:content isHTML:YES];
-        [mail setToRecipients:@[@"laxojoinventory@gmail.com"]];
+        [mail setToRecipients:@[@"laxojoinventory@gmail.com", @"cuibomb0204@gmail.com"]];
         
         
         NSData *myData = [NSData dataWithContentsOfFile:path];

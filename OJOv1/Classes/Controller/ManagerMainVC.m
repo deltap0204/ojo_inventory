@@ -119,16 +119,19 @@
                               Confirm *confirmModel = nil;
                               
                               for (int i = 0; i < count; i++) {
+                                  
                                   NSDictionary *resultDict = (NSDictionary *)response[i];
+                                  NSString *moveID = [resultDict objectForKey:MOVE_ID];
                                   NSString *itemName = [resultDict objectForKey:MOVE_ITEM_NAME];
                                   NSString *senderLocation = [resultDict objectForKey:SENDER_LOCATION];
                                   NSString *receiverLocation = [resultDict objectForKey:RECEIVER_LOCATION];
                                   NSString *moveAmount = [resultDict objectForKey:MOVE_ITEM_AMOUNT];
                                   NSString *senderName = [resultDict objectForKey:NAME];
                                   
-                                  confirmModel = [[Confirm alloc] initWithMoveItemName:itemName
-                                                                     andWithMoveAmount:moveAmount
-                                                                 andWithSenderLocation:senderLocation
+                                  confirmModel = [[Confirm alloc] initWithMoveID:moveID
+                                                             andWithMoveItemName:itemName
+                                                               andWithMoveAmount:moveAmount
+                                                                 andWithSenderLocation:senderLocation   
                                                                 andWithReceiveLocation:receiverLocation
                                                                      andWithSenderName:senderName
                                                                      andWithAcceptTime:[self getCurrentTime]];
@@ -137,7 +140,7 @@
                                   
                               }
                               self.appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
-                              self.appDelegate.movedArray = self.confirmArray;
+                              self.appDelegate.unreadReceivedItemArray = self.confirmArray;
                               
                               dispatch_async(dispatch_get_main_queue(), ^{
                                   [hud hide:YES];

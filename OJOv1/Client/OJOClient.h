@@ -142,6 +142,7 @@ typedef void (^WebClientOnFail)(NSError *);
    andFailBlock:(WebClientOnFail) failBlock;
 
 - (void) itemMoveAllow:(NSString *) method
+             andMoveID:(NSString *) moveID
        andMoveItemName:(NSString *) moveItemName
          andMoveAmount:(NSString *) moveAmount
      andSenderLocation:(NSString *) senderLocation
@@ -150,6 +151,7 @@ typedef void (^WebClientOnFail)(NSError *);
           andFailBlock:(WebClientOnFail) failBlock;
 
 - (void) itemMoveReject:(NSString *) method
+              andMoveID:(NSString *) moveID
         andMoveItemName:(NSString *) moveItemName
           andMoveAmount:(NSString *) moveAmount
       andSenderLocation:(NSString *) senderLocation
@@ -191,6 +193,21 @@ typedef void (^WebClientOnFail)(NSError *);
                 andDateString:(NSString *) dateStr
                      onFinish:(WebClientOnFinish) finishBlock
                        onFail:(WebClientOnFail) failBlock;
+
+
+
+- (void) searchUnreportedItems:(NSString *) method
+                   andLocation:(NSString *) location
+                andFinishBlock:(WebClientOnFinish) finishBlock
+                  andFailBlock:(WebClientOnFail) failBlock;
+
+
+- (void) updateUnreportedItem:(NSString *) method
+                 andMovedInID:(NSString *) movedInID
+                andMovedOutID:(NSString *) movedOutID
+                  andLocation:(NSString *) location
+               andFinishBlock:(WebClientOnFinish) finishBlock
+                 andFailBlock:(WebClientOnFail) failBlock;
 
 
 @end

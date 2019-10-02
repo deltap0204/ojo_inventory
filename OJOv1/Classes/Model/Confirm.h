@@ -10,6 +10,7 @@
 
 @interface Confirm : NSObject
 
+@property (strong, nonatomic) NSString *moveID;
 @property (strong, nonatomic) NSString *moveItemName;
 @property (strong, nonatomic) NSString *moveAmount;
 @property (strong, nonatomic) NSString *senderLocation;
@@ -18,11 +19,12 @@
 @property (strong, nonatomic) NSString *acceptTime;
 
 
-- (instancetype) initWithMoveItemName:(NSString *)moveItemName
-                    andWithMoveAmount:(NSString *)moveAmount
-                andWithSenderLocation:(NSString *)senderLocation
-               andWithReceiveLocation:(NSString *)receiverLocation
-                    andWithSenderName:(NSString *)senderName
-                    andWithAcceptTime:(NSString *) acceptTime;
+- (instancetype) initWithMoveID:(NSString *)moveID
+            andWithMoveItemName:(NSString *)moveItemName
+              andWithMoveAmount:(NSString *)moveAmount
+          andWithSenderLocation:(NSString *)senderLocation
+         andWithReceiveLocation:(NSString *)receiverLocation
+              andWithSenderName:(NSString *)senderName
+              andWithAcceptTime:(NSString *)acceptTime;
 
 @end

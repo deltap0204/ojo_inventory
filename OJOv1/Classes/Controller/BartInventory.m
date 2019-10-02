@@ -19,10 +19,7 @@
 #import "LoginVC.h"
 
 
-@interface BartInventory (){
-    AppDelegate *appDelegate;
-
-}
+@interface BartInventory ()
 
 @property (weak, nonatomic) IBOutlet UILabel *locationTitle;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
@@ -44,15 +41,21 @@
 @property (strong, nonatomic) NSString *locationController;
 @property (strong, nonatomic) NSString *location;
 @property (strong, nonatomic) NSMutableArray *inventoryList;
-@property (strong, nonatomic) NSMutableArray *inventoryReportArray;
 @property (assign, nonatomic) NSInteger totalCount;
 @property (assign, nonatomic) NSInteger currentNum;
 @property (strong, nonatomic) NSString *deviceType;
 @property (strong, nonatomic) NSString *currentFullWeightOfItem;
 @property (strong, nonatomic) NSString *currentEmptyWeightOfItem;
-@property (assign, nonatomic) BOOL minValueCheck;
 @property (assign, nonatomic) NSInteger totalCash;
+@property (strong, nonatomic) AppDelegate *appDelegate;
+@property (strong, nonatomic) MBProgressHUD *hud;
 
+@property (assign, nonatomic) BOOL movedItemCheck;
+@property (assign, nonatomic) BOOL minValueCheck;
+
+// movedIn_ID & movedOut_ID
+@property (strong, nonatomic) NSString *movedInID;
+@property (strong, nonatomic) NSString *movedOutID;
 
 @end
 
@@ -70,14 +73,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    self.appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     
     self.inventoryList = [[NSMutableArray alloc] init];
-    self.inventoryReportArray = [[NSMutableArray alloc] init];
     
-    // initialize total cash value
+    // initialize total cash value and current number
 
     self.totalCash = 0;
+    self.currentNum = 0;
+    self.minValueCheck = false;
+    self.movedItemCheck = false;
+    
     
     self.openBtWetTextField.delegate = self;
     
@@ -101,10 +107,8 @@
     
     self.userRealNameLabel.text = [LoginVC getLoggedinUser].name;
     self.locationTitle.text = self.location;
-    self.currentNum = 0;
-    self.minValueCheck = NO;
     
-    appDelegate.startTime = [self getCurrentTimeString];
+    self.appDelegate.startTime = [self getCurrentTimeString];
     [self getAllItems];
     
 }
@@ -133,10 +137,10 @@
 
 - (void) getAllItems{
     
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.labelText = @"LOADING...";
-    hud.userInteractionEnabled = NO;
-    [hud show:YES];
+    self.hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    self.hud.labelText = @"GETTING NEEDED DATA FROM SERVER...";
+    self.hud.userInteractionEnabled = NO;
+    [self.hud show:YES];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         OJOClient *ojoClicent = [OJOClient sharedWebClient];
@@ -154,7 +158,7 @@
                                       
                                       UIAlertController *alert = [UIAlertController
                                                                   alertControllerWithTitle:@"This location has no items!"
-                                                                  message:@""
+                                                                  message:@"Unfortunately you can't do inventory, please contact admin"
                                                                   preferredStyle:UIAlertControllerStyleAlert];
                                       UIAlertAction *okAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"OK", @"OK")
                                                                                          style:UIAlertActionStyleCancel
@@ -183,6 +187,7 @@
                                       {
                                           
                                           NSDictionary *inventoryDic = (NSDictionary *) response[i];
+                                          
                                           NSString *itemName = [inventoryDic objectForKey:INVENTORY_ITEM_NAME];
                                           NSInteger frequency = [[inventoryDic objectForKey:INVENTORY_FRUQUENCY] integerValue];
                                           NSInteger fullOpen = [[inventoryDic objectForKey:INVENTORY_FULL_OPEN] integerValue];
@@ -216,15 +221,13 @@
                                           [self.inventoryList addObject:inventoryModel];
                                       }
                                       
-                                      dispatch_async(dispatch_get_main_queue(), ^{
-                                          [hud hide:YES];
-                                          [self setCurrentUIChange];
-                                      });
+                                      [self getAllUnreportedItems];
+                                      
                                   }
                                   
                                   else{
                                       dispatch_async(dispatch_get_main_queue(), ^{
-                                          [hud hide:YES];
+                                          [self.hud hide:YES];
                                           NSString *response = [dicData objectForKey:MESSAGE];
                                           [self.view makeToast:response duration:1.5 position:CSToastPositionCenter];
                                           
@@ -232,7 +235,7 @@
                                   }
                                   
                               } andFailBlock:^(NSError *error) {
-                                  [hud hide:YES];
+                                  [self.hud hide:YES];
                                   [self.view makeToast:@"Please check internect connection" duration:1.5 position:CSToastPositionCenter];
                               }];
     });
@@ -262,12 +265,8 @@
         
         // get the time
         
-        appDelegate.endTime = [self getCurrentTimeString];
-        appDelegate.totalCash = [NSString stringWithFormat:@"%ld", (long)self.totalCash];
-        
-//        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-//
-//        });
+        self.appDelegate.endTime = [self getCurrentTimeString];
+        self.appDelegate.totalCash = [NSString stringWithFormat:@"%ld", (long)self.totalCash];
         
         BarInventoryCommentVC *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"BarInventoryCommentVC"];
         [self presentViewController:svc animated:YES completion:nil];
@@ -309,7 +308,7 @@
             [self.fullWeightLabel setHidden:YES];
             
             self.openBtWetTextField.text = @"0";
-            self.minValueCheck = YES;
+            self.minValueCheck = true;
             [self.nextItemButton setEnabled:YES];
             
         } else {
@@ -334,12 +333,11 @@
         self.currentFullWeightOfItem = inventoryModel.itemBottleFullWet;
         self.currentEmptyWeightOfItem = inventoryModel.itemBottleEmpWet;
         
-        
     }
 }
 
 
-#pragma mark - input value check
+#pragma mark - input value check (입력부분 체크, 최소무게보다 작은경우 디저불상태로...)
 
 - (IBAction)inputVallueOfWeightOpenBottle:(UITextField *)sender {
         NSString *weightStr = sender.text;
@@ -367,8 +365,7 @@
 
 - (BOOL)textField:(UITextField *) textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
     
-    
-    
+ 
     NSString *currentTextFeild = textField.text;
     NSString *inputStr = string;
     
@@ -384,13 +381,13 @@
     if (weight < emptyWeight) {
         self.openBtWetTextField.layer.borderWidth = 4.0f;
         self.openBtWetTextField.layer.borderColor = [[UIColor redColor] CGColor];
-        self.minValueCheck = NO;
+        self.minValueCheck = false;
         [self.nextItemButton setEnabled:NO];
 
     }else if(weight > emptyWeight & weight < fullWeight)
     {
         self.openBtWetTextField.layer.borderColor = [[UIColor clearColor] CGColor];
-        self.minValueCheck = YES;
+        self.minValueCheck = true;
         [self.nextItemButton setEnabled:YES];
         
         
@@ -430,7 +427,7 @@
     [self sendInventory];
 }
 
-#pragma mark - server connection method
+#pragma mark - server connection method (리포트를 위한 한 개 아이템관련 계산과 써버통신부분)
 
 - (void) sendInventory{
     
@@ -445,15 +442,15 @@
     
     NSInteger fullOpen = inventoryModel.fullOpen;
     NSString *priceStr = @"0";
-    NSMutableArray *moveAllowArray = appDelegate.allowedArray;
+    
     
     
     InventoryReport *inventoryCheckReport = nil;
     
     /*
-     |_______________________|
-     | SHIFT & END INVENTORY |
-     |_______________________|
+     |______________________________|
+     | INVENTORY (리포트를 위한 계산부분) |
+     |______________________________|
      */
     
     
@@ -486,6 +483,7 @@
     self.totalCash = self.totalCash + price;
     priceStr = [NSString stringWithFormat:@"%ld", (long)price];
     NSString *servingSold = [NSString stringWithFormat:@"%.02f", servingSoldFloat];
+    
     inventoryCheckReport = [[InventoryReport alloc] initWithItemName:inventoryModel.itemName
                                                        andWithFrequency:inventoryModel.frequency
                                                         andWithFullOpen:inventoryModel.fullOpen
@@ -502,11 +500,12 @@
                                                        andWithItemPrice:inventoryModel.itemPrice
                                                       andWithCashDetail:priceStr];
     
-    [self.inventoryReportArray addObject:inventoryCheckReport];
+    [self.appDelegate.bartInventoryArray addObject:inventoryCheckReport];
     
-    NSString *movingAmount = @"";
     NSString *movingOrigin = @"";
+    NSString *movingTarget = @"";
     NSString *movingTime = @"";
+    
     NSInteger missingParInt =  self.fullBtCountTextField.text.integerValue - inventoryModel.par.integerValue;
     NSString *missingPar = [NSString stringWithFormat:@"%ld", (long)missingParInt];
     
@@ -514,24 +513,51 @@
     NSString *openWet = self.openBtWetTextField.text;
     
     int j = 0;
-    BOOL edited = false;
+    self.movedItemCheck = false;
+    
+    //
+    self.movedInID = @"";
+    self.movedOutID = @"";
+    
+    
+    // 바에서 이동된 아이템이 1이상 있다.
+    
+    if (self.appDelegate.unreportedArray.count != 0) {
         
-    if (moveAllowArray.count != 0) {
-        edited = true;
+        for (int i = 0; i < self.appDelegate.unreportedArray.count ; i++) {
             
-        for (int i = 0; i < moveAllowArray.count ; i++) {
-                
-            edited = true;
-            Confirm *moveAllowModel = (Confirm *)moveAllowArray[i];
+            Confirm *moveAllowModel = (Confirm *)self.appDelegate.unreportedArray[i];
+
+            
+            //--  MovedIn/MovedOut를 위한 다블체크 (한 아이템이 주거나 받은경우 2개의 옮김정보를 가진다.) 두번째 옮김인경우 전에 한번추가된상태이므로 현재 currenNum의 번호와 shiftReport의 개수가 같다
+            BOOL doubleCheck;
+            if (self.appDelegate.shiftReport.count == self.currentNum) doubleCheck = false;
+            else doubleCheck = true;
+            //--
+            
+            
+            
+            // 아이템이 옮겨진 경우
+            
             if ([moveAllowModel.moveItemName isEqualToString:inventoryModel.itemName]) {
-                movingAmount = moveAllowModel.moveAmount;
+                
+
+                NSString *movingAmount = moveAllowModel.moveAmount;
                 movingOrigin = moveAllowModel.senderLocation;
+                movingTarget = moveAllowModel.receiverLocation;
                 movingTime = moveAllowModel.acceptTime;
                 
                 NSString *mpTempValue = missingPar;
                 NSString *ssTempValue = servingSold;
                 NSString *psTempValue = priceStr;
-                    
+                
+                NSString *movedIn = @"";
+                NSString *movedOut = @"";
+                
+                
+                
+                /*
+                
                 if (j != 0) {
                     fullItem = @"";
                     openWet = @"";
@@ -539,49 +565,85 @@
                     ssTempValue = @"";
                     psTempValue = @"";
                 }
+                
                 j++;
+                 
+                */
                 
-                NSInteger preFull;
-                if ([movingOrigin isEqualToString:self.location]) {
-                    preFull = inventoryCheckReport.amount.integerValue + movingAmount.integerValue;
-                } else {
-                    preFull = inventoryCheckReport.amount.integerValue - movingAmount.integerValue;
+                // 첫 옮김정보라면.. 추가
+                if (!doubleCheck) {
+                    
+                    NSInteger preFull;
+                    if ([movingOrigin isEqualToString:self.location]) {
+                        preFull = inventoryCheckReport.amount.integerValue + movingAmount.integerValue;
+                        movedOut = movingAmount;
+                        self.movedOutID = moveAllowModel.moveID;
+                    } else {
+                        preFull = inventoryCheckReport.amount.integerValue - movingAmount.integerValue;
+                        movedIn = movingAmount;
+                        self.movedInID = moveAllowModel.moveID;
+                    }
+                    
+                    ShiftReportModel *shiftReport = [[ShiftReportModel alloc] initWithItemName:inventoryModel.itemName
+                                                                                andWithMovedIn:movedIn
+                                                                               andWithMovedOut:movedOut
+                                                                           andWithMovingOrigin:movingOrigin
+                                                                             andWithMovingTime:movingTime
+                                                                               andWithItemFull:fullItem
+                                                                               andWithItemOpen:openWet
+                                                                            andWithItemPreFull:[NSString stringWithFormat:@"%ld", (long)preFull]
+                                                                            andWithItemPreOpen:openWet
+                                                                           andWithMissingToPar:mpTempValue
+                                                                            andWithServingSold:ssTempValue
+                                                                           andWithLiquidWeight:inventoryModel.itemLiqWet
+                                                                              andWithItemPrice:inventoryModel.itemPrice
+                                                                             andWithCashDetail:psTempValue];
+                    
+                    [self.appDelegate.shiftReport addObject:shiftReport];
+                    self.movedItemCheck = true;
+                    
                 }
-                
-                
-                
-                ShiftReportModel *shiftReport = [[ShiftReportModel alloc] initWithItemName:inventoryModel.itemName
-                                                                       andWithMovingAmount:movingAmount
-                                                                       andWithMovingOrigin:movingOrigin
-                                                                         andWithMovingTime:movingTime
-                                                                           andWithItemFull:fullItem
-                                                                           andWithItemOpen:openWet
-                                                                        andWithItemPreFull:[NSString stringWithFormat:@"%ld", (long)preFull]
-                                                                        andWithItemPreOpen:openWet
-                                                                       andWithMissingToPar:mpTempValue
-                                                                        andWithServingSold:ssTempValue
-                                                                       andWithLiquidWeight:inventoryModel.itemLiqWet
-                                                                          andWithItemPrice:inventoryModel.itemPrice
-                                                                         andWithCashDetail:psTempValue];
-                
-                
+                // 두번째 옮김정보라면.. 현재 shiftReport 에서 MovedIn/MovedOut 와 preFull 값 수정
+                else{
                     
-                [appDelegate.shiftReport addObject:shiftReport];
+                    NSInteger shiftReportCount = self.appDelegate.shiftReport.count;
+                    ShiftReportModel *shiftReport = self.appDelegate.shiftReport[shiftReportCount - 1];
                     
-                break;
+                    NSInteger preFull;
+                    
+                    if ([movingOrigin isEqualToString:self.location]) {
+                        preFull = shiftReport.itemPreFull.integerValue + movingAmount.integerValue;
+                    } else {
+                        preFull = shiftReport.itemPreFull.integerValue - movingAmount.integerValue;
+                    }
+                    
+                    NSString *movedIn = shiftReport.movedIn;
+                    NSString *movedOut = shiftReport.movedOut;
+                    
+                    if ([self.location isEqualToString:movingOrigin]) movedOut = movingAmount;
+                    else movedIn = movingAmount;
+                    
+                    // shiftReport에서 3개의 값을 수정
+                    shiftReport.movedIn = movedIn;
+                    shiftReport.movedOut = movedOut;
+                    shiftReport.itemPreFull = [NSString stringWithFormat:@"%ld", (long)preFull];
+                    
+                    [self.appDelegate.shiftReport replaceObjectAtIndex:shiftReportCount - 1 withObject:shiftReport];
+                    self.movedItemCheck = true;
+                }
 
-            } else{
-                edited = false;
             }
         }
-            
     }
-        
-    if(!edited){
-
+    
+    
+    // 바에서 받거나 보낸 아이템이 없거나, 있다하더라도 이 아이템에 대한 변화가 없는경우
+    
+    if (!self.movedItemCheck) {
         
         ShiftReportModel *shiftReport = [[ShiftReportModel alloc] initWithItemName:inventoryModel.itemName
-                                                               andWithMovingAmount:movingAmount
+                                                                    andWithMovedIn:@""
+                                                                   andWithMovedOut:@""
                                                                andWithMovingOrigin:movingOrigin
                                                                  andWithMovingTime:movingTime
                                                                    andWithItemFull:fullItem
@@ -594,20 +656,17 @@
                                                                   andWithItemPrice:inventoryModel.itemPrice
                                                                  andWithCashDetail:priceStr];
         
-        [appDelegate.shiftReport addObject:shiftReport];
-        
+        [self.appDelegate.shiftReport addObject:shiftReport];
     }
     
-    
-    appDelegate.bartInventoryArray = self.inventoryReportArray;
     NSString *itemName = self.itemNameLabel.text;
     NSString *openBtWetText = self.openBtWetTextField.text;
     NSString *fullBtCountText = self.fullBtCountTextField.text;
     
     
-    /*
-     *  SAVE IN DATABASE
-     */
+    /*-----------------------------------------------------------------------
+     *  SAVE IN DATABASE (모든계산이 끝난후 현재 FULL/OPEN 상태를 자료기지에 보관한다.)   ||
+     *---------------------------------------------------------------------*/
     
 
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -619,14 +678,28 @@
                        andAmount:fullBtCountText
                         andPrice:priceStr
                   andFinishBlock:^(NSArray *data) {
-                      [hud hide:YES];
+                      
+                      
                       NSDictionary *dicData = (NSDictionary *)data;
                       NSString *stateCode = [dicData objectForKey:STATE];
+                      
                       if ([stateCode isEqualToString:@"200"])
                       {
-                          self.currentNum ++;
-                          [self setCurrentUIChange];
+                          
+                          // Moving 옮겨진 아이템이라면... 써버에서 sender_reported or receiver_reported 를 1로 업데이트한다
+                          if (self.movedItemCheck) {
+                              
+                              [self updateMoveReported];
+                          } else {
+                              
+                              [hud hide:YES];
+                              self.currentNum ++;
+                              [self setCurrentUIChange];
+                              
+                          }
+                          
                       } else{
+                          [hud hide:YES];
                           [self.view makeToast:[dicData objectForKey:MESSAGE] duration:1.5 position:CSToastPositionCenter];
                           
                       }
@@ -637,11 +710,12 @@
                         
                     }];
     });
+    
 }
 
 - (IBAction)onBack:(id)sender {
-    appDelegate.endTime = [self getCurrentTimeString];
-    appDelegate.totalCash = [NSString stringWithFormat:@"%ld", (long)self.totalCash];
+    self.appDelegate.endTime = [self getCurrentTimeString];
+    self.appDelegate.totalCash = [NSString stringWithFormat:@"%ld", (long)self.totalCash];
     
     BarInventoryCommentVC *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"BarInventoryCommentVC"];
     [self presentViewController:svc animated:YES completion:nil];
@@ -649,8 +723,115 @@
 }
 
 
+#pragma mark - Getting unreported move items (Inventory 리포트에 반영되지않은 (reported = 0) 모든 옮김정보를 자료기지로부터 가져온다  )
 
-#pragma  mark - textView animation method
+- (void) getAllUnreportedItems {
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        OJOClient *ojoClient = [OJOClient sharedWebClient];
+  
+        [ojoClient searchUnreportedItems:SEARCH_UNREPORTED_ITEMS
+                             andLocation:self.location
+                          andFinishBlock:^(NSArray *data) {
+                              
+                                    NSDictionary *dicData = (NSDictionary *) data;
+                                    NSString *stateCode = [dicData objectForKey:STATE];
+                                    
+                                    if ([stateCode isEqualToString:@"200"]) {
+                                        
+                                        NSArray *response = (NSArray *)[dicData objectForKey:MESSAGE];
+                                        NSInteger count = response.count;
+                                        
+                                        Confirm *confirmModel = nil;
+                                        
+                                        for (int i = 0; i < count; i++) {
+                                            NSDictionary *resultDict = (NSDictionary *)response[i];
+                                            
+                                            NSString *moveID = [resultDict objectForKey:MOVE_ID];
+                                            NSString *itemName = [resultDict objectForKey:MOVE_ITEM_NAME];
+                                            NSString *senderLocation = [resultDict objectForKey:SENDER_LOCATION];
+                                            NSString *moveAmount = [resultDict objectForKey:MOVE_ITEM_AMOUNT];
+                                            NSString *senderName = [resultDict objectForKey:NAME];
+                                            NSString *movedDate = [resultDict objectForKey:DATE_STR];
+                                            NSString *receiverLocation = [resultDict objectForKey:RECEIVER_LOCATION];
+                                            
+                                            confirmModel = [[Confirm alloc] initWithMoveID:moveID
+                                                                       andWithMoveItemName:itemName
+                                                                         andWithMoveAmount:moveAmount
+                                                                     andWithSenderLocation:senderLocation
+                                                                    andWithReceiveLocation:receiverLocation
+                                                                         andWithSenderName:senderName
+                                                                         andWithAcceptTime:movedDate];
+                                            
+//-----------------------------------------------------------------------
+//                  double check (옮김정보가 같은경우를 찾아 옮김수량을 서로 더해주고 첫 옮김정보의 수량을 수정해준다, 같은정보가 없는경우에는 배렬에 추가)
+                                            
+                                            BOOL doubledItem = false;
+                                            
+                                            for (int j = 0; j < self.appDelegate.unreportedArray.count; j++) {
+                                                
+                                                if ([itemName isEqualToString:((Confirm*)self.appDelegate.unreportedArray[j]).moveItemName] && [senderLocation isEqualToString:((Confirm*)self.appDelegate.unreportedArray[j]).senderLocation] && [receiverLocation isEqualToString:((Confirm*)self.appDelegate.unreportedArray[j]).receiverLocation]) {
+                                                    
+                                                    doubledItem = true;
+                                                    NSInteger sum = ((Confirm*) self.appDelegate.unreportedArray[j]).moveAmount.integerValue + moveAmount.integerValue;
+                                                    confirmModel.moveAmount = [NSString stringWithFormat:@"%ld", (long)sum];
+                                                    
+                                                    [self.appDelegate.unreportedArray replaceObjectAtIndex:j withObject:confirmModel];
+                                                }
+                                            }
+                                            
+                                            if (!doubledItem) {
+                                                [self.appDelegate.unreportedArray addObject:confirmModel];
+                                            }
+//-------------------------------------------------------------------------
+                                            
+                                        }
+
+                                        
+                                        [self.hud hide:YES];
+                                        [self setCurrentUIChange];
+                                        
+                                    } else {
+                                        [self.hud hide:YES];
+                                        NSString *errorMessage = (NSString *)[dicData objectForKey:MESSAGE];
+                                        [self.view makeToast:errorMessage duration:1.5 position:CSToastPositionCenter];
+                                    }
+                                } andFailBlock:^(NSError *error) {
+                                    [self.hud hide:YES];
+                                    [self.view makeToast:@"PLEASE CHECK INTERNET CONNECTION!" duration:1.5 position:CSToastPositionCenter];
+                                }];
+    });
+    
+}
+
+#pragma mark - Moving report update (Move 테블에서 sender_reported 와 receiver_reported를 업데이트 한다.)
+
+- (void) updateMoveReported {
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        OJOClient *ojoClient = [OJOClient sharedWebClient];
+        [ojoClient updateUnreportedItem:UPDATE_UNREPORTED_MOVING
+                           andMovedInID:self.movedInID
+                          andMovedOutID:self.movedOutID
+                            andLocation:self.location
+                         andFinishBlock:^(NSArray *data) {
+                             
+                             
+            
+        } andFailBlock:^(NSError *error) {
+            
+        }];
+        
+        
+    });
+    
+    
+}
+
+
+
+
+#pragma  mark - textView animation method (다음 아이템을 위한 애니메이션부분)
 - (void) animatPage:(UISwipeGestureRecognizerDirection)direction {
     
     [UIView beginAnimations:nil context:nil];

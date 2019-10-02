@@ -10,15 +10,17 @@
 
 @implementation Confirm
 
-- (instancetype) initWithMoveItemName:(NSString *)moveItemName
-                    andWithMoveAmount:(NSString *)moveAmount
-                andWithSenderLocation:(NSString *)senderLocation
-               andWithReceiveLocation:(NSString *)receiverLocation
-                    andWithSenderName:(NSString *)senderName
-                    andWithAcceptTime:(NSString *) acceptTime{
+- (instancetype) initWithMoveID:(NSString *)moveID
+            andWithMoveItemName:(NSString *)moveItemName
+              andWithMoveAmount:(NSString *)moveAmount
+          andWithSenderLocation:(NSString *)senderLocation
+         andWithReceiveLocation:(NSString *)receiverLocation
+              andWithSenderName:(NSString *)senderName
+              andWithAcceptTime:(NSString *)acceptTime{
 
     self = [super init];
     if (self) {
+        self.moveID = moveID;
         self.moveItemName = moveItemName;
         self.moveAmount = moveAmount;
         self.senderLocation = senderLocation;

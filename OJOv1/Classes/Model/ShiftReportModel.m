@@ -13,7 +13,8 @@
 @implementation ShiftReportModel
 
 - (instancetype) initWithItemName:(NSString *) itemName
-              andWithMovingAmount:(NSString *) movingAmount
+                   andWithMovedIn:(NSString *) movedIn
+                  andWithMovedOut:(NSString *) movedOut
               andWithMovingOrigin:(NSString *) movingOrgin
                 andWithMovingTime:(NSString *) movingTIme
                   andWithItemFull:(NSString *) itemFull
@@ -33,7 +34,8 @@
     if(self) {
     
         self.itemName = itemName;
-        self.movingAmount = movingAmount;
+        self.movedIn = movedIn;
+        self.movedOut = movedOut;
         self.movingOrigin = movingOrgin;
         self.movingTime = movingTIme;
         self.itemFull = itemFull;

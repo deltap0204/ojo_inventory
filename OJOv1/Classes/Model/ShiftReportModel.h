@@ -11,7 +11,8 @@
 @interface ShiftReportModel : NSObject
 
 @property (strong, nonatomic) NSString *itemName;
-@property (strong, nonatomic) NSString *movingAmount;
+@property (strong, nonatomic) NSString *movedIn;
+@property (strong, nonatomic) NSString *movedOut;
 @property (strong, nonatomic) NSString *movingOrigin;
 @property (strong, nonatomic) NSString *movingTime;
 @property (strong, nonatomic) NSString *itemFull;
@@ -28,7 +29,8 @@
 
 
 - (instancetype) initWithItemName:(NSString *) itemName
-              andWithMovingAmount:(NSString *) movingAmount
+                   andWithMovedIn:(NSString *) movedIn
+                  andWithMovedOut:(NSString *) movedOut
               andWithMovingOrigin:(NSString *) movingOrgin
                 andWithMovingTime:(NSString *) movingTIme
                   andWithItemFull:(NSString *) itemFull

@@ -15,7 +15,7 @@
 
 #pragma mark - User Management
 
-#define BASE_URL                @"http://ojoinventory.com/ojo/"
+#define BASE_URL                @"http://ojoinventory.com/ojo_test/"
 #define LOGIN_URL               @"mobile/users/login"
 #define GET_ALL_USER_URL        @"mobile/users/getAllUser"
 #define ADD_USER                @"mobile/users/addUser"
@@ -99,6 +99,9 @@
 
 #pragma mark - item move management
 
+#define MOVE_ID                 @"move_id"
+#define MOVED_IN_ID             @"moved_in_id"
+#define MOVED_OUT_ID            @"moved_out_id"
 #define MOVE_ITEM_NAME          @"item_name"
 #define MOVE_ITEM_AMOUNT        @"amount"
 #define SENDER_LOCATION         @"sender_location"
@@ -118,5 +121,7 @@
 #define ITEM_MOVE_ALLOW         @"mobile/almacens/InventoryItemReceive"
 #define ITEM_MOVE_REJECT        @"mobile/almacens/InventoryItemReject"
 #define ITEM_MOVE_SEARCH_MANAGE @"mobile/almacens/searchManageReceiveItem"
+#define SEARCH_UNREPORTED_ITEMS @"mobile/almacens/searchUnreportedItems"
+#define UPDATE_UNREPORTED_MOVING    @"mobile/almacens/updateUnreportedItem"
 
 

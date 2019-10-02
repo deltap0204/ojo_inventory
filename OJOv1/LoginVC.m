@@ -41,12 +41,16 @@ static User *loggedInUser = nil;
     }
     
     AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
-    appDelegate.movedArray = [[NSMutableArray alloc] init];
+    
     appDelegate.movedTempArray = [[NSMutableArray alloc] init];
     appDelegate.allowedArray = [[NSMutableArray alloc] init];
     appDelegate.refilledArray = [[NSMutableArray alloc] init];
     appDelegate.bartInventoryArray = [[NSMutableArray alloc] init];
     
+    
+    //
+    self.usernameTextField.text = @"barlax";
+    self.passwordTextField.text = @"barlax";
 
 }
 

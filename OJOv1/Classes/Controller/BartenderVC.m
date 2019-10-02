@@ -23,8 +23,6 @@
 @property (strong, nonatomic) NSString *username;
 @property (strong,nonatomic) NSString *userRealName;
 @property (strong, nonatomic) AppDelegate *appDelegate;
-@property (strong, nonatomic) NSMutableArray *confirmArray;
-@property (assign, nonatomic) NSInteger movingCount;
 @property (strong, nonatomic) NSString *deviceType;
 
 @end
@@ -33,8 +31,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     
-    self.confirmArray = [[NSMutableArray alloc] init];
     self.appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
 
     [self.userRealNameLabel setText:[LoginVC getLoggedinUser].name];
@@ -50,10 +48,13 @@
     
     // initialize the barInventoryArray
     self.appDelegate.bartInventoryArray = [[NSMutableArray alloc] init];
-    self.appDelegate.startReport = [[NSMutableArray alloc] init];
     self.appDelegate.shiftReport = [[NSMutableArray alloc] init];
     
-    [self getAllConfirmList];
+    // initialize the unread items
+    self.appDelegate.unreadReceivedItemArray = [[NSMutableArray alloc] init];
+    self.appDelegate.unreadSentItemArray = [[NSMutableArray alloc] init];
+    
+    [self getAllUnreadMoveList];
   
 }
 
@@ -82,11 +83,12 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void) getAllConfirmList{
+- (void) getAllUnreadMoveList{
     
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.labelText = @"Checking Moved Items...";
     hud.userInteractionEnabled = NO;
+    
     [hud show:YES];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -99,36 +101,42 @@
                           if ([stateCode isEqualToString:@"200"]) {
                               NSArray *response = (NSArray *)[dicData objectForKey:MESSAGE];
                               NSInteger count = response.count;
-                              self.movingCount = count;
-                              [self.confirmArray removeAllObjects];
+                              [self.appDelegate.unreadReceivedItemArray removeAllObjects];
+                              [self.appDelegate.unreadSentItemArray removeAllObjects];
+                              
                               Confirm *confirmModel = nil;
                               
                               for (int i = 0; i < count; i++) {
                                   NSDictionary *resultDict = (NSDictionary *)response[i];
+                                  NSString *moveID = [resultDict objectForKey:MOVE_ID];
                                   NSString *itemName = [resultDict objectForKey:MOVE_ITEM_NAME];
                                   NSString *senderLocation = [resultDict objectForKey:SENDER_LOCATION];
                                   NSString *moveAmount = [resultDict objectForKey:MOVE_ITEM_AMOUNT];
                                   NSString *senderName = [resultDict objectForKey:NAME];
                                   NSString *moved_str = [resultDict objectForKey:MOVED_TIME];
+                                  NSString *receiverLocation = [resultDict objectForKey:RECEIVER_LOCATION];
 
-                                  confirmModel = [[Confirm alloc] initWithMoveItemName:itemName
-                                                                     andWithMoveAmount:moveAmount
-                                                                 andWithSenderLocation:senderLocation
-                                                                andWithReceiveLocation:self.location
-                                                                     andWithSenderName:senderName
-                                                                     andWithAcceptTime:moved_str];
+                                  confirmModel = [[Confirm alloc] initWithMoveID:moveID
+                                                             andWithMoveItemName:itemName
+                                                               andWithMoveAmount:moveAmount
+                                                           andWithSenderLocation:senderLocation
+                                                          andWithReceiveLocation:receiverLocation
+                                                               andWithSenderName:senderName
+                                                               andWithAcceptTime:moved_str];
                                   
-                                  [self.confirmArray addObject:confirmModel];
-                                  
+                                  if ([senderLocation isEqualToString:self.location]) {
+                                      [self.appDelegate.unreadSentItemArray addObject:confirmModel];
+                                  } else {
+                                      [self.appDelegate.unreadReceivedItemArray addObject:confirmModel];
+                                  }
                               }
                               
-                              self.appDelegate.movedArray = self.confirmArray;
-                              
+                            
                               dispatch_async(dispatch_get_main_queue(), ^{
                                   [hud hide:YES];
-                                  if (self.movingCount != 0) {
+                                  if (self.appDelegate.unreadReceivedItemArray.count != 0) {
                                       // if it has moved items, user has to confirm them on ConfirmVC
-                                      [self moveCheckPage];
+                                      [self unconfirmedReceivedItems];
                                   }
                                   
                               });
@@ -143,18 +151,16 @@
                           [self.view makeToast:@"PLEASE CHECK INTERNET CONNECTION!" duration:1.5 position:CSToastPositionCenter];
                           [hud hide:YES];
                       }];
-        
-        
     });
     
 }
 
-- (void) moveCheckPage{
+- (void) unconfirmedReceivedItems{
     
     
     UIAlertController *alert = [UIAlertController
                                 alertControllerWithTitle:@"CHECK OUT NEW ITEMS"
-                                message:[NSString stringWithFormat:@"%ld%@",(long)self.movingCount, @" NEW ITEMS HAVE BEEN ADDED."]
+                                message:[NSString stringWithFormat:@"%ld NEW ITEMS HAVE BEEN ADDED, PLEASE CONTINUE AFTER ACCEPT/REJECT",(long)self.appDelegate.unreadReceivedItemArray.count]
                                 preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *okAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"OK", @"CONFIRM")
                                                        style:UIAlertActionStyleCancel
@@ -176,22 +182,56 @@
 
 }
 
-- (IBAction)logOut:(id)sender {
+- (void) unconfirmedSentItems {
     
-//    LoginVC *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"loginPage"];
-//    [self presentViewController:svc animated:YES completion:nil];
+    
+    UIAlertController *alert = [UIAlertController
+                                alertControllerWithTitle:@"SORRY"
+                                message:[NSString stringWithFormat:@"YOU SENT %ld ITEMS, BUT IT'S NOT ACCEPTED YET \n PLEASE TRY AFTER IT'S ACCEPTED",
+                                         (long)self.appDelegate.unreadSentItemArray.count]
+                                preferredStyle:UIAlertControllerStyleAlert];
+    
+    
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"OK", @"CONFIRM")
+                                                       style:UIAlertActionStyleCancel
+                                                     handler:^(UIAlertAction *action) {
+                                                         
+                                                         [self logoutAction:self.logoutButton];
 
+                                                     }];
+    [alert addAction:okAction];
+    [self presentViewController:alert animated:YES completion:nil];
+    
+    return;
+    
+}
+- (IBAction)logoutAction:(UIButton *)sender {
+    
     [self dismissViewControllerAnimated:YES completion:nil];
-    
-    
 }
 
 - (IBAction)onInventory:(UIButton *)sender {
     
-    self.appDelegate.inventoryType = @"shift";
-    [self performSegueWithIdentifier:@"startBartenderInventory_ipad" sender:nil];
-    
+    if (self.appDelegate.unreadSentItemArray.count == 0 && self.appDelegate.unreadReceivedItemArray.count == 0) {
+        
+        [self performSegueWithIdentifier:@"startBartenderInventory_ipad" sender:nil];
+        
+    } else {
+        
+
+        if (self.appDelegate.unreadSentItemArray.count != 0) {
+            [self unconfirmedSentItems];
+        }
+        
+        if (self.appDelegate.unreadReceivedItemArray.count != 0) {
+            [self unconfirmedReceivedItems];
+        }
+        
+        
+    }
 }
+
+
 
 - (void) showActionSheetView{
     

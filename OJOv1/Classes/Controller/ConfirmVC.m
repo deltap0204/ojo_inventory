@@ -12,12 +12,15 @@
 
 
 @interface ConfirmVC ()
+
 @property (weak, nonatomic) IBOutlet UIButton *backButton;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *confirmArray;
 @property (assign, nonatomic) NSInteger selectedRow;
 @property (strong, nonatomic) NSString *currentLocation;
 @property (strong, nonatomic) NSString *deviceType;
+@property (strong, nonatomic) AppDelegate *appDelegate;
+@property (strong, nonatomic) NSMutableArray  *setIndexPathArray;
 
 @end
 
@@ -27,9 +30,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.confirmArray = [[NSMutableArray alloc] init];
-    AppDelegate *appDelegate;
-    appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
-    self.confirmArray = appDelegate.movedArray;
+    self.setIndexPathArray = [[NSMutableArray alloc] init];
+    self.appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    
+    self.confirmArray = self.appDelegate.unreadReceivedItemArray;
     self.tableView.delaysContentTouches = NO;
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     self.currentLocation = [userDefaults objectForKey:SEL_LOCATION];
@@ -93,6 +97,7 @@
     [confirmCell.rejectButton setTag:indexPath.row];
     confirmCell.backgroundColor = confirmCell.contentView.backgroundColor;
     return confirmCell;
+    
 }
 
 
@@ -107,16 +112,15 @@
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[sender tag] inSection:0];
     ConfirmTVC *cell = [self.tableView cellForRowAtIndexPath:indexPath];
     self.selectedRow = indexPath.row;
-    NSString *itemName = cell.itemName.text;
-    NSString *sendLocation = cell.fromLocation.text;
-    NSString *senderName = cell.sender.text;
     
-    NSString *receiverLocation = cell.receiver.text;
-    if ([receiverLocation isEqualToString:@""]) {
-        receiverLocation = self.currentLocation;
-    }
+    Confirm *selectedConfirmModel = self.confirmArray[self.selectedRow];
     
-    NSString *amount = cell.movingAmount.text;
+    NSString *moveID = selectedConfirmModel.moveID;
+    NSString *itemName = selectedConfirmModel.moveItemName;
+    NSString *sendLocation = selectedConfirmModel.senderLocation;
+    NSString *receiverLocation = selectedConfirmModel.receiverLocation;
+    NSString *amount = selectedConfirmModel.moveAmount;
+    NSString *senderName = selectedConfirmModel.senderName;
     
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.userInteractionEnabled = NO;
@@ -124,7 +128,9 @@
     [hud show:YES];
     
     OJOClient *ojoClient = [OJOClient sharedWebClient];
+    
     [ojoClient itemMoveAllow:ITEM_MOVE_ALLOW
+                  andMoveID:moveID
              andMoveItemName:itemName
                andMoveAmount:amount
            andSenderLocation:sendLocation
@@ -136,24 +142,53 @@
                   if ([stateCode isEqualToString:@"200"]) {
                       dispatch_async(dispatch_get_main_queue(), ^{
                           [hud hide:YES];
-                          Confirm *confirmModel = nil;
-                          confirmModel = [[Confirm alloc] initWithMoveItemName:itemName
-                                                             andWithMoveAmount:amount
-                                                         andWithSenderLocation:sendLocation
-                                                        andWithReceiveLocation:receiverLocation
-                                                             andWithSenderName:senderName
-                                                             andWithAcceptTime:[self getCurrentTime]];
                           
-                          AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
-                          [appDelegate.allowedArray addObject:confirmModel];
+        // ---- Doubled item check   {
+                          
+                          BOOL doubledItem = false;
+                          for (int i = 0; i < self.appDelegate.allowedArray.count; i++) {
+                              
+                              Confirm *confirmMovedModel;
+                              confirmMovedModel = self.appDelegate.allowedArray[i];
+                              if ([confirmMovedModel.moveItemName isEqualToString:itemName]  && [confirmMovedModel.senderLocation isEqualToString:sendLocation] && [confirmMovedModel.receiverLocation isEqualToString:receiverLocation]) {
+                                  
+                                  NSInteger sum = confirmMovedModel.moveAmount.integerValue + amount.integerValue;
+                                  
+                                  confirmMovedModel.moveAmount = [NSString stringWithFormat:@"%ld", (long)sum];
+                                  [self.appDelegate.allowedArray replaceObjectAtIndex:i withObject:confirmMovedModel];
+                                  doubledItem = true;
+                              }
+                          }
+                          
+                          if (!doubledItem) {
+                              
+                              Confirm *confirmModel = nil;
+                              confirmModel = [[Confirm alloc] initWithMoveID:moveID
+                                                         andWithMoveItemName:itemName
+                                                           andWithMoveAmount:amount
+                                                       andWithSenderLocation:sendLocation
+                                                      andWithReceiveLocation:receiverLocation
+                                                           andWithSenderName:senderName
+                                                           andWithAcceptTime:[self getCurrentTime]];
+                              
+                              
+                              [self.appDelegate.allowedArray addObject:confirmModel];
+                              
+                          }
+                          
+                          
+    //-------     }
+                          
+                          
+                          [self.setIndexPathArray addObject:indexPath];
                           [cell acceptedState];
+                          
                       });
                   } else{
                       dispatch_async(dispatch_get_main_queue(), ^{
                           [hud hide:YES];
                           [self.view makeToast:[dicData objectForKey:MESSAGE] duration:1.5 position:CSToastPositionCenter];
                       });
-                  
                   }
                   
               }
@@ -169,14 +204,14 @@
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[sender tag] inSection:0];
     ConfirmTVC *cell = [self.tableView cellForRowAtIndexPath:indexPath];
     self.selectedRow = indexPath.row;
-    NSString *itemName = cell.itemName.text;
-    NSString *sendLocation = cell.fromLocation.text;
-    NSString *receiverLocation = cell.receiver.text;
-    if ([receiverLocation isEqualToString:@""]) {
-        receiverLocation = self.currentLocation;
-    }
     
-    NSString *amount = cell.movingAmount.text;
+    Confirm *selectedConfirmModel = self.confirmArray[self.selectedRow];
+    
+    NSString *moveID = selectedConfirmModel.moveID;
+    NSString *itemName = selectedConfirmModel.moveItemName;
+    NSString *sendLocation = selectedConfirmModel.senderLocation;
+    NSString *receiverLocation = selectedConfirmModel.receiverLocation;
+    NSString *amount = selectedConfirmModel.moveAmount;
     
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.userInteractionEnabled = NO;
@@ -185,6 +220,7 @@
     
     OJOClient *ojoClient = [OJOClient sharedWebClient];
     [ojoClient itemMoveReject:ITEM_MOVE_REJECT
+                    andMoveID:moveID
              andMoveItemName:itemName
                andMoveAmount:amount
            andSenderLocation:sendLocation
@@ -194,8 +230,11 @@
                   NSString *stateCode = [dicData objectForKey:STATE];
                   if ([stateCode isEqualToString:@"200"]) {
                       dispatch_async(dispatch_get_main_queue(), ^{
+                          
                           [hud hide:YES];
+                          [self.setIndexPathArray addObject:indexPath];
                           [cell rejectedState];
+                          
                       });
                   } else{
                       dispatch_async(dispatch_get_main_queue(), ^{
@@ -214,6 +253,13 @@
 }
 
 - (IBAction)onReturnAndReport:(id)sender {
+    
+    for (int i = (int)self.setIndexPathArray.count - 1; i >= 0; i--){
+        
+        NSIndexPath *path = [self.setIndexPathArray objectAtIndex:i];
+        [self.appDelegate.unreadReceivedItemArray removeObjectAtIndex:path.row];
+    }
+    
     [self dismissViewControllerAnimated:YES completion:nil];
     
 }

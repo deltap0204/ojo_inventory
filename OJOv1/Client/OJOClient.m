@@ -418,6 +418,7 @@ static OJOClient *webClient = nil;
 
 
 - (void) itemMoveAllow:(NSString *) method
+             andMoveID:(NSString *) moveID
        andMoveItemName:(NSString *) moveItemName
          andMoveAmount:(NSString *) moveAmount
      andSenderLocation:(NSString *) senderLocation
@@ -426,7 +427,7 @@ static OJOClient *webClient = nil;
           andFailBlock:(WebClientOnFail) failBlock{
     
     NSString *itemMoveAllowURL = [NSString stringWithFormat:@"%@%@", BASE_URL, method];
-    NSDictionary *dicParam = @{MOVE_ITEM_NAME : moveItemName, MOVE_ITEM_AMOUNT : moveAmount, SENDER_LOCATION : senderLocation, RECEIVER_LOCATION : receiverLocation};
+    NSDictionary *dicParam = @{MOVE_ID : moveID, MOVE_ITEM_NAME : moveItemName, MOVE_ITEM_AMOUNT : moveAmount, SENDER_LOCATION : senderLocation, RECEIVER_LOCATION : receiverLocation};
     [WebClient requestPostUrl:itemMoveAllowURL parameters:dicParam suceess:^(NSArray *response) {
         finishBlock(response);
     } failure:^(NSError *error) {
@@ -434,9 +435,11 @@ static OJOClient *webClient = nil;
             failBlock(error);
         }
     }];
+    
 }
 
 - (void) itemMoveReject:(NSString *) method
+              andMoveID:(NSString *) moveID
         andMoveItemName:(NSString *) moveItemName
           andMoveAmount:(NSString *) moveAmount
       andSenderLocation:(NSString *) senderLocation
@@ -445,7 +448,7 @@ static OJOClient *webClient = nil;
            andFailBlock:(WebClientOnFail) failBlock{
     
     NSString *itemMoveRejectURL = [NSString stringWithFormat:@"%@%@", BASE_URL, method];
-    NSDictionary *dicParam = @{MOVE_ITEM_NAME : moveItemName, MOVE_ITEM_AMOUNT : moveAmount, SENDER_LOCATION : senderLocation, RECEIVER_LOCATION : receiverLocation};
+    NSDictionary *dicParam = @{MOVE_ID : moveID, MOVE_ITEM_NAME : moveItemName, MOVE_ITEM_AMOUNT : moveAmount, SENDER_LOCATION : senderLocation, RECEIVER_LOCATION : receiverLocation};
     [WebClient requestPostUrl:itemMoveRejectURL parameters:dicParam suceess:^(NSArray *response) {
         finishBlock(response);
     } failure:^(NSError *error) {
@@ -538,7 +541,43 @@ static OJOClient *webClient = nil;
     }];
 }
 
+- (void) searchUnreportedItems:(NSString *) method
+                   andLocation:(NSString *) location
+                andFinishBlock:(WebClientOnFinish) finishBlock
+                  andFailBlock:(WebClientOnFail) failBlock {
+    
+    
+    NSDictionary *dicParam = @{LOCATION : location};
+    NSString *searchURL = [NSString stringWithFormat:@"%@%@", BASE_URL, method];
+    
+    [WebClient requestPostUrl:searchURL parameters:dicParam suceess:^(NSArray *response) {
+        finishBlock(response);
+    } failure:^(NSError *error) {
+        if (failBlock) {
+            failBlock(error);
+        }
+    }];
+}
 
 
+- (void) updateUnreportedItem:(NSString *) method
+                    andMovedInID:(NSString *) movedInID
+                andMovedOutID:(NSString *) movedOutID
+                  andLocation:(NSString *) location
+               andFinishBlock:(WebClientOnFinish) finishBlock
+                 andFailBlock:(WebClientOnFail) failBlock{
+    
+    NSDictionary *dicParam = @{MOVED_IN_ID : movedInID, MOVED_OUT_ID : movedOutID, LOCATION : location};
+    NSString *updateURL = [NSString stringWithFormat:@"%@%@", BASE_URL, method];
+    
+    [WebClient requestPostUrl:updateURL parameters:dicParam suceess:^(NSArray *response) {
+        finishBlock(response);
+    } failure:^(NSError *error) {
+        if (failBlock) {
+            failBlock(error);
+        }
+    }];
+    
+}
 
 @end

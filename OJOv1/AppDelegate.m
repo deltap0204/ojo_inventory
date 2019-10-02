@@ -45,12 +45,16 @@
     
     self.allItemArray = [[NSMutableArray alloc] init];
     self.movedTempArray = [[NSMutableArray alloc] init];
-    self.movedArray = [[NSMutableArray alloc] init];
     self.refilledArray = [[NSMutableArray alloc] init];
     self.bartInventoryArray = [[NSMutableArray alloc] init];
     self.allowedArray = [[NSMutableArray alloc] init];
     self.startReport = [[NSMutableArray alloc] init];
     self.shiftReport = [[NSMutableArray alloc] init];
+    
+    self.unreadReceivedItemArray = [[NSMutableArray alloc] init];
+    self.unreadSentItemArray = [[NSMutableArray alloc] init];
+    
+    self.unreportedArray = [[NSMutableArray alloc] init];
     
     return YES;
 }
