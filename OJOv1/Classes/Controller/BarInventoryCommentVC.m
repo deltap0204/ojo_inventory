@@ -197,8 +197,6 @@
     [self.tableView reloadData];
     [self serverUpdate:itemName withPrice:priceStr withHud:hud];
     
-    
-    
 }
 
 - (IBAction)onCancelAction:(id)sender {

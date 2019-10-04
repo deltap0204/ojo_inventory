@@ -48,9 +48,9 @@ static User *loggedInUser = nil;
     appDelegate.bartInventoryArray = [[NSMutableArray alloc] init];
     
     
-    //
-    self.usernameTextField.text = @"barlax";
-    self.passwordTextField.text = @"barlax";
+
+//    self.usernameTextField.text = @"barlax";
+//    self.passwordTextField.text = @"barlax";
 
 }
 

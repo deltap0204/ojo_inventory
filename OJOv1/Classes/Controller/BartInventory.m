@@ -431,11 +431,12 @@
 
 - (void) sendInventory{
     
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.labelText = @"Sending...";
-    hud.userInteractionEnabled = NO;
+    self.hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    self.hud.labelText = @"Sending...";
+    self.hud.userInteractionEnabled = NO;
     
-    [hud show:YES];
+    [self.hud show:YES];
+    
     InventoryReport *inventoryModel = nil;
     inventoryModel = (InventoryReport *)self.inventoryList[self.currentNum];
     
@@ -470,7 +471,7 @@
     if (fullOpen == 0) {
         // full   (C2 – C1) × M
         price = (inventoryModel.amount.integerValue - self.fullBtCountTextField.text.integerValue) * inventoryModel.itemPrice.integerValue;
-            servingSoldFloat = C2 - C1;
+        servingSoldFloat = C2 - C1;
             
     } else{
         // FULL&OPEN ITEM   ([(C2 × T)+(A2-E)]-[(C1 × T)+(A1-E)])/W  ×M
@@ -516,8 +517,8 @@
     self.movedItemCheck = false;
     
     //
-    self.movedInID = @"";
-    self.movedOutID = @"";
+    self.movedInID = @"0";
+    self.movedOutID = @"0";
     
     
     // 바에서 이동된 아이템이 1이상 있다.
@@ -612,10 +613,14 @@
                     NSInteger preFull;
                     
                     if ([movingOrigin isEqualToString:self.location]) {
-                        preFull = shiftReport.itemPreFull.integerValue + movingAmount.integerValue;
+                        preFull = inventoryCheckReport.amount.integerValue + movingAmount.integerValue;
+                        self.movedOutID = moveAllowModel.moveID;
                     } else {
-                        preFull = shiftReport.itemPreFull.integerValue - movingAmount.integerValue;
+                        preFull = inventoryCheckReport.amount.integerValue - movingAmount.integerValue;
+                        self.movedInID = moveAllowModel.moveID;
                     }
+                    
+                    
                     
                     NSString *movedIn = shiftReport.movedIn;
                     NSString *movedOut = shiftReport.movedOut;
@@ -692,20 +697,20 @@
                               [self updateMoveReported];
                           } else {
                               
-                              [hud hide:YES];
+                              [self.hud hide:YES];
                               self.currentNum ++;
                               [self setCurrentUIChange];
                               
                           }
                           
                       } else{
-                          [hud hide:YES];
+                          [self.hud hide:YES];
                           [self.view makeToast:[dicData objectForKey:MESSAGE] duration:1.5 position:CSToastPositionCenter];
                           
                       }
                   }
                     andFailBlock:^(NSError *error) {
-                        [hud hide:YES];
+                        [self.hud hide:YES];
                         [self.view makeToast:@"Please check internect connection" duration:1.5 position:CSToastPositionCenter];
                         
                     }];
@@ -808,6 +813,7 @@
 
 - (void) updateMoveReported {
     
+    
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         OJOClient *ojoClient = [OJOClient sharedWebClient];
         [ojoClient updateUnreportedItem:UPDATE_UNREPORTED_MOVING
@@ -817,8 +823,28 @@
                          andFinishBlock:^(NSArray *data) {
                              
                              
+                             NSDictionary *dicData = (NSDictionary *)data;
+                             NSString *stateCode = [dicData objectForKey:STATE];
+                             
+                             [self.hud hide:YES];
+                             
+                             if ([stateCode isEqualToString:@"200"])
+                             {
+                                 
+                                 self.currentNum ++;
+                                 [self setCurrentUIChange];
+                                 
+                             } else {
+                                 
+                                 NSString *errorMessage = (NSString *)[dicData objectForKey:MESSAGE];
+                                 [self.view makeToast:errorMessage duration:1.5 position:CSToastPositionCenter];
+                             }
+                             
+                             
             
         } andFailBlock:^(NSError *error) {
+            [self.hud hide:YES];
+            [self.view makeToast:@"PLEASE CHECK INTERNET CONNECTION!" duration:1.5 position:CSToastPositionCenter];
             
         }];
         

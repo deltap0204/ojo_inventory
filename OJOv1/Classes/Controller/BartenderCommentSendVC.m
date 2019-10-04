@@ -110,7 +110,7 @@
                    @"#TOTAL CASH", self.totalCash, @"\n",
                    @"      ", @"     ", @"\n",
                    
-                   @"NO", @"ITEMS", @"PAR", @"PRICE", @"REFILL", @"FULL", @"OPEN", @"MOVED IN", @"MOVED OUT", @"FULL", @"OPEN",  @"SS"];
+                   @"NO", @"ITEMS", @"PAR", @"PRICE", @"REFILL", @"PRE-FULL", @"PRE-OPEN", @"MOVED IN", @"MOVED OUT", @"FULL", @"OPEN",  @"SS"];
     
     
     NSFileHandle *handle;
