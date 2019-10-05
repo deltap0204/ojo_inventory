@@ -741,7 +741,13 @@
                               
                                     NSDictionary *dicData = (NSDictionary *) data;
                                     NSString *stateCode = [dicData objectForKey:STATE];
-                                    
+                              
+                                    if ([stateCode isEqualToString:@"300"]) {
+                                        [self.hud hide:YES];
+                                        [self setCurrentUIChange];
+                                    }
+                              
+                              
                                     if ([stateCode isEqualToString:@"200"]) {
                                         
                                         NSArray *response = (NSArray *)[dicData objectForKey:MESSAGE];
