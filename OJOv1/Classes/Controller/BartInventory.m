@@ -654,7 +654,7 @@
                                                                    andWithItemFull:fullItem
                                                                    andWithItemOpen:openWet
                                                                 andWithItemPreFull:inventoryCheckReport.amount
-                                                                andWithItemPreOpen:openWet
+                                                                andWithItemPreOpen:inventoryModel.openBottleWet
                                                                andWithMissingToPar:missingPar
                                                                 andWithServingSold:servingSold
                                                                andWithLiquidWeight:inventoryModel.itemLiqWet
