@@ -261,6 +261,7 @@
 
 #pragma mark - Price/ServingSold Calculation Method of selcted items
 
+
 - (NSArray *) calcuateSelctedItemValue:(InventoryReport*)inventoryModel withCountFullBottle:(NSString*)countFullBottle withWeightOpenBottle:(NSString*)weightOpenBottle{
     
     float C2 = inventoryModel.amount.floatValue; // before count full bottle

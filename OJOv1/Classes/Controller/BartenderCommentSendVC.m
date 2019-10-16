@@ -13,17 +13,16 @@
 #import "ShiftReportModel.h"
 
 
-@interface BartenderCommentSendVC (){
-    
-    AppDelegate *appDelegate;
-    
-}
+@interface BartenderCommentSendVC ()
 
 @property (strong, nonatomic) NSString *location;
 @property (strong, nonatomic) NSString *invtType;
 @property (assign, nonatomic) BOOL mailVar;
 @property (strong, nonatomic) NSString *totalCash;
+@property (strong, nonatomic) AppDelegate *appDelegate;
 @property (weak, nonatomic) IBOutlet UIView *navigationView;
+
+
 
 @end
 
@@ -33,12 +32,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    self.appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     self.location = [userDefaults objectForKey:SEL_LOCATION];
-    self.invtType = appDelegate.inventoryType;
-    self.totalCash = appDelegate.totalCash;
+    self.invtType = self.appDelegate.inventoryType;
+    self.totalCash = self.appDelegate.totalCash;
     
     self.navigationView.backgroundColor = [UIColor colorWithRed:54.0/255.0 green:128.0/255.0 blue:74.0/255.0 alpha:1.0];
     self.inventoryTypeLabel.text = @"";
@@ -84,13 +83,13 @@
     //    NSMutableArray *moveAllowArray = appDelegate.allowedArray;
     
     
-    NSMutableArray *shiftReport = appDelegate.shiftReport;
+    NSMutableArray *shiftReport = self.appDelegate.shiftReport;
     ShiftReportModel *shiftReportModel = nil;
     
     NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd"];
     NSString *today = [dateFormatter stringFromDate:[NSDate date]];
-        NSString *fileName = [NSString stringWithFormat:@"%@%@%@%@%@%@", self.invtType, @"_", location, @"_", today, @".csv"];
+        NSString *fileName = [NSString stringWithFormat:@"%@%@%@%@", location, @"_", today, @".csv"];
 //    NSString *fileName = [NSString stringWithFormat:@"%@%@%@%@%@%@%@%@", self.location, @"_", today, @"_", self.invtType, @"_", currentUserName, @".csv"];
     NSString *writeString = @"";
     
@@ -186,7 +185,7 @@
         [mail setSubject:subjectName];
         NSString *content = [NSString stringWithFormat:@"%@,%@", @"Comment : ", self.commentTextView.text];
         [mail setMessageBody:content isHTML:YES];
-        [mail setToRecipients:@[@"laxojoinventory@gmail.com", @"cuibomb0204@gmail.com"]];
+        [mail setToRecipients:@[@"laxojoinventory@gmail.com"]];
         
         
         NSData *myData = [NSData dataWithContentsOfFile:path];

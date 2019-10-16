@@ -490,7 +490,7 @@
                                                         andWithFullOpen:inventoryModel.fullOpen
                                                    andWithOpenBottleWet:inventoryModel.openBottleWet
                                                           andWithAmount:inventoryModel.amount
-                                                             andWithPar:inventoryModel.par
+                                                            andWithPar:inventoryModel.par
                                                andWithNewsOpenBottleWet:self.openBtWetTextField.text
                                                       andWithNewsAmount:self.fullBtCountTextField.text
                                                andWithItemBottleFullWet:inventoryModel.itemBottleFullWet
@@ -593,7 +593,7 @@
                                                                                andWithItemFull:fullItem
                                                                                andWithItemOpen:openWet
                                                                             andWithItemPreFull:[NSString stringWithFormat:@"%ld", (long)preFull]
-                                                                            andWithItemPreOpen:openWet
+                                                                            andWithItemPreOpen:inventoryModel.openBottleWet
                                                                            andWithMissingToPar:mpTempValue
                                                                             andWithServingSold:ssTempValue
                                                                            andWithLiquidWeight:inventoryModel.itemLiqWet

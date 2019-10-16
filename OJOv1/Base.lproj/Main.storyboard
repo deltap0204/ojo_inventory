@@ -74,6 +74,15 @@
                                     <constraint firstAttribute="width" secondItem="Lnf-sE-yaq" secondAttribute="height" multiplier="1:1" id="MVo-4z-E1O"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version  1.9.7 (10)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hwa-3l-3S8">
+                                <rect key="frame" x="100" y="1009" width="634" height="53"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="53" id="P2X-e3-NRU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -82,12 +91,15 @@
                             <constraint firstAttribute="trailing" secondItem="pP0-WX-jok" secondAttribute="trailing" constant="100" id="9W6-Fy-HRI"/>
                             <constraint firstItem="Y6C-8v-W6J" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="B5k-bi-gpi"/>
                             <constraint firstItem="Y6C-8v-W6J" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="DN0-NA-nSJ"/>
+                            <constraint firstItem="Hwa-3l-3S8" firstAttribute="leading" secondItem="7BF-og-0co" secondAttribute="leading" id="E5J-m4-Rsu"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Y6C-8v-W6J" secondAttribute="bottom" id="Ebc-b6-9Uv"/>
+                            <constraint firstItem="Hwa-3l-3S8" firstAttribute="bottom" secondItem="Y6C-8v-W6J" secondAttribute="bottom" constant="-50" id="Fbf-X4-akf"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Y6C-8v-W6J" secondAttribute="bottom" id="NBv-cl-etH"/>
                             <constraint firstItem="Lnf-sE-yaq" firstAttribute="centerX" secondItem="7BF-og-0co" secondAttribute="centerX" id="O3c-AS-nuF"/>
                             <constraint firstItem="B0J-DV-NTy" firstAttribute="top" secondItem="Y6C-8v-W6J" secondAttribute="top" constant="140" id="RlR-yP-eEA"/>
                             <constraint firstAttribute="trailing" secondItem="Y6C-8v-W6J" secondAttribute="trailing" id="SBz-wL-qoB"/>
                             <constraint firstItem="Y6C-8v-W6J" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="V5x-um-ARJ"/>
+                            <constraint firstItem="Hwa-3l-3S8" firstAttribute="trailing" secondItem="7BF-og-0co" secondAttribute="trailing" id="WD5-zI-RBU"/>
                             <constraint firstAttribute="trailing" secondItem="7BF-og-0co" secondAttribute="trailing" constant="100" id="YE5-VC-zba"/>
                             <constraint firstItem="7BF-og-0co" firstAttribute="top" secondItem="pP0-WX-jok" secondAttribute="bottom" constant="60" id="YXj-IS-4aZ"/>
                             <constraint firstItem="Lnf-sE-yaq" firstAttribute="top" secondItem="7BF-og-0co" secondAttribute="bottom" constant="60" id="Zw3-0C-tI1"/>
@@ -97,6 +109,7 @@
                             <constraint firstItem="pP0-WX-jok" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="100" id="slK-eV-Dgu"/>
                             <constraint firstItem="Y6C-8v-W6J" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="uGx-xI-sQ2"/>
                             <constraint firstItem="Lnf-sE-yaq" firstAttribute="width" secondItem="7BF-og-0co" secondAttribute="width" multiplier="0.4" id="wPy-6R-H92"/>
+                            <constraint firstItem="Hwa-3l-3S8" firstAttribute="width" secondItem="7BF-og-0co" secondAttribute="width" id="zBD-l5-fKF"/>
                         </constraints>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
@@ -104,6 +117,7 @@
                         <outlet property="loginButton" destination="7BF-og-0co" id="Zki-QF-FTH"/>
                         <outlet property="passwordTextField" destination="pP0-WX-jok" id="pDX-qt-n66"/>
                         <outlet property="usernameTextField" destination="B0J-DV-NTy" id="fKZ-tU-VVs"/>
+                        <outlet property="versionNumberLabel" destination="Hwa-3l-3S8" id="Wme-1J-DNB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
