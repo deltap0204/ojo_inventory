@@ -11,6 +11,4 @@
 
 @interface BarInventoryCommentVC : UIViewController<UITextFieldDelegate, UITextViewDelegate, UITableViewDelegate, UITableViewDataSource>
 
-
-
 @end

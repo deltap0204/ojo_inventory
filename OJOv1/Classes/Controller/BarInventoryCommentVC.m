@@ -294,7 +294,6 @@
     
     NSArray *valueArray = [NSArray arrayWithObjects:priceStr, servingSold, nil];
     
-    
     return valueArray;
     
 }

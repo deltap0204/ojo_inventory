@@ -55,16 +55,14 @@ static User *loggedInUser = nil;
         
     }
         
-        
-    
-    
+   
     
     NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
     
     NSString *build = [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString *)kCFBundleVersionKey];
     
     
-    self.versionNumberLabel.text = [NSString stringWithFormat:@"Version %@ (%@) %@", version, build, test];
+    self.versionNumberLabel.text = [NSString stringWithFormat:@"Version %@ ( - Build %@ - ) %@", version, build, test];
 
 }
 
