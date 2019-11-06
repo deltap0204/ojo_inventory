@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface InventoryListVC : UIViewController<UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, UITextFieldDelegate>
+@interface InventoryListVC : UIViewController<UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
 
 @property (strong, nonatomic) NSString *location;
 @property (strong, nonatomic) NSString *locationController;

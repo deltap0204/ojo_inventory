@@ -171,6 +171,7 @@
                                                          
                                                          ConfirmVC *svc = [self.storyboard instantiateViewControllerWithIdentifier:identifier];
                                                          [svc setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+                                                         [self setModalPresentationStyle:UIModalPresentationOverCurrentContext];
                                                          [self presentViewController:svc animated:YES completion:nil];
                                                          
                                                      }];
@@ -214,7 +215,10 @@
     
     if (self.appDelegate.unreadSentItemArray.count == 0 && self.appDelegate.unreadReceivedItemArray.count == 0) {
         
+//        [self setModalPresentationStyle:UIModalPresentationOverCurrentContext];
+        
         [self performSegueWithIdentifier:@"startBartenderInventory_ipad" sender:nil];
+        
         
     } else {
         

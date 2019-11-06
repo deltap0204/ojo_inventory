@@ -181,6 +181,7 @@
                                                              
                                                          ConfirmVC *svc = [self.storyboard instantiateViewControllerWithIdentifier:identifier];
                                                          [svc setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+                                                         [svc setModalPresentationStyle:UIModalPresentationOverCurrentContext];
                                                          [self presentViewController:svc animated:YES completion:nil];
                     
                                                          
@@ -270,6 +271,7 @@
 - (IBAction)logOut:(id)sender {
     LoginVC *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"loginPage"];
     [svc setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+    [svc setModalPresentationStyle:UIModalPresentationOverCurrentContext];
     [self presentViewController:svc animated:YES completion:nil];
 }
 

@@ -440,7 +440,7 @@
         //  Negative
         else
         {
-            CGFloat disturbDistance;
+            CGFloat disturbDistance = 0.0;
             
             //  Calculating disturbed distance
 			switch (rootController.interfaceOrientation)

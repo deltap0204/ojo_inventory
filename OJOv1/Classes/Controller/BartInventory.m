@@ -48,8 +48,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *zeroButton;
 @property (weak, nonatomic) IBOutlet UIButton *removeButton;
 
-// 싸운드콘트롤 슬라이드
-@property (weak, nonatomic) IBOutlet UISlider *soundVolume;
 
 @property (weak, nonatomic) IBOutlet UIView *bluetoothView;
 
@@ -75,6 +73,7 @@
 
 // edit flag
 @property (strong, nonatomic) NSString *editFlag;
+@property (assign, nonatomic) BOOL openFlag;
 
 @end
 
@@ -103,6 +102,7 @@
     self.currentNum = 0;
     self.minValueCheck = false;
     self.movedItemCheck = false;
+    self.openFlag = false;
     
     self.editFlag = @"full";
     
@@ -145,20 +145,20 @@
 
 - (void) viewDidLayoutSubviews{
     
-    self.openBtWetTextField.layer.borderWidth = 2.0;
-    self.openBtWetTextField.layer.borderColor = [UIColor grayColor].CGColor;
+    self.openBtWetTextField.layer.borderWidth = 4.0;
+    self.fullBtCountTextField.layer.borderWidth = 4.0;
     
-    self.fullBtCountTextField.layer.borderWidth = 2.0;
-    self.fullBtCountTextField.layer.borderColor = [UIColor whiteColor].CGColor;
+    [self makeFullTextFieldHighlight];
+
 
     self.bluetoothView.layer.borderWidth = 2.0;
-    self.bluetoothView.layer.borderColor = [UIColor colorWithRed:27.0/255.0 green:240.0/255.0 blue:244.0/255.0 alpha:1.0].CGColor;
+    self.bluetoothView.layer.borderColor = [UIColor colorWithRed:145.0/255.0 green:216.0/255.0 blue:247.0/255.0 alpha:1.0].CGColor;
     
     // Number pad
     
     CGFloat cornerRadius = 42.0;
     CGFloat borderWidth = 1.0;
-    UIColor *borderColor = [UIColor colorWithRed:27.0/255.0 green:240.0/255.0 blue:244.0/255.0 alpha:1.0];
+    UIColor *borderColor = [UIColor colorWithRed:145.0/255.0 green:216.0/255.0 blue:247.0/255.0 alpha:1.0];
     
     // Number button - 0
     self.zeroButton.layer.cornerRadius = cornerRadius;
@@ -345,8 +345,10 @@
     
 }
 
-- (void) setCurrentUIChange{
-
+- (void) setCurrentUIChange {
+    
+    self.editFlag = @"full";
+    
     if (self.currentNum == self.totalCount) {
         
         // get the time
@@ -355,6 +357,7 @@
         self.appDelegate.totalCash = [NSString stringWithFormat:@"%ld", (long)self.totalCash];
         
         BarInventoryCommentVC *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"BarInventoryCommentVC"];
+        [svc setModalPresentationStyle:UIModalPresentationOverCurrentContext];
         [self presentViewController:svc animated:YES completion:nil];
         
     } else{
@@ -398,6 +401,8 @@
             self.minValueCheck = true;
             [self.nextItemButton setEnabled:YES];
             
+            self.openFlag = false;
+            
         } else {
             [self.bluetoothView setHidden:NO];
 
@@ -414,6 +419,8 @@
             self.fullWeightLabel.text = [NSString stringWithFormat:@"FULL : %@", fullWeight];
             self.openBtWetTextField.text = @"";
             [self.nextItemButton setEnabled:NO];
+            
+            self.openFlag = true;
             
         }
         
@@ -468,12 +475,12 @@
     AudioServicesCreateSystemSoundID ((__bridge CFURLRef)soundUrl, &soundID);
     AudioServicesPlaySystemSound(soundID);
     
-    
-    
     //---
+   
     
     
     NSInteger numberTag = sender.tag;
+    
     UITextField *selectedTextField = self.fullBtCountTextField;
     NSString *currentText = @"";
     
@@ -574,13 +581,12 @@
 
 
 
-
+#pragma mark - FULL/OPEN Edit Action (현재 입력하는 부분을 하이라이트 시킨다)
 
 - (IBAction)onStartFullEditAction:(id)sender {
     
     self.editFlag = @"full";
-    self.fullBtCountTextField.layer.borderColor = [UIColor whiteColor].CGColor;
-    self.openBtWetTextField.layer.borderColor = [UIColor grayColor].CGColor;
+    [self makeFullTextFieldHighlight];
     
 }
 
@@ -588,28 +594,83 @@
 - (IBAction)onStartOpenEditAction:(id)sender {
     
     self.editFlag = @"open";
-    self.fullBtCountTextField.layer.borderColor = [UIColor grayColor].CGColor;
-    self.openBtWetTextField.layer.borderColor = [UIColor whiteColor].CGColor;
-    
+    [self makeOpenTextFieldHighlight];
     
 }
 
 
+- (void) makeFullTextFieldHighlight {
+    
+    self.fullBtCountTextField.layer.borderColor = [UIColor whiteColor].CGColor;
+    
+    self.fullBtCountTextField.layer.masksToBounds = false;
+    self.fullBtCountTextField.layer.shadowRadius = 3.0;
+    self.fullBtCountTextField.layer.shadowColor = [UIColor whiteColor].CGColor;
+    self.fullBtCountTextField.layer.shadowOffset = CGSizeMake(1.0, 1.0);
+    self.fullBtCountTextField.layer.shadowOpacity = 1.0;
+    
+    // Unhighlight Other
+    
+    self.openBtWetTextField.layer.borderColor = [UIColor grayColor].CGColor;
+    self.openBtWetTextField.layer.shadowOpacity = 0.0;
+    
+    
+}
+
+- (void) makeOpenTextFieldHighlight {
+    
+    self.openBtWetTextField.layer.borderColor = [UIColor whiteColor].CGColor;
+    
+    self.openBtWetTextField.layer.masksToBounds = false;
+    self.openBtWetTextField.layer.shadowRadius = 3.0;
+    self.openBtWetTextField.layer.shadowColor = [UIColor whiteColor].CGColor;
+    self.openBtWetTextField.layer.shadowOffset = CGSizeMake(1.0, 1.0);
+    self.openBtWetTextField.layer.shadowOpacity = 1.0;
+    
+    // Unhighlight Other
+    
+    self.fullBtCountTextField.layer.borderColor = [UIColor grayColor].CGColor;
+    self.fullBtCountTextField.layer.shadowOpacity = 0.0;
+}
+
+
+
+#pragma mark - Remove leading zeros from a string
+
+- (NSString *) removeLeadingZeros:(NSString *) str {
+    NSRange range = [str rangeOfString:@"^0*" options:NSRegularExpressionSearch];
+    str = [str stringByReplacingCharactersInRange:range withString:@""];
+    return str;
+}
+
+
+#pragma mark - Next article
 
 - (IBAction)onNextArticle:(id)sender {
+    
     NSString *wetOpenBottle = self.openBtWetTextField.text;
+    if (![wetOpenBottle isEqualToString:@"0"]) {
+        wetOpenBottle = [self removeLeadingZeros:wetOpenBottle];
+    }
+    
     NSString *fullBottleCount = self.fullBtCountTextField.text;
-    
-    if ([wetOpenBottle isEqualToString:@""]) {
-        
-        [self.view makeToast:@"INSERT WEIGHT OPEN BOTTLE" duration:1.5 position:CSToastPositionCenter];
-        return;
+    if (![fullBottleCount isEqualToString:@"0"]) {
+        fullBottleCount = [self removeLeadingZeros:fullBottleCount];
     }
     
-    if ([fullBottleCount isEqualToString:@""]) {
-        [self.view makeToast:@"INSERT COUNT FULL BOTTLES" duration:1.5 position:CSToastPositionCenter];
-        return;
-    }
+    // After remove leading zero and insert again
+    
+    self.openBtWetTextField.text = wetOpenBottle;
+    self.fullBtCountTextField.text = fullBottleCount;
+    
+    
+//    if ([wetOpenBottle isEqualToString:@""] && self.openFlag) {
+//
+//        [self.view makeToast:@"INSERT WEIGHT OPEN BOTTLE" duration:1.5 position:CSToastPositionCenter];
+//        return;
+//    }
+    
+
     
     if (self.currentNum == 0) {
         // get the time
@@ -636,8 +697,6 @@
     NSInteger fullOpen = inventoryModel.fullOpen;
     NSString *priceStr = @"0";
     
-    
-    
     InventoryReport *inventoryCheckReport = nil;
     
     /*
@@ -646,8 +705,6 @@
      |______________________________|
      */
     
-    
-
     // sales report
     float C2 = inventoryModel.amount.floatValue; // before count full bottle
     float C1 = self.fullBtCountTextField.text.floatValue; // now count full bottle
@@ -657,7 +714,7 @@
     // NSInteger E = inventoryModel.itemBottleEmpWet.integerValue; // empty bottle weight
     float W = inventoryModel.itemServWet.floatValue;  // weight of one serving (one cup weight)
     float M = inventoryModel.itemPrice.floatValue;    // price of one serving (oen cup price)
-        
+    
     NSInteger price = 0;
     float servingSoldFloat = 0.0f;
     if (fullOpen == 0) {
@@ -916,6 +973,7 @@
     self.appDelegate.totalCash = [NSString stringWithFormat:@"%ld", (long)self.totalCash];
     
     BarInventoryCommentVC *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"BarInventoryCommentVC"];
+    [svc setModalPresentationStyle:UIModalPresentationOverCurrentContext];
     [self presentViewController:svc animated:YES completion:nil];
     
 }
@@ -958,6 +1016,7 @@
                                             NSString *senderName = [resultDict objectForKey:NAME];
                                             NSString *movedDate = [resultDict objectForKey:DATE_STR];
                                             NSString *receiverLocation = [resultDict objectForKey:RECEIVER_LOCATION];
+                                            
                                             
                                             confirmModel = [[Confirm alloc] initWithMoveID:moveID
                                                                        andWithMoveItemName:itemName
@@ -1039,22 +1098,13 @@
                                  [self.view makeToast:errorMessage duration:1.5 position:CSToastPositionCenter];
                              }
                              
-                             
-            
         } andFailBlock:^(NSError *error) {
             [self.hud hide:YES];
             [self.view makeToast:@"PLEASE CHECK INTERNET CONNECTION!" duration:1.5 position:CSToastPositionCenter];
             
         }];
-        
-        
     });
-    
-    
 }
-
-
-
 
 #pragma  mark - textView animation method (다음 아이템을 위한 애니메이션부분)
 - (void) animatPage:(UISwipeGestureRecognizerDirection)direction {
@@ -1066,9 +1116,10 @@
     }
     else {
         [UIView setAnimationTransition:UIViewAnimationTransitionCurlDown forView:[self view] cache:YES];
-        
     }
+    
     [UIView commitAnimations];
+    
     
     self.openBtWetTextField.text = @"";
     self.fullBtCountTextField.text = @"";

@@ -227,6 +227,7 @@
             
             ManagerMainVC *svc = [self.storyboard instantiateViewControllerWithIdentifier:identifier];
             [svc setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+            [svc setModalPresentationStyle:UIModalPresentationOverCurrentContext];
             [self presentViewController:svc animated:YES completion:nil];
             break;
         }

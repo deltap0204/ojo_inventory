@@ -123,6 +123,13 @@
     for (int i = 0; i < shiftReport.count; i++) {
         shiftReportModel = (ShiftReportModel *) shiftReport[i];
         
+        // 0 처리부분
+        if ([shiftReportModel.itemFull isEqualToString:@""]) {
+            shiftReportModel.itemFull = @"0";
+        }
+        
+        
+        
         /*
          
          || "NO" || "NAME" || "PAR" || "PRICE" || "REFILL" || "FULL" || "OPEN" || "MOVED IN" ||  "MOVED OUT" || "FULL" || "OPEN" || "SS"
@@ -201,6 +208,7 @@
 - (void) redirect {
     BartenderVC *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"bartenderPage"];
     [svc setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+    [svc setModalPresentationStyle:UIModalPresentationOverCurrentContext];
     [self presentViewController:svc animated:YES completion:nil];
     
 }
@@ -227,6 +235,7 @@
 
             BartenderVC *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"loginPage"];
             [svc setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+            [svc setModalPresentationStyle:UIModalPresentationOverCurrentContext];
             [self presentViewController:svc animated:YES completion:nil];
             break;
         }

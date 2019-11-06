@@ -33,6 +33,7 @@ static User *loggedInUser = nil;
     self.usernameTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"USERNAME" attributes:@{NSForegroundColorAttributeName:color}];
     self.passwordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"PASSWORD" attributes:@{NSForegroundColorAttributeName:color}];
     
+    
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSString *deviceType = [userDefaults objectForKey:DEVICETYPE];
     if ([deviceType isEqualToString:@"iPhone"]) {
@@ -204,11 +205,13 @@ static User *loggedInUser = nil;
                 if ([deviceType isEqualToString:@"iPad"]) {
                     BartenderVC *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"bartenderPage_ipad"];
                     [svc setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+                    [svc setModalPresentationStyle:UIModalPresentationOverCurrentContext];
                     [self presentViewController:svc animated:YES completion:nil];
                     
                 } else{
-                    BartenderVC *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"bartenderPage"];
+                    BartenderVC *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"bartenderPage_ipad"];
                     [svc setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+                    [svc setModalPresentationStyle:UIModalPresentationOverCurrentContext];
                     [self presentViewController:svc animated:YES completion:nil];
                 }
                 
@@ -221,11 +224,13 @@ static User *loggedInUser = nil;
                 if ([deviceType isEqualToString:@"iPad"]) {
                     ManagerMainVC *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"managerPage_ipad"];
                     [svc setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+                    [svc setModalPresentationStyle:UIModalPresentationOverCurrentContext];
                     [self presentViewController:svc animated:YES completion:nil];
                     
                 } else{
                     ManagerMainVC *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"managerPage"];
                     [svc setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+                    [svc setModalPresentationStyle:UIModalPresentationOverCurrentContext];
                     [self presentViewController:svc animated:YES completion:nil];
                 }
                 
@@ -237,6 +242,7 @@ static User *loggedInUser = nil;
                 [hud hide:YES];
                 AdminMainVC *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"adminPage"];
                 [svc setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+                [svc setModalPresentationStyle:UIModalPresentationOverCurrentContext];
                 [self presentViewController:svc animated:YES completion:nil];
             }
             

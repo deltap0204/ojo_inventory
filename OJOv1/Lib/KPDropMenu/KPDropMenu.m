@@ -10,13 +10,15 @@
 
 @interface KPDropMenu () <UITableViewDelegate, UITableViewDataSource>
 {
-    UITableView *tblView;
     UIFont *selectedFont, *font, *itemFont;
-    BOOL isCollapsed;
     UITapGestureRecognizer *tapGestureBackground;
-    UILabel *label;
     
 }
+
+@property (strong, nonatomic) UITableView *tblView;
+@property (strong, nonatomic) UILabel *label;
+@property (assign, nonatomic) BOOL isCollapsed;
+
 @end
 
 @implementation KPDropMenu
@@ -43,7 +45,7 @@
 - (void)initLayer {
     
     selectedIndex = 0;
-    isCollapsed = TRUE;
+    self.isCollapsed = TRUE;
     _itemTextAlignment = _titleTextAlignment = NSTextAlignmentCenter;
     _titleColor = [UIColor blackColor];
     _titleFontSize = 14.0;
@@ -120,44 +122,45 @@
     //self.layer.borderColor = [[UIColor grayColor] CGColor];
     //self.layer.borderWidth = 1;
     
-    label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
-    label.textColor = _titleColor;
-    label.text = _title;
-    label.textAlignment = _titleTextAlignment;
-    label.font = font;
-    [self addSubview:label];
+    self.label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
+    self.label.textColor = _titleColor;
+    self.label.text = _title;
+    self.label.textAlignment = _titleTextAlignment;
+    self.label.font = font;
+    [self addSubview:self.label];
     
     UIButton *actionPress = [[UIButton alloc] initWithFrame:self.bounds];
     [actionPress addTarget:self action:@selector(didTap:) forControlEvents:UIControlEventTouchUpInside];
     actionPress.backgroundColor = [UIColor clearColor];
     [self addSubview:actionPress];
     
-    tblView = [[UITableView alloc] initWithFrame:CGRectMake(self.frame.origin.x + self.superview.frame.origin.x, self.frame.origin.y + self.superview.frame.origin.y, self.frame.size.width, self.frame.size.height)] ;
-    [tblView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
-    tblView.delegate = self;
-    tblView.dataSource = self;
-    tblView.backgroundColor = _itemBackground;
+    self.tblView = [[UITableView alloc] initWithFrame:CGRectMake(self.frame.origin.x + self.superview.frame.origin.x, self.frame.origin.y + self.superview.frame.origin.y, self.frame.size.width, self.frame.size.height)] ;
+    
+    [self.tblView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
+    self.tblView.delegate = self;
+    self.tblView.dataSource = self;
+    self.tblView.backgroundColor = _itemBackground;
 }
 
 -(void)didTap : (id)sender {
-    isCollapsed = !isCollapsed;
-    if(!isCollapsed) {
+    self.isCollapsed = !self.isCollapsed;
+    if(!self.isCollapsed) {
         CGFloat height = (CGFloat)(_items.count > 5 ? _itemHeight*5 : _itemHeight * (double)(_items.count));
         
-        tblView.layer.zPosition = 1;
-        [tblView removeFromSuperview];
-        tblView.layer.borderColor = [[UIColor lightGrayColor] CGColor];
-        tblView.layer.borderWidth = 1;
-        tblView.layer.cornerRadius = 4;
-        [[self.superview superview] addSubview:tblView]; // go to superview that can show tableview in it's frame.
-        [tblView reloadData];
+        self.tblView.layer.zPosition = 1;
+        [self.tblView removeFromSuperview];
+        self.tblView.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+        self.tblView.layer.borderWidth = 1;
+        self.tblView.layer.cornerRadius = 4;
+        [[self.superview superview] addSubview:self.tblView]; // go to superview that can show tableview in it's frame.
+        [self.tblView reloadData];
         
         [UIView animateWithDuration:0.25 animations:^{
             
             if(_DirectionDown)
-                tblView.frame = CGRectMake(self.frame.origin.x + self.superview.frame.origin.x, self.frame.origin.y + self.superview.frame.origin.y + self.frame.size.height+5, self.frame.size.width, height);
+                self.tblView.frame = CGRectMake(self.frame.origin.x + self.superview.frame.origin.x, self.frame.origin.y + self.superview.frame.origin.y + self.frame.size.height+5, self.frame.size.width, height);
             else
-                tblView.frame = CGRectMake(self.frame.origin.x + self.superview.frame.origin.x, self.frame.origin.y + self.superview.frame.origin.y - 5 - height, self.frame.size.width, height);
+                self.tblView.frame = CGRectMake(self.frame.origin.x + self.superview.frame.origin.x, self.frame.origin.y + self.superview.frame.origin.y - 5 - height, self.frame.size.width, height);
         }];
         
         if(_delegate != nil){
@@ -166,7 +169,7 @@
         
         UIView *view = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
         view.tag = 99121;
-        [self.superview insertSubview:view belowSubview:tblView];
+        [self.superview insertSubview:view belowSubview:self.tblView];
         
     }
     else{
@@ -176,13 +179,13 @@
 }
 
 -(void)collapseTableView{
-    if(isCollapsed){
+    if(self.isCollapsed){
         [UIView animateWithDuration:0.25 animations:^{
             
             if(_DirectionDown)
-                tblView.frame = CGRectMake(self.frame.origin.x + self.superview.frame.origin.x, self.frame.origin.y + self.superview.frame.origin.y + self.frame.size.height+5, self.frame.size.width, 0);
+                self.tblView.frame = CGRectMake(self.frame.origin.x + self.superview.frame.origin.x, self.frame.origin.y + self.superview.frame.origin.y + self.frame.size.height+5, self.frame.size.width, 0);
             else
-                tblView.frame = CGRectMake(self.frame.origin.x + self.superview.frame.origin.x, self.frame.origin.y + self.superview.frame.origin.y, self.frame.size.width, 0);
+                self.tblView.frame = CGRectMake(self.frame.origin.x + self.superview.frame.origin.x, self.frame.origin.y + self.superview.frame.origin.y, self.frame.size.width, 0);
         }];
         
         [[self.superview viewWithTag:99121] removeFromSuperview];
@@ -233,12 +236,12 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     selectedIndex = (int)indexPath.row;
-    label.text = _items[selectedIndex];
+    self.label.text = _items[selectedIndex];
     
     if(_itemsIDs.count > 0)
         self.tag = [_itemsIDs[selectedIndex] integerValue];
     
-    isCollapsed = TRUE;
+    self.isCollapsed = TRUE;
     [self collapseTableView];
     if(_delegate != nil){
         [_delegate didSelectItem:self atIndex:(int)selectedIndex];

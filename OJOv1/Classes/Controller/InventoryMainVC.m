@@ -82,6 +82,7 @@
 - (IBAction)onBackAction:(id)sender {
     AdminMainVC *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"adminPage"];
     [svc setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+    [svc setModalPresentationStyle:UIModalPresentationOverCurrentContext];
     [self presentViewController:svc animated:YES completion:nil];
 //    [self dismissViewControllerAnimated:YES completion:nil];
 }

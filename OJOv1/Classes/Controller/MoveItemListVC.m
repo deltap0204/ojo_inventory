@@ -14,12 +14,11 @@
 #import "KPDropMenu.h"
 
 
-@interface MoveItemListVC () <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
+@interface MoveItemListVC () <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UIButton *backButton;
 @property (weak, nonatomic) IBOutlet UIButton *viewButton;
-@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) IBOutlet UITapGestureRecognizer *tabGesture1;
 @property (strong, nonatomic) IBOutlet UITapGestureRecognizer *tabGesture2;
@@ -32,6 +31,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *viewCancelButton;
 @property (weak, nonatomic) IBOutlet UIButton *locationButton;
 @property (weak, nonatomic) IBOutlet UIButton *stockButton;
+@property (weak, nonatomic) IBOutlet UITextField *searchTextField;
 
 
 @property (strong, nonatomic) NSString *senderLocation;
@@ -52,7 +52,6 @@
     // Do any additional setup after loading the view.
     [self.AddView setHidden:YES];
     [self.locationPanel setHidden:YES];
-    [self.searchBar setReturnKeyType:UIReturnKeyDone];
     NSString *receiver = self.receivelocation;
     self.locationArray = [[NSMutableArray alloc] init];
     
@@ -112,6 +111,9 @@
     [self.viewCancelButton setTitle:@"\uf05c" forState:UIControlStateNormal];
     [self.viewCancelButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     
+    
+    
+    
     // tableview initialize
     self.itemList = [[NSMutableArray alloc] init];
     self.itemSearchList = [[NSMutableArray alloc] init];
@@ -131,6 +133,7 @@
     self.moveButton.layer.borderWidth = 1.0;
     self.moveButton.layer.borderColor = [[UIColor whiteColor] CGColor];
     self.moveButton.layer.cornerRadius = self.moveButton.bounds.size.height / 2;
+    self.searchTextField.layer.cornerRadius = 23.0;
 }
 #pragma mark - server connect method
 
@@ -221,19 +224,25 @@
 
 - (void) itemMove{
     
+    NSString *receiveItemNameString = self.receiveItemName.text;
+    NSString *receiveAmountString = self.receiveAmountTextFeild.text;
+    
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.userInteractionEnabled = NO;
     [hud show:YES];
     NSString *senderName = [LoginVC getLoggedinUser].name;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         OJOClient *ojoClient = [OJOClient sharedWebClient];
+        
         [ojoClient managerItemMove:MOVE_URL
-                   andMoveItemName:self.receiveItemName.text
-                     andMoveAmount:self.receiveAmountTextFeild.text
+                   andMoveItemName:receiveItemNameString
+                     andMoveAmount:receiveAmountString
                  andSenderLocation:self.senderLocation
                andReceiverLocation:self.receivelocation
                      andSenderName:senderName
                     andFinishBlock:^(NSArray *data) {
+                        
+            
                         NSDictionary *dicData = (NSDictionary *)data;
                         NSString *stateCode = [dicData objectForKey:STATE];
                         if ([stateCode isEqualToString:@"200"]) {
@@ -392,8 +401,12 @@
     [self.receiveAmountTextFeild resignFirstResponder];
 }
 
--(void)searchBar:(UISearchBar*)searchBar textDidChange:(NSString*)text
-{
+
+#pragma mark - TextField delegate method for Search bar
+
+- (IBAction)searchTextFieldAction:(UITextField *)sender {
+    
+    NSString *text = sender.text;
     if(text.length == 0)
     {
         self.isFiltered = NO;
@@ -414,11 +427,9 @@
     }
     
     [self.tableView reloadData];
+    
+    
 }
 
-- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
-    
-    [self.searchBar resignFirstResponder];
-}
 
 @end

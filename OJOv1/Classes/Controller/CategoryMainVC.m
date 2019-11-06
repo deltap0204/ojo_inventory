@@ -93,6 +93,7 @@
     
     AdminMainVC *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"adminPage"];
     [svc setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+    [svc setModalPresentationStyle:UIModalPresentationOverCurrentContext];
     [self presentViewController:svc animated:YES completion:nil];
     
 }
@@ -286,8 +287,6 @@
     }
 }
 
-
-
 #pragma mark - search bar delegate method
 
 -(void)searchBar:(UISearchBar*)searchBar textDidChange:(NSString*)text
@@ -318,6 +317,7 @@
 #pragma mark - Add category view button event method
 
 - (IBAction)onFirst:(id)sender {
+    
     self.frequencyInt = 1;
 
     [self.firstStar.titleLabel setFont:[UIFont fontWithName:@"fontawesome" size:30.0]];

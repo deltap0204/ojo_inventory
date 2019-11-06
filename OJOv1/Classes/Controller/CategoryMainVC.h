@@ -10,7 +10,7 @@
 static NSMutableArray *categories;
 
 
-@interface CategoryMainVC : UIViewController<UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
+@interface CategoryMainVC : UIViewController<UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) NSMutableArray *categoryArray;
 

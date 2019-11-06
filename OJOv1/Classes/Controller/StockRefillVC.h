@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface StockRefillVC : UIViewController <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, UITextFieldDelegate>
+@interface StockRefillVC : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
 
 @end

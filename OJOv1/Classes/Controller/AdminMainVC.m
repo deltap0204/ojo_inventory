@@ -124,23 +124,32 @@
 
 
 - (IBAction)onUser:(id)sender {
+    
 }
 
 - (IBAction)onInventory:(id)sender {
+    
+    
 }
 
 - (IBAction)onCatetory:(id)sender {
+    
+    
 }
 
 - (IBAction)onItem:(id)sender {
+    
+    
 }
 - (IBAction)onLogout:(id)sender {
     LoginVC *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"loginPage"];
     [svc setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+    [svc setModalPresentationStyle:UIModalPresentationOverCurrentContext];
     [self presentViewController:svc animated:YES completion:nil];
 }
 
 - (IBAction)onPasswordChange:(id)sender {
+    
     self.currentPassword = self.oldPasswordTextFeild.text;
     self.updatePassword = self.passwordTextFeild.text;
     self.confirmPassword = self.confirmPasswordTextFeild.text;

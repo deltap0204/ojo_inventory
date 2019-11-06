@@ -70,10 +70,11 @@
     
 }
 
-- (void)viewDidUnload
-{
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
     self.setParLabel = nil;
-    [super viewDidUnload];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -210,6 +211,7 @@
     if (self.currentCount == self.totalCount) {
             InventoryListVC *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"inventoryListPage"];
             [svc setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+            [svc setModalPresentationStyle:UIModalPresentationOverCurrentContext];
             [self presentViewController:svc animated:YES completion:nil];
 
     } else{
@@ -342,11 +344,6 @@
 - (IBAction)tabGestureEventy:(id)sender {
     [self.setParLabel resignFirstResponder];
     
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return YES;
 }
 
 - (BOOL)textFieldShouldEndEditing:(UITextField *)textField

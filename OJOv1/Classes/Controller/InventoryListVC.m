@@ -23,7 +23,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *startInventoryButton;
 @property (weak, nonatomic) IBOutlet UIButton *setSequenceButton;
 @property (weak, nonatomic) IBOutlet FRDLivelyButton *goButton;
-@property (weak, nonatomic) IBOutlet UISearchBar *inventorySerachBar;
+@property (weak, nonatomic) IBOutlet UITextField *searchTextField;
 @property (strong, nonatomic) NSMutableArray *inventoryList;
 @property (strong, nonatomic) NSMutableArray *inventorySearchList;
 @property (assign, nonatomic) BOOL isFiltered;
@@ -126,6 +126,10 @@
     self.setSequenceButton.layer.cornerRadius = self.setSequenceButton.bounds.size.height / 2;
     
     self.goButton.layer.cornerRadius = self.goButton.bounds.size.height / 2;
+    
+    
+    self.searchTextField.layer.cornerRadius = 23.0;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -494,6 +498,7 @@
 - (IBAction)onBack:(id)sender {
     InventoryMainVC *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"inventoryMainPage"];
     [svc setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+    [svc setModalPresentationStyle:UIModalPresentationOverCurrentContext];
     [self presentViewController:svc animated:YES completion:nil];
     
 }
@@ -859,30 +864,6 @@
 
 #pragma mark - search bar delegate method
 
--(void)searchBar:(UISearchBar*)searchBar textDidChange:(NSString*)text
-{
-    if(text.length == 0)
-    {
-        self.isFiltered = NO;
-    }
-    else
-    {
-        self.isFiltered = YES;
-        self.inventorySearchList = [[NSMutableArray alloc] init];
-        
-        for (Inventory *inventory in self.inventoryList)
-        {
-            NSRange nameRange = [inventory.itemName rangeOfString:text options:NSCaseInsensitiveSearch];
-            if(nameRange.location != NSNotFound)
-            {
-                [self.inventorySearchList addObject:inventory];
-            }
-        }
-    }
-    [self.tableView reloadData];
-}
-
-
 - (IBAction)onItemNameChangeEvent:(UITextField *)sender {
     NSString *curentStr = sender.text;
     if (![curentStr isEqualToString:@""]) {
@@ -907,6 +888,35 @@
 }
 
 #pragma mark  UITextfield Delegates
+
+- (IBAction)searchTextFieldChangeAction:(UITextField *)sender {
+    NSString *text = sender.text;
+    
+    if(text.length == 0)
+    {
+        self.isFiltered = NO;
+    }
+    else
+    {
+        self.isFiltered = YES;
+        self.inventorySearchList = [[NSMutableArray alloc] init];
+        
+        for (Inventory *inventory in self.inventoryList)
+        {
+            NSRange nameRange = [inventory.itemName rangeOfString:text options:NSCaseInsensitiveSearch];
+            if(nameRange.location != NSNotFound)
+            {
+                [self.inventorySearchList addObject:inventory];
+            }
+        }
+    }
+    [self.tableView reloadData];
+    
+}
+
+
+
+
 -(void)textFieldDidBeginEditing:(UITextField *)textField {
 
     
