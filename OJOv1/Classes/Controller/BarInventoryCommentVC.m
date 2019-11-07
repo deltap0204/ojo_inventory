@@ -92,14 +92,12 @@
     
     self.userRealNameLabel.text = [LoginVC getLoggedinUser].name;
     
-    [[IQKeyboardManager sharedManager] setEnable:false];
     
 }
 
 - (void) viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
-    [[IQKeyboardManager sharedManager] setEnable:true];
 }
 
 - (void) viewWillDisappear:(BOOL)animated{
@@ -390,7 +388,8 @@
      
     self.previousItemPrice = [[self calcuateSelctedItemValue:inventoryModel withCountFullBottle:countFullBottle withWeightOpenBottle:weightOpenBottle] objectAtIndex:0];
     
-    NSLog("Previous Item Price ======= %@", self.previousItemPrice);
+    NSLog(@"Previous Item Price ======= %@", self.previousItemPrice);
+    
 }
 
 

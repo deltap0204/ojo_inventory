@@ -25,9 +25,7 @@
     
     [Fabric with:@[[Crashlytics class]]];
     
-    
-    [[IQKeyboardManager sharedManager] setEnableAutoToolbar:true];
-    [[IQKeyboardManager sharedManager] setShouldShowTextFieldPlaceholder:YES];
+
     
     [self.window makeKeyAndVisible];
     

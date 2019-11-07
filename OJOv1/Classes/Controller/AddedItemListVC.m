@@ -176,7 +176,7 @@
     return [documentsDirectory stringByAppendingPathComponent:@"stock_refill.csv"];
 }
 
-#pragma mark - UItableView method
+#pragma mark - UItableView Delegate method
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
@@ -218,6 +218,7 @@
 - (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
 {
     switch (result) {
+            
         case MFMailComposeResultSent:
         {
             [self dismissViewControllerAnimated:YES completion:NULL];

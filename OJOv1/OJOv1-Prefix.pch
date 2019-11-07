@@ -18,7 +18,6 @@
 #import "UIView+Toast.h"
 #import "define.h"
 #import "OJOClient.h"
-#import "IQKeyboardManager.h"
 #import <AudioToolbox/AudioToolbox.h>
 
 
