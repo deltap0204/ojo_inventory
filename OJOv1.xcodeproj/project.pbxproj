@@ -61,19 +61,14 @@
 		0746018A20D2A647006EABE9 /* coming_soon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746018920D2A647006EABE9 /* coming_soon@2x.png */; };
 		0747237C2065780800913C6F /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0747237A206577FA00913C6F /* Fabric.framework */; };
 		0747237D2065780800913C6F /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0747237B2065780800913C6F /* Crashlytics.framework */; };
+		076CD647235B7ED500B5670D /* Moon-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 076CD644235B7ED500B5670D /* Moon-Bold.otf */; };
+		076CD648235B7ED500B5670D /* Moon-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 076CD645235B7ED500B5670D /* Moon-Light.otf */; };
+		076CD649235B7ED500B5670D /* Moon_Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 076CD646235B7ED500B5670D /* Moon_Regular.otf */; };
 		07DC6D7C20C9FDC00053FB5B /* BartenderCommentTHVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DC6D7B20C9FDC00053FB5B /* BartenderCommentTHVC.m */; };
 		07E274371FA82AC50036E6B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07E274361FA82AB10036E6B8 /* Assets.xcassets */; };
-		07E2744F1FA881880036E6B8 /* IQBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E2743A1FA881870036E6B8 /* IQBarButtonItem.m */; };
-		07E274501FA881880036E6B8 /* IQKeyboardManager.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 07E2743B1FA881870036E6B8 /* IQKeyboardManager.bundle */; };
-		07E274511FA881880036E6B8 /* IQKeyboardManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E2743D1FA881880036E6B8 /* IQKeyboardManager.m */; };
-		07E274521FA881880036E6B8 /* IQSegmentedNextPrevious.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E274411FA881880036E6B8 /* IQSegmentedNextPrevious.m */; };
-		07E274531FA881880036E6B8 /* IQTitleBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E274431FA881880036E6B8 /* IQTitleBarButtonItem.m */; };
-		07E274541FA881880036E6B8 /* IQToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E274451FA881880036E6B8 /* IQToolbar.m */; };
-		07E274551FA881880036E6B8 /* NSArray+Sort.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E274481FA881880036E6B8 /* NSArray+Sort.m */; };
-		07E274561FA881880036E6B8 /* UIView+Hierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E2744A1FA881880036E6B8 /* UIView+Hierarchy.m */; };
-		07E274571FA881880036E6B8 /* UIView+IQKeyboardToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E2744C1FA881880036E6B8 /* UIView+IQKeyboardToolbar.m */; };
-		07E274581FA881880036E6B8 /* UIWindow+Hierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E2744E1FA881880036E6B8 /* UIWindow+Hierarchy.m */; };
 		07E5E1D620C46A9200B294FC /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E5E1D520C46A9200B294FC /* User.m */; };
+		07E9E50B236012760023CA50 /* supermario_coin.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 07E9E50A236012760023CA50 /* supermario_coin.mp3 */; };
+		07E9E50D236038620023CA50 /* bluetooth_beef.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 07E9E50C236038620023CA50 /* bluetooth_beef.mp3 */; };
 		07F540951F9DF59E004602D6 /* BartenderCommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F540941F9DF59E004602D6 /* BartenderCommentModel.m */; };
 		07F540981F9DF5BD004602D6 /* BartenderCommentTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F540971F9DF5BD004602D6 /* BartenderCommentTVC.m */; };
 		07FF220620E1957E00F19836 /* jose_c_dorado_700ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07FF21DD20E1957900F19836 /* jose_c_dorado_700ml@2x.png */; };
@@ -280,33 +275,16 @@
 		0746018B20D2B872006EABE9 /* OJOv1-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OJOv1-Prefix.pch"; sourceTree = "<group>"; };
 		0747237A206577FA00913C6F /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		0747237B2065780800913C6F /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		076CD644235B7ED500B5670D /* Moon-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Moon-Bold.otf"; sourceTree = "<group>"; };
+		076CD645235B7ED500B5670D /* Moon-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Moon-Light.otf"; sourceTree = "<group>"; };
+		076CD646235B7ED500B5670D /* Moon_Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Moon_Regular.otf; sourceTree = "<group>"; };
 		07DC6D7A20C9FDC00053FB5B /* BartenderCommentTHVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BartenderCommentTHVC.h; sourceTree = "<group>"; };
 		07DC6D7B20C9FDC00053FB5B /* BartenderCommentTHVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BartenderCommentTHVC.m; sourceTree = "<group>"; };
 		07E274361FA82AB10036E6B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		07E274391FA881870036E6B8 /* IQBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQBarButtonItem.h; sourceTree = "<group>"; };
-		07E2743A1FA881870036E6B8 /* IQBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQBarButtonItem.m; sourceTree = "<group>"; };
-		07E2743B1FA881870036E6B8 /* IQKeyboardManager.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = IQKeyboardManager.bundle; sourceTree = "<group>"; };
-		07E2743C1FA881880036E6B8 /* IQKeyboardManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQKeyboardManager.h; sourceTree = "<group>"; };
-		07E2743D1FA881880036E6B8 /* IQKeyboardManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQKeyboardManager.m; sourceTree = "<group>"; };
-		07E2743E1FA881880036E6B8 /* IQKeyboardManagerConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQKeyboardManagerConstants.h; sourceTree = "<group>"; };
-		07E2743F1FA881880036E6B8 /* IQKeyboardManagerConstantsInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQKeyboardManagerConstantsInternal.h; sourceTree = "<group>"; };
-		07E274401FA881880036E6B8 /* IQSegmentedNextPrevious.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQSegmentedNextPrevious.h; sourceTree = "<group>"; };
-		07E274411FA881880036E6B8 /* IQSegmentedNextPrevious.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQSegmentedNextPrevious.m; sourceTree = "<group>"; };
-		07E274421FA881880036E6B8 /* IQTitleBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQTitleBarButtonItem.h; sourceTree = "<group>"; };
-		07E274431FA881880036E6B8 /* IQTitleBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQTitleBarButtonItem.m; sourceTree = "<group>"; };
-		07E274441FA881880036E6B8 /* IQToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQToolbar.h; sourceTree = "<group>"; };
-		07E274451FA881880036E6B8 /* IQToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQToolbar.m; sourceTree = "<group>"; };
-		07E274461FA881880036E6B8 /* KeyboardManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardManager.h; sourceTree = "<group>"; };
-		07E274471FA881880036E6B8 /* NSArray+Sort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Sort.h"; sourceTree = "<group>"; };
-		07E274481FA881880036E6B8 /* NSArray+Sort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Sort.m"; sourceTree = "<group>"; };
-		07E274491FA881880036E6B8 /* UIView+Hierarchy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Hierarchy.h"; sourceTree = "<group>"; };
-		07E2744A1FA881880036E6B8 /* UIView+Hierarchy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Hierarchy.m"; sourceTree = "<group>"; };
-		07E2744B1FA881880036E6B8 /* UIView+IQKeyboardToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+IQKeyboardToolbar.h"; sourceTree = "<group>"; };
-		07E2744C1FA881880036E6B8 /* UIView+IQKeyboardToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+IQKeyboardToolbar.m"; sourceTree = "<group>"; };
-		07E2744D1FA881880036E6B8 /* UIWindow+Hierarchy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+Hierarchy.h"; sourceTree = "<group>"; };
-		07E2744E1FA881880036E6B8 /* UIWindow+Hierarchy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+Hierarchy.m"; sourceTree = "<group>"; };
 		07E5E1D420C46A9200B294FC /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		07E5E1D520C46A9200B294FC /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		07E9E50A236012760023CA50 /* supermario_coin.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = supermario_coin.mp3; sourceTree = "<group>"; };
+		07E9E50C236038620023CA50 /* bluetooth_beef.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bluetooth_beef.mp3; sourceTree = "<group>"; };
 		07F540931F9DF59E004602D6 /* BartenderCommentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BartenderCommentModel.h; sourceTree = "<group>"; };
 		07F540941F9DF59E004602D6 /* BartenderCommentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BartenderCommentModel.m; sourceTree = "<group>"; };
 		07F540961F9DF5BD004602D6 /* BartenderCommentTVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BartenderCommentTVC.h; sourceTree = "<group>"; };
@@ -555,6 +533,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		076CD643235B7ED500B5670D /* MoonFont */ = {
+			isa = PBXGroup;
+			children = (
+				076CD644235B7ED500B5670D /* Moon-Bold.otf */,
+				076CD645235B7ED500B5670D /* Moon-Light.otf */,
+				076CD646235B7ED500B5670D /* Moon_Regular.otf */,
+			);
+			path = MoonFont;
+			sourceTree = "<group>";
+		};
 		07DC6D7D20CB33790053FB5B /* ItemImages */ = {
 			isa = PBXGroup;
 			children = (
@@ -654,33 +642,13 @@
 			path = ItemImages;
 			sourceTree = "<group>";
 		};
-		07E274381FA881870036E6B8 /* IQKeyBoardManager */ = {
+		07E9E509236012760023CA50 /* Bgmusic */ = {
 			isa = PBXGroup;
 			children = (
-				07E274391FA881870036E6B8 /* IQBarButtonItem.h */,
-				07E2743A1FA881870036E6B8 /* IQBarButtonItem.m */,
-				07E2743B1FA881870036E6B8 /* IQKeyboardManager.bundle */,
-				07E2743C1FA881880036E6B8 /* IQKeyboardManager.h */,
-				07E2743D1FA881880036E6B8 /* IQKeyboardManager.m */,
-				07E2743E1FA881880036E6B8 /* IQKeyboardManagerConstants.h */,
-				07E2743F1FA881880036E6B8 /* IQKeyboardManagerConstantsInternal.h */,
-				07E274401FA881880036E6B8 /* IQSegmentedNextPrevious.h */,
-				07E274411FA881880036E6B8 /* IQSegmentedNextPrevious.m */,
-				07E274421FA881880036E6B8 /* IQTitleBarButtonItem.h */,
-				07E274431FA881880036E6B8 /* IQTitleBarButtonItem.m */,
-				07E274441FA881880036E6B8 /* IQToolbar.h */,
-				07E274451FA881880036E6B8 /* IQToolbar.m */,
-				07E274461FA881880036E6B8 /* KeyboardManager.h */,
-				07E274471FA881880036E6B8 /* NSArray+Sort.h */,
-				07E274481FA881880036E6B8 /* NSArray+Sort.m */,
-				07E274491FA881880036E6B8 /* UIView+Hierarchy.h */,
-				07E2744A1FA881880036E6B8 /* UIView+Hierarchy.m */,
-				07E2744B1FA881880036E6B8 /* UIView+IQKeyboardToolbar.h */,
-				07E2744C1FA881880036E6B8 /* UIView+IQKeyboardToolbar.m */,
-				07E2744D1FA881880036E6B8 /* UIWindow+Hierarchy.h */,
-				07E2744E1FA881880036E6B8 /* UIWindow+Hierarchy.m */,
+				07E9E50C236038620023CA50 /* bluetooth_beef.mp3 */,
+				07E9E50A236012760023CA50 /* supermario_coin.mp3 */,
 			);
-			path = IQKeyBoardManager;
+			path = Bgmusic;
 			sourceTree = "<group>";
 		};
 		C40D6BC21E127AC600373224 /* LNNumberpad */ = {
@@ -738,6 +706,7 @@
 		C43430441DCCC58C00239E17 /* OJOv1 */ = {
 			isa = PBXGroup;
 			children = (
+				07E9E509236012760023CA50 /* Bgmusic */,
 				07DC6D7D20CB33790053FB5B /* ItemImages */,
 				07E274361FA82AB10036E6B8 /* Assets.xcassets */,
 				C4B0F8891DCD1BBE004946B7 /* Constant */,
@@ -956,7 +925,6 @@
 		C4B0F8801DCD103C004946B7 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
-				07E274381FA881870036E6B8 /* IQKeyBoardManager */,
 				C419D4851EC4CAAD00F03F40 /* KPDropMenu */,
 				C4B0F89D1DCE22EB004946B7 /* AFNetworking */,
 				C4B0F8981DCD37F5004946B7 /* font */,
@@ -1006,6 +974,7 @@
 		C4B0F8981DCD37F5004946B7 /* font */ = {
 			isa = PBXGroup;
 			children = (
+				076CD643235B7ED500B5670D /* MoonFont */,
 				C4B0F8991DCD37F5004946B7 /* fontawesome-webfont.ttf */,
 				C4B0F89A1DCD37F5004946B7 /* FontAwesome.otf */,
 			);
@@ -1204,6 +1173,7 @@
 				0746017720CDE01A006EABE9 /* martini_bianco_750ml@2x.png in Resources */,
 				07FF222A20E1957E00F19836 /* riondo_prosecco_750ml@2x.png in Resources */,
 				0746017220CDE01A006EABE9 /* black_label_750ml@2x.png in Resources */,
+				076CD649235B7ED500B5670D /* Moon_Regular.otf in Resources */,
 				0746015120CDE01A006EABE9 /* grand_marnier_700ml@2x.png in Resources */,
 				07FF220E20E1957E00F19836 /* chinola_jugo@2x.png in Resources */,
 				0746018A20D2A647006EABE9 /* coming_soon@2x.png in Resources */,
@@ -1211,6 +1181,7 @@
 				07FF222D20E1957E00F19836 /* clamato_163ml@2x.png in Resources */,
 				0746017D20CDE01A006EABE9 /* ladoga_700ml@2x.png in Resources */,
 				0746017620CDE01A006EABE9 /* kahlua_700ml@2x.png in Resources */,
+				07E9E50D236038620023CA50 /* bluetooth_beef.mp3 in Resources */,
 				07FF222E20E1957E00F19836 /* moet_chandon_750ml@2x.png in Resources */,
 				0746016220CDE01A006EABE9 /* fireball_750ml@2x.png in Resources */,
 				07FF222620E1957E00F19836 /* jarana_blanco_1000ml@2x.png in Resources */,
@@ -1220,6 +1191,7 @@
 				07FF223220E459E200F19836 /* presidente_black_330ml@2x.png in Resources */,
 				07FF220C20E1957E00F19836 /* cranberry_jugo@2x.png in Resources */,
 				0746018120CDE01A006EABE9 /* marlboro_blanco@2x.png in Resources */,
+				076CD648235B7ED500B5670D /* Moon-Light.otf in Resources */,
 				07FF221720E1957E00F19836 /* coca_cola_20oz@2x.png in Resources */,
 				07FF222020E1957E00F19836 /* copa_vino_blanco@2x.png in Resources */,
 				0746015D20CDE01A006EABE9 /* jack_daniels_750ml@2x.png in Resources */,
@@ -1245,6 +1217,7 @@
 				0746017920CDE01A006EABE9 /* aviation_750ml@2x.png in Resources */,
 				0746015C20CDE01A006EABE9 /* social_330ml@2x.png in Resources */,
 				0746015E20CDE01A006EABE9 /* dewars_750ml@2x.png in Resources */,
+				07E9E50B236012760023CA50 /* supermario_coin.mp3 in Resources */,
 				0746018220CDE01A006EABE9 /* patron_silver_750ml@2x.png in Resources */,
 				0746015B20CDE01A006EABE9 /* stolichnaya_750ml@2x.png in Resources */,
 				0746015720CDE01A006EABE9 /* hennessy_vsop_700ml@2x.png in Resources */,
@@ -1272,8 +1245,8 @@
 				07FF221E20E1957E00F19836 /* triple_sec_700ml@2x.png in Resources */,
 				07FF220620E1957E00F19836 /* jose_c_dorado_700ml@2x.png in Resources */,
 				0746017E20CDE01A006EABE9 /* buchanan_750ml@2x.png in Resources */,
-				07E274501FA881880036E6B8 /* IQKeyboardManager.bundle in Resources */,
 				07FF220820E1957E00F19836 /* pinot_grigio_750ml@2x.png in Resources */,
+				076CD647235B7ED500B5670D /* Moon-Bold.otf in Resources */,
 				07FF221020E1957E00F19836 /* montepulciano_750ml@2x.png in Resources */,
 				07FF220920E1957E00F19836 /* 151_1000ml@2x.png in Resources */,
 				07FF222520E1957E00F19836 /* tonica_16oz@2x.png in Resources */,
@@ -1325,16 +1298,13 @@
 				C42CDBF31F48EFA600A6E225 /* RefillItem.m in Sources */,
 				C4B0F8C81DCE22EB004946B7 /* AFURLSessionManager.m in Sources */,
 				C4DA55981DD5038C0077FBC0 /* ItemTVC.m in Sources */,
-				07E2744F1FA881880036E6B8 /* IQBarButtonItem.m in Sources */,
 				C434304D1DCCC58C00239E17 /* LoginVC.m in Sources */,
 				C4B0F8D21DCE22EB004946B7 /* UIRefreshControl+AFNetworking.m in Sources */,
-				07E274511FA881880036E6B8 /* IQKeyboardManager.m in Sources */,
 				C4DC3B1D1DD24C3500369A36 /* Location.m in Sources */,
 				07F540951F9DF59E004602D6 /* BartenderCommentModel.m in Sources */,
 				C419D4731EC3782D00F03F40 /* TodayMovedItemTVC.m in Sources */,
 				CBC5147A1E56218D00FAD1C3 /* ShiftReportModel.m in Sources */,
 				C4B0F8CF1DCE22EB004946B7 /* UIButton+AFNetworking.m in Sources */,
-				07E274581FA881880036E6B8 /* UIWindow+Hierarchy.m in Sources */,
 				C4DA55951DD503740077FBC0 /* CategoryTVC.m in Sources */,
 				C4C945581DEC3CE800A61A14 /* MoveItemListVC.m in Sources */,
 				C4DA558F1DD4DB630077FBC0 /* ItemMainVC.m in Sources */,
@@ -1343,7 +1313,6 @@
 				C4035BC61DF033F90009FB9E /* ConfirmVC.m in Sources */,
 				C4DC3B171DD1123000369A36 /* AddUserVC.m in Sources */,
 				C419D4761EC3796200F03F40 /* TodayMovedItemModel.m in Sources */,
-				07E274541FA881880036E6B8 /* IQToolbar.m in Sources */,
 				C449404B1DE8A2B300DDAA04 /* StockRefillVC.m in Sources */,
 				C4C626651DE629E600C0ED0C /* ManagerInventoryTVC.m in Sources */,
 				C42ED5CF1DE0E3340072BC1D /* BarInventoryCommentVC.m in Sources */,
@@ -1357,17 +1326,13 @@
 				C43A03851DDBB9A7003AF4AF /* InventoryListVC.m in Sources */,
 				C432607B1DDCB08B00195370 /* InventoryCreateVC.m in Sources */,
 				C44940481DE7A71E00DDAA04 /* ManagerInventoryCommentVC.m in Sources */,
-				07E274521FA881880036E6B8 /* IQSegmentedNextPrevious.m in Sources */,
-				07E274531FA881880036E6B8 /* IQTitleBarButtonItem.m in Sources */,
 				C449404E1DE8A74900DDAA04 /* RefillTVC.m in Sources */,
 				C434304A1DCCC58C00239E17 /* AppDelegate.m in Sources */,
 				C44125921DEA761200AD6F73 /* AddedItemTVC.m in Sources */,
 				C432607E1DDCC7A000195370 /* Inventory.m in Sources */,
 				C4B0F8CE1DCE22EB004946B7 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				C4C626621DE61DF100C0ED0C /* ManagerInventoryVC.m in Sources */,
-				07E274571FA881880036E6B8 /* UIView+IQKeyboardToolbar.m in Sources */,
 				C4DA558C1DD4DB4C0077FBC0 /* CategoryMainVC.m in Sources */,
-				07E274551FA881880036E6B8 /* NSArray+Sort.m in Sources */,
 				07F540981F9DF5BD004602D6 /* BartenderCommentTVC.m in Sources */,
 				C4DC3B1A1DD22B7800369A36 /* LocationTVC.m in Sources */,
 				C4C626681DE691CD00C0ED0C /* ManagerInventoryCreateVC.m in Sources */,
@@ -1382,7 +1347,6 @@
 				C43260861DDDB78500195370 /* LDProgressView.m in Sources */,
 				C4DC3B111DD0D5F900369A36 /* UserTVC.m in Sources */,
 				C4B0F8C51DCE22EB004946B7 /* AFSecurityPolicy.m in Sources */,
-				07E274561FA881880036E6B8 /* UIView+Hierarchy.m in Sources */,
 				C4B0F8911DCD2FC1004946B7 /* AdminMainVC.m in Sources */,
 				C4C945551DEB816900A61A14 /* MoveLocationVC.m in Sources */,
 				C4B0F8C61DCE22EB004946B7 /* AFURLRequestSerialization.m in Sources */,
@@ -1585,6 +1549,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 26;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 2F9673MCG5;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1616,6 +1581,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 26;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 2F9673MCG5;
 				FRAMEWORK_SEARCH_PATHS = (

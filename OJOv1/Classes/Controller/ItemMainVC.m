@@ -17,9 +17,9 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *addButton;
 @property (weak, nonatomic) IBOutlet UIButton *backButton;
-@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *sortSeg;
+@property (weak, nonatomic) IBOutlet UITextField *searchTextField;
 
 @property (strong, nonatomic) NSMutableArray *itemArray;
 @property (strong, nonatomic) NSMutableArray *itemSearchArray;
@@ -63,6 +63,8 @@
     [self.backButton setTitle:@"\uf053" forState:UIControlStateNormal];
     [self.backButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     
+    self.searchTextField.layer.cornerRadius = 23.0;
+    
 }
 
 #pragma mark - navigation view action
@@ -76,6 +78,7 @@
     
     AdminMainVC *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"adminPage"];
     [svc setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+    [svc setModalPresentationStyle:UIModalPresentationOverCurrentContext];
     [self presentViewController:svc animated:YES completion:nil];
     
 }
@@ -461,8 +464,10 @@
 
 #pragma mark - search bar delegate method
 
--(void)searchBar:(UISearchBar*)searchBar textDidChange:(NSString*)text
-{
+- (IBAction)searchTextFieldAction:(UITextField *)sender {
+    
+    NSString *text = sender.text;
+    
     if(text.length == 0)
     {
         self.isFiltered = NO;
@@ -483,8 +488,8 @@
     }
     
     [self.tableView reloadData];
+    
+    
 }
-
-
 
 @end

@@ -307,6 +307,7 @@
 - (void) gotoUserMainPage{
     UserMainVC *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"userMainPage"];
     [svc setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+    [svc setModalPresentationStyle:UIModalPresentationOverCurrentContext];
     [self presentViewController:svc animated:YES completion:nil];
 }
 

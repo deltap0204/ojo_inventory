@@ -14,13 +14,10 @@
 
 
 @interface StockRefillVC ()
-{
-    AppDelegate *appDelegate;
-}
 
 @property (weak, nonatomic) IBOutlet UIButton *backButton;
 @property (weak, nonatomic) IBOutlet UIButton *viewButton;
-@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIView *addView;
 @property (weak, nonatomic) IBOutlet UIView *addPanelView;
@@ -35,6 +32,7 @@
 
 @property (strong, nonatomic) IBOutlet UITapGestureRecognizer *tabGesture1;
 @property (strong, nonatomic) IBOutlet UITapGestureRecognizer *tabGesture2;
+@property (weak, nonatomic) IBOutlet UITextField *searchTextField;
 
 
 @property (strong, nonatomic) NSMutableArray *inventoryList;
@@ -44,6 +42,7 @@
 @property (assign, nonatomic) BOOL isFiltered;
 @property (strong, nonatomic) NSString *deviceType;
 
+@property (strong, nonatomic) AppDelegate *appDelegate;
 
 @end
 
@@ -51,13 +50,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.searchBar setReturnKeyType:UIReturnKeyDone];
     [self.addView setHidden:YES];
     // Do any additional setup after loading the view.
     self.inventoryList = [[NSMutableArray alloc] init];
     self.inventorySearchList = [[NSMutableArray alloc] init];
 
-    appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    self.appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
     self.tableView.delaysContentTouches = NO;
     // back and view button initialize
@@ -77,7 +75,7 @@
     [self.viewButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     
     //
-    [self.searchBar setReturnKeyType:UIReturnKeyDone];
+
     [self.addDistributor setReturnKeyType:UIReturnKeyDone];
 
     
@@ -97,6 +95,8 @@
     self.refillButton.layer.borderWidth = 1;
     self.refillButton.layer.borderColor = [[UIColor whiteColor] CGColor];
     self.refillButton.layer.cornerRadius = self.refillButton.bounds.size.height / 2;
+    
+    self.searchTextField.layer.cornerRadius = 23.0;
 
 }
 
@@ -314,11 +314,13 @@
     hud.userInteractionEnabled = NO;
     [hud show:YES];
     
+    NSString * addItemNameString = self.addItemName.text;
+    
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         OJOClient *ojoClient = [OJOClient sharedWebClient];
         NSString *url = [NSString stringWithFormat:@"%@%@%@", @"mobile/", @"stocks/", @"refill"];
         [ojoClient refill:url
-              andItemName:self.addItemName.text
+              andItemName:addItemNameString
              andAddAmount:addAmount
            andFinishBlock:^(NSArray *data) {
                NSDictionary *dicData = (NSDictionary *)data;
@@ -366,7 +368,7 @@
                        
                        
                        
-                       [appDelegate.refilledArray addObject:refillModel];
+                       [self.appDelegate.refilledArray addObject:refillModel];
                        [self.tableView reloadData];
                    });
                    
@@ -397,10 +399,13 @@
     [self.addAmountField resignFirstResponder];
 }
 
-#pragma mark - search bar delegate method
 
--(void)searchBar:(UISearchBar*)searchBar textDidChange:(NSString*)text
-{
+#pragma mark - UITextField delegate method
+
+- (IBAction)searchTextFieldAction:(UITextField *)sender {
+    
+    NSString *text = sender.text;
+    
     if(text.length == 0)
     {
         self.isFiltered = NO;
@@ -421,18 +426,7 @@
     }
     
     [self.tableView reloadData];
-}
-
-- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
-    [self.searchBar resignFirstResponder];
-}
-
-#pragma mark - UITextField delegate method
-
-- (BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-    [self.searchBar resignFirstResponder];
-    return YES;
+    
 }
 
 @end

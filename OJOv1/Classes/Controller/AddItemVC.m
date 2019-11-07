@@ -137,6 +137,7 @@
 - (IBAction)onBack:(id)sender {
 //    ItemMainVC *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"itemMainPage"];
 //    [svc setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+//    [svc setModalPresentationStyle:UIModalPresentationOverCurrentContext];
 //    [self presentViewController:svc animated:YES completion:nil];
     [self dismissViewControllerAnimated:true completion:nil];
 }
@@ -241,6 +242,7 @@
 - (void) gotoItemMainPage{
     ItemMainVC *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"itemMainPage"];
     [svc setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+    [svc setModalPresentationStyle:UIModalPresentationOverCurrentContext];
     [self presentViewController:svc animated:YES completion:nil];
 }
 

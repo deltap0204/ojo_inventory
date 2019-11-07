@@ -19,6 +19,7 @@ static User *loggedInUser = nil;
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
+@property (weak, nonatomic) IBOutlet UILabel *versionNumberLabel;
 
 @end
 
@@ -32,6 +33,7 @@ static User *loggedInUser = nil;
     self.usernameTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"USERNAME" attributes:@{NSForegroundColorAttributeName:color}];
     self.passwordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"PASSWORD" attributes:@{NSForegroundColorAttributeName:color}];
     
+    
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSString *deviceType = [userDefaults objectForKey:DEVICETYPE];
     if ([deviceType isEqualToString:@"iPhone"]) {
@@ -40,17 +42,28 @@ static User *loggedInUser = nil;
         [self.passwordTextField setFont:[UIFont systemFontOfSize:13]];
     }
     
-    AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     
-    appDelegate.movedTempArray = [[NSMutableArray alloc] init];
-    appDelegate.allowedArray = [[NSMutableArray alloc] init];
-    appDelegate.refilledArray = [[NSMutableArray alloc] init];
-    appDelegate.bartInventoryArray = [[NSMutableArray alloc] init];
+    NSString *test = @"";
+    
+    if ([BASE_URL isEqualToString:@"http://ojoinventory.com/ojo/"]) {
+        test = @"";
+    } else {
+        // 테스트서버를 이용하고 있다.
+        test =@" - Using test server";
+        
+        self.usernameTextField.text = @"barlax";
+        self.passwordTextField.text = @"barlax";
+        
+    }
+        
+   
+    
+    NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+    
+    NSString *build = [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString *)kCFBundleVersionKey];
     
     
-
-//    self.usernameTextField.text = @"barlax";
-//    self.passwordTextField.text = @"barlax";
+    self.versionNumberLabel.text = [NSString stringWithFormat:@"Version %@ ( - Build %@ - ) %@", version, build, test];
 
 }
 
@@ -74,6 +87,26 @@ static User *loggedInUser = nil;
 
 
 - (IBAction)onLogin:(id)sender {
+    
+    AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    
+    // initialize
+    
+    appDelegate.movedTempArray = [[NSMutableArray alloc] init];
+    appDelegate.bartInventoryArray = [[NSMutableArray alloc] init];
+    appDelegate.allItemArray = [[NSMutableArray alloc] init];
+    appDelegate.refilledArray = [[NSMutableArray alloc] init];
+    appDelegate.bartInventoryArray = [[NSMutableArray alloc] init];
+    appDelegate.allowedArray = [[NSMutableArray alloc] init];
+    appDelegate.startReport = [[NSMutableArray alloc] init];
+    appDelegate.shiftReport = [[NSMutableArray alloc] init];
+    appDelegate.unreadReceivedItemArray = [[NSMutableArray alloc] init];
+    appDelegate.unreadSentItemArray = [[NSMutableArray alloc] init];
+    appDelegate.unreportedArray = [[NSMutableArray alloc] init];
+    
+    
+    
+    
     
     if ([self.usernameTextField.text isEqualToString:@""]) {
         //alert...
@@ -172,11 +205,13 @@ static User *loggedInUser = nil;
                 if ([deviceType isEqualToString:@"iPad"]) {
                     BartenderVC *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"bartenderPage_ipad"];
                     [svc setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+                    [svc setModalPresentationStyle:UIModalPresentationOverCurrentContext];
                     [self presentViewController:svc animated:YES completion:nil];
                     
                 } else{
-                    BartenderVC *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"bartenderPage"];
+                    BartenderVC *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"bartenderPage_ipad"];
                     [svc setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+                    [svc setModalPresentationStyle:UIModalPresentationOverCurrentContext];
                     [self presentViewController:svc animated:YES completion:nil];
                 }
                 
@@ -189,11 +224,13 @@ static User *loggedInUser = nil;
                 if ([deviceType isEqualToString:@"iPad"]) {
                     ManagerMainVC *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"managerPage_ipad"];
                     [svc setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+                    [svc setModalPresentationStyle:UIModalPresentationOverCurrentContext];
                     [self presentViewController:svc animated:YES completion:nil];
                     
                 } else{
                     ManagerMainVC *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"managerPage"];
                     [svc setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+                    [svc setModalPresentationStyle:UIModalPresentationOverCurrentContext];
                     [self presentViewController:svc animated:YES completion:nil];
                 }
                 
@@ -205,6 +242,7 @@ static User *loggedInUser = nil;
                 [hud hide:YES];
                 AdminMainVC *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"adminPage"];
                 [svc setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+                [svc setModalPresentationStyle:UIModalPresentationOverCurrentContext];
                 [self presentViewController:svc animated:YES completion:nil];
             }
             

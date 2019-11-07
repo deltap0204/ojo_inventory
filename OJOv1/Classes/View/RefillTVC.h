@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface RefillTVC : UITableViewCell
+
 @property (weak, nonatomic) IBOutlet UILabel *itemName;
 @property (weak, nonatomic) IBOutlet UILabel *par;
 @property (weak, nonatomic) IBOutlet UILabel *missingPar;

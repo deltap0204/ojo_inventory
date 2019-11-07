@@ -92,14 +92,12 @@
     
     self.userRealNameLabel.text = [LoginVC getLoggedinUser].name;
     
-    [[IQKeyboardManager sharedManager] setEnable:false];
     
 }
 
 - (void) viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
-    [[IQKeyboardManager sharedManager] setEnable:true];
 }
 
 - (void) viewWillDisappear:(BOOL)animated{
@@ -118,18 +116,12 @@
     
 }
 
-
-
 - (IBAction)gestureAction:(id)sender {
     
     [self.weightOpenBottleTextField resignFirstResponder];
     [self.countFullBottlesTextField resignFirstResponder];
     
 }
-
-
-
-
 
 #pragma mark - Button Action Method
 
@@ -140,6 +132,7 @@
     
     BartenderCommentSendVC *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"BartenderCommentSendVC"];
     [svc setModalPresentationStyle:UIModalPresentationFullScreen];
+    [svc setModalPresentationStyle:UIModalPresentationOverCurrentContext];
     [self presentViewController:svc animated:YES completion:nil];
     
 }
@@ -261,6 +254,7 @@
 
 #pragma mark - Price/ServingSold Calculation Method of selcted items
 
+
 - (NSArray *) calcuateSelctedItemValue:(InventoryReport*)inventoryModel withCountFullBottle:(NSString*)countFullBottle withWeightOpenBottle:(NSString*)weightOpenBottle{
     
     float C2 = inventoryModel.amount.floatValue; // before count full bottle
@@ -292,7 +286,6 @@
     NSString *servingSold = [NSString stringWithFormat:@"%.02f", servingSoldFloat];
     
     NSArray *valueArray = [NSArray arrayWithObjects:priceStr, servingSold, nil];
-    
     
     return valueArray;
     
@@ -329,17 +322,21 @@
     static NSString *cellIdentifier = @"inventoriedItemCell";
     BartenderCommentTVC *inventoriedCell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
-    inventoriedCell.cellView.layer.borderWidth = 3.0;
+    inventoriedCell.cellView.layer.borderWidth = 2.0;
     inventoriedCell.cellView.layer.borderColor = [UIColor blackColor].CGColor;
     
     
     ShiftReportModel *shiftReportModel;
     shiftReportModel = (ShiftReportModel*) self.inventoriedItems[indexPath.row];
  
+    if (shiftReportModel.liquidWeight.intValue != 0) {
+        
+    }
     
-    inventoriedCell.itemTitle.text = shiftReportModel.itemName;;
+    inventoriedCell.itemTitle.text = shiftReportModel.itemName;
     inventoriedCell.weightOpenBottle.text = [NSString stringWithFormat:@"OPEN : %@", shiftReportModel.itemOpen];
     inventoriedCell.countFullBottle.text = [NSString stringWithFormat:@"FULL : %@",  shiftReportModel.itemFull];
+    
     
     
     inventoriedCell.backgroundColor = inventoriedCell.contentView.backgroundColor;
@@ -356,26 +353,26 @@
 
     
     ShiftReportModel *shiftReportModel;
-    shiftReportModel = (ShiftReportModel*) self.inventoriedItems[self.selectedRow];
-    NSString *itemName = shiftReportModel.itemName;
-    NSString *weightOpenBottle = shiftReportModel.itemOpen;
-    NSString *countFullBottle = shiftReportModel.itemFull;
-    
-    
-    self.editItemLabel.text = itemName;
-    
-    NSString *imageNameWithUpper = [itemName stringByReplacingOccurrencesOfString:@" " withString:@"_"];
-    NSString *imageName = [imageNameWithUpper lowercaseString];
-    self.editItemImageView.image = [UIImage imageNamed:imageName];
-    if (self.editItemImageView.image == nil) {
-        self.editItemImageView.image = [UIImage imageNamed:@"coming_soon"];
+        shiftReportModel = (ShiftReportModel*) self.inventoriedItems[self.selectedRow];
+        NSString *itemName = shiftReportModel.itemName;
+        NSString *weightOpenBottle = shiftReportModel.itemOpen;
+        NSString *countFullBottle = shiftReportModel.itemFull;
         
+        
+        self.editItemLabel.text = itemName;
+        
+        NSString *imageNameWithUpper = [itemName stringByReplacingOccurrencesOfString:@" " withString:@"_"];
+        NSString *imageName = [imageNameWithUpper lowercaseString];
+        self.editItemImageView.image = [UIImage imageNamed:imageName];
+        if (self.editItemImageView.image == nil) {
+            self.editItemImageView.image = [UIImage imageNamed:@"coming_soon"];
+            
     }
     
     self.weightOpenBottleTextField.text = weightOpenBottle;
     self.countFullBottlesTextField.text = countFullBottle;
     
-    if ([weightOpenBottle isEqualToString:@"0"]) {
+    if ([weightOpenBottle isEqualToString:@""]) {
         [self.weightOpenBottleLabel setHidden:YES];
         [self.weightOpenBottleTextField setHidden:YES];
     } else {
@@ -391,7 +388,8 @@
      
     self.previousItemPrice = [[self calcuateSelctedItemValue:inventoryModel withCountFullBottle:countFullBottle withWeightOpenBottle:weightOpenBottle] objectAtIndex:0];
     
-    NSLog("Previous Item Price ======= %@", self.previousItemPrice);
+    NSLog(@"Previous Item Price ======= %@", self.previousItemPrice);
+    
 }
 
 

@@ -13,6 +13,6 @@
 
 
 
-@interface ItemMainVC : UIViewController<UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
+@interface ItemMainVC : UIViewController<UITableViewDelegate, UITableViewDataSource>
 
 @end

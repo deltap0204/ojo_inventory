@@ -22,7 +22,6 @@
 @interface BartInventory ()
 
 @property (weak, nonatomic) IBOutlet UILabel *locationTitle;
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *itemNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *emptyWeightLabel;
 @property (weak, nonatomic) IBOutlet UILabel *fullWeightLabel;
@@ -32,10 +31,25 @@
 @property (weak, nonatomic) IBOutlet UILabel *fullBtCountLabel;
 @property (weak, nonatomic) IBOutlet UILabel *progressLabel;
 @property (weak, nonatomic) IBOutlet UIButton *backButton;
-@property (weak, nonatomic) IBOutlet UIView *navigationView;
 @property (weak, nonatomic) IBOutlet UIButton *nextItemButton;
 @property (weak, nonatomic) IBOutlet UIImageView *itemImageView;
 @property (weak, nonatomic) IBOutlet UILabel *userRealNameLabel;
+
+// 수자패드 버튼
+@property (weak, nonatomic) IBOutlet UIButton *oneButton;
+@property (weak, nonatomic) IBOutlet UIButton *twoButton;
+@property (weak, nonatomic) IBOutlet UIButton *threeButton;
+@property (weak, nonatomic) IBOutlet UIButton *fourButton;
+@property (weak, nonatomic) IBOutlet UIButton *fiveButton;
+@property (weak, nonatomic) IBOutlet UIButton *sixButton;
+@property (weak, nonatomic) IBOutlet UIButton *sevenButton;
+@property (weak, nonatomic) IBOutlet UIButton *eightButton;
+@property (weak, nonatomic) IBOutlet UIButton *nineButton;
+@property (weak, nonatomic) IBOutlet UIButton *zeroButton;
+@property (weak, nonatomic) IBOutlet UIButton *removeButton;
+
+
+@property (weak, nonatomic) IBOutlet UIView *bluetoothView;
 
 @property (assign, nonatomic) NSInteger select;
 @property (strong, nonatomic) NSString *locationController;
@@ -57,6 +71,10 @@
 @property (strong, nonatomic) NSString *movedInID;
 @property (strong, nonatomic) NSString *movedOutID;
 
+// edit flag
+@property (strong, nonatomic) NSString *editFlag;
+@property (assign, nonatomic) BOOL openFlag;
+
 @end
 
 @implementation BartInventory
@@ -71,6 +89,7 @@
 
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     
     self.appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
@@ -83,7 +102,9 @@
     self.currentNum = 0;
     self.minValueCheck = false;
     self.movedItemCheck = false;
+    self.openFlag = false;
     
+    self.editFlag = @"full";
     
     self.openBtWetTextField.delegate = self;
     
@@ -96,16 +117,15 @@
     
     // replace to customized keyboard
     
+    
+    /*
     if ([self.deviceType isEqualToString:@"iPad"]) {
         self.openBtWetTextField.inputView  = [[[NSBundle mainBundle] loadNibNamed:@"LNNumberpad" owner:self options:nil] objectAtIndex:0];
         self.fullBtCountTextField.inputView  = [[[NSBundle mainBundle] loadNibNamed:@"LNNumberpad" owner:self options:nil] objectAtIndex:0];
     }
-    
-    self.titleLabel.text = @"";
-    self.navigationView.backgroundColor = [UIColor colorWithRed:54.0/255.0 green:128.0/255.0 blue:74.0/255.0 alpha:1.0];
-    
-    
-    self.userRealNameLabel.text = [LoginVC getLoggedinUser].name;
+    */
+
+    self.userRealNameLabel.text = [NSString stringWithFormat:@"Hello %@", [LoginVC getLoggedinUser].name];
     self.locationTitle.text = self.location;
     
     self.appDelegate.startTime = [self getCurrentTimeString];
@@ -125,14 +145,80 @@
 
 - (void) viewDidLayoutSubviews{
     
-    self.openBtWetTextField.layer.cornerRadius = 5.0;
-    self.openBtWetTextField.layer.borderWidth = 3.0;
-    self.openBtWetTextField.layer.borderColor = [UIColor blackColor].CGColor;
+    self.openBtWetTextField.layer.borderWidth = 4.0;
+    self.fullBtCountTextField.layer.borderWidth = 4.0;
     
-    self.fullBtCountTextField.layer.cornerRadius = 5.0;
-    self.fullBtCountTextField.layer.borderWidth = 3.0;
-    self.fullBtCountTextField.layer.borderColor = [UIColor blackColor].CGColor;
+    [self makeFullTextFieldHighlight];
 
+
+    self.bluetoothView.layer.borderWidth = 2.0;
+    self.bluetoothView.layer.borderColor = [UIColor colorWithRed:145.0/255.0 green:216.0/255.0 blue:247.0/255.0 alpha:1.0].CGColor;
+    
+    // Number pad
+    
+    CGFloat cornerRadius = 42.0;
+    CGFloat borderWidth = 1.0;
+    UIColor *borderColor = [UIColor colorWithRed:145.0/255.0 green:216.0/255.0 blue:247.0/255.0 alpha:1.0];
+    
+    // Number button - 0
+    self.zeroButton.layer.cornerRadius = cornerRadius;
+    self.zeroButton.layer.borderWidth = borderWidth;
+    self.zeroButton.layer.borderColor = borderColor.CGColor;
+    
+    // Number button - 1
+    self.oneButton.layer.cornerRadius = cornerRadius;
+    self.oneButton.layer.borderWidth = borderWidth;
+    self.oneButton.layer.borderColor = borderColor.CGColor;
+    
+    // Number button - 2
+    self.twoButton.layer.cornerRadius = cornerRadius;
+    self.twoButton.layer.borderWidth = borderWidth;
+    self.twoButton.layer.borderColor = borderColor.CGColor;
+    
+    // Number button - 3
+    self.threeButton.layer.cornerRadius = cornerRadius;
+    self.threeButton.layer.borderWidth = borderWidth;
+    self.threeButton.layer.borderColor = borderColor.CGColor;
+    
+    // Number button - 4
+    self.fourButton.layer.cornerRadius = cornerRadius;
+    self.fourButton.layer.borderWidth = borderWidth;
+    self.fourButton.layer.borderColor = borderColor.CGColor;
+    
+    // Number button - 5
+    self.fiveButton.layer.cornerRadius = cornerRadius;
+    self.fiveButton.layer.borderWidth = borderWidth;
+    self.fiveButton.layer.borderColor = borderColor.CGColor;
+    
+    // Number button - 6
+    self.sixButton.layer.cornerRadius = cornerRadius;
+    self.sixButton.layer.borderWidth = borderWidth;
+    self.sixButton.layer.borderColor = borderColor.CGColor;
+    
+    // Number button - 7
+    self.sevenButton.layer.cornerRadius = cornerRadius;
+    self.sevenButton.layer.borderWidth = borderWidth;
+    self.sevenButton.layer.borderColor = borderColor.CGColor;
+    
+    // Number button - 8
+    self.eightButton.layer.cornerRadius = cornerRadius;
+    self.eightButton.layer.borderWidth = borderWidth;
+    self.eightButton.layer.borderColor = borderColor.CGColor;
+    
+    // Number button - 9
+    self.nineButton.layer.cornerRadius = cornerRadius;
+    self.nineButton.layer.borderWidth = borderWidth;
+    self.nineButton.layer.borderColor = borderColor.CGColor;
+    
+    // Number button - <
+    self.removeButton.layer.cornerRadius = cornerRadius;
+    self.removeButton.layer.borderWidth = borderWidth;
+    self.removeButton.layer.borderColor = borderColor.CGColor;
+    
+    // Check button - v
+    self.nextItemButton.layer.cornerRadius = cornerRadius;
+    self.nextItemButton.layer.borderWidth = borderWidth;
+    self.nextItemButton.layer.borderColor = borderColor.CGColor;
 }
 
 - (void) getAllItems{
@@ -259,8 +345,10 @@
     
 }
 
-- (void) setCurrentUIChange{
-
+- (void) setCurrentUIChange {
+    
+    self.editFlag = @"full";
+    
     if (self.currentNum == self.totalCount) {
         
         // get the time
@@ -269,6 +357,7 @@
         self.appDelegate.totalCash = [NSString stringWithFormat:@"%ld", (long)self.totalCash];
         
         BarInventoryCommentVC *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"BarInventoryCommentVC"];
+        [svc setModalPresentationStyle:UIModalPresentationOverCurrentContext];
         [self presentViewController:svc animated:YES completion:nil];
         
     } else{
@@ -300,6 +389,7 @@
         
         // if it's full open item, it's impossible to edit openBtWetTextField
         if (fullOpen == 0) {
+            [self.bluetoothView setHidden:YES];
             
             [self.openBuWetLabel setHidden:YES];
             [self.openBtWetTextField setHidden:YES];
@@ -311,8 +401,10 @@
             self.minValueCheck = true;
             [self.nextItemButton setEnabled:YES];
             
-        } else {
+            self.openFlag = false;
             
+        } else {
+            [self.bluetoothView setHidden:NO];
 
             [self.openBuWetLabel setHidden:NO];
             [self.openBtWetTextField setHidden:NO];
@@ -328,6 +420,8 @@
             self.openBtWetTextField.text = @"";
             [self.nextItemButton setEnabled:NO];
             
+            self.openFlag = true;
+            
         }
         
         self.currentFullWeightOfItem = inventoryModel.itemBottleFullWet;
@@ -336,36 +430,141 @@
     }
 }
 
+#pragma mark - Bluetooth action
+
+- (IBAction)onBluetoothAction:(id)sender {
+    
+    self.hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    self.hud.labelText = @"Getting Data from Bluetooth Scale...";
+    self.hud.userInteractionEnabled = NO;
+    [self.hud show:YES];
+    
+    self.openBtWetTextField.text = @"1000";
+    
+    [NSThread sleepForTimeInterval: 1.0];
+    
+    // -- Bluetooth sound ON
+    SystemSoundID soundID;
+    NSString *effectTitle = @"bluetooth_beef";
+    
+    NSString *soundPath = [[NSBundle mainBundle] pathForResource:effectTitle ofType:@"mp3"];
+    NSURL *soundUrl = [NSURL fileURLWithPath:soundPath];
+    AudioServicesCreateSystemSoundID ((__bridge CFURLRef)soundUrl, &soundID);
+    AudioServicesPlaySystemSound(soundID);
+    
+    // --- Open value check
+    self.openBtWetTextField.layer.borderColor = [[UIColor whiteColor] CGColor];
+    self.minValueCheck = true;
+    [self.nextItemButton setEnabled:YES];
+    
+    
+    [self.hud hide:YES];
+  
+}
+
+#pragma mark - number pad action
+
+- (IBAction)onNumberAction:(UIButton *)sender {
+    
+    //--- play pad mp3
+    SystemSoundID soundID;
+    NSString *effectTitle = @"supermario_coin";
+    
+    NSString *soundPath = [[NSBundle mainBundle] pathForResource:effectTitle ofType:@"mp3"];
+    NSURL *soundUrl = [NSURL fileURLWithPath:soundPath];
+    AudioServicesCreateSystemSoundID ((__bridge CFURLRef)soundUrl, &soundID);
+    AudioServicesPlaySystemSound(soundID);
+    
+    //---
+   
+    
+    
+    NSInteger numberTag = sender.tag;
+    
+    UITextField *selectedTextField = self.fullBtCountTextField;
+    NSString *currentText = @"";
+    
+    if ([self.editFlag isEqualToString:@"open"]) {
+        selectedTextField = self.openBtWetTextField;
+        currentText = self.openBtWetTextField.text;
+    } else {
+        selectedTextField = self.fullBtCountTextField;
+        currentText = self.fullBtCountTextField.text;
+    }
+    
+    
+    NSString *clickedNumber = @"";
+    if (numberTag != 10) {
+         clickedNumber = [NSString stringWithFormat:@"%ld", (long)numberTag];
+    } else {
+        if ([currentText length] > 0) {
+            clickedNumber = [currentText substringToIndex:[currentText length]-1];
+            currentText = @"";
+        }
+        
+    }
+
+    selectedTextField.text = [NSString stringWithFormat:@"%@%@", currentText, clickedNumber];
+    
+    
+    if ([self.editFlag isEqualToString:@"open"]) {
+        // ------OPEN 값 체크, 실지---------
+        
+        NSInteger weight = [selectedTextField.text integerValue];
+        NSInteger fullWeight = [self.currentFullWeightOfItem integerValue];
+        NSInteger emptyWeight = [self.currentEmptyWeightOfItem integerValue];
+        
+        if (weight < emptyWeight) {
+            
+            self.openBtWetTextField.layer.borderColor = [[UIColor redColor] CGColor];
+            self.minValueCheck = false;
+            [self.nextItemButton setEnabled:NO];
+            
+        } else if(weight > emptyWeight & weight < fullWeight){
+            
+            self.openBtWetTextField.layer.borderColor = [[UIColor whiteColor] CGColor];
+            self.minValueCheck = true;
+            [self.nextItemButton setEnabled:YES];
+            
+        } else{
+            
+        }
+        //----------------------------------
+    }
+    
+    
+    
+}
 
 #pragma mark - input value check (입력부분 체크, 최소무게보다 작은경우 디저불상태로...)
 
 - (IBAction)inputVallueOfWeightOpenBottle:(UITextField *)sender {
-        NSString *weightStr = sender.text;
+    NSString *weightStr = sender.text;
     
-        if (![weightStr isEqualToString:@""]) {
-            NSInteger weight = [weightStr integerValue];
-            NSInteger fullWeight = [self.currentFullWeightOfItem integerValue];
-            NSInteger emptyWeight = [self.currentEmptyWeightOfItem integerValue];
-            if (weight > fullWeight) {
-//                self.openBtWetTextField.layer.borderWidth = 2.0f;
-//                self.openBtWetTextField.layer.borderColor = [[UIColor redColor] CGColor];
-                [self.openBtWetTextField setEnabled:NO];
-                
-            }
-            else if (weight < emptyWeight) {
-                self.openBtWetTextField.layer.borderWidth = 2.0f;
-                self.openBtWetTextField.layer.borderColor = [[UIColor blueColor] CGColor];
-            } else{
-                self.openBtWetTextField.layer.borderColor = [[UIColor clearColor] CGColor];
-            }
+    if (![weightStr isEqualToString:@""]) {
+        NSInteger weight = [weightStr integerValue];
+        NSInteger fullWeight = [self.currentFullWeightOfItem integerValue];
+        NSInteger emptyWeight = [self.currentEmptyWeightOfItem integerValue];
+        if (weight > fullWeight) {
+            //                self.openBtWetTextField.layer.borderWidth = 2.0f;
+            //                self.openBtWetTextField.layer.borderColor = [[UIColor redColor] CGColor];
+            [self.openBtWetTextField setEnabled:NO];
+            
+        }
+        else if (weight < emptyWeight) {
+            self.openBtWetTextField.layer.borderWidth = 2.0f;
+            self.openBtWetTextField.layer.borderColor = [[UIColor blueColor] CGColor];
         } else{
             self.openBtWetTextField.layer.borderColor = [[UIColor clearColor] CGColor];
         }
+    } else{
+        self.openBtWetTextField.layer.borderColor = [[UIColor clearColor] CGColor];
+    }
 }
 
 - (BOOL)textField:(UITextField *) textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
     
- 
+    
     NSString *currentTextFeild = textField.text;
     NSString *inputStr = string;
     
@@ -373,51 +572,105 @@
     if ([inputStr isEqualToString:@""]) {
         currentStr = [currentStr substringToIndex:[currentStr length] - 1];
     }
-    NSInteger weight = [currentStr integerValue];
     
-    NSInteger fullWeight = [self.currentFullWeightOfItem integerValue];
-    NSInteger emptyWeight = [self.currentEmptyWeightOfItem integerValue];
+//    if (weight < fullWeight) return YES;
+//    else return NO;
     
-    if (weight < emptyWeight) {
-        self.openBtWetTextField.layer.borderWidth = 4.0f;
-        self.openBtWetTextField.layer.borderColor = [[UIColor redColor] CGColor];
-        self.minValueCheck = false;
-        [self.nextItemButton setEnabled:NO];
+    return YES;
+}
 
-    }else if(weight > emptyWeight & weight < fullWeight)
-    {
-        self.openBtWetTextField.layer.borderColor = [[UIColor clearColor] CGColor];
-        self.minValueCheck = true;
-        [self.nextItemButton setEnabled:YES];
-        
-        
-    } else{
-        
-        
-        
-    }
 
+
+#pragma mark - FULL/OPEN Edit Action (현재 입력하는 부분을 하이라이트 시킨다)
+
+- (IBAction)onStartFullEditAction:(id)sender {
     
-    if (weight < fullWeight) return YES;
-    else return NO;
+    self.editFlag = @"full";
+    [self makeFullTextFieldHighlight];
     
 }
 
 
+- (IBAction)onStartOpenEditAction:(id)sender {
+    
+    self.editFlag = @"open";
+    [self makeOpenTextFieldHighlight];
+    
+}
+
+
+- (void) makeFullTextFieldHighlight {
+    
+    self.fullBtCountTextField.layer.borderColor = [UIColor whiteColor].CGColor;
+    
+    self.fullBtCountTextField.layer.masksToBounds = false;
+    self.fullBtCountTextField.layer.shadowRadius = 3.0;
+    self.fullBtCountTextField.layer.shadowColor = [UIColor whiteColor].CGColor;
+    self.fullBtCountTextField.layer.shadowOffset = CGSizeMake(1.0, 1.0);
+    self.fullBtCountTextField.layer.shadowOpacity = 1.0;
+    
+    // Unhighlight Other
+    
+    self.openBtWetTextField.layer.borderColor = [UIColor grayColor].CGColor;
+    self.openBtWetTextField.layer.shadowOpacity = 0.0;
+    
+    
+}
+
+- (void) makeOpenTextFieldHighlight {
+    
+    self.openBtWetTextField.layer.borderColor = [UIColor whiteColor].CGColor;
+    
+    self.openBtWetTextField.layer.masksToBounds = false;
+    self.openBtWetTextField.layer.shadowRadius = 3.0;
+    self.openBtWetTextField.layer.shadowColor = [UIColor whiteColor].CGColor;
+    self.openBtWetTextField.layer.shadowOffset = CGSizeMake(1.0, 1.0);
+    self.openBtWetTextField.layer.shadowOpacity = 1.0;
+    
+    // Unhighlight Other
+    
+    self.fullBtCountTextField.layer.borderColor = [UIColor grayColor].CGColor;
+    self.fullBtCountTextField.layer.shadowOpacity = 0.0;
+}
+
+
+
+#pragma mark - Remove leading zeros from a string
+
+- (NSString *) removeLeadingZeros:(NSString *) str {
+    NSRange range = [str rangeOfString:@"^0*" options:NSRegularExpressionSearch];
+    str = [str stringByReplacingCharactersInRange:range withString:@""];
+    return str;
+}
+
+
+#pragma mark - Next article
+
 - (IBAction)onNextArticle:(id)sender {
+    
     NSString *wetOpenBottle = self.openBtWetTextField.text;
+    if (![wetOpenBottle isEqualToString:@"0"]) {
+        wetOpenBottle = [self removeLeadingZeros:wetOpenBottle];
+    }
+    
     NSString *fullBottleCount = self.fullBtCountTextField.text;
-    
-    if ([wetOpenBottle isEqualToString:@""]) {
-        
-        [self.view makeToast:@"INSERT WEIGHT OPEN BOTTLE" duration:1.5 position:CSToastPositionCenter];
-        return;
+    if (![fullBottleCount isEqualToString:@"0"]) {
+        fullBottleCount = [self removeLeadingZeros:fullBottleCount];
     }
     
-    if ([fullBottleCount isEqualToString:@""]) {
-        [self.view makeToast:@"INSERT COUNT FULL BOTTLES" duration:1.5 position:CSToastPositionCenter];
-        return;
-    }
+    // After remove leading zero and insert again
+    
+    self.openBtWetTextField.text = wetOpenBottle;
+    self.fullBtCountTextField.text = fullBottleCount;
+    
+    
+//    if ([wetOpenBottle isEqualToString:@""] && self.openFlag) {
+//
+//        [self.view makeToast:@"INSERT WEIGHT OPEN BOTTLE" duration:1.5 position:CSToastPositionCenter];
+//        return;
+//    }
+    
+
     
     if (self.currentNum == 0) {
         // get the time
@@ -444,8 +697,6 @@
     NSInteger fullOpen = inventoryModel.fullOpen;
     NSString *priceStr = @"0";
     
-    
-    
     InventoryReport *inventoryCheckReport = nil;
     
     /*
@@ -454,8 +705,6 @@
      |______________________________|
      */
     
-    
-
     // sales report
     float C2 = inventoryModel.amount.floatValue; // before count full bottle
     float C1 = self.fullBtCountTextField.text.floatValue; // now count full bottle
@@ -465,7 +714,7 @@
     // NSInteger E = inventoryModel.itemBottleEmpWet.integerValue; // empty bottle weight
     float W = inventoryModel.itemServWet.floatValue;  // weight of one serving (one cup weight)
     float M = inventoryModel.itemPrice.floatValue;    // price of one serving (oen cup price)
-        
+    
     NSInteger price = 0;
     float servingSoldFloat = 0.0f;
     if (fullOpen == 0) {
@@ -490,7 +739,7 @@
                                                         andWithFullOpen:inventoryModel.fullOpen
                                                    andWithOpenBottleWet:inventoryModel.openBottleWet
                                                           andWithAmount:inventoryModel.amount
-                                                             andWithPar:inventoryModel.par
+                                                            andWithPar:inventoryModel.par
                                                andWithNewsOpenBottleWet:self.openBtWetTextField.text
                                                       andWithNewsAmount:self.fullBtCountTextField.text
                                                andWithItemBottleFullWet:inventoryModel.itemBottleFullWet
@@ -513,7 +762,6 @@
     NSString *fullItem = self.fullBtCountTextField.text;
     NSString *openWet = self.openBtWetTextField.text;
     
-    int j = 0;
     self.movedItemCheck = false;
     
     //
@@ -593,7 +841,7 @@
                                                                                andWithItemFull:fullItem
                                                                                andWithItemOpen:openWet
                                                                             andWithItemPreFull:[NSString stringWithFormat:@"%ld", (long)preFull]
-                                                                            andWithItemPreOpen:openWet
+                                                                            andWithItemPreOpen:inventoryModel.openBottleWet
                                                                            andWithMissingToPar:mpTempValue
                                                                             andWithServingSold:ssTempValue
                                                                            andWithLiquidWeight:inventoryModel.itemLiqWet
@@ -704,6 +952,8 @@
                           }
                           
                       } else{
+                          
+                          
                           [self.hud hide:YES];
                           [self.view makeToast:[dicData objectForKey:MESSAGE] duration:1.5 position:CSToastPositionCenter];
                           
@@ -723,6 +973,7 @@
     self.appDelegate.totalCash = [NSString stringWithFormat:@"%ld", (long)self.totalCash];
     
     BarInventoryCommentVC *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"BarInventoryCommentVC"];
+    [svc setModalPresentationStyle:UIModalPresentationOverCurrentContext];
     [self presentViewController:svc animated:YES completion:nil];
     
 }
@@ -765,6 +1016,7 @@
                                             NSString *senderName = [resultDict objectForKey:NAME];
                                             NSString *movedDate = [resultDict objectForKey:DATE_STR];
                                             NSString *receiverLocation = [resultDict objectForKey:RECEIVER_LOCATION];
+                                            
                                             
                                             confirmModel = [[Confirm alloc] initWithMoveID:moveID
                                                                        andWithMoveItemName:itemName
@@ -846,22 +1098,13 @@
                                  [self.view makeToast:errorMessage duration:1.5 position:CSToastPositionCenter];
                              }
                              
-                             
-            
         } andFailBlock:^(NSError *error) {
             [self.hud hide:YES];
             [self.view makeToast:@"PLEASE CHECK INTERNET CONNECTION!" duration:1.5 position:CSToastPositionCenter];
             
         }];
-        
-        
     });
-    
-    
 }
-
-
-
 
 #pragma  mark - textView animation method (다음 아이템을 위한 애니메이션부분)
 - (void) animatPage:(UISwipeGestureRecognizerDirection)direction {
@@ -873,9 +1116,10 @@
     }
     else {
         [UIView setAnimationTransition:UIViewAnimationTransitionCurlDown forView:[self view] cache:YES];
-        
     }
+    
     [UIView commitAnimations];
+    
     
     self.openBtWetTextField.text = @"";
     self.fullBtCountTextField.text = @"";
@@ -887,7 +1131,7 @@
     [self.fullBtCountTextField resignFirstResponder];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+-(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return YES;
 }

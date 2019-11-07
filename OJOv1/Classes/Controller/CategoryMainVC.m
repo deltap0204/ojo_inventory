@@ -17,7 +17,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *backButton;
 @property (weak, nonatomic) IBOutlet UIButton *addCategoryButton;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UIView *addView;
 @property (weak, nonatomic) IBOutlet UITextField *addCategoryName;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *addFullOpen;
@@ -25,6 +24,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *addViewButton;
 @property (weak, nonatomic) IBOutlet UIButton *viewCloseButton;
 @property (strong, nonatomic) IBOutlet UITapGestureRecognizer *tabGesture;
+@property (weak, nonatomic) IBOutlet UITextField *searchTextField;
 
 
 @property (weak, nonatomic) IBOutlet UIButton *firstStar;
@@ -47,7 +47,6 @@
     // Do any additional setup after loading the view.
     self.categoryArray = [[NSMutableArray alloc] init];
     self.isFiltered = NO;
-    self.searchBar.delegate = self;
     
     [self.addView setHidden:YES];
     [self initialStar];
@@ -83,6 +82,8 @@
     [self.viewCloseButton.titleLabel setFont:[UIFont fontWithName:@"fontawesome" size:30.0]];
     [self.viewCloseButton setTitle:@"\uf05c" forState:UIControlStateNormal];
     [self.viewCloseButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    
+    self.searchTextField.layer.cornerRadius = 23.0;
 
 }
 
@@ -93,6 +94,7 @@
     
     AdminMainVC *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"adminPage"];
     [svc setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+    [svc setModalPresentationStyle:UIModalPresentationOverCurrentContext];
     [self presentViewController:svc animated:YES completion:nil];
     
 }
@@ -288,10 +290,14 @@
 
 
 
+
+
 #pragma mark - search bar delegate method
 
--(void)searchBar:(UISearchBar*)searchBar textDidChange:(NSString*)text
-{
+- (IBAction)searchTextFieldAction:(UITextField *)sender {
+    
+    NSString *text = sender.text;
+    
     if(text.length == 0)
     {
         self.isFiltered = NO;
@@ -313,11 +319,14 @@
     
     [self.tableView reloadData];
     
+    
+    
 }
 
 #pragma mark - Add category view button event method
 
 - (IBAction)onFirst:(id)sender {
+    
     self.frequencyInt = 1;
 
     [self.firstStar.titleLabel setFont:[UIFont fontWithName:@"fontawesome" size:30.0]];

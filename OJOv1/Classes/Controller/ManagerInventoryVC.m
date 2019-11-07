@@ -12,10 +12,9 @@
 
 @interface ManagerInventoryVC () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UIButton *backButton;
-
+@property (weak, nonatomic) IBOutlet UITextField *searchTextField;
 
 @property (strong, nonatomic) NSString *controller;
 @property (strong, nonatomic) NSString *locaction;
@@ -39,8 +38,10 @@
     self.locaction = [userDefaults objectForKey:SEL_LOCATION];
     self.deviceType = [userDefaults objectForKey:DEVICETYPE];
     
-    self.titleLabel.text = [NSString stringWithFormat:@"%@%@", @"INVENTORY LIST OF ", self.locaction];
-
+    self.titleLabel.text = [NSString stringWithFormat:@"%@%@", @"Inventory List of ", self.locaction];
+    
+    self.searchTextField.layer.cornerRadius = 23.0;
+    
     CGFloat awesomeFontSize = 0.0f;
     if ([self.deviceType isEqualToString:@"iPad"]) awesomeFontSize = 40.0f;
     else awesomeFontSize = 20.0f;
@@ -150,6 +151,7 @@
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
     NSInteger rowCount;
+    
     if (self.isFiltered) {
         rowCount = self.inventorySearchList.count;
     } else{
@@ -216,17 +218,18 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+#pragma mark - TextField delegate method for searchbar
 
-#pragma mark - search bar delegate method
-
--(void)searchBar:(UISearchBar*)searchBar textDidChange:(NSString*)text
-{
-    if(text.length == 0)
+- (IBAction)searchTextFieldAction:(UITextField *)sender {
+    
+    if(sender.text.length == 0)
     {
         self.isFiltered = NO;
     }
     else
     {
+        NSString *text = self.searchTextField.text;
+        
         self.isFiltered = YES;
         self.inventorySearchList = [[NSMutableArray alloc] init];
         
@@ -241,6 +244,7 @@
     }
     
     [self.tableView reloadData];
+    
 }
-
+ 
 @end
