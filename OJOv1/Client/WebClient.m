@@ -18,11 +18,12 @@
     AFHTTPSessionManager *httpManager = [AFHTTPSessionManager manager];
     
     [httpManager setResponseSerializer:[AFHTTPResponseSerializer serializer]];
-    
     [httpManager POST:strURL
            parameters:dicParams
              progress:nil
               success:^(NSURLSessionDataTask * _Nonnull task, id _Nullable responseObject){
+        
+                
                 NSString* response = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
                   NSLog(@"\n---Server reponse---\n %@", response);
                   if ([responseObject isKindOfClass:[NSDictionary class]] || [responseObject isKindOfClass:[NSArray class]]) {

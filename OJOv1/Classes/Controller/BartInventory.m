@@ -1117,7 +1117,7 @@
     else {
         [UIView setAnimationTransition:UIViewAnimationTransitionCurlDown forView:[self view] cache:YES];
     }
-    
+    	
     [UIView commitAnimations];
     
     
@@ -1129,11 +1129,6 @@
 - (IBAction)tabGestureAction:(id)sender {
     [self.openBtWetTextField resignFirstResponder];
     [self.fullBtCountTextField resignFirstResponder];
-}
-
--(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return YES;
 }
 
 - (BOOL)textFieldShouldEndEditing:(UITextField *)textField

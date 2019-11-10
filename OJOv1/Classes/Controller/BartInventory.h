@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BartInventory : UIViewController<UITextFieldDelegate, UITextViewDelegate, UITextFieldDelegate>
+@interface BartInventory : UIViewController<UITextViewDelegate, UITextFieldDelegate>
 
 @end

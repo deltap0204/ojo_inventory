@@ -389,7 +389,6 @@
     self.previousItemPrice = [[self calcuateSelctedItemValue:inventoryModel withCountFullBottle:countFullBottle withWeightOpenBottle:weightOpenBottle] objectAtIndex:0];
     
     NSLog(@"Previous Item Price ======= %@", self.previousItemPrice);
-    
 }
 
 
