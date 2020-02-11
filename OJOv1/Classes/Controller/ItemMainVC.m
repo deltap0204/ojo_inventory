@@ -125,6 +125,8 @@
     }
 }
 
+#pragma mark - sorting method according to alphabet
+
 - (void) sortItemArrayByAlphaBet{
     [self.itemArray sortUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
         Item *item1 = (Item *)obj1;

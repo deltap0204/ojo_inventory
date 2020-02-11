@@ -329,6 +329,8 @@
 }
 
 
+#pragma mark - This is sorting method to alphabet
+
 - (void) sortByRanking {
     
     [self.inventoryList sortUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
@@ -344,6 +346,8 @@
     }];
     
 }
+
+#pragma mark - UI Change method
 
 - (void) setCurrentUIChange {
     
@@ -447,7 +451,7 @@
     SystemSoundID soundID;
     NSString *effectTitle = @"bluetooth_beef";
     
-    NSString *soundPath = [[NSBundle mainBundle] pathForResource:effectTitle ofType:@"mp3"];
+    NSString *soundPath 	= [[NSBundle mainBundle] pathForResource:effectTitle ofType:@"mp3"];
     NSURL *soundUrl = [NSURL fileURLWithPath:soundPath];
     AudioServicesCreateSystemSoundID ((__bridge CFURLRef)soundUrl, &soundID);
     AudioServicesPlaySystemSound(soundID);
@@ -456,7 +460,6 @@
     self.openBtWetTextField.layer.borderColor = [[UIColor whiteColor] CGColor];
     self.minValueCheck = true;
     [self.nextItemButton setEnabled:YES];
-    
     
     [self.hud hide:YES];
   
@@ -664,12 +667,7 @@
     self.fullBtCountTextField.text = fullBottleCount;
     
     
-//    if ([wetOpenBottle isEqualToString:@""] && self.openFlag) {
-//
-//        [self.view makeToast:@"INSERT WEIGHT OPEN BOTTLE" duration:1.5 position:CSToastPositionCenter];
-//        return;
-//    }
-    
+  
 
     
     if (self.currentNum == 0) {

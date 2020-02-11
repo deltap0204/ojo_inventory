@@ -29,6 +29,7 @@
                   if ([responseObject isKindOfClass:[NSDictionary class]] || [responseObject isKindOfClass:[NSArray class]]) {
                       if (success) {
                           success(responseObject);
+                          
                       }
                   } else {
                       NSArray *response = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];

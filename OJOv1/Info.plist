@@ -43,6 +43,10 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>$(PRODUCT_NAME) uses Bluetooth to find, communicate with nearby scale device, Please grant access</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>$(PRODUCT_NAME) uses Bluetooth to find, communicate with nearby scale device, Please grant access</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>fontawesome-webfont.ttf</string>

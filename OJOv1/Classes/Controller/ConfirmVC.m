@@ -29,15 +29,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.confirmArray = [[NSMutableArray alloc] init];
-    self.setIndexPathArray = [[NSMutableArray alloc] init];
-    self.appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     
-    self.confirmArray = self.appDelegate.unreadReceivedItemArray;
-    self.tableView.delaysContentTouches = NO;
+    // NSUserDefaults
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     self.currentLocation = [userDefaults objectForKey:SEL_LOCATION];
     self.deviceType = [userDefaults objectForKey:DEVICETYPE];
+    
+    
+    // Array Init
+    self.confirmArray = [[NSMutableArray alloc] init];
+    self.setIndexPathArray = [[NSMutableArray alloc] init];
+    self.appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    self.confirmArray = self.appDelegate.unreadReceivedItemArray;
+    
+    
+    // UITableView
+    
+    self.tableView.delaysContentTouches = NO;
     
 }
 
@@ -130,7 +138,7 @@
     OJOClient *ojoClient = [OJOClient sharedWebClient];
     
     [ojoClient itemMoveAllow:ITEM_MOVE_ALLOW
-                  andMoveID:moveID
+                   andMoveID:moveID
              andMoveItemName:itemName
                andMoveAmount:amount
            andSenderLocation:sendLocation
@@ -146,19 +154,30 @@
         // ---- Doubled item check   {
                           
                           BOOL doubledItem = false;
-                          for (int i = 0; i < self.appDelegate.allowedArray.count; i++) {
+                          
+                          if (self.appDelegate.allowedArray.count > 1) {
                               
-                              Confirm *confirmMovedModel;
-                              confirmMovedModel = self.appDelegate.allowedArray[i];
-                              if ([confirmMovedModel.moveItemName isEqualToString:itemName]  && [confirmMovedModel.senderLocation isEqualToString:sendLocation] && [confirmMovedModel.receiverLocation isEqualToString:receiverLocation]) {
+                              
+                              
+                              
+                              for (int i = 0; i < self.appDelegate.allowedArray.count; i++) {
                                   
-                                  NSInteger sum = confirmMovedModel.moveAmount.integerValue + amount.integerValue;
-                                  
-                                  confirmMovedModel.moveAmount = [NSString stringWithFormat:@"%ld", (long)sum];
-                                  [self.appDelegate.allowedArray replaceObjectAtIndex:i withObject:confirmMovedModel];
-                                  doubledItem = true;
+                                  Confirm *confirmMovedModel;
+                                  confirmMovedModel = self.appDelegate.allowedArray[i];
+                                  if ([confirmMovedModel.moveItemName isEqualToString:itemName]  && [confirmMovedModel.senderLocation isEqualToString:sendLocation] && [confirmMovedModel.receiverLocation isEqualToString:receiverLocation]) {
+                                      
+                                      NSInteger sum = confirmMovedModel.moveAmount.integerValue + amount.integerValue;
+                                      
+                                      confirmMovedModel.moveAmount = [NSString stringWithFormat:@"%ld", (long)sum];
+                                      [self.appDelegate.allowedArray replaceObjectAtIndex:i withObject:confirmMovedModel];
+                                      doubledItem = true;
+                                      
+                                      
+                                  }
                               }
                           }
+                          
+                          
                           
                           if (!doubledItem) {
                               
@@ -218,7 +237,9 @@
     hud.labelText = @"Rejecting...";
     [hud show:YES];
     
+    
     OJOClient *ojoClient = [OJOClient sharedWebClient];
+    
     [ojoClient itemMoveReject:ITEM_MOVE_REJECT
                     andMoveID:moveID
              andMoveItemName:itemName
@@ -254,10 +275,12 @@
 
 - (IBAction)onReturnAndReport:(id)sender {
     
-    for (int i = (int)self.setIndexPathArray.count - 1; i >= 0; i--){
+    
+    for (int i = (int)self.setIndexPathArray.count - 1; i >= 0; i--) {
         
         NSIndexPath *path = [self.setIndexPathArray objectAtIndex:i];
         [self.appDelegate.unreadReceivedItemArray removeObjectAtIndex:path.row];
+        
     }
     
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -265,11 +288,14 @@
 }
 
 - (NSString *) getCurrentTime{
+    
     NSDate *now = [NSDate date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     dateFormatter.dateFormat = @"hh:mm:ss";
     [dateFormatter setTimeZone:[NSTimeZone systemTimeZone]];
+    
     return [dateFormatter stringFromDate:now];
+    
 }
 
 

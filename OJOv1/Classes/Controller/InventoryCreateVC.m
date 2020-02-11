@@ -158,6 +158,7 @@
 #pragma mark - Sort Action according to ranking
 
 - (void) sortAllItemByRanking{
+    
     [self.itemArray sortUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
         Item *item1 = (Item *)obj1;
         Item *item2 = (Item *)obj2;
@@ -190,6 +191,7 @@
         }
         
         if ([self.par isEqualToString:@""]) {
+            
             [self.view makeToast:@"" duration:1.5 position:CSToastPositionCenter];
             return;
         }
@@ -208,6 +210,7 @@
 }
 
 - (void) setCurrentUIChange{
+                                                                                                                                                                                                                                        
     if (self.currentCount == self.totalCount) {
             InventoryListVC *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"inventoryListPage"];
             [svc setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
@@ -245,9 +248,8 @@
     }
 }
 
-
-
 #pragma  mark - textView animation method
+
 - (void) animatPage:(UISwipeGestureRecognizerDirection)direction {
     
     [UIView beginAnimations:nil context:nil];
@@ -262,16 +264,18 @@
     [UIView commitAnimations];
     
     self.setParLabel.text = @"";
-    [self.agreeSeg setSelectedSegmentIndex:0];
+        [self.agreeSeg setSelectedSegmentIndex:0];
     self.segIndex = 0;
 }
 
 #pragma mark - create inventory method
 
-- (void) setInventory{
+- (void) setInventory {
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.userInteractionEnabled = NO;
     [hud show:YES];
+    
+    
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         OJOClient *ojoClient = [OJOClient sharedWebClient];

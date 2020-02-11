@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		071B210E238CC13700BBFB1B /* PulsingHaloLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 071B210C238CC13700BBFB1B /* PulsingHaloLayer.m */; };
+		071B2111238CC97200BBFB1B /* AddDeviceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 071B2110238CC97200BBFB1B /* AddDeviceVC.m */; };
+		071B211F23981D6600BBFB1B /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 071B211E23981D6600BBFB1B /* CoreBluetooth.framework */; };
+		071B212423A0847900BBFB1B /* BLE.m in Sources */ = {isa = PBXBuildFile; fileRef = 071B212223A0847900BBFB1B /* BLE.m */; };
 		0746015120CDE01A006EABE9 /* grand_marnier_700ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746011C20CDDED6006EABE9 /* grand_marnier_700ml@2x.png */; };
 		0746015220CDE01A006EABE9 /* greygoose_750ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746011D20CDDED6006EABE9 /* greygoose_750ml@2x.png */; };
 		0746015320CDE01A006EABE9 /* baileys_750ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746011E20CDDEDD006EABE9 /* baileys_750ml@2x.png */; };
@@ -219,6 +223,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		071B210A238CC13700BBFB1B /* PulsingHalo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PulsingHalo.h; sourceTree = "<group>"; };
+		071B210B238CC13700BBFB1B /* PulsingHaloLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PulsingHaloLayer.h; sourceTree = "<group>"; };
+		071B210C238CC13700BBFB1B /* PulsingHaloLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PulsingHaloLayer.m; sourceTree = "<group>"; };
+		071B210F238CC97200BBFB1B /* AddDeviceVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddDeviceVC.h; sourceTree = "<group>"; };
+		071B2110238CC97200BBFB1B /* AddDeviceVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddDeviceVC.m; sourceTree = "<group>"; };
+		071B211E23981D6600BBFB1B /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		071B212123A0847900BBFB1B /* BLE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLE.h; sourceTree = "<group>"; };
+		071B212223A0847900BBFB1B /* BLE.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLE.m; sourceTree = "<group>"; };
+		071B212323A0847900BBFB1B /* BLEDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEDefines.h; sourceTree = "<group>"; };
 		0746011C20CDDED6006EABE9 /* grand_marnier_700ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grand_marnier_700ml@2x.png"; sourceTree = "<group>"; };
 		0746011D20CDDED6006EABE9 /* greygoose_750ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "greygoose_750ml@2x.png"; sourceTree = "<group>"; };
 		0746011E20CDDEDD006EABE9 /* baileys_750ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "baileys_750ml@2x.png"; sourceTree = "<group>"; };
@@ -408,7 +421,7 @@
 		C4B0F8921DCD2FE6004946B7 /* ManagerMainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagerMainVC.h; sourceTree = "<group>"; };
 		C4B0F8931DCD2FE6004946B7 /* ManagerMainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagerMainVC.m; sourceTree = "<group>"; };
 		C4B0F8951DCD3006004946B7 /* BartenderVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BartenderVC.h; sourceTree = "<group>"; };
-		C4B0F8961DCD3006004946B7 /* BartenderVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BartenderVC.m; sourceTree = "<group>"; };
+		C4B0F8961DCD3006004946B7 /* BartenderVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BartenderVC.m; sourceTree = "<group>"; wrapsLines = 0; };
 		C4B0F8991DCD37F5004946B7 /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.ttf"; sourceTree = "<group>"; };
 		C4B0F89A1DCD37F5004946B7 /* FontAwesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.otf; sourceTree = "<group>"; };
 		C4B0F89F1DCE22EB004946B7 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
@@ -512,6 +525,7 @@
 				C4FAC22E1DF75B85007D6F98 /* MessageUI.framework in Frameworks */,
 				C426F3AA1DD90280009122F2 /* Foundation.framework in Frameworks */,
 				0747237D2065780800913C6F /* Crashlytics.framework in Frameworks */,
+				071B211F23981D6600BBFB1B /* CoreBluetooth.framework in Frameworks */,
 				0747237C2065780800913C6F /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -533,6 +547,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		071B2108238CC13600BBFB1B /* PulsingHalo */ = {
+			isa = PBXGroup;
+			children = (
+				071B210A238CC13700BBFB1B /* PulsingHalo.h */,
+				071B210B238CC13700BBFB1B /* PulsingHaloLayer.h */,
+				071B210C238CC13700BBFB1B /* PulsingHaloLayer.m */,
+			);
+			path = PulsingHalo;
+			sourceTree = "<group>";
+		};
+		071B212023A0847900BBFB1B /* BLE */ = {
+			isa = PBXGroup;
+			children = (
+				071B212123A0847900BBFB1B /* BLE.h */,
+				071B212223A0847900BBFB1B /* BLE.m */,
+				071B212323A0847900BBFB1B /* BLEDefines.h */,
+			);
+			path = BLE;
+			sourceTree = "<group>";
+		};
 		076CD643235B7ED500B5670D /* MoonFont */ = {
 			isa = PBXGroup;
 			children = (
@@ -674,6 +708,7 @@
 		C426F3A81DD90280009122F2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				071B211E23981D6600BBFB1B /* CoreBluetooth.framework */,
 				C4FAC22D1DF75B85007D6F98 /* MessageUI.framework */,
 				C426F3A91DD90280009122F2 /* Foundation.framework */,
 			);
@@ -815,6 +850,8 @@
 				C4035BC51DF033F90009FB9E /* ConfirmVC.m */,
 				0746018620D05C13006EABE9 /* BartenderCommentSendVC.h */,
 				0746018720D05C13006EABE9 /* BartenderCommentSendVC.m */,
+				071B210F238CC97200BBFB1B /* AddDeviceVC.h */,
+				071B2110238CC97200BBFB1B /* AddDeviceVC.m */,
 			);
 			name = Bartender;
 			sourceTree = "<group>";
@@ -925,6 +962,8 @@
 		C4B0F8801DCD103C004946B7 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				071B212023A0847900BBFB1B /* BLE */,
+				071B2108238CC13600BBFB1B /* PulsingHalo */,
 				C419D4851EC4CAAD00F03F40 /* KPDropMenu */,
 				C4B0F89D1DCE22EB004946B7 /* AFNetworking */,
 				C4B0F8981DCD37F5004946B7 /* font */,
@@ -1048,7 +1087,7 @@
 				C434303E1DCCC58C00239E17 /* Sources */,
 				C434303F1DCCC58C00239E17 /* Frameworks */,
 				C43430401DCCC58C00239E17 /* Resources */,
-				074723792065765100913C6F /* ShellScript */,
+				074723792065765100913C6F /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -1273,18 +1312,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		074723792065765100913C6F /* ShellScript */ = {
+		074723792065765100913C6F /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Run Script";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PROJECT_DIR}/Fabric.framework/run\" 4b489c1b01893e51d0495c631b6185d72f9eea76 a396c577a8050f1f6947b7de9b458955ebf75077a690acedd255e4968fb06467";
+			shellScript = "\"${PROJECT_DIR}/Fabric.framework/run\" 4b489c1b01893e51d0495c631b6185d72f9eea76 a396c577a8050f1f6947b7de9b458955ebf75077a690acedd255e4968fb06467\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1332,6 +1372,7 @@
 				C432607E1DDCC7A000195370 /* Inventory.m in Sources */,
 				C4B0F8CE1DCE22EB004946B7 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				C4C626621DE61DF100C0ED0C /* ManagerInventoryVC.m in Sources */,
+				071B212423A0847900BBFB1B /* BLE.m in Sources */,
 				C4DA558C1DD4DB4C0077FBC0 /* CategoryMainVC.m in Sources */,
 				07F540981F9DF5BD004602D6 /* BartenderCommentTVC.m in Sources */,
 				C4DC3B1A1DD22B7800369A36 /* LocationTVC.m in Sources */,
@@ -1357,6 +1398,7 @@
 				C4035BC31DF033DA0009FB9E /* Confirm.m in Sources */,
 				C419D46D1EC2579C00F03F40 /* TodayMovedItemVC.m in Sources */,
 				C4B0F8C31DCE22EB004946B7 /* AFHTTPSessionManager.m in Sources */,
+				071B210E238CC13700BBFB1B /* PulsingHaloLayer.m in Sources */,
 				07DC6D7C20C9FDC00053FB5B /* BartenderCommentTHVC.m in Sources */,
 				07E5E1D620C46A9200B294FC /* User.m in Sources */,
 				C4B84A481DDA078F008E2FAA /* AddItemVC.m in Sources */,
@@ -1368,6 +1410,7 @@
 				CBC5147D1E5621B500FAD1C3 /* StartReportModel.m in Sources */,
 				C419D4881EC4CAAD00F03F40 /* KPDropMenu.m in Sources */,
 				C4C9455B1DEDEFA200A61A14 /* MoveItem.m in Sources */,
+				071B2111238CC97200BBFB1B /* AddDeviceVC.m in Sources */,
 				C4C945641DEE037A00A61A14 /* MovedItemTVC.m in Sources */,
 				C4B0F8D31DCE22EB004946B7 /* UIWebView+AFNetworking.m in Sources */,
 				C4C945611DEDFCB400A61A14 /* MovedItemVC.m in Sources */,
@@ -1549,7 +1592,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 26;
+				CURRENT_PROJECT_VERSION = 31;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 2F9673MCG5;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1581,7 +1624,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 26;
+				CURRENT_PROJECT_VERSION = 31;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 2F9673MCG5;
 				FRAMEWORK_SEARCH_PATHS = (

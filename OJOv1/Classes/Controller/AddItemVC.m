@@ -165,6 +165,8 @@
     [self keyboardHiddenEvent];
 }
 
+#pragma mark - server communication method (save item data at database)
+
 - (IBAction)onCreateItem:(id)sender {
     self.itemName = self.itemNameTextField.text;
     self.categoryStr = self.chooseCategoryButton.titleLabel.text;

@@ -404,8 +404,8 @@
         invModel = (Inventory*) self.inventoryList[i];
         NSString *itemName = @"";
         NSString *openBottleWet = @"";
-        NSString *amount = @"3";
-        NSString *par = @"3";
+        NSString *amount = @"0";
+        NSString *par = @"0";
         NSString *itemPrice = @"";
         
         if (invModel.itemName != nil) itemName = invModel.itemName;
@@ -689,8 +689,6 @@
     
 }
 
-//- (void) tableView:(UITableView *) tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(nonnull NSIndexPath *)indexPath{
-//}
 
 -(NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
     self.selectedRow = indexPath.row;
@@ -744,7 +742,7 @@
     return YES;
 }
 
-#pragma mark - tableview longpress gesture
+#pragma mark - TableView longpress gesturer method (moving items sequence)
 
 
 - (IBAction)longPressGestureRecognized:(id)sender {
@@ -858,9 +856,8 @@
     snapshot.layer.shadowOpacity = 0.4;
     
     return snapshot;
+    
 }
-
-
 
 #pragma mark - search bar delegate method
 
@@ -868,7 +865,7 @@
     NSString *curentStr = sender.text;
     if (![curentStr isEqualToString:@""]) {
         [self.itemSearchTableView setHidden:NO];
-    
+        
         self.isItemFiltered = YES;
         self.itemSearchArray = [[NSMutableArray alloc] init];
         for (Item *item in self.itemArray)

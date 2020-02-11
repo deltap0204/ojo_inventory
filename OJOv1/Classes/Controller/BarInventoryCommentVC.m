@@ -74,17 +74,15 @@
     self.inventoryReportArray = [[NSMutableArray alloc] init];
     self.inventoryReportArray = appDelegate.bartInventoryArray;
     
+    
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     self.location = [userDefaults objectForKey:SEL_LOCATION];
-    
-    
     self.deviceType = [userDefaults objectForKey:DEVICETYPE];
     
     self.invtType = appDelegate.inventoryType;
     self.navigationTopView.backgroundColor = [UIColor colorWithRed:54.0/255.0 green:128.0/255.0 blue:74.0/255.0 alpha:1.0];
     self.inventoriedItems = appDelegate.shiftReport;
     self.inventoryTypeLabel.text = @"";
-    
     
     [self.editView setHidden:YES];
     [self.editButton setHidden:YES];
@@ -167,7 +165,6 @@
     NSString *missingPar = [NSString stringWithFormat:@"%ld", (long)missingParInt];
     priceStr = [[self calcuateSelctedItemValue:inventoryModel withCountFullBottle:self.countFullBottlesTextField.text withWeightOpenBottle:self.weightOpenBottleTextField.text] objectAtIndex:0];
     NSString *servingSold = [[self calcuateSelctedItemValue:inventoryModel withCountFullBottle:self.countFullBottlesTextField.text withWeightOpenBottle:self.weightOpenBottleTextField.text] objectAtIndex:1];
-    
     
     
     shiftReportModel.itemOpen = weightOpenBottle;
@@ -291,11 +288,7 @@
     
 }
 
-
-
-
 #pragma mark - UITableViewDelegate Method
-
 
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -313,7 +306,7 @@
     
     headerCell.locationLabel.text = self.location;
     return headerCell;
-}
+    }
 
 
 
@@ -325,9 +318,9 @@
     inventoriedCell.cellView.layer.borderWidth = 2.0;
     inventoriedCell.cellView.layer.borderColor = [UIColor blackColor].CGColor;
     
-    
     ShiftReportModel *shiftReportModel;
     shiftReportModel = (ShiftReportModel*) self.inventoriedItems[indexPath.row];
+    
  
     if (shiftReportModel.liquidWeight.intValue != 0) {
         
