@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="ipad10_5" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -7105,7 +7105,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3TH-RT-r9k">
                                 <rect key="frame" x="134.5" y="104" width="565" height="565"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bluetooth_logo" translatesAutoresizingMaskIntoConstraints="NO" id="C1c-wA-XsU">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bluetooth_logo" translatesAutoresizingMaskIntoConstraints="NO" id="C1c-wA-XsU">
                                         <rect key="frame" x="248" y="250.5" width="69" height="64"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="69" id="ADx-N3-wOm"/>
@@ -7121,13 +7121,21 @@
                                     <constraint firstAttribute="height" constant="565" id="yUn-IL-pap"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connecting..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zdN-Js-KMV">
+                                <rect key="frame" x="316" y="37" width="202" height="46"/>
+                                <fontDescription key="fontDescription" name="Moon2.0-Regular" family="Moon 2.0" pointSize="38"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="mwI-a5-w8M" firstAttribute="top" secondItem="BC4-sL-pmU" secondAttribute="bottom" constant="35" id="AgG-cV-QsK"/>
                             <constraint firstItem="dKf-zP-kPv" firstAttribute="top" secondItem="aL1-hw-XRD" secondAttribute="bottom" id="BE9-mG-D3h"/>
+                            <constraint firstItem="zdN-Js-KMV" firstAttribute="centerY" secondItem="mwI-a5-w8M" secondAttribute="centerY" id="Bnb-7Z-gah"/>
                             <constraint firstItem="mwI-a5-w8M" firstAttribute="leading" secondItem="Lg0-Ry-EQF" secondAttribute="leading" constant="38" id="OEA-Pb-5Fw"/>
                             <constraint firstItem="3TH-RT-r9k" firstAttribute="centerX" secondItem="Lg0-Ry-EQF" secondAttribute="centerX" id="aKK-9A-twI"/>
+                            <constraint firstItem="zdN-Js-KMV" firstAttribute="centerX" secondItem="3TH-RT-r9k" secondAttribute="centerX" id="hUn-6f-oCL"/>
                             <constraint firstItem="3TH-RT-r9k" firstAttribute="top" secondItem="mwI-a5-w8M" secondAttribute="bottom" constant="19" id="kE4-EE-lnn"/>
                             <constraint firstItem="aL1-hw-XRD" firstAttribute="top" secondItem="3TH-RT-r9k" secondAttribute="bottom" constant="8" id="lTj-LN-tUs"/>
                             <constraint firstItem="aL1-hw-XRD" firstAttribute="leading" secondItem="Lg0-Ry-EQF" secondAttribute="leading" id="sBt-m1-cBu"/>
@@ -7138,12 +7146,14 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="bluetoothLogo" destination="C1c-wA-XsU" id="a06-lY-EBv"/>
+                        <outlet property="containView" destination="3TH-RT-r9k" id="AWh-B7-RfW"/>
                         <outlet property="deviceListTableView" destination="aL1-hw-XRD" id="ZNE-Ye-Fqw"/>
+                        <outlet property="statusLabel" destination="zdN-Js-KMV" id="xQS-d7-jGp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Uw-dD-cXG" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2519" y="-2992"/>
+            <point key="canvasLocation" x="-2519.424460431655" y="-2992.4460431654679"/>
         </scene>
     </scenes>
     <resources>

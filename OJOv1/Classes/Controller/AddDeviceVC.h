@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PulsingHaloLayer.h"
+#import "BLEClient.h"
 
-NS_ASSUME_NONNULL_BEGIN
 
-@interface AddDeviceVC : UIViewController
+@interface AddDeviceVC : UIViewController<BLEDelegate>
 
 @end
 
-NS_ASSUME_NONNULL_END

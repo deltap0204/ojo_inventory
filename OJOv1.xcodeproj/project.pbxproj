@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		070E2EC1245D5D4600B00C13 /* AddDeviceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 071B2110238CC97200BBFB1B /* AddDeviceVC.m */; };
+		070E2EC524630BE300B00C13 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 070E2EC424630BE200B00C13 /* CoreGraphics.framework */; };
+		070E2ECE246484E600B00C13 /* BLEClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 070E2ECD246484E600B00C13 /* BLEClient.m */; };
 		071B210E238CC13700BBFB1B /* PulsingHaloLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 071B210C238CC13700BBFB1B /* PulsingHaloLayer.m */; };
 		071B2111238CC97200BBFB1B /* AddDeviceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 071B2110238CC97200BBFB1B /* AddDeviceVC.m */; };
 		071B211F23981D6600BBFB1B /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 071B211E23981D6600BBFB1B /* CoreBluetooth.framework */; };
-		071B212423A0847900BBFB1B /* BLE.m in Sources */ = {isa = PBXBuildFile; fileRef = 071B212223A0847900BBFB1B /* BLE.m */; };
 		0746015120CDE01A006EABE9 /* grand_marnier_700ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746011C20CDDED6006EABE9 /* grand_marnier_700ml@2x.png */; };
 		0746015220CDE01A006EABE9 /* greygoose_750ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746011D20CDDED6006EABE9 /* greygoose_750ml@2x.png */; };
 		0746015320CDE01A006EABE9 /* baileys_750ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746011E20CDDEDD006EABE9 /* baileys_750ml@2x.png */; };
@@ -223,14 +225,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		070E2EC424630BE200B00C13 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		070E2ECC246484E600B00C13 /* BLEClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BLEClient.h; sourceTree = "<group>"; };
+		070E2ECD246484E600B00C13 /* BLEClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BLEClient.m; sourceTree = "<group>"; };
 		071B210A238CC13700BBFB1B /* PulsingHalo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PulsingHalo.h; sourceTree = "<group>"; };
 		071B210B238CC13700BBFB1B /* PulsingHaloLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PulsingHaloLayer.h; sourceTree = "<group>"; };
 		071B210C238CC13700BBFB1B /* PulsingHaloLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PulsingHaloLayer.m; sourceTree = "<group>"; };
 		071B210F238CC97200BBFB1B /* AddDeviceVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddDeviceVC.h; sourceTree = "<group>"; };
 		071B2110238CC97200BBFB1B /* AddDeviceVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddDeviceVC.m; sourceTree = "<group>"; };
 		071B211E23981D6600BBFB1B /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
-		071B212123A0847900BBFB1B /* BLE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLE.h; sourceTree = "<group>"; };
-		071B212223A0847900BBFB1B /* BLE.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLE.m; sourceTree = "<group>"; };
 		071B212323A0847900BBFB1B /* BLEDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEDefines.h; sourceTree = "<group>"; };
 		0746011C20CDDED6006EABE9 /* grand_marnier_700ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grand_marnier_700ml@2x.png"; sourceTree = "<group>"; };
 		0746011D20CDDED6006EABE9 /* greygoose_750ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "greygoose_750ml@2x.png"; sourceTree = "<group>"; };
@@ -522,6 +525,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				070E2EC524630BE300B00C13 /* CoreGraphics.framework in Frameworks */,
 				C4FAC22E1DF75B85007D6F98 /* MessageUI.framework in Frameworks */,
 				C426F3AA1DD90280009122F2 /* Foundation.framework in Frameworks */,
 				0747237D2065780800913C6F /* Crashlytics.framework in Frameworks */,
@@ -560,9 +564,9 @@
 		071B212023A0847900BBFB1B /* BLE */ = {
 			isa = PBXGroup;
 			children = (
-				071B212123A0847900BBFB1B /* BLE.h */,
-				071B212223A0847900BBFB1B /* BLE.m */,
 				071B212323A0847900BBFB1B /* BLEDefines.h */,
+				070E2ECC246484E600B00C13 /* BLEClient.h */,
+				070E2ECD246484E600B00C13 /* BLEClient.m */,
 			);
 			path = BLE;
 			sourceTree = "<group>";
@@ -708,6 +712,7 @@
 		C426F3A81DD90280009122F2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				070E2EC424630BE200B00C13 /* CoreGraphics.framework */,
 				071B211E23981D6600BBFB1B /* CoreBluetooth.framework */,
 				C4FAC22D1DF75B85007D6F98 /* MessageUI.framework */,
 				C426F3A91DD90280009122F2 /* Foundation.framework */,
@@ -1372,7 +1377,7 @@
 				C432607E1DDCC7A000195370 /* Inventory.m in Sources */,
 				C4B0F8CE1DCE22EB004946B7 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				C4C626621DE61DF100C0ED0C /* ManagerInventoryVC.m in Sources */,
-				071B212423A0847900BBFB1B /* BLE.m in Sources */,
+				070E2ECE246484E600B00C13 /* BLEClient.m in Sources */,
 				C4DA558C1DD4DB4C0077FBC0 /* CategoryMainVC.m in Sources */,
 				07F540981F9DF5BD004602D6 /* BartenderCommentTVC.m in Sources */,
 				C4DC3B1A1DD22B7800369A36 /* LocationTVC.m in Sources */,
@@ -1432,6 +1437,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				070E2EC1245D5D4600B00C13 /* AddDeviceVC.m in Sources */,
 				C434306B1DCCC58C00239E17 /* OJOv1UITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1592,7 +1598,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 31;
+				CURRENT_PROJECT_VERSION = 32;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 2F9673MCG5;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1624,7 +1630,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 31;
+				CURRENT_PROJECT_VERSION = 32;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 2F9673MCG5;
 				FRAMEWORK_SEARCH_PATHS = (

@@ -1,5 +1,12 @@
 //
 //  PulsingHaloLayer.m
+//  https://github.com/shu223/PulsingHalo
+//
+//  Created by shuichi on 12/5/13.
+//  Copyright (c) 2013 Shuichi Tsutsumi. All rights reserved.
+//
+//  Inspired by https://github.com/samvermette/SVPulsingAnnotationView
+
 
 #import "PulsingHaloLayer.h"
 
@@ -74,6 +81,7 @@
 - (void)start {
     [self _setupAnimationGroup];
     [self.effect addAnimation:self.animationGroup forKey:@"pulse"];
+    NSLog(@"anim did set");
 }
 
 - (void)setFrame:(CGRect)frame {
@@ -185,11 +193,16 @@
 #pragma mark - CAAnimationDelegate
 
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag {
-    if ([self.effect.animationKeys count]) {
-        [self.effect removeAllAnimations];
-    }
-    [self.effect removeFromSuperlayer];
-    [self removeFromSuperlayer];
+//    if ([self.effect.animationKeys count]) {
+//        [self.effect removeAllAnimations];
+//    }
+//    [self.effect removeFromSuperlayer];
+//    [self removeFromSuperlayer];
 }
-
+- (void)animationDidStart:(CAAnimation *)anim {
+    if (self.effect.animationKeys == nil) {
+        [self.effect addAnimation:self.animationGroup forKey:@"pulse"];
+    }
+    NSLog(@"anim started");
+}
 @end
