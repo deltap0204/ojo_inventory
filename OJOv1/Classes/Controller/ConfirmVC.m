@@ -21,6 +21,7 @@
 @property (strong, nonatomic) NSString *deviceType;
 @property (strong, nonatomic) AppDelegate *appDelegate;
 @property (strong, nonatomic) NSMutableArray  *setIndexPathArray;
+@property (strong, nonatomic) NSMutableArray *viewChanged;
 
 @end
 
@@ -39,8 +40,16 @@
     // Array Init
     self.confirmArray = [[NSMutableArray alloc] init];
     self.setIndexPathArray = [[NSMutableArray alloc] init];
+
     self.appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     self.confirmArray = self.appDelegate.unreadReceivedItemArray;
+    
+    NSArray *array = @[@"0", @"0"];
+    
+    self.viewChanged = [[NSMutableArray alloc] init];
+    for (int i = 0; i < self.confirmArray.count; i++) {
+        [self.viewChanged addObject:array];
+    }
     
     
     // UITableView
@@ -96,8 +105,14 @@
         confirmCell.receiver.text = @"";
     }
     
-    [confirmCell acceptState];
-    [confirmCell rejectState];
+    NSArray *array = self.viewChanged[indexPath.row];
+    if ([array[0] isEqualToString:@"0"]) [confirmCell acceptState];
+    else [confirmCell acceptedState];
+    
+    
+    if ([array[1] isEqualToString:@"0"]) [confirmCell rejectState];
+    else [confirmCell rejectedState];
+    
     
     [confirmCell.acceptButton addTarget:self action:@selector(acceptAction:) forControlEvents:UIControlEventTouchUpInside];
     [confirmCell.rejectButton addTarget:self action:@selector(rejectAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -201,6 +216,8 @@
                           
                           [self.setIndexPathArray addObject:indexPath];
                           [cell acceptedState];
+                          NSArray *array = @[@"1", @"0"];
+                          [self.viewChanged replaceObjectAtIndex:indexPath.row withObject:array];
                           
                       });
                   } else{
@@ -256,15 +273,16 @@
                           [self.setIndexPathArray addObject:indexPath];
                           [cell rejectedState];
                           
+                          NSArray *array = @[@"0", @"1"];
+                          [self.viewChanged replaceObjectAtIndex:indexPath.row withObject:array];
+                          
                       });
                   } else{
                       dispatch_async(dispatch_get_main_queue(), ^{
                           [hud hide:YES];
                           [self.view makeToast:[dicData objectForKey:MESSAGE] duration:1.5 position:CSToastPositionCenter];
                       });
-                      
                   }
-                  
               }
                 andFailBlock:^(NSError *error) {
                     [hud hide:YES];
