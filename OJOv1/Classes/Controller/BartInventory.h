@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BLEClient.h"
 
-@interface BartInventory : UIViewController<UITextViewDelegate, UITextFieldDelegate>
+@interface BartInventory : UIViewController<UITextViewDelegate, UITextFieldDelegate, BLEDelegate, CBPeripheralDelegate>
 
 @end

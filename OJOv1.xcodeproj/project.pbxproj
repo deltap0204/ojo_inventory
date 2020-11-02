@@ -12,7 +12,6 @@
 		070E2ECE246484E600B00C13 /* BLEClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 070E2ECD246484E600B00C13 /* BLEClient.m */; };
 		071B210E238CC13700BBFB1B /* PulsingHaloLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 071B210C238CC13700BBFB1B /* PulsingHaloLayer.m */; };
 		071B2111238CC97200BBFB1B /* AddDeviceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 071B2110238CC97200BBFB1B /* AddDeviceVC.m */; };
-		071B211F23981D6600BBFB1B /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 071B211E23981D6600BBFB1B /* CoreBluetooth.framework */; };
 		0746015120CDE01A006EABE9 /* grand_marnier_700ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746011C20CDDED6006EABE9 /* grand_marnier_700ml@2x.png */; };
 		0746015220CDE01A006EABE9 /* greygoose_750ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746011D20CDDED6006EABE9 /* greygoose_750ml@2x.png */; };
 		0746015320CDE01A006EABE9 /* baileys_750ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746011E20CDDEDD006EABE9 /* baileys_750ml@2x.png */; };
@@ -66,7 +65,6 @@
 		0746018820D05C14006EABE9 /* BartenderCommentSendVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0746018720D05C13006EABE9 /* BartenderCommentSendVC.m */; };
 		0746018A20D2A647006EABE9 /* coming_soon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746018920D2A647006EABE9 /* coming_soon@2x.png */; };
 		0747237C2065780800913C6F /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0747237A206577FA00913C6F /* Fabric.framework */; };
-		0747237D2065780800913C6F /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0747237B2065780800913C6F /* Crashlytics.framework */; };
 		076CD647235B7ED500B5670D /* Moon-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 076CD644235B7ED500B5670D /* Moon-Bold.otf */; };
 		076CD648235B7ED500B5670D /* Moon-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 076CD645235B7ED500B5670D /* Moon-Light.otf */; };
 		076CD649235B7ED500B5670D /* Moon_Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 076CD646235B7ED500B5670D /* Moon_Regular.otf */; };
@@ -205,6 +203,8 @@
 		C4FAC2311DFA2833007D6F98 /* InventoryReport.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FAC2301DFA2833007D6F98 /* InventoryReport.m */; };
 		CBC5147A1E56218D00FAD1C3 /* ShiftReportModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC514791E56218D00FAD1C3 /* ShiftReportModel.m */; };
 		CBC5147D1E5621B500FAD1C3 /* StartReportModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC5147C1E5621B500FAD1C3 /* StartReportModel.m */; };
+		D90086FE254F1320008EAFAF /* BLEDeviceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D90086FD254F1320008EAFAF /* BLEDeviceModel.m */; };
+		D9D81872254B2C3100312385 /* DeviceTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D9D81871254B2C3100312385 /* DeviceTVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -290,7 +290,6 @@
 		0746018920D2A647006EABE9 /* coming_soon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coming_soon@2x.png"; sourceTree = "<group>"; };
 		0746018B20D2B872006EABE9 /* OJOv1-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OJOv1-Prefix.pch"; sourceTree = "<group>"; };
 		0747237A206577FA00913C6F /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
-		0747237B2065780800913C6F /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		076CD644235B7ED500B5670D /* Moon-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Moon-Bold.otf"; sourceTree = "<group>"; };
 		076CD645235B7ED500B5670D /* Moon-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Moon-Light.otf"; sourceTree = "<group>"; };
 		076CD646235B7ED500B5670D /* Moon_Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Moon_Regular.otf; sourceTree = "<group>"; };
@@ -518,6 +517,10 @@
 		CBC514791E56218D00FAD1C3 /* ShiftReportModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShiftReportModel.m; sourceTree = "<group>"; };
 		CBC5147B1E5621B500FAD1C3 /* StartReportModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartReportModel.h; sourceTree = "<group>"; };
 		CBC5147C1E5621B500FAD1C3 /* StartReportModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartReportModel.m; sourceTree = "<group>"; };
+		D90086FC254F1320008EAFAF /* BLEDeviceModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BLEDeviceModel.h; sourceTree = "<group>"; };
+		D90086FD254F1320008EAFAF /* BLEDeviceModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BLEDeviceModel.m; sourceTree = "<group>"; };
+		D9D81870254B2C3100312385 /* DeviceTVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceTVC.h; sourceTree = "<group>"; };
+		D9D81871254B2C3100312385 /* DeviceTVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceTVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -528,8 +531,6 @@
 				070E2EC524630BE300B00C13 /* CoreGraphics.framework in Frameworks */,
 				C4FAC22E1DF75B85007D6F98 /* MessageUI.framework in Frameworks */,
 				C426F3AA1DD90280009122F2 /* Foundation.framework in Frameworks */,
-				0747237D2065780800913C6F /* Crashlytics.framework in Frameworks */,
-				071B211F23981D6600BBFB1B /* CoreBluetooth.framework in Frameworks */,
 				0747237C2065780800913C6F /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -723,7 +724,6 @@
 		C43430391DCCC58C00239E17 = {
 			isa = PBXGroup;
 			children = (
-				0747237B2065780800913C6F /* Crashlytics.framework */,
 				0747237A206577FA00913C6F /* Fabric.framework */,
 				C43430441DCCC58C00239E17 /* OJOv1 */,
 				C434305E1DCCC58C00239E17 /* OJOv1Tests */,
@@ -914,6 +914,8 @@
 				C42CDBF21F48EFA600A6E225 /* RefillItem.m */,
 				07F540931F9DF59E004602D6 /* BartenderCommentModel.h */,
 				07F540941F9DF59E004602D6 /* BartenderCommentModel.m */,
+				D90086FC254F1320008EAFAF /* BLEDeviceModel.h */,
+				D90086FD254F1320008EAFAF /* BLEDeviceModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -960,6 +962,8 @@
 				07F540971F9DF5BD004602D6 /* BartenderCommentTVC.m */,
 				07DC6D7A20C9FDC00053FB5B /* BartenderCommentTHVC.h */,
 				07DC6D7B20C9FDC00053FB5B /* BartenderCommentTHVC.m */,
+				D9D81870254B2C3100312385 /* DeviceTVC.h */,
+				D9D81871254B2C3100312385 /* DeviceTVC.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1150,7 +1154,7 @@
 				TargetAttributes = {
 					C43430411DCCC58C00239E17 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 2F9673MCG5;
+						DevelopmentTeam = 877DP9C4TC;
 						LastSwiftMigration = 0930;
 						ProvisioningStyle = Automatic;
 					};
@@ -1361,6 +1365,7 @@
 				C449404B1DE8A2B300DDAA04 /* StockRefillVC.m in Sources */,
 				C4C626651DE629E600C0ED0C /* ManagerInventoryTVC.m in Sources */,
 				C42ED5CF1DE0E3340072BC1D /* BarInventoryCommentVC.m in Sources */,
+				D90086FE254F1320008EAFAF /* BLEDeviceModel.m in Sources */,
 				C4B0F8CB1DCE22EB004946B7 /* AFAutoPurgingImageCache.m in Sources */,
 				C4B0F8E21DCFBBC1004946B7 /* UserMainVC.m in Sources */,
 				C441258F1DEA73AA00AD6F73 /* AddedItemListVC.m in Sources */,
@@ -1368,6 +1373,7 @@
 				C40D6BC11E11619D00373224 /* FRDLivelyButton.m in Sources */,
 				C452DB9D1E02F808002F3C9F /* aloneItemNameTVC.m in Sources */,
 				C4B0F8CD1DCE22EB004946B7 /* AFNetworkActivityIndicatorManager.m in Sources */,
+				D9D81872254B2C3100312385 /* DeviceTVC.m in Sources */,
 				C43A03851DDBB9A7003AF4AF /* InventoryListVC.m in Sources */,
 				C432607B1DDCB08B00195370 /* InventoryCreateVC.m in Sources */,
 				C44940481DE7A71E00DDAA04 /* ManagerInventoryCommentVC.m in Sources */,
@@ -1598,9 +1604,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 35;
+				CURRENT_PROJECT_VERSION = 0;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 2F9673MCG5;
+				DEVELOPMENT_TEAM = 877DP9C4TC;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1610,6 +1616,7 @@
 				INFOPLIST_FILE = OJOv1/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.9.8;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.inventory.OJOv1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1630,9 +1637,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 35;
+				CURRENT_PROJECT_VERSION = 0;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 2F9673MCG5;
+				DEVELOPMENT_TEAM = 877DP9C4TC;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1642,6 +1649,7 @@
 				INFOPLIST_FILE = OJOv1/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.9.8;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.inventory.OJOv1;
 				PRODUCT_NAME = "$(TARGET_NAME)";

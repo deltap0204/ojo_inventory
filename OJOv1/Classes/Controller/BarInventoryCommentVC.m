@@ -51,7 +51,6 @@
 @property (strong, nonatomic) NSString *previousItemPrice;
 
 
-
 @end
 
 @implementation BarInventoryCommentVC
@@ -89,7 +88,6 @@
     [self.cancelButton setHidden:YES];
     
     self.userRealNameLabel.text = [LoginVC getLoggedinUser].name;
-    
     
 }
 
@@ -287,6 +285,8 @@
     return valueArray;
     
 }
+
+
 
 #pragma mark - UITableViewDelegate Method
 

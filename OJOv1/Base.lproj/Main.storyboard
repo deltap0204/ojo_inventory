@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="ipad10_5" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -63,7 +63,7 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="cGK-U5-mnU"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7BF-og-0co">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7BF-og-0co">
                                 <rect key="frame" x="100" y="427" width="634" height="83.5"/>
                                 <color key="backgroundColor" red="0.21176470589999999" green="0.50196078430000002" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -166,7 +166,7 @@
                                     <constraint firstAttribute="width" secondItem="5bX-ek-T7Q" secondAttribute="height" multiplier="768:500" id="7GC-AV-PPo"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fle-tJ-0Pp">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fle-tJ-0Pp">
                                 <rect key="frame" x="104.5" y="603" width="625.5" height="83.5"/>
                                 <color key="backgroundColor" red="0.21176470589999999" green="0.50196078430000002" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -181,7 +181,7 @@
                                     <segue destination="M1f-Yy-uWg" kind="showDetail" identifier="" id="IF0-2J-9YL"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VJ4-Z3-xxD">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VJ4-Z3-xxD">
                                 <rect key="frame" x="104.5" y="716.5" width="625.5" height="83.5"/>
                                 <color key="backgroundColor" red="0.21176470589999999" green="0.50196078430000002" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Moon2.0-Regular" family="Moon 2.0" pointSize="17"/>
@@ -193,7 +193,7 @@
                                     <segue destination="yym-1F-zqv" kind="showDetail" id="Duh-cW-2fg"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wZu-KG-bI6">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wZu-KG-bI6">
                                 <rect key="frame" x="104.5" y="830" width="625.5" height="83"/>
                                 <color key="backgroundColor" red="0.21176470589999999" green="0.50196078430000002" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Moon2.0-Regular" family="Moon 2.0" pointSize="17"/>
@@ -205,7 +205,7 @@
                                     <segue destination="1mr-Yd-gxE" kind="show" id="apO-hM-qp0"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eet-ao-5v6">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eet-ao-5v6">
                                 <rect key="frame" x="104.5" y="943" width="625.5" height="83.5"/>
                                 <color key="backgroundColor" red="0.21176470589999999" green="0.50196078430000002" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Moon2.0-Regular" family="Moon 2.0" pointSize="17"/>
@@ -229,7 +229,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gq0-7v-kJ7">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gq0-7v-kJ7">
                                         <rect key="frame" x="20" y="16.5" width="77.5" height="77.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Gq0-7v-kJ7" secondAttribute="height" multiplier="1:1" id="hP3-hD-drW"/>
@@ -239,7 +239,7 @@
                                             <action selector="onLogout:" destination="lKL-8h-hvg" eventType="touchUpInside" id="VPD-K9-vOo"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfP-n6-cU4">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfP-n6-cU4">
                                         <rect key="frame" x="737.5" y="16.5" width="77.5" height="77.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                         <connections>
@@ -297,7 +297,7 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fGC-Ur-Zj8">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fGC-Ur-Zj8">
                                                 <rect key="frame" x="87.5" y="575" width="409" height="56"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <state key="normal" title="CHANGE">
@@ -503,7 +503,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DiH-9b-cGJ">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DiH-9b-cGJ">
                                         <rect key="frame" x="726.5" y="31.5" width="77.5" height="77.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="DiH-9b-cGJ" secondAttribute="height" multiplier="1:1" id="zDc-Wl-cz0"/>
@@ -513,7 +513,7 @@
                                             <action selector="onAddUser:" destination="M1f-Yy-uWg" eventType="touchUpInside" id="Lub-Yt-rYF"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GOY-b2-ZpB">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GOY-b2-ZpB">
                                         <rect key="frame" x="30" y="31.5" width="77.5" height="77.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="GOY-b2-ZpB" secondAttribute="height" multiplier="1:1" id="f9c-Fl-ReC"/>
@@ -760,7 +760,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BHP-cj-H67">
                                 <rect key="frame" x="0.0" y="-20" width="834" height="111"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ptf-y7-sbU">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ptf-y7-sbU">
                                         <rect key="frame" x="30" y="16.5" width="77.5" height="77.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="ptf-y7-sbU" secondAttribute="height" multiplier="1:1" id="SQQ-1d-I0d"/>
@@ -832,7 +832,7 @@
                                     <action selector="onRole:" destination="EGb-yk-dUA" eventType="valueChanged" id="JM2-DD-Zp1"/>
                                 </connections>
                             </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8o-xz-gao">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8o-xz-gao">
                                 <rect key="frame" x="104.5" y="871.5" width="625.5" height="76"/>
                                 <color key="backgroundColor" red="0.4512019753" green="0.62356227639999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Moon2.0-Regular" family="Moon 2.0" pointSize="20"/>
@@ -843,7 +843,7 @@
                                     <action selector="onCreate:" destination="EGb-yk-dUA" eventType="touchUpInside" id="MQO-BZ-eu5"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bs1-YU-LGw">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bs1-YU-LGw">
                                 <rect key="frame" x="104.5" y="745" width="625.5" height="76.5"/>
                                 <color key="backgroundColor" red="0.45098039220000002" green="0.62352941179999999" blue="1" alpha="0.55494541949999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Moon2.0-Regular" family="Moon 2.0" pointSize="20"/>
@@ -865,7 +865,7 @@
                                             <outlet property="delegate" destination="EGb-yk-dUA" id="JMr-ac-SlA"/>
                                         </connections>
                                     </pickerView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r7s-FV-RCY">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r7s-FV-RCY">
                                         <rect key="frame" x="762" y="798.5" width="52" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="HZd-jd-SYG"/>
@@ -1001,7 +1001,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wbC-6m-H1g">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wbC-6m-H1g">
                                         <rect key="frame" x="726.5" y="16.5" width="77.5" height="77.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="wbC-6m-H1g" secondAttribute="height" multiplier="1:1" id="ENH-Hn-kl6"/>
@@ -1011,7 +1011,7 @@
                                             <action selector="onAddCategory:" destination="1mr-Yd-gxE" eventType="touchUpInside" id="LUC-3p-Wrc"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xjg-3a-3mt">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xjg-3a-3mt">
                                         <rect key="frame" x="30" y="16.5" width="77.5" height="77.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Xjg-3a-3mt" secondAttribute="height" multiplier="1:1" id="wDQ-WG-u6Q"/>
@@ -1306,7 +1306,7 @@
                                                     <constraint firstAttribute="height" constant="60" id="Ke0-Hi-dgj"/>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C8d-AT-7ow">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C8d-AT-7ow">
                                                 <rect key="frame" x="22" y="21" width="67" height="67"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -1324,7 +1324,7 @@
                                                     <constraint firstAttribute="height" constant="60" id="hHl-hD-3WU"/>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RaK-9f-Jvx">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RaK-9f-Jvx">
                                                 <rect key="frame" x="111" y="21" width="67" height="67"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -1341,7 +1341,7 @@
                                                     <constraint firstAttribute="height" constant="60" id="oxu-Gh-Mje"/>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jll-g9-gNS">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jll-g9-gNS">
                                                 <rect key="frame" x="200" y="21" width="67" height="67"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -1358,7 +1358,7 @@
                                                     <constraint firstAttribute="height" constant="60" id="cj4-6l-qn9"/>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ax4-qY-PcG">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ax4-qY-PcG">
                                                 <rect key="frame" x="289" y="21" width="67" height="67"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -1375,7 +1375,7 @@
                                                     <constraint firstAttribute="height" constant="60" id="S5S-Ot-sCl"/>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="28m-Uk-os6">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="28m-Uk-os6">
                                                 <rect key="frame" x="378" y="21" width="67" height="67"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -1430,7 +1430,7 @@
                                             <constraint firstItem="Jll-g9-gNS" firstAttribute="leading" secondItem="ltA-Ma-3HY" secondAttribute="trailing" id="zXn-6P-FmU"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mf5-7p-GGF">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mf5-7p-GGF">
                                         <rect key="frame" x="100" y="475.5" width="467" height="54.5"/>
                                         <fontDescription key="fontDescription" name="Moon2.0-Regular" family="Moon 2.0" pointSize="20"/>
                                         <state key="normal" title="ADD">
@@ -1440,7 +1440,7 @@
                                             <action selector="onAddViewCategory:" destination="1mr-Yd-gxE" eventType="touchUpInside" id="Rdj-TM-xUI"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CUm-0A-I8p">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CUm-0A-I8p">
                                         <rect key="frame" x="608.5" y="15" width="43.5" height="54.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
@@ -1624,7 +1624,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ECg-4u-cmQ">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ECg-4u-cmQ">
                                         <rect key="frame" x="726.5" y="16.5" width="77.5" height="77.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="ECg-4u-cmQ" secondAttribute="height" multiplier="1:1" id="J0R-GG-E88"/>
@@ -1635,7 +1635,7 @@
                                             <segue destination="2cx-jb-GvE" kind="show" id="ZqH-mw-SkZ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ggW-sO-vyg">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ggW-sO-vyg">
                                         <rect key="frame" x="30" y="16.5" width="77.5" height="77.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="ggW-sO-vyg" secondAttribute="height" multiplier="1:1" id="qVm-CX-oyX"/>
@@ -1966,7 +1966,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8pL-kw-KJ7">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8pL-kw-KJ7">
                                         <rect key="frame" x="30" y="16.5" width="77.5" height="77.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="8pL-kw-KJ7" secondAttribute="height" multiplier="1:1" id="Syl-93-g0z"/>
@@ -1996,7 +1996,7 @@
                                 <fontDescription key="fontDescription" name="Moon2.0-Regular" family="Moon 2.0" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5fl-lQ-Tl2">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5fl-lQ-Tl2">
                                 <rect key="frame" x="104.5" y="292" width="625.5" height="76"/>
                                 <color key="backgroundColor" red="0.45098039220000002" green="0.62352941179999999" blue="1" alpha="0.55494541949999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Moon2.0-Regular" family="Moon 2.0" pointSize="17"/>
@@ -2055,7 +2055,7 @@
                                 <fontDescription key="fontDescription" name="Moon2.0-Regular" family="Moon 2.0" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vfl-9g-abU">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vfl-9g-abU">
                                 <rect key="frame" x="104.5" y="781" width="625.5" height="76"/>
                                 <color key="backgroundColor" red="0.4512019753" green="0.62356227639999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <gestureRecognizers/>
@@ -2078,7 +2078,7 @@
                                             <outlet property="delegate" destination="2cx-jb-GvE" id="UzG-q3-Pgz"/>
                                         </connections>
                                     </pickerView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yt3-4Q-U8u">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yt3-4Q-U8u">
                                         <rect key="frame" x="719" y="788.5" width="105" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="Jo0-nf-qF8"/>
@@ -2217,14 +2217,14 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IMH-ys-eGS">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IMH-ys-eGS">
                                         <rect key="frame" x="726.5" y="16.5" width="77.5" height="77.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="IMH-ys-eGS" secondAttribute="height" multiplier="1:1" id="KC9-vo-1rD"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PFu-EN-dKa">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PFu-EN-dKa">
                                         <rect key="frame" x="30" y="16.5" width="77.5" height="77.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="PFu-EN-dKa" secondAttribute="height" multiplier="1:1" id="NAO-BR-kIl"/>
@@ -2368,7 +2368,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xUV-Dk-TlU">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xUV-Dk-TlU">
                                         <rect key="frame" x="15" y="22" width="66.5" height="66.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="xUV-Dk-TlU" secondAttribute="height" multiplier="1:1" id="Kvz-g3-ZRm"/>
@@ -2645,7 +2645,7 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="additionalBack" translatesAutoresizingMaskIntoConstraints="NO" id="2Qe-oj-mGY">
                                         <rect key="frame" x="0.0" y="0.0" width="834" height="180"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rby-R4-ESW">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rby-R4-ESW">
                                         <rect key="frame" x="125" y="10" width="584" height="78"/>
                                         <color key="backgroundColor" red="0.4512019753" green="0.62356227639999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -2659,7 +2659,7 @@
                                             <action selector="onSetSequence:" destination="NPD-p9-2Qt" eventType="touchUpInside" id="4Sd-Ii-phi"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZC2-Wy-TkN">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZC2-Wy-TkN">
                                         <rect key="frame" x="125" y="98" width="584" height="77.5"/>
                                         <color key="backgroundColor" red="0.4512019753" green="0.62356227639999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -2689,7 +2689,7 @@
                                     <constraint firstItem="Rby-R4-ESW" firstAttribute="width" secondItem="VbT-jO-Swk" secondAttribute="width" multiplier="0.7" id="ysD-9X-hp0"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pzg-M4-qsE" customClass="FRDLivelyButton">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pzg-M4-qsE" customClass="FRDLivelyButton">
                                 <rect key="frame" x="680" y="820" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -2739,7 +2739,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c4Z-oG-HeU">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c4Z-oG-HeU">
                                                 <rect key="frame" x="87.5" y="435.5" width="409" height="55.5"/>
                                                 <fontDescription key="fontDescription" name="Moon2.0-Regular" family="Moon 2.0" pointSize="17"/>
                                                 <state key="normal" title="ADD">
@@ -2761,7 +2761,7 @@
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chivas" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1po-5X-p8B">
-                                                                    <rect key="frame" x="15" y="0.0" width="379" height="44"/>
+                                                                    <rect key="frame" x="16" y="0.0" width="377" height="44"/>
                                                                     <fontDescription key="fontDescription" name="Moon2.0-Regular" family="Moon 2.0" pointSize="20"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -2930,7 +2930,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wy2-kj-75S">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wy2-kj-75S">
                                         <rect key="frame" x="30" y="16.5" width="77.5" height="77.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="wy2-kj-75S" secondAttribute="height" multiplier="1:1" id="tOD-6X-yDg"/>
@@ -2966,7 +2966,7 @@
                                 <fontDescription key="fontDescription" name="Moon2.0-Regular" family="Moon 2.0" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6tm-cE-xJ2">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6tm-cE-xJ2">
                                 <rect key="frame" x="104.5" y="675" width="625.5" height="76.5"/>
                                 <color key="backgroundColor" red="0.21176470589999999" green="0.50196078430000002" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Moon2.0-Regular" family="Moon 2.0" pointSize="20"/>
@@ -3101,13 +3101,13 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kna-r1-HX1">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kna-r1-HX1">
                                         <rect key="frame" x="10" y="32.5" width="49" height="49"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Kna-r1-HX1" secondAttribute="height" multiplier="1:1" id="ayu-57-4mh"/>
                                         </constraints>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ijB-Tl-qNZ">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ijB-Tl-qNZ">
                                         <rect key="frame" x="775" y="32.5" width="49" height="49"/>
                                     </button>
                                 </subviews>
@@ -3210,7 +3210,7 @@
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nM4-Fb-Vws">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nM4-Fb-Vws">
                                                             <rect key="frame" x="39" y="108" width="292" height="36"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="nM4-Fb-Vws" secondAttribute="height" multiplier="105:13" id="gof-iY-iXm"/>
@@ -3220,7 +3220,7 @@
                                                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             </state>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uh5-e9-b0H">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uh5-e9-b0H">
                                                             <rect key="frame" x="506" y="108" width="292" height="36"/>
                                                             <fontDescription key="fontDescription" name="Moon2.0-Regular" family="Moon 2.0" pointSize="17"/>
                                                             <state key="normal" title="REJECT">
@@ -3335,7 +3335,7 @@
                                     <outlet property="delegate" destination="CoS-Qg-SDb" id="HRJ-TS-bK0"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XIB-TZ-6gY">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XIB-TZ-6gY">
                                 <rect key="frame" x="0.0" y="1014.5" width="834" height="97.5"/>
                                 <color key="backgroundColor" red="0.21176470589999999" green="0.50196078430000002" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -3398,7 +3398,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ihH-V6-TRB">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ihH-V6-TRB">
                                 <rect key="frame" x="38" y="35" width="182" height="50"/>
                                 <color key="backgroundColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -3431,7 +3431,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iBL-kJ-xoR">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iBL-kJ-xoR">
                                 <rect key="frame" x="0.0" y="382" width="834" height="74"/>
                                 <color key="backgroundColor" red="0.21176470589999999" green="0.50196078430000002" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -3470,7 +3470,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q2s-0i-ENe">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q2s-0i-ENe">
                                 <rect key="frame" x="614" y="35" width="182" height="50"/>
                                 <color key="backgroundColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Moon2.0-Regular" family="Moon 2.0" pointSize="24"/>
@@ -3536,7 +3536,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dUq-Mf-rnA">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dUq-Mf-rnA">
                                 <rect key="frame" x="626" y="51" width="133" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Moon2.0-Regular" family="Moon 2.0" pointSize="24"/>
@@ -3630,7 +3630,7 @@
                                     <outlet property="delegate" destination="Sa1-Bz-2UI" id="R7s-WR-j5i"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="40J-P6-OLr">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="40J-P6-OLr">
                                 <rect key="frame" x="513" y="314" width="203" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
@@ -3641,7 +3641,7 @@
                                 <rect key="frame" x="347" y="393" width="364" height="271"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7fg-6h-Cw6">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7fg-6h-Cw6">
                                         <rect key="frame" x="0.0" y="0.0" width="84" height="84"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="36"/>
@@ -3652,7 +3652,7 @@
                                             <action selector="onNumberAction:" destination="Sa1-Bz-2UI" eventType="touchUpInside" id="whO-w0-Wvq"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pOy-SX-M47">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pOy-SX-M47">
                                         <rect key="frame" x="93" y="0.0" width="84" height="84"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="36"/>
@@ -3663,7 +3663,7 @@
                                             <action selector="onNumberAction:" destination="Sa1-Bz-2UI" eventType="touchUpInside" id="BHi-qD-0CR"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oph-3U-Mfk">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oph-3U-Mfk">
                                         <rect key="frame" x="186" y="0.0" width="84" height="84"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="36"/>
@@ -3674,7 +3674,7 @@
                                             <action selector="onNumberAction:" destination="Sa1-Bz-2UI" eventType="touchUpInside" id="ZYd-iQ-V8i"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Cl-XJ-9mX">
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Cl-XJ-9mX">
                                         <rect key="frame" x="0.0" y="93" width="84" height="84"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="36"/>
@@ -3685,7 +3685,7 @@
                                             <action selector="onNumberAction:" destination="Sa1-Bz-2UI" eventType="touchUpInside" id="xhI-fK-DRC"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qa2-n1-Ae0">
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qa2-n1-Ae0">
                                         <rect key="frame" x="93" y="93" width="84" height="84"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="36"/>
@@ -3696,7 +3696,7 @@
                                             <action selector="onNumberAction:" destination="Sa1-Bz-2UI" eventType="touchUpInside" id="1ts-D6-PXt"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lYu-V5-phr">
+                                    <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lYu-V5-phr">
                                         <rect key="frame" x="186" y="93" width="84" height="84"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="36"/>
@@ -3707,7 +3707,7 @@
                                             <action selector="onNumberAction:" destination="Sa1-Bz-2UI" eventType="touchUpInside" id="Msc-Yj-Mc1"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j4A-P9-UZb">
+                                    <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j4A-P9-UZb">
                                         <rect key="frame" x="0.0" y="186" width="84" height="84"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="36"/>
@@ -3718,7 +3718,7 @@
                                             <action selector="onNumberAction:" destination="Sa1-Bz-2UI" eventType="touchUpInside" id="Glk-6w-lNB"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oG6-FD-KBt">
+                                    <button opaque="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oG6-FD-KBt">
                                         <rect key="frame" x="93" y="186" width="84" height="84"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="36"/>
@@ -3729,7 +3729,7 @@
                                             <action selector="onNumberAction:" destination="Sa1-Bz-2UI" eventType="touchUpInside" id="cWA-na-ZId"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="9" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ISz-Id-UI9">
+                                    <button opaque="NO" tag="9" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ISz-Id-UI9">
                                         <rect key="frame" x="186" y="186" width="84" height="84"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="36"/>
@@ -3740,7 +3740,7 @@
                                             <action selector="onNumberAction:" destination="Sa1-Bz-2UI" eventType="touchUpInside" id="R2I-RI-Eg1"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xiV-pU-Cxm">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xiV-pU-Cxm">
                                         <rect key="frame" x="279" y="93" width="84" height="84"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="36"/>
@@ -3791,7 +3791,7 @@
                                         <color key="textColor" red="0.56862745098039214" green="0.84705882352941175" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RNg-eP-0Kr">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RNg-eP-0Kr">
                                         <rect key="frame" x="0.0" y="0.0" width="236" height="150"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
@@ -3808,7 +3808,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wvS-OP-SZc">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wvS-OP-SZc">
                                 <rect key="frame" x="513" y="715" width="203" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Moon2.0-Regular" family="Moon 2.0" pointSize="17"/>
@@ -3893,7 +3893,7 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gp3-bj-i3a">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gp3-bj-i3a">
                                                 <rect key="frame" x="24" y="43" width="133" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="133" id="1HL-Ba-IxJ"/>
@@ -3907,7 +3907,7 @@
                                                     <action selector="onCancelAction:" destination="B4e-ve-jow" eventType="touchUpInside" id="lhN-kX-iYf"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KC9-S6-8Zs">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KC9-S6-8Zs">
                                                 <rect key="frame" x="677" y="43" width="133" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="o9R-ht-nd5"/>
@@ -3995,19 +3995,19 @@
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6B2-Nq-Nhf">
                                                                     <rect key="frame" x="17" y="0.0" width="584" height="100"/>
                                                                     <fontDescription key="fontDescription" name="Moon2.0-Regular" family="Moon 2.0" pointSize="35"/>
-                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <color key="textColor" systemColor="darkTextColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FULL : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="avJ-5h-xmx">
                                                                     <rect key="frame" x="667" y="0.0" width="167" height="50"/>
                                                                     <fontDescription key="fontDescription" name="Moon2.0-Regular" family="Moon 2.0" pointSize="24"/>
-                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <color key="textColor" systemColor="darkTextColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OPEN : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4eD-zY-Vyi">
                                                                     <rect key="frame" x="667" y="50" width="167" height="50"/>
                                                                     <fontDescription key="fontDescription" name="Moon2.0-Regular" family="Moon 2.0" pointSize="24"/>
-                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <color key="textColor" systemColor="darkTextColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
@@ -4260,7 +4260,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pMj-K0-A2r">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pMj-K0-A2r">
                                         <rect key="frame" x="24" y="43" width="133" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="BMX-Dm-Zir"/>
@@ -4374,7 +4374,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X6u-sA-EjV">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X6u-sA-EjV">
                                 <rect key="frame" x="104.5" y="623" width="625.5" height="83.5"/>
                                 <color key="backgroundColor" red="0.21176470589999999" green="0.50196078430000002" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -4388,7 +4388,7 @@
                                     <action selector="onStartInventory:" destination="dhg-3g-wdd" eventType="touchUpInside" id="DCa-yp-eI9"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Mc-zq-dRN">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Mc-zq-dRN">
                                 <rect key="frame" x="104.5" y="731.5" width="625.5" height="83.5"/>
                                 <color key="backgroundColor" red="0.21176470589999999" green="0.50196078430000002" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Moon2.0-Regular" family="Moon 2.0" pointSize="20"/>
@@ -4400,7 +4400,7 @@
                                     <segue destination="Pjn-j9-b2I" kind="showDetail" id="Cib-pI-281"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IMI-8V-cCL">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IMI-8V-cCL">
                                 <rect key="frame" x="104.5" y="840" width="625.5" height="83"/>
                                 <color key="backgroundColor" red="0.21176470589999999" green="0.50196078430000002" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Moon2.0-Regular" family="Moon 2.0" pointSize="20"/>
@@ -4412,7 +4412,7 @@
                                     <segue destination="QBu-iT-B1l" kind="showDetail" id="aiF-LB-Sty"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PDD-cp-ftS">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PDD-cp-ftS">
                                 <rect key="frame" x="104.5" y="948" width="625.5" height="83.5"/>
                                 <color key="backgroundColor" red="0.21176470589999999" green="0.50196078430000002" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Moon2.0-Regular" family="Moon 2.0" pointSize="20"/>
@@ -4435,7 +4435,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qiR-aS-SN6">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qiR-aS-SN6">
                                         <rect key="frame" x="775" y="29.5" width="49" height="49"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="qiR-aS-SN6" secondAttribute="height" multiplier="1:1" id="xvm-sB-Get"/>
@@ -4460,7 +4460,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4uD-up-ZpW">
                                 <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
                                 <subviews>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bXF-OS-G4X">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bXF-OS-G4X">
                                         <rect key="frame" x="167" y="516.5" width="500" height="79"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -4472,7 +4472,7 @@
                                             <action selector="onIpadStartInventory:" destination="dhg-3g-wdd" eventType="touchUpInside" id="pKQ-pK-Dcc"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btb-gS-OwP">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btb-gS-OwP">
                                         <rect key="frame" x="167" y="645.5" width="500" height="79.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="Moon2.0-Regular" family="Moon 2.0" pointSize="20"/>
@@ -4483,7 +4483,7 @@
                                             <action selector="onIpadStartInventory:" destination="dhg-3g-wdd" eventType="touchUpInside" id="Pwa-IX-0hp"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LBi-kV-ucK">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LBi-kV-ucK">
                                         <rect key="frame" x="167" y="435" width="500" height="79.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="Moon2.0-Regular" family="Moon 2.0" pointSize="20"/>
@@ -4601,7 +4601,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vqq-6Y-0EC">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vqq-6Y-0EC">
                                         <rect key="frame" x="10" y="35.5" width="55.5" height="55.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="vqq-6Y-0EC" secondAttribute="height" multiplier="1:1" id="Kec-iF-zkS"/>
@@ -4610,7 +4610,7 @@
                                             <action selector="onBack:" destination="QBu-iT-B1l" eventType="touchUpInside" id="sDl-Lj-3f5"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JIn-3q-3Zl">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JIn-3q-3Zl">
                                         <rect key="frame" x="768.5" y="35.5" width="55.5" height="55.5"/>
                                         <connections>
                                             <action selector="onView:" destination="QBu-iT-B1l" eventType="touchUpInside" id="dJw-lU-MCl"/>
@@ -4794,7 +4794,7 @@
                                                     <outlet property="delegate" destination="QBu-iT-B1l" id="3q0-zH-de3"/>
                                                 </connections>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jhm-Ok-KgR">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jhm-Ok-KgR">
                                                 <rect key="frame" x="73" y="422" width="438" height="53.5"/>
                                                 <fontDescription key="fontDescription" name="Moon2.0-Regular" family="Moon 2.0" pointSize="20"/>
                                                 <state key="normal" title="REFEILL">
@@ -4953,7 +4953,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JpG-hP-IQx">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JpG-hP-IQx">
                                         <rect key="frame" x="10" y="37.5" width="58.5" height="58.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="JpG-hP-IQx" secondAttribute="height" multiplier="1:1" id="L4i-1c-pnZ"/>
@@ -4962,7 +4962,7 @@
                                             <action selector="onBack:" destination="Pjn-j9-b2I" eventType="touchUpInside" id="FFz-SV-2Et"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aVC-2H-ZHg">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aVC-2H-ZHg">
                                         <rect key="frame" x="765.5" y="37.5" width="58.5" height="58.5"/>
                                         <connections>
                                             <action selector="onView:" destination="Pjn-j9-b2I" eventType="touchUpInside" id="rxh-sX-mjF"/>
@@ -5106,7 +5106,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cxk-fJ-We5">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cxk-fJ-We5">
                                         <rect key="frame" x="10" y="32.5" width="49" height="49"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="cxk-fJ-We5" secondAttribute="height" multiplier="1:1" id="uN5-aV-kfH"/>
@@ -5115,7 +5115,7 @@
                                             <action selector="onBack:" destination="q2q-Uj-0rJ" eventType="touchUpInside" id="RdX-Nm-Ie5"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2N3-8Y-7cX">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2N3-8Y-7cX">
                                         <rect key="frame" x="775" y="32.5" width="49" height="49"/>
                                         <connections>
                                             <action selector="onView:" destination="q2q-Uj-0rJ" eventType="touchUpInside" id="DrA-aF-VOd"/>
@@ -5266,7 +5266,7 @@
                                                 <fontDescription key="fontDescription" name="Moon2.0-Regular" family="Moon 2.0" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ne8-lS-wUS">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ne8-lS-wUS">
                                                 <rect key="frame" x="73" y="152.5" width="438" height="66.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="Moon2.0-Regular" family="Moon 2.0" pointSize="20"/>
@@ -5275,7 +5275,7 @@
                                                     <action selector="onLocationSelect:" destination="q2q-Uj-0rJ" eventType="touchUpInside" id="eCR-pd-hho"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JXO-V1-uMb">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JXO-V1-uMb">
                                                 <rect key="frame" x="73" y="366" width="438" height="66.5"/>
                                                 <fontDescription key="fontDescription" name="Moon2.0-Regular" family="Moon 2.0" pointSize="20"/>
                                                 <state key="normal" title="MOVE">
@@ -5292,7 +5292,7 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kum-Ay-6OL">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kum-Ay-6OL">
                                                 <rect key="frame" x="529" y="8" width="45" height="45"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="45" id="IHT-6o-U2k"/>
@@ -5344,7 +5344,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fTl-FY-iVR">
                                 <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
                                 <subviews>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cfW-Dt-FZ3">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cfW-Dt-FZ3">
                                         <rect key="frame" x="208.5" y="150" width="417" height="62.5"/>
                                         <color key="backgroundColor" red="0.21176470589999999" green="0.50196078430000002" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -5353,124 +5353,124 @@
                                         <fontDescription key="fontDescription" name="Moon2.0-Regular" family="Moon 2.0" pointSize="15"/>
                                         <state key="normal" title="STOCK">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleShadowColor" systemColor="darkTextColor"/>
                                         </state>
                                         <connections>
                                             <action selector="onLocationButtonAction:" destination="q2q-Uj-0rJ" eventType="touchUpInside" id="oVo-dU-A58"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZAC-QZ-gH8">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZAC-QZ-gH8">
                                         <rect key="frame" x="208.5" y="217.5" width="417" height="62.5"/>
                                         <color key="backgroundColor" red="0.21176470589999999" green="0.50196078430000002" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Moon2.0-Regular" family="Moon 2.0" pointSize="15"/>
                                         <state key="normal" title="NEVERAS">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleShadowColor" systemColor="darkTextColor"/>
                                         </state>
                                         <connections>
                                             <action selector="onLocationButtonAction:" destination="q2q-Uj-0rJ" eventType="touchUpInside" id="Hvb-1m-dea"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NzE-cI-VaH">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NzE-cI-VaH">
                                         <rect key="frame" x="208.5" y="285" width="417" height="62.5"/>
                                         <color key="backgroundColor" red="0.21176470589999999" green="0.50196078430000002" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Moon2.0-Regular" family="Moon 2.0" pointSize="15"/>
                                         <state key="normal" title="ALMACEN">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleShadowColor" systemColor="darkTextColor"/>
                                         </state>
                                         <connections>
                                             <action selector="onLocationButtonAction:" destination="q2q-Uj-0rJ" eventType="touchUpInside" id="Eiw-iZ-2Zy"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j5j-eg-hBP">
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j5j-eg-hBP">
                                         <rect key="frame" x="208.5" y="352.5" width="417" height="62.5"/>
                                         <color key="backgroundColor" red="0.21176470589999999" green="0.50196078430000002" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Moon2.0-Regular" family="Moon 2.0" pointSize="15"/>
                                         <state key="normal" title="BAR LAX">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleShadowColor" systemColor="darkTextColor"/>
                                         </state>
                                         <connections>
                                             <action selector="onLocationButtonAction:" destination="q2q-Uj-0rJ" eventType="touchUpInside" id="hFL-ZT-x87"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mCP-T3-g8P">
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mCP-T3-g8P">
                                         <rect key="frame" x="208.5" y="420" width="417" height="63"/>
                                         <color key="backgroundColor" red="0.21176470589999999" green="0.50196078430000002" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Moon2.0-Regular" family="Moon 2.0" pointSize="15"/>
                                         <state key="normal" title="BAR CENTRAL">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleShadowColor" systemColor="darkTextColor"/>
                                         </state>
                                         <connections>
                                             <action selector="onLocationButtonAction:" destination="q2q-Uj-0rJ" eventType="touchUpInside" id="4AM-eD-hFt"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ntp-oc-slF">
+                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ntp-oc-slF">
                                         <rect key="frame" x="208.5" y="488" width="417" height="62.5"/>
                                         <color key="backgroundColor" red="0.21176470589999999" green="0.50196078430000002" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Moon2.0-Regular" family="Moon 2.0" pointSize="15"/>
                                         <state key="normal" title="BAR VIP">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleShadowColor" systemColor="darkTextColor"/>
                                         </state>
                                         <connections>
                                             <action selector="onLocationButtonAction:" destination="q2q-Uj-0rJ" eventType="touchUpInside" id="cWZ-oW-Dvd"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZLf-GX-2ek">
+                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZLf-GX-2ek">
                                         <rect key="frame" x="208.5" y="555.5" width="417" height="62.5"/>
                                         <color key="backgroundColor" red="0.21176470589999999" green="0.50196078430000002" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Moon2.0-Regular" family="Moon 2.0" pointSize="15"/>
                                         <state key="normal" title="BAR OFFICE">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleShadowColor" systemColor="darkTextColor"/>
                                         </state>
                                         <connections>
                                             <action selector="onLocationButtonAction:" destination="q2q-Uj-0rJ" eventType="touchUpInside" id="8xQ-f8-aLC"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SFR-NO-JPH">
+                                    <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SFR-NO-JPH">
                                         <rect key="frame" x="208.5" y="623" width="417" height="62.5"/>
                                         <color key="backgroundColor" red="0.21176470589999999" green="0.50196078430000002" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Moon2.0-Regular" family="Moon 2.0" pointSize="15"/>
                                         <state key="normal" title="BAR RED BULL">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleShadowColor" systemColor="darkTextColor"/>
                                         </state>
                                         <connections>
                                             <action selector="onLocationButtonAction:" destination="q2q-Uj-0rJ" eventType="touchUpInside" id="2g1-z0-9mR"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="faC-el-w7T">
+                                    <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="faC-el-w7T">
                                         <rect key="frame" x="208.5" y="690.5" width="417" height="62.5"/>
                                         <color key="backgroundColor" red="0.21176470589999999" green="0.50196078430000002" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Moon2.0-Regular" family="Moon 2.0" pointSize="15"/>
                                         <state key="normal" title="BAR DJ">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleShadowColor" systemColor="darkTextColor"/>
                                         </state>
                                         <connections>
                                             <action selector="onLocationButtonAction:" destination="q2q-Uj-0rJ" eventType="touchUpInside" id="JoH-4O-cBD"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLS-Os-7e0">
+                                    <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLS-Os-7e0">
                                         <rect key="frame" x="208.5" y="758" width="417" height="62.5"/>
                                         <color key="backgroundColor" red="0.21176470589999999" green="0.50196078430000002" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Moon2.0-Regular" family="Moon 2.0" pointSize="15"/>
                                         <state key="normal" title="CONCINA">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleShadowColor" systemColor="darkTextColor"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TBu-oZ-UrJ">
+                                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TBu-oZ-UrJ">
                                         <rect key="frame" x="208.5" y="825.5" width="417" height="62.5"/>
                                         <color key="backgroundColor" red="0.21176470589999999" green="0.50196078430000002" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Moon2.0-Regular" family="Moon 2.0" pointSize="15"/>
                                         <state key="normal" title="EVENTO">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleShadowColor" systemColor="darkTextColor"/>
                                         </state>
                                         <connections>
                                             <action selector="onLocationButtonAction:" destination="q2q-Uj-0rJ" eventType="touchUpInside" id="dGP-WY-8t0"/>
@@ -5630,7 +5630,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yVp-HR-RG7">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yVp-HR-RG7">
                                         <rect key="frame" x="10" y="35.5" width="55.5" height="55.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="yVp-HR-RG7" secondAttribute="height" multiplier="1:1" id="eKg-RJ-o43"/>
@@ -5891,7 +5891,7 @@
                                     <outlet property="delegate" destination="H95-Nq-1cd" id="UO9-q1-U0I"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="75n-nE-PeV">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="75n-nE-PeV">
                                 <rect key="frame" x="0.0" y="1003.5" width="834" height="108.5"/>
                                 <color key="backgroundColor" red="0.21176470589999999" green="0.50196078430000002" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -5980,7 +5980,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eDz-K7-BLk">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eDz-K7-BLk">
                                         <rect key="frame" x="10" y="35.5" width="55.5" height="55.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="eDz-K7-BLk" secondAttribute="height" multiplier="1:1" id="cQ5-XM-Qlp"/>
@@ -6018,7 +6018,7 @@
                                 <fontDescription key="fontDescription" name="Moon2.0-Regular" family="Moon 2.0" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r7i-mr-AQU">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r7i-mr-AQU">
                                 <rect key="frame" x="104.5" y="751" width="625.5" height="83.5"/>
                                 <color key="backgroundColor" red="0.21176470589999999" green="0.50196078430000002" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Moon2.0-Regular" family="Moon 2.0" pointSize="20"/>
@@ -6048,7 +6048,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YMG-Cw-nsH">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YMG-Cw-nsH">
                                         <rect key="frame" x="0.0" y="0.0" width="637.5" height="84"/>
                                         <connections>
                                             <action selector="onCheck:" destination="cjb-7A-3DN" eventType="touchUpInside" id="GBR-mW-zUi"/>
@@ -6257,7 +6257,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J64-Mt-Obg">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J64-Mt-Obg">
                                 <rect key="frame" x="104.5" y="852.5" width="625.5" height="83"/>
                                 <color key="backgroundColor" red="0.21176470589999999" green="0.50196078430000002" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -6355,7 +6355,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bzI-uv-nuz">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bzI-uv-nuz">
                                         <rect key="frame" x="10" y="35.5" width="55.5" height="55.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="bzI-uv-nuz" secondAttribute="height" multiplier="1:1" id="mai-wc-xkB"/>
@@ -6562,7 +6562,7 @@
                                     <outlet property="delegate" destination="fpJ-HG-gxk" id="ZRF-4g-YGH"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9x5-me-lfw">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9x5-me-lfw">
                                 <rect key="frame" x="0.0" y="1014.5" width="834" height="97.5"/>
                                 <color key="backgroundColor" red="0.21176470589999999" green="0.50196078430000002" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -6698,25 +6698,25 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CDg-WQ-tgg">
-                                                    <rect key="frame" x="20" y="2" width="774" height="146"/>
+                                                    <rect key="frame" x="21" y="2" width="772" height="146"/>
                                                     <subviews>
                                                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EIS-FU-Ej3">
-                                                            <rect key="frame" x="0.0" y="109.5" width="774" height="36.5"/>
+                                                            <rect key="frame" x="0.0" y="109.5" width="772" height="36.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ORGIN : STOCK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aab-hf-YSW">
-                                                                    <rect key="frame" x="213.5" y="9.5" width="109" height="18"/>
+                                                                    <rect key="frame" x="212.5" y="9.5" width="109" height="18"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TARGET : BAR LAX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mvO-DA-xQG">
-                                                                    <rect key="frame" x="451.5" y="9.5" width="130" height="18"/>
+                                                                    <rect key="frame" x="450.5" y="9.5" width="130" height="18"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rewind" translatesAutoresizingMaskIntoConstraints="NO" id="91F-GO-MgG">
-                                                                    <rect key="frame" x="372.5" y="3.5" width="29" height="29.5"/>
+                                                                    <rect key="frame" x="371.5" y="3.5" width="29" height="29.5"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="91F-GO-MgG" secondAttribute="height" multiplier="1:1" id="SwW-sg-paW"/>
                                                                     </constraints>
@@ -6734,31 +6734,31 @@
                                                             </constraints>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Absolut 750ml" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JNK-Xt-lGe">
-                                                            <rect key="frame" x="292" y="5" width="190" height="36"/>
+                                                            <rect key="frame" x="291" y="5" width="190" height="36"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xZi-fq-aX2">
-                                                            <rect key="frame" x="379.5" y="41" width="15" height="30"/>
+                                                            <rect key="frame" x="378.5" y="41" width="15" height="30"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moved 41 minutes ago by Milos Havel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4bT-W3-tUG">
-                                                            <rect key="frame" x="258.5" y="89.5" width="257" height="18"/>
+                                                            <rect key="frame" x="257.5" y="89.5" width="257" height="18"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="side" translatesAutoresizingMaskIntoConstraints="NO" id="C7E-eE-S2D">
-                                                            <rect key="frame" x="701" y="0.0" width="73" height="73"/>
+                                                            <rect key="frame" x="699" y="0.0" width="73" height="73"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="C7E-eE-S2D" secondAttribute="height" multiplier="1:1" id="0dj-MH-52p"/>
                                                             </constraints>
                                                         </imageView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pending" translatesAutoresizingMaskIntoConstraints="NO" id="Snn-Bg-pOI">
-                                                            <rect key="frame" x="728" y="17" width="29" height="29"/>
+                                                            <rect key="frame" x="726" y="17" width="29" height="29"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="Snn-Bg-pOI" secondAttribute="height" multiplier="1:1" id="fBO-Le-1RL"/>
                                                             </constraints>
@@ -6915,7 +6915,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xjS-h1-STJ">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xjS-h1-STJ">
                                         <rect key="frame" x="10" y="32.5" width="49" height="49"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="xjS-h1-STJ" secondAttribute="height" multiplier="1:1" id="Lhv-nm-bPl"/>
@@ -7071,7 +7071,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mwI-a5-w8M">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mwI-a5-w8M">
                                 <rect key="frame" x="38" y="35" width="182" height="50"/>
                                 <color key="backgroundColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -7086,22 +7086,6 @@
                                     <action selector="onBackAction:" destination="laI-Uu-qYW" eventType="touchUpInside" id="rEN-Tm-Q3Z"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aL1-hw-XRD">
-                                <rect key="frame" x="0.0" y="677" width="834" height="435"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="70" id="ULA-Yd-U5p">
-                                        <rect key="frame" x="0.0" y="28" width="834" height="70"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ULA-Yd-U5p" id="ec2-zT-7sP">
-                                            <rect key="frame" x="0.0" y="0.0" width="834" height="70"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3TH-RT-r9k">
                                 <rect key="frame" x="134.5" y="104" width="565" height="565"/>
                                 <subviews>
@@ -7127,17 +7111,85 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aL1-hw-XRD">
+                                <rect key="frame" x="0.0" y="677" width="834" height="435"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="deviceItemCell" rowHeight="100" id="ULA-Yd-U5p" customClass="DeviceTVC">
+                                        <rect key="frame" x="0.0" y="28" width="834" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ULA-Yd-U5p" id="ec2-zT-7sP">
+                                            <rect key="frame" x="0.0" y="0.0" width="834" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jbf-RZ-Yk6">
+                                                    <rect key="frame" x="20" y="99" width="794" height="1"/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="0.80000000000000004" id="Xec-Dk-V88"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ETEKCITY Scale_SNC00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mkr-VR-KcP">
+                                                    <rect key="frame" x="25" y="20" width="629" height="25.5"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Device ID: EASDF@#$-#234" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GH2-dh-yHJ">
+                                                    <rect key="frame" x="25" y="60.5" width="629" height="23"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not Connected" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ztb-mu-wXg">
+                                                    <rect key="frame" x="664" y="38.5" width="150" height="23"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="150" id="Wsl-NT-RJs"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="jbf-RZ-Yk6" secondAttribute="bottom" id="1hL-k9-5Tg"/>
+                                                <constraint firstItem="jbf-RZ-Yk6" firstAttribute="leading" secondItem="ec2-zT-7sP" secondAttribute="leading" constant="20" id="3pe-Wn-G7Q"/>
+                                                <constraint firstItem="ztb-mu-wXg" firstAttribute="leading" secondItem="Mkr-VR-KcP" secondAttribute="trailing" constant="10" id="FYd-xr-s8R"/>
+                                                <constraint firstAttribute="trailing" secondItem="ztb-mu-wXg" secondAttribute="trailing" constant="20" id="LYs-b2-emw"/>
+                                                <constraint firstItem="ztb-mu-wXg" firstAttribute="leading" secondItem="GH2-dh-yHJ" secondAttribute="trailing" constant="10" id="TDJ-Ot-sx4"/>
+                                                <constraint firstAttribute="trailing" secondItem="jbf-RZ-Yk6" secondAttribute="trailing" constant="20" id="Z8s-en-mw0"/>
+                                                <constraint firstItem="Mkr-VR-KcP" firstAttribute="top" secondItem="ec2-zT-7sP" secondAttribute="top" constant="20" id="Zyv-la-fJG"/>
+                                                <constraint firstItem="Mkr-VR-KcP" firstAttribute="leading" secondItem="ec2-zT-7sP" secondAttribute="leading" constant="25" id="ccU-jo-q7w"/>
+                                                <constraint firstItem="ztb-mu-wXg" firstAttribute="centerY" secondItem="ec2-zT-7sP" secondAttribute="centerY" id="krD-RC-lb9"/>
+                                                <constraint firstItem="GH2-dh-yHJ" firstAttribute="top" secondItem="Mkr-VR-KcP" secondAttribute="bottom" constant="15" id="o7O-E6-uv6"/>
+                                                <constraint firstItem="GH2-dh-yHJ" firstAttribute="leading" secondItem="Mkr-VR-KcP" secondAttribute="leading" id="ypa-VR-UKp"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="deviceIDLabel" destination="GH2-dh-yHJ" id="4qc-3z-4mV"/>
+                                            <outlet property="deviceNameLabel" destination="Mkr-VR-KcP" id="MuE-FK-jK1"/>
+                                            <outlet property="statusLabel" destination="ztb-mu-wXg" id="yiX-89-tNz"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="laI-Uu-qYW" id="B5Z-oy-vTl"/>
+                                    <outlet property="delegate" destination="laI-Uu-qYW" id="Q1O-fs-EMl"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="mwI-a5-w8M" firstAttribute="top" secondItem="BC4-sL-pmU" secondAttribute="bottom" constant="35" id="AgG-cV-QsK"/>
                             <constraint firstItem="dKf-zP-kPv" firstAttribute="top" secondItem="aL1-hw-XRD" secondAttribute="bottom" id="BE9-mG-D3h"/>
                             <constraint firstItem="zdN-Js-KMV" firstAttribute="centerY" secondItem="mwI-a5-w8M" secondAttribute="centerY" id="Bnb-7Z-gah"/>
+                            <constraint firstItem="aL1-hw-XRD" firstAttribute="top" secondItem="3TH-RT-r9k" secondAttribute="bottom" constant="8" symbolic="YES" id="Jma-ew-GJE"/>
                             <constraint firstItem="mwI-a5-w8M" firstAttribute="leading" secondItem="Lg0-Ry-EQF" secondAttribute="leading" constant="38" id="OEA-Pb-5Fw"/>
                             <constraint firstItem="3TH-RT-r9k" firstAttribute="centerX" secondItem="Lg0-Ry-EQF" secondAttribute="centerX" id="aKK-9A-twI"/>
                             <constraint firstItem="zdN-Js-KMV" firstAttribute="centerX" secondItem="3TH-RT-r9k" secondAttribute="centerX" id="hUn-6f-oCL"/>
                             <constraint firstItem="3TH-RT-r9k" firstAttribute="top" secondItem="mwI-a5-w8M" secondAttribute="bottom" constant="19" id="kE4-EE-lnn"/>
-                            <constraint firstItem="aL1-hw-XRD" firstAttribute="top" secondItem="3TH-RT-r9k" secondAttribute="bottom" constant="8" id="lTj-LN-tUs"/>
                             <constraint firstItem="aL1-hw-XRD" firstAttribute="leading" secondItem="Lg0-Ry-EQF" secondAttribute="leading" id="sBt-m1-cBu"/>
                             <constraint firstAttribute="trailing" secondItem="aL1-hw-XRD" secondAttribute="trailing" id="uaN-eA-rxS"/>
                         </constraints>
@@ -7179,5 +7231,47 @@
         <image name="right-arrow" width="64" height="64"/>
         <image name="send" width="128" height="128"/>
         <image name="side" width="287" height="286"/>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

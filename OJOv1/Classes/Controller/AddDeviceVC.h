@@ -9,9 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "PulsingHaloLayer.h"
 #import "BLEClient.h"
+#import "DeviceTVC.h"
+#import "BLEDeviceModel.h"
 
 
-@interface AddDeviceVC : UIViewController<BLEDelegate>
+@interface AddDeviceVC : UIViewController<BLEDelegate, UITableViewDelegate, UITableViewDataSource>
 
 @end
 

@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-
 @interface BarInventoryCommentVC : UIViewController<UITextFieldDelegate, UITextViewDelegate, UITableViewDelegate, UITableViewDataSource>
 
 @end

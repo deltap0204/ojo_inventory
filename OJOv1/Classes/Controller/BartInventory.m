@@ -17,6 +17,7 @@
 #import "Confirm.h"
 #import "BarInventoryCommentVC.h"
 #import "LoginVC.h"
+#import "AddDeviceVC.h"
 
 
 @interface BartInventory ()
@@ -75,6 +76,10 @@
 @property (strong, nonatomic) NSString *editFlag;
 @property (assign, nonatomic) BOOL openFlag;
 
+@property (strong, nonatomic) BLEClient *bleClient;
+
+@property (assign, nonatomic) bool allowBLEScale;
+
 @end
 
 @implementation BartInventory
@@ -114,6 +119,7 @@
     self.deviceType = [userDefaults objectForKey:DEVICETYPE];
     
     [self.nextItemButton setEnabled:NO];
+    self.allowBLEScale = NO;
     
     // replace to customized keyboard
     
@@ -131,6 +137,22 @@
     self.appDelegate.startTime = [self getCurrentTimeString];
     [self getAllItems];
     
+    
+    
+}
+
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.bleClient = [BLEClient sharedBLEClient];
+    if (self.bleClient.activePeripheral != nil && self.bleClient.activePeripheral.state) {
+        self.bleClient.delegate = self;
+    }
+    
+}
+
+- (void) viewWillDisappear:(BOOL)animated {
+    self.bleClient.delegate = nil;
+    [super viewWillDisappear:animated];
 }
 
 - (NSString*) getCurrentTimeString{
@@ -226,7 +248,7 @@
     self.hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     self.hud.labelText = @"GETTING NEEDED DATA FROM SERVER...";
     self.hud.userInteractionEnabled = NO;
-    [self.hud show:YES];
+//    [self.hud show:YES];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         OJOClient *ojoClicent = [OJOClient sharedWebClient];
@@ -402,6 +424,7 @@
             [self.fullWeightLabel setHidden:YES];
             
             self.openBtWetTextField.text = @"0";
+            self.allowBLEScale = NO;
             self.minValueCheck = true;
             [self.nextItemButton setEnabled:YES];
             
@@ -423,7 +446,7 @@
             self.fullWeightLabel.text = [NSString stringWithFormat:@"FULL : %@", fullWeight];
             self.openBtWetTextField.text = @"";
             [self.nextItemButton setEnabled:NO];
-            
+            self.allowBLEScale = YES;
             self.openFlag = true;
             
         }
@@ -443,7 +466,13 @@
     self.hud.userInteractionEnabled = NO;
     [self.hud show:YES];
     
-    self.openBtWetTextField.text = @"1000";
+    if ([[self.bleClient activePeripheral] state]) {
+        self.allowBLEScale = YES;
+    } else {
+        AddDeviceVC* svc =[self.storyboard instantiateViewControllerWithIdentifier:@"addDevicePage"];
+        [self presentViewController:svc animated:YES completion:nil];
+    }
+    [self.openBtWetTextField setText:@"0"];
     
     [NSThread sleepForTimeInterval: 1.0];
     
@@ -463,6 +492,26 @@
     
     [self.hud hide:YES];
   
+}
+
+- (void) checkBottleWeightValid: (NSString *) weightStr {
+    NSInteger weight = [weightStr integerValue];
+    NSInteger fullWeight = [self.currentFullWeightOfItem integerValue];
+    NSInteger emptyWeight = [self.currentEmptyWeightOfItem integerValue];
+    
+    if (weight < emptyWeight) {
+        
+        self.openBtWetTextField.layer.borderColor = [[UIColor redColor] CGColor];
+        self.minValueCheck = false;
+        [self.nextItemButton setEnabled:NO];
+        
+    } else if(weight > emptyWeight & weight < fullWeight){
+        
+        self.openBtWetTextField.layer.borderColor = [[UIColor whiteColor] CGColor];
+        self.minValueCheck = true;
+        [self.nextItemButton setEnabled:YES];
+        
+    }
 }
 
 #pragma mark - number pad action
@@ -1102,6 +1151,37 @@
             
         }];
     });
+}
+
+#pragma mark - BLE Delegate Method
+
+- (void)bleDidUpdatedState:(CBCentralManager *)central {
+//    if (central.state == CBCentralManagerStatePoweredOn) {
+//        [self.bleClient findBLEPeripherals:5];
+//    }
+}
+
+- (void) bleDidReceiveWeight:(int)weight {
+    if (self.allowBLEScale) {
+        [self.openBtWetTextField setText:[NSString stringWithFormat:@"%d", weight]];
+        [self checkBottleWeightValid:[NSString stringWithFormat:@"%d", weight]];
+    }
+    
+    
+}
+
+-(void) bleDidFoundDevices:(NSMutableArray *)peripherals {
+    
+}
+
+-(void) bleDidConnect:(CBPeripheral *)peripheral {
+//    if (self.bleClient.activePeripheral != nil && self.bleClient.activePeripheral.state) {
+//        [self.bleClient.activePeripheral discoverServices:nil];
+//    }
+}
+
+-(void) bleDidDisconnect:(CBPeripheral *)peripheral {
+//    [self.bleClient connectPeripheral:self.bleClient.activePeripheral];
 }
 
 #pragma  mark - textView animation method (다음 아이템을 위한 애니메이션부분)
