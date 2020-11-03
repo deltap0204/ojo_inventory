@@ -1154,7 +1154,7 @@
 				TargetAttributes = {
 					C43430411DCCC58C00239E17 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 877DP9C4TC;
+						DevelopmentTeam = 2F9673MCG5;
 						LastSwiftMigration = 0930;
 						ProvisioningStyle = Automatic;
 					};
@@ -1604,9 +1604,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0;
+				CURRENT_PROJECT_VERSION = 37;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 877DP9C4TC;
+				DEVELOPMENT_TEAM = 2F9673MCG5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1616,7 +1616,7 @@
 				INFOPLIST_FILE = OJOv1/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.9.8;
+				MARKETING_VERSION = 1.9.7;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.inventory.OJOv1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1637,9 +1637,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0;
+				CURRENT_PROJECT_VERSION = 37;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 877DP9C4TC;
+				DEVELOPMENT_TEAM = 2F9673MCG5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1649,7 +1649,7 @@
 				INFOPLIST_FILE = OJOv1/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.9.8;
+				MARKETING_VERSION = 1.9.7;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.inventory.OJOv1;
 				PRODUCT_NAME = "$(TARGET_NAME)";

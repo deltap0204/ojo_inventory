@@ -48,6 +48,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *nineButton;
 @property (weak, nonatomic) IBOutlet UIButton *zeroButton;
 @property (weak, nonatomic) IBOutlet UIButton *removeButton;
+@property (weak, nonatomic) IBOutlet UIButton *adaptWeightButton;
 
 
 @property (weak, nonatomic) IBOutlet UIView *bluetoothView;
@@ -461,20 +462,17 @@
 
 - (IBAction)onBluetoothAction:(id)sender {
     
-    self.hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    self.hud.labelText = @"Getting Data from Bluetooth Scale...";
-    self.hud.userInteractionEnabled = NO;
-    [self.hud show:YES];
+//
     
     if ([[self.bleClient activePeripheral] state]) {
         self.allowBLEScale = YES;
+        return;
     } else {
         AddDeviceVC* svc =[self.storyboard instantiateViewControllerWithIdentifier:@"addDevicePage"];
         [self presentViewController:svc animated:YES completion:nil];
     }
     [self.openBtWetTextField setText:@"0"];
     
-    [NSThread sleepForTimeInterval: 1.0];
     
     // -- Bluetooth sound ON
     SystemSoundID soundID;
@@ -490,7 +488,6 @@
     self.minValueCheck = true;
     [self.nextItemButton setEnabled:YES];
     
-    [self.hud hide:YES];
   
 }
 
