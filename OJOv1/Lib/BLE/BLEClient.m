@@ -147,7 +147,13 @@
     
     [self.CM scanForPeripheralsWithServices:[NSArray arrayWithObject:[CBUUID UUIDWithString:@"1910"]] options:nil];
     
-    if (self.deviceModels != nil && self.deviceModels.count > 0) {
+    if (self.deviceModels != nil && self.deviceModels.count > 0 && self.peripherals != nil && self.peripherals.count > 0) {
+        [self.deviceModels removeAllObjects];
+        for (int pIndex = 0; pIndex < self.peripherals.count; pIndex ++) {
+            CBPeripheral *peripheral = self.peripherals[pIndex];
+            BLEDeviceModel *devModel = [[BLEDeviceModel alloc] initWithDeviceIdentifier:[NSString stringWithFormat:@"%@", peripheral.identifier] andName:peripheral.name andConnected:peripheral.state];
+            [self.deviceModels addObject:devModel];
+        }
         [self.delegate bleDidFoundDevices:self.deviceModels];
     }
 //    [self.CM scanForPeripheralsWithServices:nil options:nil];

@@ -194,7 +194,7 @@
             CGRect bottmLineFrame = bottomLineView.frame;
             bottmLineFrame.origin.y = CGRectGetHeight(self.frame)-2;
             [UIView animateWithDuration:0.2 animations:^{
-                bottomLineView.frame  =  bottmLineFrame;
+                self->bottomLineView.frame  =  bottmLineFrame;
             }];
             
             return;
@@ -206,10 +206,10 @@
         CGRect bottmLineFrame = bottomLineView.frame;
         bottmLineFrame.origin.y = CGRectGetHeight(self.frame)-2;
         [UIView animateWithDuration:0.2 animations:^{
-            _labelPlaceholder.frame = frame;
-            _labelPlaceholder.font = [UIFont fontWithName:self.font.fontName size:12];
-            _labelPlaceholder.textColor = _selectedPlaceHolderColor;
-            bottomLineView.frame  =  bottmLineFrame;
+            self->_labelPlaceholder.frame = frame;
+            self->_labelPlaceholder.font = [UIFont fontWithName:self.font.fontName size:12];
+            self->_labelPlaceholder.textColor = self->_selectedPlaceHolderColor;
+            self->bottomLineView.frame  =  bottmLineFrame;
             
         }];
         
@@ -224,7 +224,7 @@
             CGRect bottmLineFrame = bottomLineView.frame;
             bottmLineFrame.origin.y = CGRectGetHeight(self.frame)-2;
             [UIView animateWithDuration:0.2 animations:^{
-                bottomLineView.frame  =  bottmLineFrame;
+                self->bottomLineView.frame  =  bottmLineFrame;
             }];
             
             return;
@@ -236,10 +236,10 @@
         CGRect bottmLineFrame = bottomLineView.frame;
         bottmLineFrame.origin.y = CGRectGetHeight(self.frame)-1;
         [UIView animateWithDuration:0.2 animations:^{
-            _labelPlaceholder.frame = frame;
-            _labelPlaceholder.font = [UIFont fontWithName:self.font.fontName size:12];
-            _labelPlaceholder.textColor = _placeHolderColor;
-            bottomLineView.frame  =  bottmLineFrame;
+            self->_labelPlaceholder.frame = frame;
+            self->_labelPlaceholder.font = [UIFont fontWithName:self.font.fontName size:12];
+            self->_labelPlaceholder.textColor = self->_placeHolderColor;
+            self->bottomLineView.frame  =  bottmLineFrame;
             
         }];
         
