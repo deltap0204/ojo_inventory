@@ -1154,7 +1154,7 @@
 				TargetAttributes = {
 					C43430411DCCC58C00239E17 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 2F9673MCG5;
+						DevelopmentTeam = 877DP9C4TC;
 						LastSwiftMigration = 0930;
 						ProvisioningStyle = Automatic;
 					};
@@ -1604,9 +1604,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 40;
+				CURRENT_PROJECT_VERSION = 41;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 2F9673MCG5;
+				DEVELOPMENT_TEAM = 877DP9C4TC;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1637,9 +1637,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 40;
+				CURRENT_PROJECT_VERSION = 41;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 2F9673MCG5;
+				DEVELOPMENT_TEAM = 877DP9C4TC;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

@@ -51,6 +51,8 @@
 
 
 @property (weak, nonatomic) IBOutlet UIView *bluetoothView;
+@property (weak, nonatomic) IBOutlet UIImageView *bluetoothIV;
+@property (weak, nonatomic) IBOutlet UILabel *bluetoothLabel;
 
 @property (assign, nonatomic) NSInteger select;
 @property (strong, nonatomic) NSString *locationController;
@@ -148,6 +150,20 @@
         self.bleClient.delegate = self;
     }
     
+    [self updateBLEViewState];
+    
+}
+
+- (void) updateBLEViewState {
+    if ([[self.bleClient activePeripheral] state]) {
+        if (self.allowBLEScale) {
+            [self showBLEButtonAsActive];
+        } else {
+            [self showBLEButtonAsInActive];
+        }
+    } else {
+        [self showBLEButtonAsInActive];
+    }
 }
 
 - (void) viewWillDisappear:(BOOL)animated {
@@ -172,9 +188,9 @@
     
     [self makeFullTextFieldHighlight];
 
-
-    self.bluetoothView.layer.borderWidth = 2.0;
-    self.bluetoothView.layer.borderColor = [UIColor colorWithRed:145.0/255.0 green:216.0/255.0 blue:247.0/255.0 alpha:1.0].CGColor;
+    
+//    self.bluetoothView.layer.borderWidth = 2.0;
+//    self.bluetoothView.layer.borderColor = [UIColor colorWithRed:145.0/255.0 green:216.0/255.0 blue:247.0/255.0 alpha:1.0].CGColor;
     
     // Number pad
     
@@ -449,13 +465,34 @@
             self.allowBLEScale = YES;
             self.openFlag = true;
             
+            
         }
+        
+        [self updateBLEViewState];
         
         self.currentFullWeightOfItem = inventoryModel.itemBottleFullWet;
         self.currentEmptyWeightOfItem = inventoryModel.itemBottleEmpWet;
         
     }
 }
+
+- (void) showBLEButtonAsActive {
+    self.bluetoothView.layer.borderWidth = 2.0;
+    self.bluetoothView.layer.borderColor = [UIColor colorWithRed:145.0/255.0 green:216.0/255.0 blue:247.0/255.0 alpha:1.0].CGColor;
+    [self.bluetoothIV setImage:[UIImage imageNamed:@"bluetooth_logo"]];
+    self.bluetoothLabel.textColor = [UIColor colorWithRed:145.0/255.0 green:216.0/255.0 blue:247.0/255.0 alpha:1.0];
+    [self.bluetoothView.layer masksToBounds];
+}
+
+- (void) showBLEButtonAsInActive {
+    self.bluetoothView.layer.borderWidth = 2.0;
+    self.bluetoothView.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    
+    [self.bluetoothIV setImage:[UIImage imageNamed:@"bluetooth_logo_gray"]];
+    self.bluetoothLabel.textColor = [UIColor lightGrayColor];
+    [self.bluetoothView.layer masksToBounds];
+}
+
 
 #pragma mark - Bluetooth action
 
@@ -466,15 +503,24 @@
     self.hud.userInteractionEnabled = NO;
     [self.hud show:YES];
     
+    self.allowBLEScale = !self.allowBLEScale;
+    
     if ([[self.bleClient activePeripheral] state]) {
-        self.allowBLEScale = YES;
+//        self.allowBLEScale = YES;
+        [self updateBLEViewState];
     } else {
         AddDeviceVC* svc =[self.storyboard instantiateViewControllerWithIdentifier:@"addDevicePage"];
         [self presentViewController:svc animated:YES completion:nil];
+        
+        
+
     }
-    [self.openBtWetTextField setText:@"0"];
+    if (self.allowBLEScale) {
+        [self.openBtWetTextField setText:@"0"];
+    }
     
-    [NSThread sleepForTimeInterval: 1.0];
+    
+//    [NSThread sleepForTimeInterval: 1.0];
     
     // -- Bluetooth sound ON
     SystemSoundID soundID;
@@ -1175,12 +1221,15 @@
 }
 
 -(void) bleDidConnect:(CBPeripheral *)peripheral {
-//    if (self.bleClient.activePeripheral != nil && self.bleClient.activePeripheral.state) {
-//        [self.bleClient.activePeripheral discoverServices:nil];
-//    }
+    
+    if (self.bleClient.activePeripheral != nil && self.bleClient.activePeripheral.state) {
+        self.allowBLEScale = YES;
+        [self updateBLEViewState];
+    }
 }
 
 -(void) bleDidDisconnect:(CBPeripheral *)peripheral {
+    [self updateBLEViewState];
 //    [self.bleClient connectPeripheral:self.bleClient.activePeripheral];
 }
 

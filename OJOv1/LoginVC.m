@@ -228,7 +228,7 @@ static User *loggedInUser = nil;
                     [self presentViewController:svc animated:YES completion:nil];
                     
                 } else{
-                    ManagerMainVC *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"managerPage_ipad"];
+                    ManagerMainVC *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"managerPage"];
                     [svc setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
                     [svc setModalPresentationStyle:UIModalPresentationOverCurrentContext];
                     [self presentViewController:svc animated:YES completion:nil];
