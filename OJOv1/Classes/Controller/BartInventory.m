@@ -54,6 +54,11 @@
 @property (weak, nonatomic) IBOutlet UIImageView *bluetoothIV;
 @property (weak, nonatomic) IBOutlet UILabel *bluetoothLabel;
 
+@property (weak, nonatomic) IBOutlet UIView *adminAccessView;
+@property (weak, nonatomic) IBOutlet UITextField *adminPasswordTextField;
+@property (weak, nonatomic) IBOutlet UIButton *adminPasswordConfirmButton;
+
+
 @property (assign, nonatomic) NSInteger select;
 @property (strong, nonatomic) NSString *locationController;
 @property (strong, nonatomic) NSString *location;
@@ -110,6 +115,7 @@
     self.minValueCheck = false;
     self.movedItemCheck = false;
     self.openFlag = false;
+    [self.adminAccessView setHidden:YES];
     
     self.editFlag = @"full";
     
@@ -132,6 +138,13 @@
         self.fullBtCountTextField.inputView  = [[[NSBundle mainBundle] loadNibNamed:@"LNNumberpad" owner:self options:nil] objectAtIndex:0];
     }
     */
+    
+    // admin password confirm page UI initialize
+    
+    self.adminPasswordTextField.layer.cornerRadius = 5.0;
+    self.adminPasswordConfirmButton.layer.borderWidth = 1.0;
+    self.adminPasswordConfirmButton.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.adminPasswordConfirmButton.layer.cornerRadius = 5.0;
 
     self.userRealNameLabel.text = [NSString stringWithFormat:@"Hello %@", [LoginVC getLoggedinUser].name];
     self.locationTitle.text = self.location;
@@ -1062,15 +1075,30 @@
 }
 
 - (IBAction)onBack:(id)sender {
-    self.appDelegate.endTime = [self getCurrentTimeString];
-    self.appDelegate.totalCash = [NSString stringWithFormat:@"%ld", (long)self.totalCash];
-    
-    BarInventoryCommentVC *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"BarInventoryCommentVC"];
-    [svc setModalPresentationStyle:UIModalPresentationOverCurrentContext];
-    [self presentViewController:svc animated:YES completion:nil];
-    
+    [self.adminAccessView setHidden:NO];
+}
+- (IBAction)onPasswordViewClose:(id)sender {
+    [self.adminAccessView setHidden:YES];
 }
 
+- (IBAction)onCancelConfirm:(id)sender {
+    
+    NSString *password = self.adminPasswordTextField.text;
+    
+    if ([password isEqual:@"Lepagi732"]) {
+        self.appDelegate.endTime = [self getCurrentTimeString];
+        self.appDelegate.totalCash = [NSString stringWithFormat:@"%ld", (long)self.totalCash];
+        
+        BarInventoryCommentVC *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"BarInventoryCommentVC"];
+        [svc setModalPresentationStyle:UIModalPresentationOverCurrentContext];
+        [self presentViewController:svc animated:YES completion:nil];
+    } else {
+        
+        
+    }
+    
+    
+}
 
 #pragma mark - Getting unreported move items (Inventory 리포트에 반영되지않은 (reported = 0) 모든 옮김정보를 자료기지로부터 가져온다  )
 

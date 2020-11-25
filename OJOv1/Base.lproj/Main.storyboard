@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="ipad10_5" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -221,7 +221,7 @@
                                 <rect key="frame" x="0.0" y="-20" width="834" height="111"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Admin Panel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="WkY-aN-WiJ">
-                                        <rect key="frame" x="349" y="40.5" width="136" height="30"/>
+                                        <rect key="frame" x="349.5" y="40.5" width="135" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="TOa-6r-tMF"/>
                                         </constraints>
@@ -866,7 +866,7 @@
                                         </connections>
                                     </pickerView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r7s-FV-RCY">
-                                        <rect key="frame" x="758" y="798.5" width="56" height="30"/>
+                                        <rect key="frame" x="762" y="798.5" width="52" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="HZd-jd-SYG"/>
                                         </constraints>
@@ -3823,12 +3823,67 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BL1-cY-V8h">
+                                <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bYD-qy-57Q">
+                                        <rect key="frame" x="114" y="156" width="579" height="573"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="padlock" translatesAutoresizingMaskIntoConstraints="NO" id="Zve-0S-tB1">
+                                                <rect key="frame" x="240" y="30" width="150" height="132"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please insert admin password to cancel current inventory" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLu-69-q0D">
+                                                <rect key="frame" x="83" y="187" width="441" height="88"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="Moon2.0-Regular" family="Moon 2.0" pointSize="30"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="weD-hd-7ti">
+                                                <rect key="frame" x="83" y="294" width="441" height="68"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="Moon2.0-Regular" family="Moon 2.0" pointSize="30"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="continue" textContentType="password"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LoC-AQ-MPw">
+                                                <rect key="frame" x="83" y="416" width="441" height="68"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="Moon2.0-Regular" family="Moon 2.0" pointSize="30"/>
+                                                <state key="normal" title="CANCEL">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="onCancelConfirm:" destination="Sa1-Bz-2UI" eventType="touchUpInside" id="8Yd-gk-JVX"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.21176470589999999" green="0.50196078430000002" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="txm-7i-Qjd">
+                                        <rect key="frame" x="670" y="133" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button" image="close"/>
+                                        <connections>
+                                            <action selector="onPasswordViewClose:" destination="Sa1-Bz-2UI" eventType="touchUpInside" id="Pg2-pj-bNt"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.5256046660958904" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="adminAccessView" destination="BL1-cY-V8h" id="TUK-c9-QMW"/>
+                        <outlet property="adminPasswordConfirmButton" destination="LoC-AQ-MPw" id="vQR-J4-hhg"/>
+                        <outlet property="adminPasswordTextField" destination="weD-hd-7ti" id="yLi-Ee-GKP"/>
                         <outlet property="backButton" destination="dUq-Mf-rnA" id="ZLq-Kt-U0K"/>
                         <outlet property="bluetoothIV" destination="6vF-wd-De8" id="lYK-GG-Ot7"/>
                         <outlet property="bluetoothLabel" destination="Jjq-sB-185" id="Fwz-cr-pIb"/>
@@ -4284,13 +4339,13 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MAKE A COMMENT" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="HvZ-C7-dI4">
-                                <rect key="frame" x="234.5" y="150" width="365.5" height="47"/>
+                                <rect key="frame" x="237" y="150" width="360.5" height="48"/>
                                 <fontDescription key="fontDescription" name="Moon2.0-Regular" family="Moon 2.0" pointSize="40"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sXN-El-IFy">
-                                <rect key="frame" x="80" y="227" width="674" height="400"/>
+                                <rect key="frame" x="80" y="228" width="674" height="400"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="400" id="B0j-A3-Lm1"/>
@@ -4299,14 +4354,14 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="YaU-i8-Vns">
-                                <rect key="frame" x="329.5" y="771" width="175" height="175"/>
+                                <rect key="frame" x="329.5" y="772" width="175" height="175"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="175" id="48F-oj-IkC"/>
                                     <constraint firstAttribute="width" constant="175" id="ps2-yg-K0V"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wlw-Px-B61">
-                                <rect key="frame" x="518" y="637" width="236" height="132"/>
+                                <rect key="frame" x="518" y="638" width="236" height="132"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="132" id="2wG-J4-9C5"/>
@@ -6394,7 +6449,7 @@
                                                     <rect key="frame" x="1" y="1" width="832" height="198"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ABSOLUTE 750ML" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="1yT-fe-Ydc">
-                                                            <rect key="frame" x="309" y="3" width="214.5" height="30"/>
+                                                            <rect key="frame" x="313" y="3" width="206.5" height="30"/>
                                                             <fontDescription key="fontDescription" name="Moon2.0-Regular" family="Moon 2.0" pointSize="25"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
@@ -6416,7 +6471,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CURRENT AMOUNT : 120" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oil-l4-0q6">
-                                                                    <rect key="frame" x="50" y="31" width="236" height="24"/>
+                                                                    <rect key="frame" x="50" y="31" width="231.5" height="24"/>
                                                                     <fontDescription key="fontDescription" name="Moon2.0-Regular" family="Moon 2.0" pointSize="20"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
@@ -6449,7 +6504,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TOTAL PRICE : $3000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TSI-bS-cBv">
-                                                                    <rect key="frame" x="466.5" y="26" width="197" height="24"/>
+                                                                    <rect key="frame" x="466.5" y="26" width="212.5" height="24"/>
                                                                     <fontDescription key="fontDescription" name="Moon2.0-Regular" family="Moon 2.0" pointSize="20"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
@@ -6466,7 +6521,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PRICE PER UNIT : $30" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bRc-NB-ICs">
-                                                                    <rect key="frame" x="466.5" y="56" width="204.5" height="24"/>
+                                                                    <rect key="frame" x="466.5" y="56" width="207.5" height="24"/>
                                                                     <fontDescription key="fontDescription" name="Moon2.0-Regular" family="Moon 2.0" pointSize="20"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
@@ -6479,7 +6534,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RATE OF SALE : 0.88" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4P7-xl-cmT">
-                                                                    <rect key="frame" x="466.5" y="86" width="191.5" height="24"/>
+                                                                    <rect key="frame" x="466.5" y="86" width="204" height="24"/>
                                                                     <fontDescription key="fontDescription" name="Moon2.0-Regular" family="Moon 2.0" pointSize="20"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
@@ -7108,7 +7163,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connecting..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zdN-Js-KMV">
-                                <rect key="frame" x="303.5" y="38" width="227.5" height="44.5"/>
+                                <rect key="frame" x="316" y="37" width="202" height="46"/>
                                 <fontDescription key="fontDescription" name="Moon2.0-Regular" family="Moon 2.0" pointSize="38"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -7228,6 +7283,7 @@
         <image name="logo" width="256" height="256"/>
         <image name="logohd" width="510.66665649414062" height="341.33334350585938"/>
         <image name="pad_check" width="32" height="32"/>
+        <image name="padlock" width="32" height="32"/>
         <image name="pending" width="64" height="64"/>
         <image name="rewind" width="64" height="64"/>
         <image name="right-arrow" width="64" height="64"/>
