@@ -68,6 +68,38 @@
 		076CD647235B7ED500B5670D /* Moon-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 076CD644235B7ED500B5670D /* Moon-Bold.otf */; };
 		076CD648235B7ED500B5670D /* Moon-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 076CD645235B7ED500B5670D /* Moon-Light.otf */; };
 		076CD649235B7ED500B5670D /* Moon_Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 076CD646235B7ED500B5670D /* Moon_Regular.otf */; };
+		077A6BB925E855C9007F59F4 /* d'usse_750ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6B9825E855C6007F59F4 /* d'usse_750ml@2x.png */; };
+		077A6BBA25E855C9007F59F4 /* pina_unidades@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6B9925E855C6007F59F4 /* pina_unidades@2x.png */; };
+		077A6BBB25E855C9007F59F4 /* presidente_light_330@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6B9A25E855C7007F59F4 /* presidente_light_330@2x.png */; };
+		077A6BBC25E855C9007F59F4 /* presidente_gold@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6B9B25E855C7007F59F4 /* presidente_gold@2x.png */; };
+		077A6BBD25E855C9007F59F4 /* brugal_blanco_1000ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6B9C25E855C7007F59F4 /* brugal_blanco_1000ml@2x.png */; };
+		077A6BBE25E855C9007F59F4 /* coors_banquet@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6B9D25E855C7007F59F4 /* coors_banquet@2x.png */; };
+		077A6BBF25E855C9007F59F4 /* frangelico_700ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6B9E25E855C7007F59F4 /* frangelico_700ml@2x.png */; };
+		077A6BC025E855C9007F59F4 /* tanqueray_750ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6B9F25E855C7007F59F4 /* tanqueray_750ml@2x.png */; };
+		077A6BC125E855C9007F59F4 /* cafe_porciones@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6BA025E855C7007F59F4 /* cafe_porciones@2x.png */; };
+		077A6BC225E855C9007F59F4 /* modelo_negra@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6BA125E855C7007F59F4 /* modelo_negra@2x.png */; };
+		077A6BC325E855C9007F59F4 /* barcelo_blanco700@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6BA225E855C7007F59F4 /* barcelo_blanco700@2x.png */; };
+		077A6BC425E855C9007F59F4 /* pellegrino_750ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6BA325E855C7007F59F4 /* pellegrino_750ml@2x.png */; };
+		077A6BC525E855C9007F59F4 /* stolichnaya_375ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6BA425E855C7007F59F4 /* stolichnaya_375ml@2x.png */; };
+		077A6BC625E855C9007F59F4 /* canadien_club_750ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6BA525E855C8007F59F4 /* canadien_club_750ml@2x.png */; };
+		077A6BC725E855C9007F59F4 /* jagermeister_755ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6BA625E855C8007F59F4 /* jagermeister_755ml@2x.png */; };
+		077A6BC825E855C9007F59F4 /* jagermeister_750ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6BA725E855C8007F59F4 /* jagermeister_750ml@2x.png */; };
+		077A6BC925E855C9007F59F4 /* brugal_extra_v_350ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6BA825E855C8007F59F4 /* brugal_extra_v_350ml@2x.png */; };
+		077A6BCA25E855C9007F59F4 /* coorslight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6BA925E855C8007F59F4 /* coorslight@2x.png */; };
+		077A6BCB25E855C9007F59F4 /* disaronno_750ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6BAA25E855C8007F59F4 /* disaronno_750ml@2x.png */; };
+		077A6BCC25E855C9007F59F4 /* coronita@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6BAB25E855C8007F59F4 /* coronita@2x.png */; };
+		077A6BCD25E855C9007F59F4 /* bermudez_700ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6BAC25E855C8007F59F4 /* bermudez_700ml@2x.png */; };
+		077A6BCE25E855C9007F59F4 /* heineken_lata@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6BAD25E855C8007F59F4 /* heineken_lata@2x.png */; };
+		077A6BCF25E855C9007F59F4 /* barcelo_anejo_1000ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6BAE25E855C8007F59F4 /* barcelo_anejo_1000ml@2x.png */; };
+		077A6BD025E855C9007F59F4 /* jagermeister_1000ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6BAF25E855C8007F59F4 /* jagermeister_1000ml@2x.png */; };
+		077A6BD125E855C9007F59F4 /* brugal_leyenda_700ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6BB025E855C8007F59F4 /* brugal_leyenda_700ml@2x.png */; };
+		077A6BD225E855C9007F59F4 /* brutal_151@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6BB125E855C8007F59F4 /* brutal_151@2x.png */; };
+		077A6BD425E855C9007F59F4 /* gold_label_750ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6BB325E855C9007F59F4 /* gold_label_750ml@2x.png */; };
+		077A6BD525E855C9007F59F4 /* brugal_extra_v_700ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6BB425E855C9007F59F4 /* brugal_extra_v_700ml@2x.png */; };
+		077A6BD625E855C9007F59F4 /* redbull_sinazucar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6BB525E855C9007F59F4 /* redbull_sinazucar@2x.png */; };
+		077A6BD725E855C9007F59F4 /* brugal_xv_350ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6BB625E855C9007F59F4 /* brugal_xv_350ml@2x.png */; };
+		077A6BD825E855C9007F59F4 /* barcelo_imp_700ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6BB725E855C9007F59F4 /* barcelo_imp_700ml@2x.png */; };
+		077A6BD925E855C9007F59F4 /* modelo_rubia@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6BB825E855C9007F59F4 /* modelo_rubia@2x.png */; };
 		07DC6D7C20C9FDC00053FB5B /* BartenderCommentTHVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DC6D7B20C9FDC00053FB5B /* BartenderCommentTHVC.m */; };
 		07E274371FA82AC50036E6B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07E274361FA82AB10036E6B8 /* Assets.xcassets */; };
 		07E5E1D620C46A9200B294FC /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E5E1D520C46A9200B294FC /* User.m */; };
@@ -293,6 +325,38 @@
 		076CD644235B7ED500B5670D /* Moon-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Moon-Bold.otf"; sourceTree = "<group>"; };
 		076CD645235B7ED500B5670D /* Moon-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Moon-Light.otf"; sourceTree = "<group>"; };
 		076CD646235B7ED500B5670D /* Moon_Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Moon_Regular.otf; sourceTree = "<group>"; };
+		077A6B9825E855C6007F59F4 /* d'usse_750ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "d'usse_750ml@2x.png"; sourceTree = "<group>"; };
+		077A6B9925E855C6007F59F4 /* pina_unidades@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pina_unidades@2x.png"; sourceTree = "<group>"; };
+		077A6B9A25E855C7007F59F4 /* presidente_light_330@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "presidente_light_330@2x.png"; sourceTree = "<group>"; };
+		077A6B9B25E855C7007F59F4 /* presidente_gold@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "presidente_gold@2x.png"; sourceTree = "<group>"; };
+		077A6B9C25E855C7007F59F4 /* brugal_blanco_1000ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "brugal_blanco_1000ml@2x.png"; sourceTree = "<group>"; };
+		077A6B9D25E855C7007F59F4 /* coors_banquet@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coors_banquet@2x.png"; sourceTree = "<group>"; };
+		077A6B9E25E855C7007F59F4 /* frangelico_700ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frangelico_700ml@2x.png"; sourceTree = "<group>"; };
+		077A6B9F25E855C7007F59F4 /* tanqueray_750ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tanqueray_750ml@2x.png"; sourceTree = "<group>"; };
+		077A6BA025E855C7007F59F4 /* cafe_porciones@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cafe_porciones@2x.png"; sourceTree = "<group>"; };
+		077A6BA125E855C7007F59F4 /* modelo_negra@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "modelo_negra@2x.png"; sourceTree = "<group>"; };
+		077A6BA225E855C7007F59F4 /* barcelo_blanco700@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "barcelo_blanco700@2x.png"; sourceTree = "<group>"; };
+		077A6BA325E855C7007F59F4 /* pellegrino_750ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pellegrino_750ml@2x.png"; sourceTree = "<group>"; };
+		077A6BA425E855C7007F59F4 /* stolichnaya_375ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stolichnaya_375ml@2x.png"; sourceTree = "<group>"; };
+		077A6BA525E855C8007F59F4 /* canadien_club_750ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "canadien_club_750ml@2x.png"; sourceTree = "<group>"; };
+		077A6BA625E855C8007F59F4 /* jagermeister_755ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jagermeister_755ml@2x.png"; sourceTree = "<group>"; };
+		077A6BA725E855C8007F59F4 /* jagermeister_750ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jagermeister_750ml@2x.png"; sourceTree = "<group>"; };
+		077A6BA825E855C8007F59F4 /* brugal_extra_v_350ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "brugal_extra_v_350ml@2x.png"; sourceTree = "<group>"; };
+		077A6BA925E855C8007F59F4 /* coorslight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coorslight@2x.png"; sourceTree = "<group>"; };
+		077A6BAA25E855C8007F59F4 /* disaronno_750ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "disaronno_750ml@2x.png"; sourceTree = "<group>"; };
+		077A6BAB25E855C8007F59F4 /* coronita@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coronita@2x.png"; sourceTree = "<group>"; };
+		077A6BAC25E855C8007F59F4 /* bermudez_700ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bermudez_700ml@2x.png"; sourceTree = "<group>"; };
+		077A6BAD25E855C8007F59F4 /* heineken_lata@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "heineken_lata@2x.png"; sourceTree = "<group>"; };
+		077A6BAE25E855C8007F59F4 /* barcelo_anejo_1000ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "barcelo_anejo_1000ml@2x.png"; sourceTree = "<group>"; };
+		077A6BAF25E855C8007F59F4 /* jagermeister_1000ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jagermeister_1000ml@2x.png"; sourceTree = "<group>"; };
+		077A6BB025E855C8007F59F4 /* brugal_leyenda_700ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "brugal_leyenda_700ml@2x.png"; sourceTree = "<group>"; };
+		077A6BB125E855C8007F59F4 /* brutal_151@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "brutal_151@2x.png"; sourceTree = "<group>"; };
+		077A6BB325E855C9007F59F4 /* gold_label_750ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gold_label_750ml@2x.png"; sourceTree = "<group>"; };
+		077A6BB425E855C9007F59F4 /* brugal_extra_v_700ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "brugal_extra_v_700ml@2x.png"; sourceTree = "<group>"; };
+		077A6BB525E855C9007F59F4 /* redbull_sinazucar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "redbull_sinazucar@2x.png"; sourceTree = "<group>"; };
+		077A6BB625E855C9007F59F4 /* brugal_xv_350ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "brugal_xv_350ml@2x.png"; sourceTree = "<group>"; };
+		077A6BB725E855C9007F59F4 /* barcelo_imp_700ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "barcelo_imp_700ml@2x.png"; sourceTree = "<group>"; };
+		077A6BB825E855C9007F59F4 /* modelo_rubia@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "modelo_rubia@2x.png"; sourceTree = "<group>"; };
 		07DC6D7A20C9FDC00053FB5B /* BartenderCommentTHVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BartenderCommentTHVC.h; sourceTree = "<group>"; };
 		07DC6D7B20C9FDC00053FB5B /* BartenderCommentTHVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BartenderCommentTHVC.m; sourceTree = "<group>"; };
 		07E274361FA82AB10036E6B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -585,6 +649,38 @@
 		07DC6D7D20CB33790053FB5B /* ItemImages */ = {
 			isa = PBXGroup;
 			children = (
+				077A6BAE25E855C8007F59F4 /* barcelo_anejo_1000ml@2x.png */,
+				077A6BA225E855C7007F59F4 /* barcelo_blanco700@2x.png */,
+				077A6BB725E855C9007F59F4 /* barcelo_imp_700ml@2x.png */,
+				077A6BAC25E855C8007F59F4 /* bermudez_700ml@2x.png */,
+				077A6B9C25E855C7007F59F4 /* brugal_blanco_1000ml@2x.png */,
+				077A6BA825E855C8007F59F4 /* brugal_extra_v_350ml@2x.png */,
+				077A6BB425E855C9007F59F4 /* brugal_extra_v_700ml@2x.png */,
+				077A6BB025E855C8007F59F4 /* brugal_leyenda_700ml@2x.png */,
+				077A6BB625E855C9007F59F4 /* brugal_xv_350ml@2x.png */,
+				077A6BB125E855C8007F59F4 /* brutal_151@2x.png */,
+				077A6BA025E855C7007F59F4 /* cafe_porciones@2x.png */,
+				077A6BA525E855C8007F59F4 /* canadien_club_750ml@2x.png */,
+				077A6B9D25E855C7007F59F4 /* coors_banquet@2x.png */,
+				077A6BA925E855C8007F59F4 /* coorslight@2x.png */,
+				077A6BAB25E855C8007F59F4 /* coronita@2x.png */,
+				077A6B9825E855C6007F59F4 /* d'usse_750ml@2x.png */,
+				077A6BAA25E855C8007F59F4 /* disaronno_750ml@2x.png */,
+				077A6B9E25E855C7007F59F4 /* frangelico_700ml@2x.png */,
+				077A6BB325E855C9007F59F4 /* gold_label_750ml@2x.png */,
+				077A6BAD25E855C8007F59F4 /* heineken_lata@2x.png */,
+				077A6BA725E855C8007F59F4 /* jagermeister_750ml@2x.png */,
+				077A6BA625E855C8007F59F4 /* jagermeister_755ml@2x.png */,
+				077A6BAF25E855C8007F59F4 /* jagermeister_1000ml@2x.png */,
+				077A6BA125E855C7007F59F4 /* modelo_negra@2x.png */,
+				077A6BB825E855C9007F59F4 /* modelo_rubia@2x.png */,
+				077A6BA325E855C7007F59F4 /* pellegrino_750ml@2x.png */,
+				077A6B9925E855C6007F59F4 /* pina_unidades@2x.png */,
+				077A6B9B25E855C7007F59F4 /* presidente_gold@2x.png */,
+				077A6B9A25E855C7007F59F4 /* presidente_light_330@2x.png */,
+				077A6BB525E855C9007F59F4 /* redbull_sinazucar@2x.png */,
+				077A6BA425E855C7007F59F4 /* stolichnaya_375ml@2x.png */,
+				077A6B9F25E855C7007F59F4 /* tanqueray_750ml@2x.png */,
 				07FF223020E459E200F19836 /* presidente_330ml@2x.png */,
 				07FF222F20E459E100F19836 /* presidente_black_330ml@2x.png */,
 				07FF223120E459E200F19836 /* presidente_light_330m@2x.png */,
@@ -1197,12 +1293,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				07FF220720E1957E00F19836 /* manzana_jugo@2x.png in Resources */,
+				077A6BB925E855C9007F59F4 /* d'usse_750ml@2x.png in Resources */,
 				0746017A20CDE01A006EABE9 /* chivas_regal_750ml@2x.png in Resources */,
 				07FF220D20E1957E00F19836 /* blue_curacao_700ml@2x.png in Resources */,
 				0746018020CDE01A006EABE9 /* greygoose_magnum@2x.png in Resources */,
+				077A6BD125E855C9007F59F4 /* brugal_leyenda_700ml@2x.png in Resources */,
+				077A6BC625E855C9007F59F4 /* canadien_club_750ml@2x.png in Resources */,
 				07FF222720E1957E00F19836 /* barcelo_gran_a_700ml@2x.png in Resources */,
 				07FF221320E1957E00F19836 /* guineo_700ml@2x.png in Resources */,
 				0746018520CDE01A006EABE9 /* corona_330ml@2x.png in Resources */,
+				077A6BC125E855C9007F59F4 /* cafe_porciones@2x.png in Resources */,
 				0746017B20CDE01A006EABE9 /* coca_cola_light_20oz@2x.png in Resources */,
 				0746015620CDE01A006EABE9 /* marlboro_rojo@2x.png in Resources */,
 				C40D6BC91E127AC600373224 /* LNNumberpad.xib in Resources */,
@@ -1211,6 +1311,7 @@
 				0746016720CDE01A006EABE9 /* jose_cuervo_blanco_750ml@2x.png in Resources */,
 				0746017F20CDE01A006EABE9 /* barcelo_gran_anejo_700ml@2x.png in Resources */,
 				C4B0F8C91DCE22EB004946B7 /* LICENSE in Resources */,
+				077A6BBC25E855C9007F59F4 /* presidente_gold@2x.png in Resources */,
 				0746015F20CDE01A006EABE9 /* barcelo_imperial_700ml@2x.png in Resources */,
 				0746016320CDE01A006EABE9 /* bohemia_330ml@2x.png in Resources */,
 				0746015320CDE01A006EABE9 /* baileys_750ml@2x.png in Resources */,
@@ -1221,25 +1322,34 @@
 				0746017720CDE01A006EABE9 /* martini_bianco_750ml@2x.png in Resources */,
 				07FF222A20E1957E00F19836 /* riondo_prosecco_750ml@2x.png in Resources */,
 				0746017220CDE01A006EABE9 /* black_label_750ml@2x.png in Resources */,
+				077A6BD025E855C9007F59F4 /* jagermeister_1000ml@2x.png in Resources */,
 				076CD649235B7ED500B5670D /* Moon_Regular.otf in Resources */,
 				0746015120CDE01A006EABE9 /* grand_marnier_700ml@2x.png in Resources */,
+				077A6BBF25E855C9007F59F4 /* frangelico_700ml@2x.png in Resources */,
+				077A6BCB25E855C9007F59F4 /* disaronno_750ml@2x.png in Resources */,
 				07FF220E20E1957E00F19836 /* chinola_jugo@2x.png in Resources */,
 				0746018A20D2A647006EABE9 /* coming_soon@2x.png in Resources */,
 				0746017120CDE01A006EABE9 /* brugal_xv_700ml@2x.png in Resources */,
 				07FF222D20E1957E00F19836 /* clamato_163ml@2x.png in Resources */,
 				0746017D20CDE01A006EABE9 /* ladoga_700ml@2x.png in Resources */,
+				077A6BD525E855C9007F59F4 /* brugal_extra_v_700ml@2x.png in Resources */,
 				0746017620CDE01A006EABE9 /* kahlua_700ml@2x.png in Resources */,
 				07E9E50D236038620023CA50 /* bluetooth_beef.mp3 in Resources */,
 				07FF222E20E1957E00F19836 /* moet_chandon_750ml@2x.png in Resources */,
 				0746016220CDE01A006EABE9 /* fireball_750ml@2x.png in Resources */,
 				07FF222620E1957E00F19836 /* jarana_blanco_1000ml@2x.png in Resources */,
 				0746015420CDE01A006EABE9 /* dasani_500ml@2x.png in Resources */,
+				077A6BD825E855C9007F59F4 /* barcelo_imp_700ml@2x.png in Resources */,
 				C40D6BC71E127AC600373224 /* LNHexNumberpad.xib in Resources */,
+				077A6BCA25E855C9007F59F4 /* coorslight@2x.png in Resources */,
 				0746017420CDE01A006EABE9 /* ricard_750ml@2x.png in Resources */,
 				07FF223220E459E200F19836 /* presidente_black_330ml@2x.png in Resources */,
 				07FF220C20E1957E00F19836 /* cranberry_jugo@2x.png in Resources */,
 				0746018120CDE01A006EABE9 /* marlboro_blanco@2x.png in Resources */,
 				076CD648235B7ED500B5670D /* Moon-Light.otf in Resources */,
+				077A6BC925E855C9007F59F4 /* brugal_extra_v_350ml@2x.png in Resources */,
+				077A6BBD25E855C9007F59F4 /* brugal_blanco_1000ml@2x.png in Resources */,
+				077A6BCF25E855C9007F59F4 /* barcelo_anejo_1000ml@2x.png in Resources */,
 				07FF221720E1957E00F19836 /* coca_cola_20oz@2x.png in Resources */,
 				07FF222020E1957E00F19836 /* copa_vino_blanco@2x.png in Resources */,
 				0746015D20CDE01A006EABE9 /* jack_daniels_750ml@2x.png in Resources */,
@@ -1249,6 +1359,7 @@
 				0746015920CDE01A006EABE9 /* sambuca_750ml@2x.png in Resources */,
 				07FF222920E1957E00F19836 /* peroni_330ml@2x.png in Resources */,
 				07FF221520E1957E00F19836 /* hennessy_white_700ml@2x.png in Resources */,
+				077A6BC025E855C9007F59F4 /* tanqueray_750ml@2x.png in Resources */,
 				0746016F20CDE01A006EABE9 /* jose_cuervo_dorado_700ml@2x.png in Resources */,
 				0746015820CDE01A006EABE9 /* malibu_750ml@2x.png in Resources */,
 				0746016C20CDE01A006EABE9 /* amaretto_750ml@2x.png in Resources */,
@@ -1256,50 +1367,67 @@
 				07FF220B20E1957E00F19836 /* melocoton_700ml@2x.png in Resources */,
 				0746016520CDE01A006EABE9 /* cointreau_700ml@2x.png in Resources */,
 				0746017820CDE01A006EABE9 /* bombay_750ml@2x.png in Resources */,
+				077A6BC325E855C9007F59F4 /* barcelo_blanco700@2x.png in Resources */,
 				0746016020CDE01A006EABE9 /* barcelo_anejo_700ml@2x.png in Resources */,
 				0746016120CDE01A006EABE9 /* perrier_330ml@2x.png in Resources */,
 				0746016A20CDE01A006EABE9 /* brugal_extra_viejo_700ml@2x.png in Resources */,
 				C4B0F89C1DCD37F5004946B7 /* FontAwesome.otf in Resources */,
+				077A6BCD25E855C9007F59F4 /* bermudez_700ml@2x.png in Resources */,
 				0746016920CDE01A006EABE9 /* stella_artois_330ml@2x.png in Resources */,
 				07FF222220E1957E00F19836 /* mamajuana@2x.png in Resources */,
+				077A6BBB25E855C9007F59F4 /* presidente_light_330@2x.png in Resources */,
 				0746017920CDE01A006EABE9 /* aviation_750ml@2x.png in Resources */,
 				0746015C20CDE01A006EABE9 /* social_330ml@2x.png in Resources */,
 				0746015E20CDE01A006EABE9 /* dewars_750ml@2x.png in Resources */,
 				07E9E50B236012760023CA50 /* supermario_coin.mp3 in Resources */,
 				0746018220CDE01A006EABE9 /* patron_silver_750ml@2x.png in Resources */,
+				077A6BD925E855C9007F59F4 /* modelo_rubia@2x.png in Resources */,
 				0746015B20CDE01A006EABE9 /* stolichnaya_750ml@2x.png in Resources */,
 				0746015720CDE01A006EABE9 /* hennessy_vsop_700ml@2x.png in Resources */,
 				07FF220F20E1957E00F19836 /* lemon_jugo@2x.png in Resources */,
 				0746015220CDE01A006EABE9 /* greygoose_750ml@2x.png in Resources */,
 				07FF221820E1957E00F19836 /* jose_c_blanco_750ml@2x.png in Resources */,
 				0746016D20CDE01A006EABE9 /* absolut_750ml@2x.png in Resources */,
+				077A6BC825E855C9007F59F4 /* jagermeister_750ml@2x.png in Resources */,
 				07FF221920E1957E00F19836 /* barbera_dalba_750ml@2x.png in Resources */,
 				0746015A20CDE01A006EABE9 /* anejo-700-frontal_web@2x.png in Resources */,
 				C4B0F89B1DCD37F5004946B7 /* fontawesome-webfont.ttf in Resources */,
+				077A6BD225E855C9007F59F4 /* brutal_151@2x.png in Resources */,
 				07E274371FA82AC50036E6B8 /* Assets.xcassets in Resources */,
 				0746017C20CDE01A006EABE9 /* coka_cola_20oz@2x.png in Resources */,
 				07FF222420E1957E00F19836 /* tomate_jugoNice-to-meet-you!.png in Resources */,
+				077A6BC525E855C9007F59F4 /* stolichnaya_375ml@2x.png in Resources */,
 				0746018320CDE01A006EABE9 /* belvedere_750ml@2x.png in Resources */,
 				0746016B20CDE01A006EABE9 /* averna_700ml@2x.png in Resources */,
 				07FF221C20E1957E00F19836 /* pina_jugo@2x.png in Resources */,
+				077A6BC225E855C9007F59F4 /* modelo_negra@2x.png in Resources */,
+				077A6BC725E855C9007F59F4 /* jagermeister_755ml@2x.png in Resources */,
 				07FF223320E459E200F19836 /* presidente_330ml@2x.png in Resources */,
+				077A6BBA25E855C9007F59F4 /* pina_unidades@2x.png in Resources */,
 				07FF221120E1957E00F19836 /* imperial_gold_700ml@2x.png in Resources */,
 				07FF221220E1957E00F19836 /* riondo_magnum@2x.png in Resources */,
+				077A6BD425E855C9007F59F4 /* gold_label_750ml@2x.png in Resources */,
 				07FF222120E1957E00F19836 /* nero_davola_750ml@2x.png in Resources */,
 				C43430501DCCC58C00239E17 /* Main.storyboard in Resources */,
 				07FF221A20E1957E00F19836 /* copa_vino_tinto@2x.png in Resources */,
+				077A6BD725E855C9007F59F4 /* brugal_xv_350ml@2x.png in Resources */,
 				07FF222C20E1957E00F19836 /* strawberry_700ml@2x.png in Resources */,
 				07FF222820E1957E00F19836 /* naranja_jugo@2x.png in Resources */,
 				07FF221E20E1957E00F19836 /* triple_sec_700ml@2x.png in Resources */,
+				077A6BD625E855C9007F59F4 /* redbull_sinazucar@2x.png in Resources */,
 				07FF220620E1957E00F19836 /* jose_c_dorado_700ml@2x.png in Resources */,
 				0746017E20CDE01A006EABE9 /* buchanan_750ml@2x.png in Resources */,
 				07FF220820E1957E00F19836 /* pinot_grigio_750ml@2x.png in Resources */,
 				076CD647235B7ED500B5670D /* Moon-Bold.otf in Resources */,
 				07FF221020E1957E00F19836 /* montepulciano_750ml@2x.png in Resources */,
+				077A6BCC25E855C9007F59F4 /* coronita@2x.png in Resources */,
 				07FF220920E1957E00F19836 /* 151_1000ml@2x.png in Resources */,
+				077A6BBE25E855C9007F59F4 /* coors_banquet@2x.png in Resources */,
 				07FF222520E1957E00F19836 /* tonica_16oz@2x.png in Resources */,
 				07FF221420E1957E00F19836 /* chianti_classico_750ml@2x.png in Resources */,
+				077A6BCE25E855C9007F59F4 /* heineken_lata@2x.png in Resources */,
 				0746016820CDE01A006EABE9 /* campari_750ml@2x.png in Resources */,
+				077A6BC425E855C9007F59F4 /* pellegrino_750ml@2x.png in Resources */,
 				07FF220A20E1957E00F19836 /* tomate_jugo@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1601,10 +1729,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 42;
+				CURRENT_PROJECT_VERSION = 43;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 2F9673MCG5;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1634,10 +1762,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 42;
+				CURRENT_PROJECT_VERSION = 43;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 2F9673MCG5;
 				FRAMEWORK_SEARCH_PATHS = (

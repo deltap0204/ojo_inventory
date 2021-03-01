@@ -21,6 +21,22 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *sortSeg;
 @property (weak, nonatomic) IBOutlet UITextField *searchTextField;
 
+// item view pageHi
+
+@property (weak, nonatomic) IBOutlet UIView *itemDetailView;
+@property (weak, nonatomic) IBOutlet UILabel *itemNameLabelInView;
+@property (weak, nonatomic) IBOutlet UILabel *categoryNameLabelInView;
+@property (weak, nonatomic) IBOutlet UIImageView *itemImageViewInView;
+@property (weak, nonatomic) IBOutlet UILabel *itemWeightFullLabelInView;
+@property (weak, nonatomic) IBOutlet UILabel *itemWeightEmptyLabelInView;
+@property (weak, nonatomic) IBOutlet UILabel *liquidWeidhtLabelInView;
+@property (weak, nonatomic) IBOutlet UILabel *servingLabelInView;
+@property (weak, nonatomic) IBOutlet UILabel *weightPerServingLabelInView;
+@property (weak, nonatomic) IBOutlet UILabel *pricePerServingLabelInView;
+
+
+
+
 @property (strong, nonatomic) NSMutableArray *itemArray;
 @property (strong, nonatomic) NSMutableArray *itemSearchArray;
 @property (strong, nonatomic) NSMutableArray *sortedArray;
@@ -42,6 +58,9 @@
     // Adding UILongGestureRecognizer
     UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressGestureRecognized:)];
     [self.tableView addGestureRecognizer:longPress];
+    
+    // UIView initialize
+    [self.itemDetailView setHidden:YES];
     
     
     [self loadAllData];
@@ -279,6 +298,10 @@
     self.selectedRow = indexPath.row;
     
     
+    
+    [self.itemDetailView setHidden:NO];
+    
+    
 }
 
 
@@ -492,6 +515,34 @@
     [self.tableView reloadData];
     
     
+}
+
+#pragma mark - Button Action
+
+- (IBAction)itemDetailViewCancelAction:(id)sender {
+    
+    [self.itemDetailView setHidden:YES];
+}
+
+- (IBAction)barCentralSelectedAction:(id)sender {
+}
+
+- (IBAction)barOfficeSelectedAction:(id)sender {
+}
+
+- (IBAction)barLaxSelectedAction:(id)sender {
+}
+
+- (IBAction)barDjSelectedAction:(id)sender {
+}
+
+- (IBAction)locationSelectedAction:(id)sender {
+}
+
+- (IBAction)eventoSelectedAction:(id)sender {
+}
+
+- (IBAction)varVIPSelectedAction:(id)sender {
 }
 
 @end
