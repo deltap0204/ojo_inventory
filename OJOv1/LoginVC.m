@@ -48,11 +48,11 @@ static User *loggedInUser = nil;
     if ([BASE_URL isEqualToString:@"http://ojoinventory.com/ojo/"]) {
         test = @"";
     } else {
-        // 테스트서버를 이용하고 있다.
+        
         test =@" - Using test server";
         
-        self.usernameTextField.text = @"barlax";
-        self.passwordTextField.text = @"barlax";
+        self.usernameTextField.text = @"bomb";
+        self.passwordTextField.text = @"bomb";
         
     }
         

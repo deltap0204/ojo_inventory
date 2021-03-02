@@ -21,7 +21,7 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *sortSeg;
 @property (weak, nonatomic) IBOutlet UITextField *searchTextField;
 
-// item view pageHi
+// item view page
 
 @property (weak, nonatomic) IBOutlet UIView *itemDetailView;
 @property (weak, nonatomic) IBOutlet UILabel *itemNameLabelInView;
@@ -34,6 +34,14 @@
 @property (weak, nonatomic) IBOutlet UILabel *weightPerServingLabelInView;
 @property (weak, nonatomic) IBOutlet UILabel *pricePerServingLabelInView;
 
+// -- location choose imageviews
+@property (weak, nonatomic) IBOutlet UIImageView *barcentralImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *barofficeImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *barlaxImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *stockImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *bardjImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *eventoImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *barvipImageView;
 
 
 
@@ -161,7 +169,7 @@
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.userInteractionEnabled = NO;
     [hud show:YES];
-    
+    	
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         OJOClient *ojoClicent = [OJOClient sharedWebClient];
         [ojoClicent getAllItems:GET_ALL_ITEM onFinish:^(NSArray *data) {
@@ -296,6 +304,21 @@
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     self.selectedRow = indexPath.row;
+    
+    Item *itemModel;
+    itemModel= (Item *)self.itemArray[indexPath.row];
+    
+    self.itemNameLabelInView.text = itemModel.itemName;
+    self.categoryNameLabelInView.text = [NSString stringWithFormat:@"( %@ )", itemModel.categoryName];
+    
+    NSString *imageNameWithUpper = [itemModel.itemName stringByReplacingOccurrencesOfString:@" " withString:@"_"];
+    NSString *imageName = [imageNameWithUpper lowercaseString];
+    self.itemImageViewInView.image = [UIImage imageNamed:imageName];
+    if (self.itemImageViewInView.image == nil) {
+        self.itemImageViewInView.image = [UIImage imageNamed:@"coming_soon"];
+    }
+    
+    
     
     
     
@@ -524,25 +547,5 @@
     [self.itemDetailView setHidden:YES];
 }
 
-- (IBAction)barCentralSelectedAction:(id)sender {
-}
-
-- (IBAction)barOfficeSelectedAction:(id)sender {
-}
-
-- (IBAction)barLaxSelectedAction:(id)sender {
-}
-
-- (IBAction)barDjSelectedAction:(id)sender {
-}
-
-- (IBAction)locationSelectedAction:(id)sender {
-}
-
-- (IBAction)eventoSelectedAction:(id)sender {
-}
-
-- (IBAction)varVIPSelectedAction:(id)sender {
-}
 
 @end
