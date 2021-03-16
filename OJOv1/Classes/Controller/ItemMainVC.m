@@ -11,6 +11,7 @@
 #import "Category.h"
 #import "ItemTVC.h"
 #import "AdminMainVC.h"
+#import "ItemFull"
 
 
 @interface ItemMainVC ()

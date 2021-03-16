@@ -100,6 +100,7 @@
 		077A6BD725E855C9007F59F4 /* brugal_xv_350ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6BB625E855C9007F59F4 /* brugal_xv_350ml@2x.png */; };
 		077A6BD825E855C9007F59F4 /* barcelo_imp_700ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6BB725E855C9007F59F4 /* barcelo_imp_700ml@2x.png */; };
 		077A6BD925E855C9007F59F4 /* modelo_rubia@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6BB825E855C9007F59F4 /* modelo_rubia@2x.png */; };
+		07C9DA102601015B00955210 /* ItemFull.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C9DA0F2601015B00955210 /* ItemFull.m */; };
 		07DC6D7C20C9FDC00053FB5B /* BartenderCommentTHVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DC6D7B20C9FDC00053FB5B /* BartenderCommentTHVC.m */; };
 		07E274371FA82AC50036E6B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07E274361FA82AB10036E6B8 /* Assets.xcassets */; };
 		07E5E1D620C46A9200B294FC /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E5E1D520C46A9200B294FC /* User.m */; };
@@ -357,6 +358,8 @@
 		077A6BB625E855C9007F59F4 /* brugal_xv_350ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "brugal_xv_350ml@2x.png"; sourceTree = "<group>"; };
 		077A6BB725E855C9007F59F4 /* barcelo_imp_700ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "barcelo_imp_700ml@2x.png"; sourceTree = "<group>"; };
 		077A6BB825E855C9007F59F4 /* modelo_rubia@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "modelo_rubia@2x.png"; sourceTree = "<group>"; };
+		07C9DA0E2601015B00955210 /* ItemFull.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ItemFull.h; sourceTree = "<group>"; };
+		07C9DA0F2601015B00955210 /* ItemFull.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ItemFull.m; sourceTree = "<group>"; };
 		07DC6D7A20C9FDC00053FB5B /* BartenderCommentTHVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BartenderCommentTHVC.h; sourceTree = "<group>"; };
 		07DC6D7B20C9FDC00053FB5B /* BartenderCommentTHVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BartenderCommentTHVC.m; sourceTree = "<group>"; };
 		07E274361FA82AB10036E6B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -990,6 +993,8 @@
 				C4DA559A1DD503AE0077FBC0 /* Category.m */,
 				C4DA559C1DD503B70077FBC0 /* Item.h */,
 				C4DA559D1DD503B70077FBC0 /* Item.m */,
+				07C9DA0E2601015B00955210 /* ItemFull.h */,
+				07C9DA0F2601015B00955210 /* ItemFull.m */,
 				C432607C1DDCC7A000195370 /* Inventory.h */,
 				C432607D1DDCC7A000195370 /* Inventory.m */,
 				C4C945591DEDEFA200A61A14 /* MoveItem.h */,
@@ -1475,6 +1480,7 @@
 				C42CDBF31F48EFA600A6E225 /* RefillItem.m in Sources */,
 				C4B0F8C81DCE22EB004946B7 /* AFURLSessionManager.m in Sources */,
 				C4DA55981DD5038C0077FBC0 /* ItemTVC.m in Sources */,
+				07C9DA102601015B00955210 /* ItemFull.m in Sources */,
 				C434304D1DCCC58C00239E17 /* LoginVC.m in Sources */,
 				C4B0F8D21DCE22EB004946B7 /* UIRefreshControl+AFNetworking.m in Sources */,
 				C4DC3B1D1DD24C3500369A36 /* Location.m in Sources */,
