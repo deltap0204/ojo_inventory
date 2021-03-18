@@ -90,6 +90,7 @@
 #define INVENTORY_ITEM_PRICE    @"item_price"
 #define INVENTORY_CATEGORY      @"item_category"
 #define INVENTORY_JSON          @"inventory_json"
+#define INVENTORY_ACTIVED_LOCATIONS     @"actived_locations"
 
 
 #pragma mark - comment

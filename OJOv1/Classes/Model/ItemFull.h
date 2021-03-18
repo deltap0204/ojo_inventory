@@ -20,7 +20,7 @@
 @property (strong, nonatomic) NSString *servBt;
 @property (strong, nonatomic) NSString *price;
 @property (assign, nonatomic) NSInteger frequency;
-@property (strong, nonatomic) NSMutableArray activedLocationArray;
+@property (strong, nonatomic) NSMutableArray *activedLocationArray;
 
 
 
@@ -31,8 +31,9 @@
                   andWithBtEmpWet:(NSString*)btEmpWet
                     andWithLiqWet:(NSString*)liqWet
                     andWithServBt:(NSString*)servBt
-                         andprice:(NSString*)price
-                     andFrequence:(NSInteger)frequency;
+                     andWithprice:(NSString*)price
+                 andWithFrequence:(NSInteger)frequency
+      andWithActivedLocationArray:(NSMutableArray*)activedLocationArray;
 
 - (instancetype) initWithDictionary:(NSDictionary *) dictionary;
 

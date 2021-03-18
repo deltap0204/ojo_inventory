@@ -11,7 +11,7 @@
 #import "Category.h"
 #import "ItemTVC.h"
 #import "AdminMainVC.h"
-#import "ItemFull"
+#import "ItemFull.h"
 
 
 @interface ItemMainVC ()
@@ -125,8 +125,8 @@
         case 1: // sort by ranking
             [self sortItemArrayByAlphaBet];
             [self.itemArray sortUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
-                Item *item1 = (Item *)obj1;
-                Item *item2 = (Item *)obj2;
+                ItemFull *item1 = (ItemFull *)obj1;
+                ItemFull *item2 = (ItemFull *)obj2;
                 if (item1.frequency > item2.frequency) {
                     return NSOrderedAscending;
                 } else if (item1.frequency < item2.frequency) {
@@ -141,8 +141,8 @@
         case 2: // sort by category
             [self sortItemArrayByAlphaBet];
             [self.itemArray sortUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
-                Item *item1 = (Item *)obj1;
-                Item *item2 = (Item *)obj2;
+                ItemFull *item1 = (ItemFull *)obj1;
+                ItemFull *item2 = (ItemFull *)obj2;
                 return [item1.categoryName compare:item2.categoryName];
             }];
             [self.tableView reloadData];
@@ -157,8 +157,8 @@
 
 - (void) sortItemArrayByAlphaBet{
     [self.itemArray sortUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
-        Item *item1 = (Item *)obj1;
-        Item *item2 = (Item *)obj2;
+        ItemFull *item1 = (ItemFull *)obj1;
+        ItemFull *item2 = (ItemFull *)obj2;
         return [item1.itemName compare:item2.itemName];
     }];
 }
@@ -183,24 +183,46 @@
                 NSInteger count = response.count;
                 
                 [self.itemArray removeAllObjects];
-                Item *itemModel = nil;
+                
+                ItemFull *itemFullModel = nil;
                 
                 for (int i = 0; i < count; i++) {
                     
                     NSDictionary *userDict = (NSDictionary *) response[i];
-                    NSString *ItemName = [userDict objectForKey:ITEM_NAME];
+                    NSString *itemName = [userDict objectForKey:ITEM_NAME];
                     NSString *categoryName = [userDict objectForKey:ITEM_CATEGORY];
                     NSInteger fullOpen = [[userDict objectForKey:FULL_OPEN] integerValue];
                     NSInteger frequency = [[userDict objectForKey:FREQUENCY] integerValue];
                     NSString *price = [userDict objectForKey:PRICE];
+                    NSString *btFullWet = [userDict objectForKey:BT_FULL_WET];
+                    NSString *btEmpWet = [userDict objectForKey:@"be_emp_wet"];
+                    NSString * ligWet = [userDict objectForKey:LIQ_WET];
+                    NSString *servBt = [userDict objectForKey:SERVE_WET];
+                    
+                    NSMutableArray *locationArray = (NSMutableArray *)[userDict objectForKey:@"active_locations"];
+
+//                    NSInteger locationCount = locationArray.count;
+//                    for (int j = 0; j < locationCount; j++) {
+//                        NSString *location = (NSString*)locationArray[j];
+//                        [activedLocationArray addObject:location];
+//                    }
+                                     
+                    
+                    itemFullModel = [[ItemFull alloc] initWithItemName:itemName
+                                                    andWithFullAndOpen:fullOpen
+                                                   andWithCategoryName:categoryName
+                                                      andWithBtFullWet:btFullWet
+                                                       andWithBtEmpWet:btEmpWet
+                                                         andWithLiqWet:ligWet
+                                                         andWithServBt:servBt
+                                                          andWithprice:price
+                                                      andWithFrequence:frequency
+                                           andWithActivedLocationArray:locationArray];
                     
                     
-                    itemModel = [[Item alloc] initWithItemName:ItemName
-                                            andWithFullAndOpen:fullOpen
-                                           andWithCategoryName:categoryName
-                                                  andFrequency:frequency
-                                                      andPrice:price];
-                    [self.itemArray addObject:itemModel];
+                    
+                    [self.itemArray addObject:itemFullModel];
+                    
                 }
                 [self sortItemArrayByAlphaBet];
                 
@@ -246,12 +268,14 @@
 
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
     static NSString *cellItentifier = @"itemCell";
     ItemTVC *itemCell = [tableView dequeueReusableCellWithIdentifier:cellItentifier];
-    Item *itemModel;
+    ItemFull *itemModel;
     
-    if(self.isFiltered) itemModel = (Item *)self.itemSearchArray[indexPath.row];
-    else itemModel= (Item *)self.itemArray[indexPath.row];
+    if(self.isFiltered) itemModel = (ItemFull *)self.itemSearchArray[indexPath.row];
+    else itemModel= (ItemFull *)self.itemArray[indexPath.row];
+    
     
     NSString *imageNameWithUpper = [itemModel.itemName stringByReplacingOccurrencesOfString:@" " withString:@"_"];
     NSString *imageName = [imageNameWithUpper lowercaseString];
@@ -304,10 +328,14 @@
 
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
     self.selectedRow = indexPath.row;
     
-    Item *itemModel;
-    itemModel= (Item *)self.itemArray[indexPath.row];
+    ItemFull *itemModel;
+    
+    if(self.isFiltered) itemModel = (ItemFull *)self.itemSearchArray[indexPath.row];
+    else itemModel= (ItemFull*)self.itemArray[indexPath.row];
+    
     
     self.itemNameLabelInView.text = itemModel.itemName;
     self.categoryNameLabelInView.text = [NSString stringWithFormat:@"( %@ )", itemModel.categoryName];
@@ -320,7 +348,36 @@
     }
     
     
-    
+    self.itemWeightFullLabelInView.text = itemModel.btFullWet;
+    self.itemWeightEmptyLabelInView.text = itemModel.btEmpWet;
+    self.liquidWeidhtLabelInView.text = itemModel.liqWet;
+    self.servingLabelInView.text = itemModel.liqWet;
+    self.weightPerServingLabelInView.text = itemModel.servBt;
+    self.pricePerServingLabelInView.text = itemModel.price;
+        
+    for (int i = 0; i < itemModel.activedLocationArray.count; i++) {
+        
+        NSString *activeLocation = (NSString*)itemModel.activedLocationArray[i];
+        
+        if ([activeLocation isEqual:@"BAR CENTRAL"]) {
+            self.barcentralImageView.image = [UIImage imageNamed:@"location_selected"];
+        } else if([activeLocation isEqual:@"BAR OFFIC"]) {
+            self.barofficeImageView.image = [UIImage imageNamed:@"location_selected"];
+        } else if([activeLocation isEqual:@"BAR LAX"]){
+            self.barlaxImageView.image = [UIImage imageNamed:@"location_selected"];;
+        } else if([activeLocation isEqual:@"STOCK"]){
+            self.stockImageView.image = [UIImage imageNamed:@"location_selected"];;
+        } else if([activeLocation isEqual:@"BAR DJ"]){
+            self.bardjImageView.image = [UIImage imageNamed:@"location_selected"];
+        } else if([activeLocation isEqual:@"EVENTO"]){
+            self.eventoImageView.image = [UIImage imageNamed:@"location_selected"];;
+        } else if([activeLocation isEqual:@"BAR VIP"]){
+            self.barvipImageView.image = [UIImage imageNamed:@"location_selected"];
+        } else {
+            NSLog(@"Not active location now");
+        }
+        
+    }
     
     
     [self.itemDetailView setHidden:NO];
@@ -526,7 +583,7 @@
         self.isFiltered = YES;
         self.itemSearchArray = [[NSMutableArray alloc] init];
         
-        for (Item* item in self.itemArray)
+        for (ItemFull* item in self.itemArray)
         {
             NSRange nameRange = [item.itemName rangeOfString:text options:NSCaseInsensitiveSearch];
             if(nameRange.location != NSNotFound)
@@ -544,6 +601,26 @@
 #pragma mark - Button Action
 
 - (IBAction)itemDetailViewCancelAction:(id)sender {
+    
+    // Initialization all item detail
+    
+    self.itemNameLabelInView.text = @"";
+    self.categoryNameLabelInView.text = @"";
+    self.itemImageViewInView.image = [UIImage imageNamed:@"coming_soon"];
+    self.itemWeightFullLabelInView.text = @"0";
+    self.itemWeightEmptyLabelInView.text = @"0";
+    self.liquidWeidhtLabelInView.text = @"0";
+    self.servingLabelInView.text = @"0";
+    self.weightPerServingLabelInView.text = @"0";
+    self.pricePerServingLabelInView.text = @" ";
+    
+    self.barcentralImageView.image = [UIImage imageNamed:@"location_unselected"];
+    self.barofficeImageView.image = [UIImage imageNamed:@"location_unselected"];
+    self.barlaxImageView.image = [UIImage imageNamed:@"location_unselected"];;
+    self.stockImageView.image = [UIImage imageNamed:@"location_unselected"];;
+    self.bardjImageView.image = [UIImage imageNamed:@"location_unselected"];
+    self.eventoImageView.image = [UIImage imageNamed:@"location_unselected"];;
+    self.barvipImageView.image = [UIImage imageNamed:@"location_unselected"];
     
     [self.itemDetailView setHidden:YES];
 }

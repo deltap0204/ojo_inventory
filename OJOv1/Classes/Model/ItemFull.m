@@ -23,20 +23,23 @@
         self.servBt = dictionary[INVENTORY_SERV_BT];
         self.price = dictionary[INVENTORY_ITEM_PRICE];
         self.frequency =[dictionary[INVENTORY_FRUQUENCY] intValue];
+        self.activedLocationArray = dictionary[INVENTORY_ACTIVED_LOCATIONS];
+        
 
     }
     return self;
 }
 
-- (instancetype) initWithItemName:(NSString *)itemName
+- (instancetype) initWithItemName:(NSString*)itemName
                andWithFullAndOpen:(NSInteger)fullAndOpen
-              andWithCategoryName:(NSString *)categoryName
+              andWithCategoryName:(NSString*)categoryName
                  andWithBtFullWet:(NSString*)btFullWet
                   andWithBtEmpWet:(NSString*)btEmpWet
                     andWithLiqWet:(NSString*)liqWet
                     andWithServBt:(NSString*)servBt
-                         andprice:(NSString*)price
-                     andFrequence:(NSInteger)frequency{
+                     andWithprice:(NSString*)price
+                 andWithFrequence:(NSInteger)frequency
+      andWithActivedLocationArray:(NSMutableArray*)activedLocationArray{
     
     
     self = [super init];
@@ -50,6 +53,7 @@
         self.servBt = servBt;
         self.price = price;
         self.frequency = frequency;
+        self.activedLocationArray = activedLocationArray;
     }
     
     return self;
