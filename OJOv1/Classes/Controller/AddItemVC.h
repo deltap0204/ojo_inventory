@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ItemFull.h"
 
 @interface AddItemVC : UIViewController
+
+
+@property (strong, nonatomic) ItemFull *selectedItem;
+@property (strong, nonatomic) NSString *fromVC;
 
 @end

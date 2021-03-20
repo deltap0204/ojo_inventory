@@ -21,6 +21,7 @@
         self.btEmpWet = dictionary[INVENTORY_BT_EMP_WET];
         self.liqWet = dictionary[INVENTORY_LIQ_WET];
         self.servBt = dictionary[INVENTORY_SERV_BT];
+        self.servWet = dictionary[INVENTORY_SERV_WET];
         self.price = dictionary[INVENTORY_ITEM_PRICE];
         self.frequency =[dictionary[INVENTORY_FRUQUENCY] intValue];
         self.activedLocationArray = dictionary[INVENTORY_ACTIVED_LOCATIONS];
@@ -37,6 +38,7 @@
                   andWithBtEmpWet:(NSString*)btEmpWet
                     andWithLiqWet:(NSString*)liqWet
                     andWithServBt:(NSString*)servBt
+                   andWithServWet:(NSString*)servWet
                      andWithprice:(NSString*)price
                  andWithFrequence:(NSInteger)frequency
       andWithActivedLocationArray:(NSMutableArray*)activedLocationArray{
@@ -51,6 +53,7 @@
         self.btEmpWet = btEmpWet;
         self.liqWet = liqWet;
         self.servBt = servBt;
+        self.servWet = servWet;
         self.price = price;
         self.frequency = frequency;
         self.activedLocationArray = activedLocationArray;

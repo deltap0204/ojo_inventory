@@ -18,6 +18,7 @@
 @property (strong, nonatomic) NSString *btEmpWet;
 @property (strong, nonatomic) NSString *liqWet;
 @property (strong, nonatomic) NSString *servBt;
+@property (strong, nonatomic) NSString *servWet;
 @property (strong, nonatomic) NSString *price;
 @property (assign, nonatomic) NSInteger frequency;
 @property (strong, nonatomic) NSMutableArray *activedLocationArray;
@@ -31,6 +32,7 @@
                   andWithBtEmpWet:(NSString*)btEmpWet
                     andWithLiqWet:(NSString*)liqWet
                     andWithServBt:(NSString*)servBt
+                   andWithServWet:(NSString*)servWet
                      andWithprice:(NSString*)price
                  andWithFrequence:(NSInteger)frequency
       andWithActivedLocationArray:(NSMutableArray*)activedLocationArray;

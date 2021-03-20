@@ -12,6 +12,7 @@
 #import "ItemTVC.h"
 #import "AdminMainVC.h"
 #import "ItemFull.h"
+#import "AddItemVC.h"
 
 
 @interface ItemMainVC ()
@@ -95,21 +96,7 @@
     
 }
 
-#pragma mark - navigation view action
 
-- (IBAction)onAdd:(id)sender {
-    
-    
-}
-
-- (IBAction)onBack:(id)sender {
-    
-    AdminMainVC *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"adminPage"];
-    [svc setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
-    [svc setModalPresentationStyle:UIModalPresentationOverCurrentContext];
-    [self presentViewController:svc animated:YES completion:nil];
-    
-}
 
 
 
@@ -197,7 +184,8 @@
                     NSString *btFullWet = [userDict objectForKey:BT_FULL_WET];
                     NSString *btEmpWet = [userDict objectForKey:@"be_emp_wet"];
                     NSString * ligWet = [userDict objectForKey:LIQ_WET];
-                    NSString *servBt = [userDict objectForKey:SERVE_WET];
+                    NSString *serveWet = [userDict objectForKey:SERVE_WET];
+                    NSString *servBt = [userDict objectForKey:SERVE_BOTTLE];
                     
                     NSMutableArray *locationArray = (NSMutableArray *)[userDict objectForKey:@"active_locations"];
 
@@ -215,6 +203,7 @@
                                                        andWithBtEmpWet:btEmpWet
                                                          andWithLiqWet:ligWet
                                                          andWithServBt:servBt
+                                                        andWithServWet:serveWet
                                                           andWithprice:price
                                                       andWithFrequence:frequency
                                            andWithActivedLocationArray:locationArray];
@@ -351,8 +340,8 @@
     self.itemWeightFullLabelInView.text = itemModel.btFullWet;
     self.itemWeightEmptyLabelInView.text = itemModel.btEmpWet;
     self.liquidWeidhtLabelInView.text = itemModel.liqWet;
-    self.servingLabelInView.text = itemModel.liqWet;
-    self.weightPerServingLabelInView.text = itemModel.servBt;
+    self.servingLabelInView.text = itemModel.servBt;
+    self.weightPerServingLabelInView.text = itemModel.servWet;
     self.pricePerServingLabelInView.text = itemModel.price;
         
     for (int i = 0; i < itemModel.activedLocationArray.count; i++) {
@@ -385,10 +374,28 @@
     
 }
 
-
-- (void) tableView:(UITableView *) tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(nonnull NSIndexPath *)indexPath{
+- (NSArray *) tableView:(UITableView*)tableView editActionsForRowAtIndexPath:(nonnull NSIndexPath *)indexPath{
     
-    if(editingStyle == UITableViewCellEditingStyleDelete){
+    ItemFull *itemFull;
+    
+    if(self.isFiltered) itemFull = (ItemFull*)self.itemSearchArray[indexPath.row];
+    else itemFull = (ItemFull*)self.itemArray[indexPath.row];
+    
+    UITableViewRowAction *editButton;
+    UITableViewRowAction *deleteButton;
+    
+    self.selectedRow = indexPath.row;
+    
+    editButton = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@" EDIT " handler:^(UITableViewRowAction *action, NSIndexPath *indexPath)
+                  {
+        
+        [self performSegueWithIdentifier:@"addItem" sender:tableView];
+                      
+                  }];
+    
+    
+    
+    deleteButton = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"DELETE" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
         
         UIAlertController *alert = nil;
         Item *itemModel = nil;
@@ -443,9 +450,22 @@
         [alert addAction:cancel];
         [self presentViewController:alert animated:YES completion:nil];
         
-        
-    }
+    }];
+    
+    
+    
+    
+    
+    
+    
+    deleteButton.backgroundColor = [UIColor redColor];
+    editButton.backgroundColor = [UIColor blueColor];
+    return @[editButton, deleteButton];
+    
 }
+
+
+
 
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
     //do whatever u want after row has been moved
@@ -623,6 +643,56 @@
     self.barvipImageView.image = [UIImage imageNamed:@"location_unselected"];
     
     [self.itemDetailView setHidden:YES];
+}
+
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    AddItemVC *viewControler = (AddItemVC*)segue.destinationViewController;
+    
+    ItemFull *itemFullModel;
+    
+    if (sender == self.addButton){
+        
+        itemFullModel = [[ItemFull alloc] initWithItemName:@""
+                                   andWithFullAndOpen:0
+                                  andWithCategoryName:@""
+                                     andWithBtFullWet:@""
+                                      andWithBtEmpWet:@""
+                                        andWithLiqWet:@""
+                                        andWithServBt:@""
+                                            andWithServWet:@""
+                                         andWithprice:@""
+                                     andWithFrequence:0
+                          andWithActivedLocationArray:nil];
+        
+    } else {
+        
+        itemFullModel = self.itemArray[self.selectedRow];
+        
+    }
+    
+    viewControler.fromVC = sender == self.addButton ? @"add" : @"edit";
+    viewControler.selectedItem = itemFullModel;
+    
+    
+}
+
+#pragma mark - navigation view action
+
+- (IBAction)onAdd:(id)sender {
+    self.selectedRow = 3000;
+    [self performSegueWithIdentifier:@"addItem" sender:sender];
+    
+}
+
+- (IBAction)onBack:(id)sender {
+    
+    AdminMainVC *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"adminPage"];
+    [svc setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+    [svc setModalPresentationStyle:UIModalPresentationOverCurrentContext];
+    [self presentViewController:svc animated:YES completion:nil];
+    
 }
 
 

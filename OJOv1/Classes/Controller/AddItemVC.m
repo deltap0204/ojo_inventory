@@ -9,25 +9,49 @@
 #import "AddItemVC.h"
 #import "UITextField+PaddingLabel.h"
 #import "ItemMainVC.h"
-#import "ACFloatingTextField.h"
 #import "CategoryMainVC.h"
 #import "Category.h"
 
 @interface AddItemVC () <UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UIButton *backButton;
-@property (weak, nonatomic) IBOutlet ACFloatingTextField *itemNameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *itemNameTextField;
 @property (weak, nonatomic) IBOutlet UIButton *chooseCategoryButton;
-@property (weak, nonatomic) IBOutlet ACFloatingTextField *wetFullBottleTextFeild;
-@property (weak, nonatomic) IBOutlet ACFloatingTextField *wetEmptyBottleTextFeild;
-@property (weak, nonatomic) IBOutlet ACFloatingTextField *wetLiquidTextFeild;
-@property (weak, nonatomic) IBOutlet ACFloatingTextField *servingPerBottleTextFeild;
-@property (weak, nonatomic) IBOutlet ACFloatingTextField *wetServingTextFeild;
-@property (weak, nonatomic) IBOutlet ACFloatingTextField *salePriceTextFeild;
+@property (weak, nonatomic) IBOutlet UITextField *wetFullBottleTextFeild;
+@property (weak, nonatomic) IBOutlet UITextField *wetEmptyBottleTextFeild;
+@property (weak, nonatomic) IBOutlet UITextField *wetLiquidTextFeild;
+@property (weak, nonatomic) IBOutlet UITextField *servingPerBottleTextFeild;
+@property (weak, nonatomic) IBOutlet UITextField *wetServingTextFeild;
+@property (weak, nonatomic) IBOutlet UITextField *salePriceTextFeild;
 @property (weak, nonatomic) IBOutlet UIPickerView *categoryPickerView;
-@property (weak, nonatomic) IBOutlet UIButton *creatItemButton;
+@property (weak, nonatomic) IBOutlet UIButton *creatOrEditItemButton;
 @property (weak, nonatomic) IBOutlet UIButton *doneButton;
 @property (weak, nonatomic) IBOutlet UIView *categorySelectView;
+@property (weak, nonatomic) IBOutlet UIImageView *itemImageView;
+
+// -- location choose imageviews
+@property (weak, nonatomic) IBOutlet UIImageView *barcentralImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *barofficeImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *barlaxImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *stockImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *bardjImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *eventoImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *barvipImageView;
+
+@property (weak, nonatomic) IBOutlet UIView *locationChangeConfirmView;
+@property (weak, nonatomic) IBOutlet UILabel *locationChangeCausionLabel;
+@property (weak, nonatomic) IBOutlet UITextField *locationChangeParTextField;
+@property (weak, nonatomic) IBOutlet UIButton *locationChangeConfirmButton;
+@property (weak, nonatomic) IBOutlet UIButton *locationChangeCancelButton;
+
+
+@property (assign, nonatomic) BOOL barcentralSelected;
+@property (assign, nonatomic) BOOL barofficeSelected;
+@property (assign, nonatomic) BOOL barlaxSelected;
+@property (assign, nonatomic) BOOL stockSelected;
+@property (assign, nonatomic) BOOL bardjSelected;
+@property (assign, nonatomic) BOOL eventoSelected;
+@property (assign, nonatomic) BOOL barvipSelected;
 
 @property (strong, nonatomic) NSString *itemName;
 @property (strong, nonatomic) NSString *categoryStr;
@@ -50,9 +74,109 @@
     
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self textFieldInitialize];
+    
+    [self.locationChangeConfirmView setHidden:YES];
+    
+    self.itemNameTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"ITEM NAME" attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    
+    if ([self.fromVC isEqualToString:@"edit"]) {
+        
+        self.itemNameTextField.text = self.selectedItem.itemName;
+        [self.chooseCategoryButton setTitle:self.selectedItem.categoryName forState:UIControlStateNormal];
+        self.wetFullBottleTextFeild.text = self.selectedItem.btFullWet;
+        self.wetEmptyBottleTextFeild.text = self.selectedItem.btEmpWet;
+        self.wetLiquidTextFeild.text = self.selectedItem.liqWet;
+        self.wetServingTextFeild.text = self.selectedItem.servWet;
+        self.servingPerBottleTextFeild.text = self.selectedItem.servBt;
+        self.salePriceTextFeild.text = self.selectedItem.price;
+        
+        NSString *imageNameWithUpper = [self.selectedItem.itemName stringByReplacingOccurrencesOfString:@" " withString:@"_"];
+        NSString *imageName = [imageNameWithUpper lowercaseString];
+        self.itemImageView.image = [UIImage imageNamed:imageName];
+        if (self.itemImageView.image == nil) {
+            self.itemImageView.image = [UIImage imageNamed:@"coming_soon"];
+        }
+        
+        for (int i = 0; i < self.selectedItem.activedLocationArray.count; i++) {
+            
+            NSString *activeLocation = (NSString*)self.selectedItem.activedLocationArray[i];
+            
+            if ([activeLocation isEqual:@"BAR CENTRAL"]) {
+                self.barcentralImageView.image = [UIImage imageNamed:@"location_selected"];
+                self.barcentralSelected = YES;
+            } else if([activeLocation isEqual:@"BAR OFFIC"]) {
+                self.barofficeImageView.image = [UIImage imageNamed:@"location_selected"];
+                self.barofficeSelected = YES;
+            } else if([activeLocation isEqual:@"BAR LAX"]){
+                self.barlaxImageView.image = [UIImage imageNamed:@"location_selected"];;
+                self.barlaxSelected = YES;
+            } else if([activeLocation isEqual:@"STOCK"]){
+                self.stockImageView.image = [UIImage imageNamed:@"location_selected"];;
+                self.stockSelected  = YES;
+            } else if([activeLocation isEqual:@"BAR DJ"]){
+                self.bardjImageView.image = [UIImage imageNamed:@"location_selected"];
+                self.bardjSelected = YES;
+            } else if([activeLocation isEqual:@"EVENTO"]){
+                self.eventoImageView.image = [UIImage imageNamed:@"location_selected"];;
+                self.eventoSelected = YES;
+            } else if([activeLocation isEqual:@"BAR VIP"]){
+                self.barvipImageView.image = [UIImage imageNamed:@"location_selected"];
+                self.barvipSelected = YES;
+            } else {
+                NSLog(@"Not active location now");
+            }
+            
+        }
+        } else {
+            // AddView
+            
+            [self dataIniaitalization];
+            
+            
+        }
+    
     [self.categorySelectView setHidden:YES];
     [self loadAllCategory];
+        
+}
+    
+- (void) dataIniaitalization {
+    
+    // selected variable initialization
+    
+    self.barcentralSelected = NO;
+    self.barofficeSelected = NO;
+    self.barlaxSelected = NO;
+    self.stockSelected = NO;
+    self.bardjSelected = NO;
+    self.eventoSelected = NO;
+    self.barvipSelected = NO;
+    
+    // TextField & ImageView initialization
+    
+
+    self.itemNameTextField.text = @"";
+    self.chooseCategoryButton.titleLabel.text = @"";
+    self.wetFullBottleTextFeild.text = @"";
+    self.wetEmptyBottleTextFeild.text = @"";
+    self.wetLiquidTextFeild.text = @"";
+    self.wetServingTextFeild.text = @"";
+    self.servingPerBottleTextFeild.text = @"";
+    self.salePriceTextFeild.text = @"";
+    
+    self.itemImageView.image = [UIImage imageNamed:@"coming_soon"];
+    
+    // Active Locatins Initialization
+    
+    self.barcentralImageView.image = [UIImage imageNamed:@"location_unselected"];
+    self.barofficeImageView.image = [UIImage imageNamed:@"location_unselected"];
+    self.barlaxImageView.image = [UIImage imageNamed:@"location_unselected"];;
+    self.stockImageView.image = [UIImage imageNamed:@"location_unselected"];;
+    self.bardjImageView.image = [UIImage imageNamed:@"location_unselected"];
+    self.eventoImageView.image = [UIImage imageNamed:@"location_unselected"];;
+    self.barvipImageView.image = [UIImage imageNamed:@"location_unselected"];
+    
+        
 }
 
 - (void)didReceiveMemoryWarning {
@@ -60,59 +184,12 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void) textFieldInitialize{
-    [self.itemNameTextField setTextFieldPlaceholderText:@"ITEM NAME"];
-    self.itemNameTextField.placeHolderColor = [UIColor whiteColor];
-    self.itemNameTextField.selectedPlaceHolderColor = [UIColor whiteColor];
-    self.itemNameTextField.lineColor = [UIColor clearColor];
-    
-    [self.wetFullBottleTextFeild setTextFieldPlaceholderText:@"WEIGHT FULL BOTTLE"];
-    self.wetFullBottleTextFeild.placeHolderColor = [UIColor whiteColor];
-    self.wetFullBottleTextFeild.selectedPlaceHolderColor = [UIColor whiteColor];
-    self.wetFullBottleTextFeild.lineColor = [UIColor clearColor];
-    
-    [self.wetEmptyBottleTextFeild setTextFieldPlaceholderText:@"WEIGHT EMPTY BOTTLE"];
-    self.wetEmptyBottleTextFeild.placeHolderColor = [UIColor whiteColor];
-    self.wetEmptyBottleTextFeild.selectedPlaceHolderColor = [UIColor whiteColor];
-    self.wetEmptyBottleTextFeild.lineColor = [UIColor clearColor];
-    
-    [self.wetLiquidTextFeild setTextFieldPlaceholderText:@"WEIGHT LIQUID"];
-    self.wetLiquidTextFeild.placeHolderColor = [UIColor whiteColor];
-    self.wetLiquidTextFeild.selectedPlaceHolderColor = [UIColor whiteColor];
-    self.wetLiquidTextFeild.lineColor = [UIColor clearColor];
-    
-    [self.servingPerBottleTextFeild setTextFieldPlaceholderText:@"SERVING PER BOTTLE"];
-    self.servingPerBottleTextFeild.placeHolderColor = [UIColor whiteColor];
-    self.servingPerBottleTextFeild.selectedPlaceHolderColor = [UIColor whiteColor];
-    self.servingPerBottleTextFeild.lineColor = [UIColor clearColor];
-    
-    [self.wetServingTextFeild setTextFieldPlaceholderText:@"WEIGHT SERVING"];
-    self.wetServingTextFeild.placeHolderColor = [UIColor whiteColor];
-    self.wetServingTextFeild.selectedPlaceHolderColor = [UIColor whiteColor];
-    self.wetServingTextFeild.lineColor = [UIColor clearColor];
-    
-    [self.salePriceTextFeild setTextFieldPlaceholderText:@"SALES PRICE"];
-    self.salePriceTextFeild.placeHolderColor = [UIColor whiteColor];
-    self.salePriceTextFeild.selectedPlaceHolderColor = [UIColor whiteColor];
-    self.salePriceTextFeild.lineColor = [UIColor clearColor];
-}
+
 
 - (void) viewDidLayoutSubviews{
-    
-    CGFloat radius = self.itemNameTextField.bounds.size.height / 2;
-    self.itemNameTextField.layer.cornerRadius = radius;
-    self.chooseCategoryButton.layer.cornerRadius = radius;
-    self.wetFullBottleTextFeild.layer.cornerRadius = radius;
-    self.wetEmptyBottleTextFeild.layer.cornerRadius = radius;
-    self.wetLiquidTextFeild.layer.cornerRadius = radius;
-    self.servingPerBottleTextFeild.layer.cornerRadius = radius;
-    self.wetServingTextFeild.layer.cornerRadius = radius;
-    self.salePriceTextFeild.layer.cornerRadius = radius;
-    self.creatItemButton.layer.cornerRadius = radius;
-    
-    [self.backButton.titleLabel setFont:[UIFont fontWithName:@"fontawesome" size:35.0]];
-    [self.backButton setTitle:@"\uf053" forState:UIControlStateNormal];
-    [self.backButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    self.chooseCategoryButton.layer.borderWidth = 1.0;
+    self.chooseCategoryButton.layer.borderColor = [UIColor grayColor].CGColor;
+
 
 }
 
@@ -167,7 +244,12 @@
 
 #pragma mark - server communication method (save item data at database)
 
-- (IBAction)onCreateItem:(id)sender {
+- (IBAction)onCreateAndEditItemAction:(id)sender {
+    
+    
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [hud show:YES];
+    
     self.itemName = self.itemNameTextField.text;
     self.categoryStr = self.chooseCategoryButton.titleLabel.text;
     self.wetFullBottle = self.wetFullBottleTextFeild.text;
@@ -208,10 +290,21 @@
         return;
     }
 
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    [hud show:YES];
+    
+    NSString *requestMethod = @"";
+    
+    if ([self.fromVC isEqualToString:@"add"]) {
+        requestMethod = ADD_ITEM;
+    } else {
+        requestMethod = EDIT_ITEM;
+    }
+    
+    
+    
+    
+    
     OJOClient *ojoClient = [OJOClient sharedWebClient];
-    [ojoClient addItem:ADD_ITEM
+    [ojoClient addItem:requestMethod
            andItemName:self.itemName
        andItemCategory:self.categoryStr
           andBtFullWet:self.wetFullBottle
@@ -342,6 +435,118 @@
     int wetLiq = [self.wetLiquidTextFeild.text intValue];
     long wetServing = roundl(wetLiq/servBottle);
     self.wetServingTextFeild.text = [NSString stringWithFormat:@"%ld", wetServing];
+    
+}
+
+
+- (void)locationChangeViewInitialization:(NSString*)location withActiveValue:(BOOL)activeValue{
+    
+    NSString *currentItemName = @"";
+    
+    if ([self.itemNameTextField.text isEqualToString:@""]) {
+        
+        UIAlertController *alert = nil;
+        alert = [UIAlertController alertControllerWithTitle:@"ADD ITEM NAME" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* cancel = [UIAlertAction
+                                 actionWithTitle:@"OK"
+                                 style:UIAlertActionStyleDefault
+                                 handler:^(UIAlertAction * action)
+                                 {
+                                     [alert dismissViewControllerAnimated:YES completion:nil];
+                                     
+                                 }];
+        [alert addAction:cancel];
+        [self presentViewController:alert animated:YES completion:nil];
+        
+        return;
+        
+    } else {
+        currentItemName = self.itemNameTextField.text;
+    }
+        
+        
+
+    
+    
+    [self.locationChangeConfirmView setHidden:NO];
+    
+    if (activeValue) {
+        // Do Active
+        [self.locationChangeParTextField setHidden:NO];
+        self.locationChangeCausionLabel.text = [NSString stringWithFormat:@"<%@> WILL BE ADDED IN %@, ADD PAR VALUE", currentItemName, location];
+        [self.locationChangeConfirmButton setTitle:@"ACTIVE/ADD" forState:UIControlStateNormal];
+        
+        
+    } else {
+        // Deactive
+        [self.locationChangeParTextField setHidden:YES];
+        self.locationChangeCausionLabel.text = [NSString stringWithFormat:@"<%@> WILL BE DELETED IN %@, CONFIRM AGAIN", currentItemName, location];
+        [self.locationChangeConfirmButton setTitle:@"DEACTIVE/REMOVE" forState:UIControlStateNormal];
+    }
+    
+}
+
+
+// location active/deactive actions
+
+- (IBAction)onBarCentralAction:(id)sender {
+    if (self.barcentralSelected) [self locationChangeViewInitialization:@"BAR CENTRAL" withActiveValue:NO];
+    else [self locationChangeViewInitialization:@"BAR CENTRAL" withActiveValue:YES];
+}
+
+- (IBAction)onBarOfficeAction:(id)sender {
+    if (self.barofficeSelected) [self locationChangeViewInitialization:@"BAR CENTRAL" withActiveValue:NO];
+    else [self locationChangeViewInitialization:@"BAR CENTRAL" withActiveValue:YES];
+}
+
+- (IBAction)onBarLaxAction:(id)sender {
+    if (self.barlaxSelected) [self locationChangeViewInitialization:@"BAR LAX" withActiveValue:NO];
+    else [self locationChangeViewInitialization:@"BAR LAX" withActiveValue:YES];
+}
+
+- (IBAction)onStockAction:(id)sender {
+    if (self.stockSelected) [self locationChangeViewInitialization:@"STOCK" withActiveValue:NO];
+    else [self locationChangeViewInitialization:@"STOCK" withActiveValue:YES];
+}
+- (IBAction)onBarDJAction:(id)sender {
+    if (self.bardjSelected) [self locationChangeViewInitialization:@"BAR DJ" withActiveValue:NO];
+    else [self locationChangeViewInitialization:@"BAR DJ" withActiveValue:YES];
+}
+- (IBAction)onEventoAction:(id)sender {
+    if (self.eventoSelected) [self locationChangeViewInitialization:@"EVENTO" withActiveValue:NO];
+    else [self locationChangeViewInitialization:@"EVENTO" withActiveValue:YES];
+}
+- (IBAction)onVIPAction:(id)sender {
+    if (self.barvipSelected) [self locationChangeViewInitialization:@"BAR VIP" withActiveValue:NO];
+    else [self locationChangeViewInitialization:@"BAR VIP" withActiveValue:YES];
+}
+
+- (IBAction)locationChangeAction:(id)sender {
+    
+    if ([self.locationChangeParTextField.text isEqual:@""]) {
+        self.locationChangeParTextField.layer.borderWidth = 1.0;
+        
+        return;
+        
+    } else {
+        
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+}
+
+- (IBAction)locationChangeCancelAction:(id)sender {
+    
+    [self.locationChangeConfirmView setHidden:YES];
+    
     
 }
 
