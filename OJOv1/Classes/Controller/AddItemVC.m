@@ -250,8 +250,7 @@
 - (IBAction)onCreateAndEditItemAction:(id)sender {
     
     
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    [hud show:YES];
+    
     
     self.itemName = self.itemNameTextField.text;
     self.categoryStr = self.chooseCategoryButton.titleLabel.text;
@@ -294,6 +293,9 @@
     }
 
     
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [hud show:YES];
+    
     NSString *requestMethod = @"";
     
     if ([self.fromVC isEqualToString:@"add"]) {
@@ -301,10 +303,6 @@
     } else {
         requestMethod = EDIT_ITEM;
     }
-    
-    
-    
-    
     
     OJOClient *ojoClient = [OJOClient sharedWebClient];
     [ojoClient addItem:requestMethod
@@ -442,6 +440,24 @@
 }
 
 
+- (void) alertAction:(NSString*)title withMessage:(NSString*)showMessage {
+    
+    UIAlertController *alert = nil;
+    alert = [UIAlertController alertControllerWithTitle:title message:showMessage preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction* cancel = [UIAlertAction
+                             actionWithTitle:@"OK"
+                             style:UIAlertActionStyleDefault
+                             handler:^(UIAlertAction * action)
+                             {
+                                 [alert dismissViewControllerAnimated:YES completion:nil];
+                                 
+                             }];
+    [alert addAction:cancel];
+    [self presentViewController:alert animated:YES completion:nil];
+    
+}
+
+
 - (void)locationChangeViewInitialization:(NSString*)location withActiveValue:(BOOL)activeValue{
     
     NSString *currentItemName = @"";
@@ -451,22 +467,20 @@
     
     if ([self.itemNameTextField.text isEqualToString:@""]) {
         
-        UIAlertController *alert = nil;
-        alert = [UIAlertController alertControllerWithTitle:@"ADD ITEM NAME" message:@"" preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction* cancel = [UIAlertAction
-                                 actionWithTitle:@"OK"
-                                 style:UIAlertActionStyleDefault
-                                 handler:^(UIAlertAction * action)
-                                 {
-                                     [alert dismissViewControllerAnimated:YES completion:nil];
-                                     
-                                 }];
-        [alert addAction:cancel];
-        [self presentViewController:alert animated:YES completion:nil];
-        
+        [self alertAction:@"SORRY" withMessage:@"PLEAS ADD ITEM NAME"];
         return;
         
     } else {
+        
+        
+        for (int i = 0; i < self.itemArray.count; i++) {
+            
+            ItemFull *itemModel = (ItemFull*)self.itemArray[i];
+            if ([itemModel.itemName isEqualToString:self.itemNameTextField.text]) {
+                [self alertAction:@"SORRY" withMessage:@"THIS ITEM IS EXIST IN LIST NOW, TRY WITH OTHER NAME TO ADD!"];
+                return;
+            }
+        }
         currentItemName = self.itemNameTextField.text;
     }
         
@@ -493,6 +507,8 @@
     }
     
 }
+
+
 
 
 // location active/deactive actions
@@ -568,9 +584,8 @@
         
         [hud hide:YES];
         if(![stateCode isEqualToString:@"200"]){
-            
-            [self.view makeToast:[dicData objectForKey:MESSAGE] duration:2.5 position:CSToastPositionCenter];
-            
+            [self.locationChangeConfirmView setHidden:YES];
+            [self alertAction:@"FAILED" withMessage:[dicData objectForKey:MESSAGE]];
         } else{
                         
             // All Set Finished Successfully
@@ -633,11 +648,6 @@
         [self.view makeToast:@"Please check internect connection" duration:1.5 position:CSToastPositionCenter];
         
     }];
-    
-    
-    
-    
-    
     
 }
 

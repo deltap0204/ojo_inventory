@@ -453,11 +453,6 @@
     }];
     
     
-    
-    
-    
-    
-    
     deleteButton.backgroundColor = [UIColor redColor];
     editButton.backgroundColor = [UIColor blueColor];
     return @[editButton, deleteButton];
@@ -674,6 +669,7 @@
     
     viewControler.fromVC = sender == self.addButton ? @"add" : @"edit";
     viewControler.selectedItem = itemFullModel;
+    viewControler.itemArray = self.itemArray;
     
     
 }

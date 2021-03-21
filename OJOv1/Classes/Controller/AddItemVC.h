@@ -14,5 +14,6 @@
 
 @property (strong, nonatomic) ItemFull *selectedItem;
 @property (strong, nonatomic) NSString *fromVC;
+@property (strong, nonatomic) NSMutableArray *itemArray;
 
 @end
