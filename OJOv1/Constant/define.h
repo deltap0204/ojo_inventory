@@ -125,4 +125,8 @@
 #define SEARCH_UNREPORTED_ITEMS @"mobile/almacens/searchUnreportedItems"
 #define UPDATE_UNREPORTED_MOVING    @"mobile/almacens/updateUnreportedItem"
 
+#pragma mark - Item-Location Active/Deactive
+
+#define ITEM_LOCATION_STATUS_UPDATE  @"mobile/items/itemLocationStatusUpdate"
+
 

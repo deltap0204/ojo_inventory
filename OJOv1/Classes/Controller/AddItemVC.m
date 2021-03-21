@@ -53,6 +53,9 @@
 @property (assign, nonatomic) BOOL eventoSelected;
 @property (assign, nonatomic) BOOL barvipSelected;
 
+@property (strong, nonatomic) NSString *selectedLoctionString;
+@property (strong, nonatomic) NSString *requestStatus;
+
 @property (strong, nonatomic) NSString *itemName;
 @property (strong, nonatomic) NSString *categoryStr;
 @property (strong, nonatomic) NSString *wetFullBottle;
@@ -442,6 +445,9 @@
 - (void)locationChangeViewInitialization:(NSString*)location withActiveValue:(BOOL)activeValue{
     
     NSString *currentItemName = @"";
+    self.selectedLoctionString = location;
+    
+    
     
     if ([self.itemNameTextField.text isEqualToString:@""]) {
         
@@ -465,9 +471,7 @@
     }
         
         
-
-    
-    
+ 
     [self.locationChangeConfirmView setHidden:NO];
     
     if (activeValue) {
@@ -476,12 +480,16 @@
         self.locationChangeCausionLabel.text = [NSString stringWithFormat:@"<%@> WILL BE ADDED IN %@, ADD PAR VALUE", currentItemName, location];
         [self.locationChangeConfirmButton setTitle:@"ACTIVE/ADD" forState:UIControlStateNormal];
         
+        self.requestStatus = @"active";
+        
         
     } else {
         // Deactive
         [self.locationChangeParTextField setHidden:YES];
         self.locationChangeCausionLabel.text = [NSString stringWithFormat:@"<%@> WILL BE DELETED IN %@, CONFIRM AGAIN", currentItemName, location];
         [self.locationChangeConfirmButton setTitle:@"DEACTIVE/REMOVE" forState:UIControlStateNormal];
+        
+        self.requestStatus = @"inactive";
     }
     
 }
@@ -523,18 +531,108 @@
 
 - (IBAction)locationChangeAction:(id)sender {
     
-    if ([self.locationChangeParTextField.text isEqual:@""]) {
-        self.locationChangeParTextField.layer.borderWidth = 1.0;
-        
-        return;
-        
+    NSString *parValue = self.locationChangeParTextField.text;
+    
+    if ([self.requestStatus isEqualToString:@"active"]) {
+        if ([self.locationChangeParTextField.text isEqual:@""]) {
+            self.locationChangeParTextField.layer.borderWidth = 1.0;
+            self.locationChangeParTextField.layer.borderColor = [UIColor redColor].CGColor;
+            return;
+            
+        } else {
+            
+            self.locationChangeParTextField.layer.borderColor = [UIColor whiteColor].CGColor;
+            
+        }
     } else {
-        
-        
+        parValue = @"0";
     }
     
     
     
+    
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [hud show:YES];
+    
+    OJOClient *ojoClient = [OJOClient sharedWebClient];
+    [ojoClient itemLocationStatusUpdate:ITEM_LOCATION_STATUS_UPDATE
+                              andStatus:self.requestStatus
+                            andItemName:self.selectedItem.itemName
+                        andLocationName:self.selectedLoctionString
+                                 andPar:parValue
+                         andFinishBlock:^(NSArray *data) {
+        
+        
+        NSDictionary *dicData = (NSDictionary *)data;
+        NSString *stateCode = [dicData objectForKey:STATE];
+        
+        [hud hide:YES];
+        if(![stateCode isEqualToString:@"200"]){
+            
+            [self.view makeToast:[dicData objectForKey:MESSAGE] duration:2.5 position:CSToastPositionCenter];
+            
+        } else{
+                        
+            // All Set Finished Successfully
+            if ([self.selectedLoctionString isEqualToString:@"BAR CENTRAL"]) {
+                if (self.barcentralSelected) self.barcentralImageView.image = [UIImage imageNamed:@"location_unselected"];
+                else self.barcentralImageView.image = [UIImage imageNamed:@"location_selected"];
+                
+                self.barcentralSelected = !self.barcentralSelected;
+                
+            } else if ([self.selectedLoctionString isEqualToString:@"BAR OFFIC"]) {
+                if (self.barofficeSelected) self.barofficeImageView.image = [UIImage imageNamed:@"location_unselected"];
+                else self.barofficeImageView.image = [UIImage imageNamed:@"location_selected"];
+                
+                self.barofficeSelected = !self.barofficeSelected;
+                
+            } else if ([self.selectedLoctionString isEqualToString:@"BAR LAX"]) {
+                if (self.barlaxSelected) self.barlaxImageView.image = [UIImage imageNamed:@"location_unselected"];
+                else self.barlaxImageView.image = [UIImage imageNamed:@"location_selected"];
+                
+                self.barlaxSelected = !self.barlaxSelected;
+                
+            } else if ([self.selectedLoctionString isEqualToString:@"STOCK"]) {
+                if (self.stockSelected) self.stockImageView.image = [UIImage imageNamed:@"location_unselected"];
+                else self.stockImageView.image = [UIImage imageNamed:@"location_selected"];
+                
+                self.stockSelected = !self.stockSelected;
+                
+            } else if ([self.selectedLoctionString isEqualToString:@"BAR DJ"]) {
+                if (self.bardjSelected) self.bardjImageView.image = [UIImage imageNamed:@"location_unselected"];
+                else self.bardjImageView.image = [UIImage imageNamed:@"location_selected"];
+                
+                self.bardjSelected = !self.bardjSelected;
+                
+            } else if ([self.selectedLoctionString isEqualToString:@"EVENTO"]) {
+                if (self.eventoSelected) self.eventoImageView.image = [UIImage imageNamed:@"location_unselected"];
+                else self.eventoImageView.image = [UIImage imageNamed:@"location_selected"];
+                
+                self.eventoSelected = !self.eventoSelected;
+                
+            } else if ([self.selectedLoctionString isEqualToString:@"BAR VIP"]) {
+                if (self.barvipSelected) self.barvipImageView.image = [UIImage imageNamed:@"location_unselected"];
+                else self.barvipImageView.image = [UIImage imageNamed:@"location_selected"];
+                
+                self.barvipSelected = !self.barvipSelected;
+                
+            } else {
+                
+                // fuck this, what the hell
+            }
+            
+            [self.locationChangeConfirmView setHidden:YES];
+            self.locationChangeParTextField.text = @"";
+                        
+        }
+        
+        
+    } andFailBock:^(NSError *error) {
+        
+        [hud hide:YES];
+        [self.view makeToast:@"Please check internect connection" duration:1.5 position:CSToastPositionCenter];
+        
+    }];
     
     
     
@@ -545,8 +643,9 @@
 
 - (IBAction)locationChangeCancelAction:(id)sender {
     
-    [self.locationChangeConfirmView setHidden:YES];
+
     
+    [self.locationChangeConfirmView setHidden:YES];
     
 }
 

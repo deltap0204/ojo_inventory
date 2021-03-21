@@ -209,5 +209,14 @@ typedef void (^WebClientOnFail)(NSError *);
                andFinishBlock:(WebClientOnFinish) finishBlock
                  andFailBlock:(WebClientOnFail) failBlock;
 
+- (void) itemLocationStatusUpdate:(NSString *) method
+                        andStatus:(NSString *) status
+                      andItemName:(NSString *) itemName
+                  andLocationName:(NSString *) locationName
+                           andPar:(NSString *)par
+                   andFinishBlock:(WebClientOnFinish) finishBlock
+                      andFailBock:(WebClientOnFail) failBlock;
+
+
 
 @end

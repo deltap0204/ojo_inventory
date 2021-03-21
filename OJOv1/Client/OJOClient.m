@@ -580,4 +580,27 @@ static OJOClient *webClient = nil;
     
 }
 
+- (void) itemLocationStatusUpdate:(NSString *) method
+                        andStatus:(NSString *) status
+                      andItemName:(NSString *) itemName
+                  andLocationName:(NSString *) locationName
+                           andPar:(NSString *) par
+                   andFinishBlock:(WebClientOnFinish) finishBlock
+                      andFailBock:(WebClientOnFail) failBlock {
+    
+    
+    NSDictionary *dicParam = @{@"status" : status, @"item_name" : itemName, @"location_name" : locationName, @"par" : par};
+    NSString *updateURL = [NSString stringWithFormat:@"%@%@", BASE_URL, method];
+    
+    [WebClient requestPostUrl:updateURL parameters:dicParam suceess:^(NSArray *response) {
+        finishBlock(response);
+    } failure:^(NSError *error) {
+        if (failBlock) {
+            failBlock(error);
+        }
+    }];
+    
+    
+}
+
 @end
