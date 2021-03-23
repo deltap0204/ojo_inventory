@@ -401,8 +401,13 @@
         Item *itemModel = nil;
         itemModel = self.itemArray[indexPath.row];
         
-        alert = [UIAlertController alertControllerWithTitle:@"" message:@"Do you want to delete this item ?"
+        NSString *itemName = itemModel.itemName;
+        
+        alert = [UIAlertController alertControllerWithTitle:@"" message:[NSString stringWithFormat:@"Do you wanna delete %@", itemName]
                                              preferredStyle:UIAlertControllerStyleAlert];
+        
+        
+        
         UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK"
                                                      style:UIAlertActionStyleDefault
                                                    handler:^(UIAlertAction * _Nonnull action) {
@@ -668,6 +673,9 @@
     } else {
         
         itemFullModel = self.itemArray[self.selectedRow];
+        
+        if(self.isFiltered) itemFullModel = (ItemFull *)self.itemSearchArray[self.selectedRow];
+        else itemFullModel= (ItemFull*)self.itemArray[self.selectedRow];
         
     }
     
