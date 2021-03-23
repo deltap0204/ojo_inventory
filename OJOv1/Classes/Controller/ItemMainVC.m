@@ -415,10 +415,12 @@
                                                            [ojoClient deleteItem:DELETE_ITEM
                                                                      andItemName:itemModel.itemName
                                                                    onFinishBlock:^(NSArray *data) {
+                                                                       [hud hide:YES];
+                                                                        
                                                                        NSDictionary *dicData = (NSDictionary *) data;
                                                                        NSString *stateCode = [dicData objectForKey:STATE];
                                                                        if ([stateCode isEqualToString:@"200"]) {
-                                                                           [hud hide:YES];
+                                                                           
                                                                            [alert dismissViewControllerAnimated:YES completion:nil];
                                                                            [self.itemArray removeObjectAtIndex:indexPath.row];
                                                                            [self.tableView reloadData];
@@ -465,6 +467,8 @@
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
     //do whatever u want after row has been moved
 }
+
+
 
 
 #pragma mark - tableview longpress gesture

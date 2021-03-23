@@ -249,9 +249,7 @@
 
 - (IBAction)onCreateAndEditItemAction:(id)sender {
     
-    
-    
-    
+        
     self.itemName = self.itemNameTextField.text;
     self.categoryStr = self.chooseCategoryButton.titleLabel.text;
     self.wetFullBottle = self.wetFullBottleTextFeild.text;
@@ -473,19 +471,21 @@
     } else {
         
         
-        for (int i = 0; i < self.itemArray.count; i++) {
-            
-            ItemFull *itemModel = (ItemFull*)self.itemArray[i];
-            if ([itemModel.itemName isEqualToString:self.itemNameTextField.text]) {
-                [self alertAction:@"SORRY" withMessage:@"THIS ITEM IS EXIST IN LIST NOW, TRY WITH OTHER NAME TO ADD!"];
-                return;
+        if ([self.fromVC isEqualToString:@"add"]) {
+            for (int i = 0; i < self.itemArray.count; i++) {
+                
+                ItemFull *itemModel = (ItemFull*)self.itemArray[i];
+                if ([itemModel.itemName isEqualToString:self.itemNameTextField.text]) {
+                    [self alertAction:@"SORRY" withMessage:@"THIS ITEM IS EXIST IN LIST NOW, TRY WITH OTHER NAME TO ADD!"];
+                    return;
+                }
             }
+            
         }
-        currentItemName = self.itemNameTextField.text;
     }
         
         
- 
+    currentItemName = self.itemNameTextField.text;
     [self.locationChangeConfirmView setHidden:NO];
     
     if (activeValue) {

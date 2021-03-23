@@ -47,10 +47,23 @@
 
 - (void) viewDidLayoutSubviews{
     
-    self.userSettingButon.layer.cornerRadius = self.userSettingButon.bounds.size.height / 2 ;
-    self.inventorySettingButton.layer.cornerRadius = self.inventorySettingButton.bounds.size.height / 2;
-    self.categorySettingButton.layer.cornerRadius = self.categorySettingButton.bounds.size.height / 2;
-    self.itemSettingButton.layer.cornerRadius = self.itemSettingButton.bounds.size.height / 2;
+//    self.userSettingButon.layer.cornerRadius = self.userSettingButon.bounds.size.height / 2 ;
+//    self.inventorySettingButton.layer.cornerRadius = self.inventorySettingButton.bounds.size.height / 2;
+//    self.categorySettingButton.layer.cornerRadius = self.categorySettingButton.bounds.size.height / 2;
+//    self.itemSettingButton.layer.cornerRadius = self.itemSettingButton.bounds.size.height / 2;
+    
+    self.userSettingButon.layer.cornerRadius = 5.0;
+    self.inventorySettingButton.layer.cornerRadius = 5.0;
+    self.categorySettingButton.layer.cornerRadius = 5.0;
+    self.itemSettingButton.layer.cornerRadius = 5.0;
+    self.userSettingButon.layer.borderWidth = 2.0;
+    self.inventorySettingButton.layer.borderWidth = 2.0;
+    self.categorySettingButton.layer.borderWidth = 2.0;
+    self.itemSettingButton.layer.borderWidth = 2.0;
+    self.userSettingButon.layer.borderColor = [UIColor blackColor].CGColor;
+    self.inventorySettingButton.layer.borderColor = [UIColor blackColor].CGColor;
+    self.categorySettingButton.layer.borderColor = [UIColor blackColor].CGColor;
+    self.itemSettingButton.layer.borderColor = [UIColor blackColor].CGColor;
     
     [self.logoutButton.titleLabel setFont:[UIFont fontWithName:@"fontawesome" size:40.0]];
     [self.logoutButton setTitle:@"\uf08b" forState:UIControlStateNormal];

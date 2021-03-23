@@ -104,6 +104,7 @@ static OJOClient *webClient = nil;
 - (void) getAllItems:(NSString *) method
             onFinish:(WebClientOnFinish) finishBlock
               onFail:(WebClientOnFail) failBlock{
+    
     NSString *getAllItemURL = [NSString stringWithFormat:@"%@%@", BASE_URL, method];
     [WebClient requestPostUrl:getAllItemURL parameters:nil suceess:^(NSArray *response) {
         finishBlock(response);
@@ -112,6 +113,20 @@ static OJOClient *webClient = nil;
             failBlock(error);
         }
     }];
+}
+
+- (void) refreshItemLocationTable:(NSString *) method
+                         onFinish:(WebClientOnFinish) finishBlock
+                           onFail:(WebClientOnFail) failBlock {
+    NSString *getAllItemURL = [NSString stringWithFormat:@"%@%@", BASE_URL, method];
+    [WebClient requestPostUrl:getAllItemURL parameters:nil suceess:^(NSArray *response) {
+        finishBlock(response);
+    } failure:^(NSError *error) {
+        if (failBlock) {
+            failBlock(error);
+        }
+    }];
+    
 }
 
 - (void) getAllCateogories:(NSString *) method
