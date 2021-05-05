@@ -65,6 +65,7 @@
 		0746018820D05C14006EABE9 /* BartenderCommentSendVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0746018720D05C13006EABE9 /* BartenderCommentSendVC.m */; };
 		0746018A20D2A647006EABE9 /* coming_soon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746018920D2A647006EABE9 /* coming_soon@2x.png */; };
 		0747237C2065780800913C6F /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0747237A206577FA00913C6F /* Fabric.framework */; };
+		074BA442261255C4007A49C0 /* RegisterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 074BA441261255C4007A49C0 /* RegisterVC.m */; };
 		076CD647235B7ED500B5670D /* Moon-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 076CD644235B7ED500B5670D /* Moon-Bold.otf */; };
 		076CD648235B7ED500B5670D /* Moon-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 076CD645235B7ED500B5670D /* Moon-Light.otf */; };
 		076CD649235B7ED500B5670D /* Moon_Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 076CD646235B7ED500B5670D /* Moon_Regular.otf */; };
@@ -323,6 +324,8 @@
 		0746018920D2A647006EABE9 /* coming_soon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coming_soon@2x.png"; sourceTree = "<group>"; };
 		0746018B20D2B872006EABE9 /* OJOv1-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OJOv1-Prefix.pch"; sourceTree = "<group>"; };
 		0747237A206577FA00913C6F /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		074BA440261255C3007A49C0 /* RegisterVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RegisterVC.h; path = OJOv1/RegisterVC.h; sourceTree = SOURCE_ROOT; };
+		074BA441261255C4007A49C0 /* RegisterVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = RegisterVC.m; path = OJOv1/RegisterVC.m; sourceTree = SOURCE_ROOT; };
 		076CD644235B7ED500B5670D /* Moon-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Moon-Bold.otf"; sourceTree = "<group>"; };
 		076CD645235B7ED500B5670D /* Moon-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Moon-Light.otf"; sourceTree = "<group>"; };
 		076CD646235B7ED500B5670D /* Moon_Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Moon_Regular.otf; sourceTree = "<group>"; };
@@ -978,6 +981,8 @@
 				C4A5F6521EA928F700A1A385 /* Admin */,
 				C434304B1DCCC58C00239E17 /* LoginVC.h */,
 				C434304C1DCCC58C00239E17 /* LoginVC.m */,
+				074BA440261255C3007A49C0 /* RegisterVC.h */,
+				074BA441261255C4007A49C0 /* RegisterVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1544,6 +1549,7 @@
 				C419D46D1EC2579C00F03F40 /* TodayMovedItemVC.m in Sources */,
 				C4B0F8C31DCE22EB004946B7 /* AFHTTPSessionManager.m in Sources */,
 				071B210E238CC13700BBFB1B /* PulsingHaloLayer.m in Sources */,
+				074BA442261255C4007A49C0 /* RegisterVC.m in Sources */,
 				07DC6D7C20C9FDC00053FB5B /* BartenderCommentTHVC.m in Sources */,
 				07E5E1D620C46A9200B294FC /* User.m in Sources */,
 				C4B84A481DDA078F008E2FAA /* AddItemVC.m in Sources */,

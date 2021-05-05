@@ -96,16 +96,19 @@
 }
 
 -(void)viewDidLayoutSubviews{
-    self.fullNameLabel.layer.cornerRadius = self.fullNameLabel.bounds.size.height / 2;
-    self.emailLabel.layer.cornerRadius = self.emailLabel.bounds.size.height / 2;
-    self.usernameLabel.layer.cornerRadius = self.usernameLabel.bounds.size.height / 2;
-    self.passwordLabel.layer.cornerRadius = self.passwordLabel.bounds.size.height / 2;
-    self.locationButton.layer.cornerRadius = self.locationButton.bounds.size.height / 2;
-    self.createButton.layer.cornerRadius = self.createButton.bounds.size.height / 2;
 
     [self.backButton.titleLabel setFont:[UIFont fontWithName:@"fontawesome" size:50.0]];
     [self.backButton setTitle:@"\uf104" forState:UIControlStateNormal];
     [self.backButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    
+    self.locationButton.layer.cornerRadius = 5.0;
+    self.createButton.layer.cornerRadius = 5.0;
+    
+    self.locationButton.layer.borderWidth = 2.0;
+    self.createButton.layer.borderWidth = 2.0;
+    
+    self.locationButton.layer.borderColor = [UIColor blackColor].CGColor;
+    self.createButton.layer.borderColor = [UIColor blackColor].CGColor;
 
 }
 

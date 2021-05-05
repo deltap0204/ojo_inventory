@@ -34,8 +34,8 @@
     // Do any additional setup after loading the view.
     self.userArray = [[NSMutableArray alloc] init];
     
-    [self.backButton.titleLabel setFont:[UIFont fontWithName:@"fontawesome" size:40.0]];
-    [self.backButton setTitle:@"\uf053" forState:UIControlStateNormal];
+    [self.backButton.titleLabel setFont:[UIFont fontWithName:@"fontawesome" size:50.0]];
+    [self.backButton setTitle:@"\uf104" forState:UIControlStateNormal];
     [self.backButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     
     [self.addUserButton.titleLabel setFont:[UIFont fontWithName:@"fontawesome" size:40.0]];
