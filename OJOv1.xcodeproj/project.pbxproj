@@ -12,95 +12,12 @@
 		070E2ECE246484E600B00C13 /* BLEClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 070E2ECD246484E600B00C13 /* BLEClient.m */; };
 		071B210E238CC13700BBFB1B /* PulsingHaloLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 071B210C238CC13700BBFB1B /* PulsingHaloLayer.m */; };
 		071B2111238CC97200BBFB1B /* AddDeviceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 071B2110238CC97200BBFB1B /* AddDeviceVC.m */; };
-		0746015120CDE01A006EABE9 /* grand_marnier_700ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746011C20CDDED6006EABE9 /* grand_marnier_700ml@2x.png */; };
-		0746015220CDE01A006EABE9 /* greygoose_750ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746011D20CDDED6006EABE9 /* greygoose_750ml@2x.png */; };
-		0746015320CDE01A006EABE9 /* baileys_750ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746011E20CDDEDD006EABE9 /* baileys_750ml@2x.png */; };
-		0746015420CDE01A006EABE9 /* dasani_500ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746011F20CDDEE4006EABE9 /* dasani_500ml@2x.png */; };
-		0746015520CDE01A006EABE9 /* red_bull@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746012020CDDEEA006EABE9 /* red_bull@2x.png */; };
-		0746015620CDE01A006EABE9 /* marlboro_rojo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746012120CDDEF0006EABE9 /* marlboro_rojo@2x.png */; };
-		0746015720CDE01A006EABE9 /* hennessy_vsop_700ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746012220CDDEF6006EABE9 /* hennessy_vsop_700ml@2x.png */; };
-		0746015820CDE01A006EABE9 /* malibu_750ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746012320CDDEFC006EABE9 /* malibu_750ml@2x.png */; };
-		0746015920CDE01A006EABE9 /* sambuca_750ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746012420CDDF02006EABE9 /* sambuca_750ml@2x.png */; };
-		0746015A20CDE01A006EABE9 /* anejo-700-frontal_web@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746012520CDDF08006EABE9 /* anejo-700-frontal_web@2x.png */; };
-		0746015B20CDE01A006EABE9 /* stolichnaya_750ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746012620CDDF0E006EABE9 /* stolichnaya_750ml@2x.png */; };
-		0746015C20CDE01A006EABE9 /* social_330ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746012720CDDF15006EABE9 /* social_330ml@2x.png */; };
-		0746015D20CDE01A006EABE9 /* jack_daniels_750ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746012820CDDF1B006EABE9 /* jack_daniels_750ml@2x.png */; };
-		0746015E20CDE01A006EABE9 /* dewars_750ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746012920CDDF21006EABE9 /* dewars_750ml@2x.png */; };
-		0746015F20CDE01A006EABE9 /* barcelo_imperial_700ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746012A20CDDF27006EABE9 /* barcelo_imperial_700ml@2x.png */; };
-		0746016020CDE01A006EABE9 /* barcelo_anejo_700ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746012B20CDDF2D006EABE9 /* barcelo_anejo_700ml@2x.png */; };
-		0746016120CDE01A006EABE9 /* perrier_330ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746012C20CDDF33006EABE9 /* perrier_330ml@2x.png */; };
-		0746016220CDE01A006EABE9 /* fireball_750ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746012D20CDDF39006EABE9 /* fireball_750ml@2x.png */; };
-		0746016320CDE01A006EABE9 /* bohemia_330ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746012E20CDDF3F006EABE9 /* bohemia_330ml@2x.png */; };
-		0746016520CDE01A006EABE9 /* cointreau_700ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746013020CDDF4C006EABE9 /* cointreau_700ml@2x.png */; };
-		0746016720CDE01A006EABE9 /* jose_cuervo_blanco_750ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746013220CDDF58006EABE9 /* jose_cuervo_blanco_750ml@2x.png */; };
-		0746016820CDE01A006EABE9 /* campari_750ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746013320CDDF5E006EABE9 /* campari_750ml@2x.png */; };
-		0746016920CDE01A006EABE9 /* stella_artois_330ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746013420CDDF65006EABE9 /* stella_artois_330ml@2x.png */; };
-		0746016A20CDE01A006EABE9 /* brugal_extra_viejo_700ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746013520CDDF6A006EABE9 /* brugal_extra_viejo_700ml@2x.png */; };
-		0746016B20CDE01A006EABE9 /* averna_700ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746013620CDDF70006EABE9 /* averna_700ml@2x.png */; };
-		0746016C20CDE01A006EABE9 /* amaretto_750ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746013720CDDF77006EABE9 /* amaretto_750ml@2x.png */; };
-		0746016D20CDE01A006EABE9 /* absolut_750ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746013820CDDF7D006EABE9 /* absolut_750ml@2x.png */; };
-		0746016F20CDE01A006EABE9 /* jose_cuervo_dorado_700ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746013A20CDDF8A006EABE9 /* jose_cuervo_dorado_700ml@2x.png */; };
-		0746017020CDE01A006EABE9 /* brugal_blanco_700ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746013B20CDDF90006EABE9 /* brugal_blanco_700ml@2x.png */; };
-		0746017120CDE01A006EABE9 /* brugal_xv_700ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746013C20CDDF96006EABE9 /* brugal_xv_700ml@2x.png */; };
-		0746017220CDE01A006EABE9 /* black_label_750ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746013D20CDDF9D006EABE9 /* black_label_750ml@2x.png */; };
-		0746017320CDE01A006EABE9 /* fernet_branca_750ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746013E20CDDFA3006EABE9 /* fernet_branca_750ml@2x.png */; };
-		0746017420CDE01A006EABE9 /* ricard_750ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746013F20CDDFAA006EABE9 /* ricard_750ml@2x.png */; };
-		0746017520CDE01A006EABE9 /* jaegermeister_750ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746014020CDDFB0006EABE9 /* jaegermeister_750ml@2x.png */; };
-		0746017620CDE01A006EABE9 /* kahlua_700ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746014120CDDFB6006EABE9 /* kahlua_700ml@2x.png */; };
-		0746017720CDE01A006EABE9 /* martini_bianco_750ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746014220CDDFBC006EABE9 /* martini_bianco_750ml@2x.png */; };
-		0746017820CDE01A006EABE9 /* bombay_750ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746014320CDDFC2006EABE9 /* bombay_750ml@2x.png */; };
-		0746017920CDE01A006EABE9 /* aviation_750ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746014420CDDFC9006EABE9 /* aviation_750ml@2x.png */; };
-		0746017A20CDE01A006EABE9 /* chivas_regal_750ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746014520CDDFCF006EABE9 /* chivas_regal_750ml@2x.png */; };
-		0746017B20CDE01A006EABE9 /* coca_cola_light_20oz@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746014620CDDFD5006EABE9 /* coca_cola_light_20oz@2x.png */; };
-		0746017C20CDE01A006EABE9 /* coka_cola_20oz@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746014720CDDFDC006EABE9 /* coka_cola_20oz@2x.png */; };
-		0746017D20CDE01A006EABE9 /* ladoga_700ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746014820CDDFE2006EABE9 /* ladoga_700ml@2x.png */; };
-		0746017E20CDE01A006EABE9 /* buchanan_750ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746014920CDDFE8006EABE9 /* buchanan_750ml@2x.png */; };
-		0746017F20CDE01A006EABE9 /* barcelo_gran_anejo_700ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746014A20CDDFEE006EABE9 /* barcelo_gran_anejo_700ml@2x.png */; };
-		0746018020CDE01A006EABE9 /* greygoose_magnum@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746014B20CDDFF5006EABE9 /* greygoose_magnum@2x.png */; };
-		0746018120CDE01A006EABE9 /* marlboro_blanco@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746014C20CDDFFB006EABE9 /* marlboro_blanco@2x.png */; };
-		0746018220CDE01A006EABE9 /* patron_silver_750ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746014D20CDE001006EABE9 /* patron_silver_750ml@2x.png */; };
-		0746018320CDE01A006EABE9 /* belvedere_750ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746014E20CDE007006EABE9 /* belvedere_750ml@2x.png */; };
-		0746018420CDE01A006EABE9 /* sprite_20oz@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746014F20CDE00E006EABE9 /* sprite_20oz@2x.png */; };
-		0746018520CDE01A006EABE9 /* corona_330ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746015020CDE014006EABE9 /* corona_330ml@2x.png */; };
 		0746018820D05C14006EABE9 /* BartenderCommentSendVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0746018720D05C13006EABE9 /* BartenderCommentSendVC.m */; };
-		0746018A20D2A647006EABE9 /* coming_soon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0746018920D2A647006EABE9 /* coming_soon@2x.png */; };
 		0747237C2065780800913C6F /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0747237A206577FA00913C6F /* Fabric.framework */; };
 		074BA442261255C4007A49C0 /* RegisterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 074BA441261255C4007A49C0 /* RegisterVC.m */; };
 		076CD647235B7ED500B5670D /* Moon-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 076CD644235B7ED500B5670D /* Moon-Bold.otf */; };
 		076CD648235B7ED500B5670D /* Moon-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 076CD645235B7ED500B5670D /* Moon-Light.otf */; };
 		076CD649235B7ED500B5670D /* Moon_Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 076CD646235B7ED500B5670D /* Moon_Regular.otf */; };
-		077A6BB925E855C9007F59F4 /* d'usse_750ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6B9825E855C6007F59F4 /* d'usse_750ml@2x.png */; };
-		077A6BBA25E855C9007F59F4 /* pina_unidades@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6B9925E855C6007F59F4 /* pina_unidades@2x.png */; };
-		077A6BBB25E855C9007F59F4 /* presidente_light_330@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6B9A25E855C7007F59F4 /* presidente_light_330@2x.png */; };
-		077A6BBC25E855C9007F59F4 /* presidente_gold@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6B9B25E855C7007F59F4 /* presidente_gold@2x.png */; };
-		077A6BBD25E855C9007F59F4 /* brugal_blanco_1000ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6B9C25E855C7007F59F4 /* brugal_blanco_1000ml@2x.png */; };
-		077A6BBE25E855C9007F59F4 /* coors_banquet@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6B9D25E855C7007F59F4 /* coors_banquet@2x.png */; };
-		077A6BBF25E855C9007F59F4 /* frangelico_700ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6B9E25E855C7007F59F4 /* frangelico_700ml@2x.png */; };
-		077A6BC025E855C9007F59F4 /* tanqueray_750ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6B9F25E855C7007F59F4 /* tanqueray_750ml@2x.png */; };
-		077A6BC125E855C9007F59F4 /* cafe_porciones@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6BA025E855C7007F59F4 /* cafe_porciones@2x.png */; };
-		077A6BC225E855C9007F59F4 /* modelo_negra@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6BA125E855C7007F59F4 /* modelo_negra@2x.png */; };
-		077A6BC325E855C9007F59F4 /* barcelo_blanco700@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6BA225E855C7007F59F4 /* barcelo_blanco700@2x.png */; };
-		077A6BC425E855C9007F59F4 /* pellegrino_750ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6BA325E855C7007F59F4 /* pellegrino_750ml@2x.png */; };
-		077A6BC525E855C9007F59F4 /* stolichnaya_375ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6BA425E855C7007F59F4 /* stolichnaya_375ml@2x.png */; };
-		077A6BC625E855C9007F59F4 /* canadien_club_750ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6BA525E855C8007F59F4 /* canadien_club_750ml@2x.png */; };
-		077A6BC725E855C9007F59F4 /* jagermeister_755ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6BA625E855C8007F59F4 /* jagermeister_755ml@2x.png */; };
-		077A6BC825E855C9007F59F4 /* jagermeister_750ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6BA725E855C8007F59F4 /* jagermeister_750ml@2x.png */; };
-		077A6BC925E855C9007F59F4 /* brugal_extra_v_350ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6BA825E855C8007F59F4 /* brugal_extra_v_350ml@2x.png */; };
-		077A6BCA25E855C9007F59F4 /* coorslight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6BA925E855C8007F59F4 /* coorslight@2x.png */; };
-		077A6BCB25E855C9007F59F4 /* disaronno_750ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6BAA25E855C8007F59F4 /* disaronno_750ml@2x.png */; };
-		077A6BCC25E855C9007F59F4 /* coronita@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6BAB25E855C8007F59F4 /* coronita@2x.png */; };
-		077A6BCD25E855C9007F59F4 /* bermudez_700ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6BAC25E855C8007F59F4 /* bermudez_700ml@2x.png */; };
-		077A6BCE25E855C9007F59F4 /* heineken_lata@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6BAD25E855C8007F59F4 /* heineken_lata@2x.png */; };
-		077A6BCF25E855C9007F59F4 /* barcelo_anejo_1000ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6BAE25E855C8007F59F4 /* barcelo_anejo_1000ml@2x.png */; };
-		077A6BD025E855C9007F59F4 /* jagermeister_1000ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6BAF25E855C8007F59F4 /* jagermeister_1000ml@2x.png */; };
-		077A6BD125E855C9007F59F4 /* brugal_leyenda_700ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6BB025E855C8007F59F4 /* brugal_leyenda_700ml@2x.png */; };
-		077A6BD225E855C9007F59F4 /* brutal_151@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6BB125E855C8007F59F4 /* brutal_151@2x.png */; };
-		077A6BD425E855C9007F59F4 /* gold_label_750ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6BB325E855C9007F59F4 /* gold_label_750ml@2x.png */; };
-		077A6BD525E855C9007F59F4 /* brugal_extra_v_700ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6BB425E855C9007F59F4 /* brugal_extra_v_700ml@2x.png */; };
-		077A6BD625E855C9007F59F4 /* redbull_sinazucar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6BB525E855C9007F59F4 /* redbull_sinazucar@2x.png */; };
-		077A6BD725E855C9007F59F4 /* brugal_xv_350ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6BB625E855C9007F59F4 /* brugal_xv_350ml@2x.png */; };
-		077A6BD825E855C9007F59F4 /* barcelo_imp_700ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6BB725E855C9007F59F4 /* barcelo_imp_700ml@2x.png */; };
-		077A6BD925E855C9007F59F4 /* modelo_rubia@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 077A6BB825E855C9007F59F4 /* modelo_rubia@2x.png */; };
 		07C9DA102601015B00955210 /* ItemFull.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C9DA0F2601015B00955210 /* ItemFull.m */; };
 		07DC6D7C20C9FDC00053FB5B /* BartenderCommentTHVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DC6D7B20C9FDC00053FB5B /* BartenderCommentTHVC.m */; };
 		07E274371FA82AC50036E6B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07E274361FA82AB10036E6B8 /* Assets.xcassets */; };
@@ -109,47 +26,7 @@
 		07E9E50D236038620023CA50 /* bluetooth_beef.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 07E9E50C236038620023CA50 /* bluetooth_beef.mp3 */; };
 		07F540951F9DF59E004602D6 /* BartenderCommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F540941F9DF59E004602D6 /* BartenderCommentModel.m */; };
 		07F540981F9DF5BD004602D6 /* BartenderCommentTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F540971F9DF5BD004602D6 /* BartenderCommentTVC.m */; };
-		07FF220620E1957E00F19836 /* jose_c_dorado_700ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07FF21DD20E1957900F19836 /* jose_c_dorado_700ml@2x.png */; };
-		07FF220720E1957E00F19836 /* manzana_jugo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07FF21DE20E1957900F19836 /* manzana_jugo@2x.png */; };
-		07FF220820E1957E00F19836 /* pinot_grigio_750ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07FF21DF20E1957900F19836 /* pinot_grigio_750ml@2x.png */; };
-		07FF220920E1957E00F19836 /* 151_1000ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07FF21E020E1957900F19836 /* 151_1000ml@2x.png */; };
-		07FF220A20E1957E00F19836 /* tomate_jugo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07FF21E120E1957A00F19836 /* tomate_jugo@2x.png */; };
-		07FF220B20E1957E00F19836 /* melocoton_700ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07FF21E220E1957A00F19836 /* melocoton_700ml@2x.png */; };
-		07FF220C20E1957E00F19836 /* cranberry_jugo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07FF21E320E1957A00F19836 /* cranberry_jugo@2x.png */; };
-		07FF220D20E1957E00F19836 /* blue_curacao_700ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07FF21E420E1957A00F19836 /* blue_curacao_700ml@2x.png */; };
-		07FF220E20E1957E00F19836 /* chinola_jugo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07FF21E520E1957A00F19836 /* chinola_jugo@2x.png */; };
-		07FF220F20E1957E00F19836 /* lemon_jugo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07FF21E620E1957A00F19836 /* lemon_jugo@2x.png */; };
-		07FF221020E1957E00F19836 /* montepulciano_750ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07FF21E720E1957A00F19836 /* montepulciano_750ml@2x.png */; };
-		07FF221120E1957E00F19836 /* imperial_gold_700ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07FF21E820E1957A00F19836 /* imperial_gold_700ml@2x.png */; };
-		07FF221220E1957E00F19836 /* riondo_magnum@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07FF21E920E1957B00F19836 /* riondo_magnum@2x.png */; };
-		07FF221320E1957E00F19836 /* guineo_700ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07FF21EA20E1957B00F19836 /* guineo_700ml@2x.png */; };
-		07FF221420E1957E00F19836 /* chianti_classico_750ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07FF21EB20E1957B00F19836 /* chianti_classico_750ml@2x.png */; };
-		07FF221520E1957E00F19836 /* hennessy_white_700ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07FF21EC20E1957B00F19836 /* hennessy_white_700ml@2x.png */; };
-		07FF221720E1957E00F19836 /* coca_cola_20oz@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07FF21EE20E1957B00F19836 /* coca_cola_20oz@2x.png */; };
-		07FF221820E1957E00F19836 /* jose_c_blanco_750ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07FF21EF20E1957B00F19836 /* jose_c_blanco_750ml@2x.png */; };
-		07FF221920E1957E00F19836 /* barbera_dalba_750ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07FF21F020E1957B00F19836 /* barbera_dalba_750ml@2x.png */; };
-		07FF221A20E1957E00F19836 /* copa_vino_tinto@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07FF21F120E1957C00F19836 /* copa_vino_tinto@2x.png */; };
-		07FF221B20E1957E00F19836 /* club_soda_16oz@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07FF21F220E1957C00F19836 /* club_soda_16oz@2x.png */; };
-		07FF221C20E1957E00F19836 /* pina_jugo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07FF21F320E1957C00F19836 /* pina_jugo@2x.png */; };
-		07FF221E20E1957E00F19836 /* triple_sec_700ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07FF21F520E1957C00F19836 /* triple_sec_700ml@2x.png */; };
-		07FF221F20E1957E00F19836 /* veuve_cliquot_750ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07FF21F620E1957C00F19836 /* veuve_cliquot_750ml@2x.png */; };
-		07FF222020E1957E00F19836 /* copa_vino_blanco@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07FF21F720E1957C00F19836 /* copa_vino_blanco@2x.png */; };
-		07FF222120E1957E00F19836 /* nero_davola_750ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07FF21F820E1957C00F19836 /* nero_davola_750ml@2x.png */; };
-		07FF222220E1957E00F19836 /* mamajuana@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07FF21F920E1957C00F19836 /* mamajuana@2x.png */; };
-		07FF222420E1957E00F19836 /* tomate_jugoNice-to-meet-you!.png in Resources */ = {isa = PBXBuildFile; fileRef = 07FF21FB20E1957D00F19836 /* tomate_jugoNice-to-meet-you!.png */; };
-		07FF222520E1957E00F19836 /* tonica_16oz@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07FF21FC20E1957D00F19836 /* tonica_16oz@2x.png */; };
-		07FF222620E1957E00F19836 /* jarana_blanco_1000ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07FF21FD20E1957D00F19836 /* jarana_blanco_1000ml@2x.png */; };
-		07FF222720E1957E00F19836 /* barcelo_gran_a_700ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07FF21FE20E1957D00F19836 /* barcelo_gran_a_700ml@2x.png */; };
-		07FF222820E1957E00F19836 /* naranja_jugo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07FF21FF20E1957D00F19836 /* naranja_jugo@2x.png */; };
-		07FF222920E1957E00F19836 /* peroni_330ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07FF220020E1957D00F19836 /* peroni_330ml@2x.png */; };
-		07FF222A20E1957E00F19836 /* riondo_prosecco_750ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07FF220120E1957D00F19836 /* riondo_prosecco_750ml@2x.png */; };
-		07FF222B20E1957E00F19836 /* menta_700ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07FF220220E1957E00F19836 /* menta_700ml@2x.png */; };
-		07FF222C20E1957E00F19836 /* strawberry_700ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07FF220320E1957E00F19836 /* strawberry_700ml@2x.png */; };
-		07FF222D20E1957E00F19836 /* clamato_163ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07FF220420E1957E00F19836 /* clamato_163ml@2x.png */; };
-		07FF222E20E1957E00F19836 /* moet_chandon_750ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07FF220520E1957E00F19836 /* moet_chandon_750ml@2x.png */; };
-		07FF223220E459E200F19836 /* presidente_black_330ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07FF222F20E459E100F19836 /* presidente_black_330ml@2x.png */; };
-		07FF223320E459E200F19836 /* presidente_330ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07FF223020E459E200F19836 /* presidente_330ml@2x.png */; };
-		07FF223420E459E200F19836 /* presidente_light_330m@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07FF223120E459E200F19836 /* presidente_light_330m@2x.png */; };
+		9BEB6C3D270A09EB00B69DE4 /* ItemImages in Resources */ = {isa = PBXBuildFile; fileRef = 9BEB6C3C270A09EB00B69DE4 /* ItemImages */; };
 		C4035BC31DF033DA0009FB9E /* Confirm.m in Sources */ = {isa = PBXBuildFile; fileRef = C4035BC21DF033DA0009FB9E /* Confirm.m */; };
 		C4035BC61DF033F90009FB9E /* ConfirmVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C4035BC51DF033F90009FB9E /* ConfirmVC.m */; };
 		C4035BC91DF034200009FB9E /* ConfirmTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C4035BC81DF034200009FB9E /* ConfirmTVC.m */; };
@@ -269,59 +146,8 @@
 		071B2110238CC97200BBFB1B /* AddDeviceVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddDeviceVC.m; sourceTree = "<group>"; };
 		071B211E23981D6600BBFB1B /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		071B212323A0847900BBFB1B /* BLEDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEDefines.h; sourceTree = "<group>"; };
-		0746011C20CDDED6006EABE9 /* grand_marnier_700ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grand_marnier_700ml@2x.png"; sourceTree = "<group>"; };
-		0746011D20CDDED6006EABE9 /* greygoose_750ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "greygoose_750ml@2x.png"; sourceTree = "<group>"; };
-		0746011E20CDDEDD006EABE9 /* baileys_750ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "baileys_750ml@2x.png"; sourceTree = "<group>"; };
-		0746011F20CDDEE4006EABE9 /* dasani_500ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dasani_500ml@2x.png"; sourceTree = "<group>"; };
-		0746012020CDDEEA006EABE9 /* red_bull@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "red_bull@2x.png"; sourceTree = "<group>"; };
-		0746012120CDDEF0006EABE9 /* marlboro_rojo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marlboro_rojo@2x.png"; sourceTree = "<group>"; };
-		0746012220CDDEF6006EABE9 /* hennessy_vsop_700ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hennessy_vsop_700ml@2x.png"; sourceTree = "<group>"; };
-		0746012320CDDEFC006EABE9 /* malibu_750ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "malibu_750ml@2x.png"; sourceTree = "<group>"; };
-		0746012420CDDF02006EABE9 /* sambuca_750ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sambuca_750ml@2x.png"; sourceTree = "<group>"; };
-		0746012520CDDF08006EABE9 /* anejo-700-frontal_web@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "anejo-700-frontal_web@2x.png"; sourceTree = "<group>"; };
-		0746012620CDDF0E006EABE9 /* stolichnaya_750ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stolichnaya_750ml@2x.png"; sourceTree = "<group>"; };
-		0746012720CDDF15006EABE9 /* social_330ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "social_330ml@2x.png"; sourceTree = "<group>"; };
-		0746012820CDDF1B006EABE9 /* jack_daniels_750ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jack_daniels_750ml@2x.png"; sourceTree = "<group>"; };
-		0746012920CDDF21006EABE9 /* dewars_750ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dewars_750ml@2x.png"; sourceTree = "<group>"; };
-		0746012A20CDDF27006EABE9 /* barcelo_imperial_700ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "barcelo_imperial_700ml@2x.png"; sourceTree = "<group>"; };
-		0746012B20CDDF2D006EABE9 /* barcelo_anejo_700ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "barcelo_anejo_700ml@2x.png"; sourceTree = "<group>"; };
-		0746012C20CDDF33006EABE9 /* perrier_330ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "perrier_330ml@2x.png"; sourceTree = "<group>"; };
-		0746012D20CDDF39006EABE9 /* fireball_750ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fireball_750ml@2x.png"; sourceTree = "<group>"; };
-		0746012E20CDDF3F006EABE9 /* bohemia_330ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bohemia_330ml@2x.png"; sourceTree = "<group>"; };
-		0746013020CDDF4C006EABE9 /* cointreau_700ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cointreau_700ml@2x.png"; sourceTree = "<group>"; };
-		0746013220CDDF58006EABE9 /* jose_cuervo_blanco_750ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jose_cuervo_blanco_750ml@2x.png"; sourceTree = "<group>"; };
-		0746013320CDDF5E006EABE9 /* campari_750ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "campari_750ml@2x.png"; sourceTree = "<group>"; };
-		0746013420CDDF65006EABE9 /* stella_artois_330ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stella_artois_330ml@2x.png"; sourceTree = "<group>"; };
-		0746013520CDDF6A006EABE9 /* brugal_extra_viejo_700ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "brugal_extra_viejo_700ml@2x.png"; sourceTree = "<group>"; };
-		0746013620CDDF70006EABE9 /* averna_700ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "averna_700ml@2x.png"; sourceTree = "<group>"; };
-		0746013720CDDF77006EABE9 /* amaretto_750ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "amaretto_750ml@2x.png"; sourceTree = "<group>"; };
-		0746013820CDDF7D006EABE9 /* absolut_750ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "absolut_750ml@2x.png"; sourceTree = "<group>"; };
-		0746013A20CDDF8A006EABE9 /* jose_cuervo_dorado_700ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jose_cuervo_dorado_700ml@2x.png"; sourceTree = "<group>"; };
-		0746013B20CDDF90006EABE9 /* brugal_blanco_700ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "brugal_blanco_700ml@2x.png"; sourceTree = "<group>"; };
-		0746013C20CDDF96006EABE9 /* brugal_xv_700ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "brugal_xv_700ml@2x.png"; sourceTree = "<group>"; };
-		0746013D20CDDF9D006EABE9 /* black_label_750ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "black_label_750ml@2x.png"; sourceTree = "<group>"; };
-		0746013E20CDDFA3006EABE9 /* fernet_branca_750ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fernet_branca_750ml@2x.png"; sourceTree = "<group>"; };
-		0746013F20CDDFAA006EABE9 /* ricard_750ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ricard_750ml@2x.png"; sourceTree = "<group>"; };
-		0746014020CDDFB0006EABE9 /* jaegermeister_750ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jaegermeister_750ml@2x.png"; sourceTree = "<group>"; };
-		0746014120CDDFB6006EABE9 /* kahlua_700ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "kahlua_700ml@2x.png"; sourceTree = "<group>"; };
-		0746014220CDDFBC006EABE9 /* martini_bianco_750ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "martini_bianco_750ml@2x.png"; sourceTree = "<group>"; };
-		0746014320CDDFC2006EABE9 /* bombay_750ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bombay_750ml@2x.png"; sourceTree = "<group>"; };
-		0746014420CDDFC9006EABE9 /* aviation_750ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "aviation_750ml@2x.png"; sourceTree = "<group>"; };
-		0746014520CDDFCF006EABE9 /* chivas_regal_750ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chivas_regal_750ml@2x.png"; sourceTree = "<group>"; };
-		0746014620CDDFD5006EABE9 /* coca_cola_light_20oz@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coca_cola_light_20oz@2x.png"; sourceTree = "<group>"; };
-		0746014720CDDFDC006EABE9 /* coka_cola_20oz@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coka_cola_20oz@2x.png"; sourceTree = "<group>"; };
-		0746014820CDDFE2006EABE9 /* ladoga_700ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ladoga_700ml@2x.png"; sourceTree = "<group>"; };
-		0746014920CDDFE8006EABE9 /* buchanan_750ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buchanan_750ml@2x.png"; sourceTree = "<group>"; };
-		0746014A20CDDFEE006EABE9 /* barcelo_gran_anejo_700ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "barcelo_gran_anejo_700ml@2x.png"; sourceTree = "<group>"; };
-		0746014B20CDDFF5006EABE9 /* greygoose_magnum@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "greygoose_magnum@2x.png"; sourceTree = "<group>"; };
-		0746014C20CDDFFB006EABE9 /* marlboro_blanco@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marlboro_blanco@2x.png"; sourceTree = "<group>"; };
-		0746014D20CDE001006EABE9 /* patron_silver_750ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "patron_silver_750ml@2x.png"; sourceTree = "<group>"; };
-		0746014E20CDE007006EABE9 /* belvedere_750ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "belvedere_750ml@2x.png"; sourceTree = "<group>"; };
-		0746014F20CDE00E006EABE9 /* sprite_20oz@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sprite_20oz@2x.png"; sourceTree = "<group>"; };
-		0746015020CDE014006EABE9 /* corona_330ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "corona_330ml@2x.png"; sourceTree = "<group>"; };
 		0746018620D05C13006EABE9 /* BartenderCommentSendVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BartenderCommentSendVC.h; sourceTree = "<group>"; };
 		0746018720D05C13006EABE9 /* BartenderCommentSendVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BartenderCommentSendVC.m; sourceTree = "<group>"; };
-		0746018920D2A647006EABE9 /* coming_soon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coming_soon@2x.png"; sourceTree = "<group>"; };
 		0746018B20D2B872006EABE9 /* OJOv1-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OJOv1-Prefix.pch"; sourceTree = "<group>"; };
 		0747237A206577FA00913C6F /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		074BA440261255C3007A49C0 /* RegisterVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RegisterVC.h; path = OJOv1/RegisterVC.h; sourceTree = SOURCE_ROOT; };
@@ -329,38 +155,6 @@
 		076CD644235B7ED500B5670D /* Moon-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Moon-Bold.otf"; sourceTree = "<group>"; };
 		076CD645235B7ED500B5670D /* Moon-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Moon-Light.otf"; sourceTree = "<group>"; };
 		076CD646235B7ED500B5670D /* Moon_Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Moon_Regular.otf; sourceTree = "<group>"; };
-		077A6B9825E855C6007F59F4 /* d'usse_750ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "d'usse_750ml@2x.png"; sourceTree = "<group>"; };
-		077A6B9925E855C6007F59F4 /* pina_unidades@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pina_unidades@2x.png"; sourceTree = "<group>"; };
-		077A6B9A25E855C7007F59F4 /* presidente_light_330@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "presidente_light_330@2x.png"; sourceTree = "<group>"; };
-		077A6B9B25E855C7007F59F4 /* presidente_gold@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "presidente_gold@2x.png"; sourceTree = "<group>"; };
-		077A6B9C25E855C7007F59F4 /* brugal_blanco_1000ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "brugal_blanco_1000ml@2x.png"; sourceTree = "<group>"; };
-		077A6B9D25E855C7007F59F4 /* coors_banquet@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coors_banquet@2x.png"; sourceTree = "<group>"; };
-		077A6B9E25E855C7007F59F4 /* frangelico_700ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frangelico_700ml@2x.png"; sourceTree = "<group>"; };
-		077A6B9F25E855C7007F59F4 /* tanqueray_750ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tanqueray_750ml@2x.png"; sourceTree = "<group>"; };
-		077A6BA025E855C7007F59F4 /* cafe_porciones@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cafe_porciones@2x.png"; sourceTree = "<group>"; };
-		077A6BA125E855C7007F59F4 /* modelo_negra@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "modelo_negra@2x.png"; sourceTree = "<group>"; };
-		077A6BA225E855C7007F59F4 /* barcelo_blanco700@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "barcelo_blanco700@2x.png"; sourceTree = "<group>"; };
-		077A6BA325E855C7007F59F4 /* pellegrino_750ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pellegrino_750ml@2x.png"; sourceTree = "<group>"; };
-		077A6BA425E855C7007F59F4 /* stolichnaya_375ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stolichnaya_375ml@2x.png"; sourceTree = "<group>"; };
-		077A6BA525E855C8007F59F4 /* canadien_club_750ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "canadien_club_750ml@2x.png"; sourceTree = "<group>"; };
-		077A6BA625E855C8007F59F4 /* jagermeister_755ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jagermeister_755ml@2x.png"; sourceTree = "<group>"; };
-		077A6BA725E855C8007F59F4 /* jagermeister_750ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jagermeister_750ml@2x.png"; sourceTree = "<group>"; };
-		077A6BA825E855C8007F59F4 /* brugal_extra_v_350ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "brugal_extra_v_350ml@2x.png"; sourceTree = "<group>"; };
-		077A6BA925E855C8007F59F4 /* coorslight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coorslight@2x.png"; sourceTree = "<group>"; };
-		077A6BAA25E855C8007F59F4 /* disaronno_750ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "disaronno_750ml@2x.png"; sourceTree = "<group>"; };
-		077A6BAB25E855C8007F59F4 /* coronita@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coronita@2x.png"; sourceTree = "<group>"; };
-		077A6BAC25E855C8007F59F4 /* bermudez_700ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bermudez_700ml@2x.png"; sourceTree = "<group>"; };
-		077A6BAD25E855C8007F59F4 /* heineken_lata@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "heineken_lata@2x.png"; sourceTree = "<group>"; };
-		077A6BAE25E855C8007F59F4 /* barcelo_anejo_1000ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "barcelo_anejo_1000ml@2x.png"; sourceTree = "<group>"; };
-		077A6BAF25E855C8007F59F4 /* jagermeister_1000ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jagermeister_1000ml@2x.png"; sourceTree = "<group>"; };
-		077A6BB025E855C8007F59F4 /* brugal_leyenda_700ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "brugal_leyenda_700ml@2x.png"; sourceTree = "<group>"; };
-		077A6BB125E855C8007F59F4 /* brutal_151@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "brutal_151@2x.png"; sourceTree = "<group>"; };
-		077A6BB325E855C9007F59F4 /* gold_label_750ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gold_label_750ml@2x.png"; sourceTree = "<group>"; };
-		077A6BB425E855C9007F59F4 /* brugal_extra_v_700ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "brugal_extra_v_700ml@2x.png"; sourceTree = "<group>"; };
-		077A6BB525E855C9007F59F4 /* redbull_sinazucar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "redbull_sinazucar@2x.png"; sourceTree = "<group>"; };
-		077A6BB625E855C9007F59F4 /* brugal_xv_350ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "brugal_xv_350ml@2x.png"; sourceTree = "<group>"; };
-		077A6BB725E855C9007F59F4 /* barcelo_imp_700ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "barcelo_imp_700ml@2x.png"; sourceTree = "<group>"; };
-		077A6BB825E855C9007F59F4 /* modelo_rubia@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "modelo_rubia@2x.png"; sourceTree = "<group>"; };
 		07C9DA0E2601015B00955210 /* ItemFull.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ItemFull.h; sourceTree = "<group>"; };
 		07C9DA0F2601015B00955210 /* ItemFull.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ItemFull.m; sourceTree = "<group>"; };
 		07DC6D7A20C9FDC00053FB5B /* BartenderCommentTHVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BartenderCommentTHVC.h; sourceTree = "<group>"; };
@@ -374,47 +168,7 @@
 		07F540941F9DF59E004602D6 /* BartenderCommentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BartenderCommentModel.m; sourceTree = "<group>"; };
 		07F540961F9DF5BD004602D6 /* BartenderCommentTVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BartenderCommentTVC.h; sourceTree = "<group>"; };
 		07F540971F9DF5BD004602D6 /* BartenderCommentTVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BartenderCommentTVC.m; sourceTree = "<group>"; };
-		07FF21DD20E1957900F19836 /* jose_c_dorado_700ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jose_c_dorado_700ml@2x.png"; sourceTree = "<group>"; };
-		07FF21DE20E1957900F19836 /* manzana_jugo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "manzana_jugo@2x.png"; sourceTree = "<group>"; };
-		07FF21DF20E1957900F19836 /* pinot_grigio_750ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pinot_grigio_750ml@2x.png"; sourceTree = "<group>"; };
-		07FF21E020E1957900F19836 /* 151_1000ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "151_1000ml@2x.png"; sourceTree = "<group>"; };
-		07FF21E120E1957A00F19836 /* tomate_jugo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tomate_jugo@2x.png"; sourceTree = "<group>"; };
-		07FF21E220E1957A00F19836 /* melocoton_700ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "melocoton_700ml@2x.png"; sourceTree = "<group>"; };
-		07FF21E320E1957A00F19836 /* cranberry_jugo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cranberry_jugo@2x.png"; sourceTree = "<group>"; };
-		07FF21E420E1957A00F19836 /* blue_curacao_700ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blue_curacao_700ml@2x.png"; sourceTree = "<group>"; };
-		07FF21E520E1957A00F19836 /* chinola_jugo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chinola_jugo@2x.png"; sourceTree = "<group>"; };
-		07FF21E620E1957A00F19836 /* lemon_jugo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lemon_jugo@2x.png"; sourceTree = "<group>"; };
-		07FF21E720E1957A00F19836 /* montepulciano_750ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "montepulciano_750ml@2x.png"; sourceTree = "<group>"; };
-		07FF21E820E1957A00F19836 /* imperial_gold_700ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imperial_gold_700ml@2x.png"; sourceTree = "<group>"; };
-		07FF21E920E1957B00F19836 /* riondo_magnum@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "riondo_magnum@2x.png"; sourceTree = "<group>"; };
-		07FF21EA20E1957B00F19836 /* guineo_700ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guineo_700ml@2x.png"; sourceTree = "<group>"; };
-		07FF21EB20E1957B00F19836 /* chianti_classico_750ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chianti_classico_750ml@2x.png"; sourceTree = "<group>"; };
-		07FF21EC20E1957B00F19836 /* hennessy_white_700ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hennessy_white_700ml@2x.png"; sourceTree = "<group>"; };
-		07FF21EE20E1957B00F19836 /* coca_cola_20oz@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coca_cola_20oz@2x.png"; sourceTree = "<group>"; };
-		07FF21EF20E1957B00F19836 /* jose_c_blanco_750ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jose_c_blanco_750ml@2x.png"; sourceTree = "<group>"; };
-		07FF21F020E1957B00F19836 /* barbera_dalba_750ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "barbera_dalba_750ml@2x.png"; sourceTree = "<group>"; };
-		07FF21F120E1957C00F19836 /* copa_vino_tinto@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "copa_vino_tinto@2x.png"; sourceTree = "<group>"; };
-		07FF21F220E1957C00F19836 /* club_soda_16oz@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "club_soda_16oz@2x.png"; sourceTree = "<group>"; };
-		07FF21F320E1957C00F19836 /* pina_jugo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pina_jugo@2x.png"; sourceTree = "<group>"; };
-		07FF21F520E1957C00F19836 /* triple_sec_700ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "triple_sec_700ml@2x.png"; sourceTree = "<group>"; };
-		07FF21F620E1957C00F19836 /* veuve_cliquot_750ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "veuve_cliquot_750ml@2x.png"; sourceTree = "<group>"; };
-		07FF21F720E1957C00F19836 /* copa_vino_blanco@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "copa_vino_blanco@2x.png"; sourceTree = "<group>"; };
-		07FF21F820E1957C00F19836 /* nero_davola_750ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nero_davola_750ml@2x.png"; sourceTree = "<group>"; };
-		07FF21F920E1957C00F19836 /* mamajuana@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mamajuana@2x.png"; sourceTree = "<group>"; };
-		07FF21FB20E1957D00F19836 /* tomate_jugoNice-to-meet-you!.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tomate_jugoNice-to-meet-you!.png"; sourceTree = "<group>"; };
-		07FF21FC20E1957D00F19836 /* tonica_16oz@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tonica_16oz@2x.png"; sourceTree = "<group>"; };
-		07FF21FD20E1957D00F19836 /* jarana_blanco_1000ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jarana_blanco_1000ml@2x.png"; sourceTree = "<group>"; };
-		07FF21FE20E1957D00F19836 /* barcelo_gran_a_700ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "barcelo_gran_a_700ml@2x.png"; sourceTree = "<group>"; };
-		07FF21FF20E1957D00F19836 /* naranja_jugo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "naranja_jugo@2x.png"; sourceTree = "<group>"; };
-		07FF220020E1957D00F19836 /* peroni_330ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "peroni_330ml@2x.png"; sourceTree = "<group>"; };
-		07FF220120E1957D00F19836 /* riondo_prosecco_750ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "riondo_prosecco_750ml@2x.png"; sourceTree = "<group>"; };
-		07FF220220E1957E00F19836 /* menta_700ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menta_700ml@2x.png"; sourceTree = "<group>"; };
-		07FF220320E1957E00F19836 /* strawberry_700ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "strawberry_700ml@2x.png"; sourceTree = "<group>"; };
-		07FF220420E1957E00F19836 /* clamato_163ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clamato_163ml@2x.png"; sourceTree = "<group>"; };
-		07FF220520E1957E00F19836 /* moet_chandon_750ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "moet_chandon_750ml@2x.png"; sourceTree = "<group>"; };
-		07FF222F20E459E100F19836 /* presidente_black_330ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "presidente_black_330ml@2x.png"; sourceTree = "<group>"; };
-		07FF223020E459E200F19836 /* presidente_330ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "presidente_330ml@2x.png"; sourceTree = "<group>"; };
-		07FF223120E459E200F19836 /* presidente_light_330m@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "presidente_light_330m@2x.png"; sourceTree = "<group>"; };
+		9BEB6C3C270A09EB00B69DE4 /* ItemImages */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ItemImages; sourceTree = "<group>"; };
 		C4035BC11DF033DA0009FB9E /* Confirm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Confirm.h; sourceTree = "<group>"; };
 		C4035BC21DF033DA0009FB9E /* Confirm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Confirm.m; sourceTree = "<group>"; };
 		C4035BC41DF033F90009FB9E /* ConfirmVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfirmVC.h; sourceTree = "<group>"; };
@@ -652,137 +406,6 @@
 			path = MoonFont;
 			sourceTree = "<group>";
 		};
-		07DC6D7D20CB33790053FB5B /* ItemImages */ = {
-			isa = PBXGroup;
-			children = (
-				077A6BAE25E855C8007F59F4 /* barcelo_anejo_1000ml@2x.png */,
-				077A6BA225E855C7007F59F4 /* barcelo_blanco700@2x.png */,
-				077A6BB725E855C9007F59F4 /* barcelo_imp_700ml@2x.png */,
-				077A6BAC25E855C8007F59F4 /* bermudez_700ml@2x.png */,
-				077A6B9C25E855C7007F59F4 /* brugal_blanco_1000ml@2x.png */,
-				077A6BA825E855C8007F59F4 /* brugal_extra_v_350ml@2x.png */,
-				077A6BB425E855C9007F59F4 /* brugal_extra_v_700ml@2x.png */,
-				077A6BB025E855C8007F59F4 /* brugal_leyenda_700ml@2x.png */,
-				077A6BB625E855C9007F59F4 /* brugal_xv_350ml@2x.png */,
-				077A6BB125E855C8007F59F4 /* brutal_151@2x.png */,
-				077A6BA025E855C7007F59F4 /* cafe_porciones@2x.png */,
-				077A6BA525E855C8007F59F4 /* canadien_club_750ml@2x.png */,
-				077A6B9D25E855C7007F59F4 /* coors_banquet@2x.png */,
-				077A6BA925E855C8007F59F4 /* coorslight@2x.png */,
-				077A6BAB25E855C8007F59F4 /* coronita@2x.png */,
-				077A6B9825E855C6007F59F4 /* d'usse_750ml@2x.png */,
-				077A6BAA25E855C8007F59F4 /* disaronno_750ml@2x.png */,
-				077A6B9E25E855C7007F59F4 /* frangelico_700ml@2x.png */,
-				077A6BB325E855C9007F59F4 /* gold_label_750ml@2x.png */,
-				077A6BAD25E855C8007F59F4 /* heineken_lata@2x.png */,
-				077A6BA725E855C8007F59F4 /* jagermeister_750ml@2x.png */,
-				077A6BA625E855C8007F59F4 /* jagermeister_755ml@2x.png */,
-				077A6BAF25E855C8007F59F4 /* jagermeister_1000ml@2x.png */,
-				077A6BA125E855C7007F59F4 /* modelo_negra@2x.png */,
-				077A6BB825E855C9007F59F4 /* modelo_rubia@2x.png */,
-				077A6BA325E855C7007F59F4 /* pellegrino_750ml@2x.png */,
-				077A6B9925E855C6007F59F4 /* pina_unidades@2x.png */,
-				077A6B9B25E855C7007F59F4 /* presidente_gold@2x.png */,
-				077A6B9A25E855C7007F59F4 /* presidente_light_330@2x.png */,
-				077A6BB525E855C9007F59F4 /* redbull_sinazucar@2x.png */,
-				077A6BA425E855C7007F59F4 /* stolichnaya_375ml@2x.png */,
-				077A6B9F25E855C7007F59F4 /* tanqueray_750ml@2x.png */,
-				07FF223020E459E200F19836 /* presidente_330ml@2x.png */,
-				07FF222F20E459E100F19836 /* presidente_black_330ml@2x.png */,
-				07FF223120E459E200F19836 /* presidente_light_330m@2x.png */,
-				07FF21E020E1957900F19836 /* 151_1000ml@2x.png */,
-				07FF21F020E1957B00F19836 /* barbera_dalba_750ml@2x.png */,
-				07FF21FE20E1957D00F19836 /* barcelo_gran_a_700ml@2x.png */,
-				07FF21E420E1957A00F19836 /* blue_curacao_700ml@2x.png */,
-				07FF21EB20E1957B00F19836 /* chianti_classico_750ml@2x.png */,
-				07FF21E520E1957A00F19836 /* chinola_jugo@2x.png */,
-				07FF220420E1957E00F19836 /* clamato_163ml@2x.png */,
-				07FF21F220E1957C00F19836 /* club_soda_16oz@2x.png */,
-				07FF21EE20E1957B00F19836 /* coca_cola_20oz@2x.png */,
-				07FF21F720E1957C00F19836 /* copa_vino_blanco@2x.png */,
-				07FF21F120E1957C00F19836 /* copa_vino_tinto@2x.png */,
-				07FF21E320E1957A00F19836 /* cranberry_jugo@2x.png */,
-				07FF21EA20E1957B00F19836 /* guineo_700ml@2x.png */,
-				07FF21EC20E1957B00F19836 /* hennessy_white_700ml@2x.png */,
-				07FF21E820E1957A00F19836 /* imperial_gold_700ml@2x.png */,
-				07FF21FD20E1957D00F19836 /* jarana_blanco_1000ml@2x.png */,
-				07FF21EF20E1957B00F19836 /* jose_c_blanco_750ml@2x.png */,
-				07FF21DD20E1957900F19836 /* jose_c_dorado_700ml@2x.png */,
-				07FF21E620E1957A00F19836 /* lemon_jugo@2x.png */,
-				07FF21F920E1957C00F19836 /* mamajuana@2x.png */,
-				07FF21DE20E1957900F19836 /* manzana_jugo@2x.png */,
-				07FF21E220E1957A00F19836 /* melocoton_700ml@2x.png */,
-				07FF220220E1957E00F19836 /* menta_700ml@2x.png */,
-				07FF220520E1957E00F19836 /* moet_chandon_750ml@2x.png */,
-				07FF21E720E1957A00F19836 /* montepulciano_750ml@2x.png */,
-				07FF21FF20E1957D00F19836 /* naranja_jugo@2x.png */,
-				07FF21F820E1957C00F19836 /* nero_davola_750ml@2x.png */,
-				07FF220020E1957D00F19836 /* peroni_330ml@2x.png */,
-				07FF21F320E1957C00F19836 /* pina_jugo@2x.png */,
-				07FF21DF20E1957900F19836 /* pinot_grigio_750ml@2x.png */,
-				07FF21E920E1957B00F19836 /* riondo_magnum@2x.png */,
-				07FF220120E1957D00F19836 /* riondo_prosecco_750ml@2x.png */,
-				07FF220320E1957E00F19836 /* strawberry_700ml@2x.png */,
-				07FF21E120E1957A00F19836 /* tomate_jugo@2x.png */,
-				07FF21FB20E1957D00F19836 /* tomate_jugoNice-to-meet-you!.png */,
-				07FF21FC20E1957D00F19836 /* tonica_16oz@2x.png */,
-				07FF21F520E1957C00F19836 /* triple_sec_700ml@2x.png */,
-				07FF21F620E1957C00F19836 /* veuve_cliquot_750ml@2x.png */,
-				0746018920D2A647006EABE9 /* coming_soon@2x.png */,
-				0746013820CDDF7D006EABE9 /* absolut_750ml@2x.png */,
-				0746013720CDDF77006EABE9 /* amaretto_750ml@2x.png */,
-				0746012520CDDF08006EABE9 /* anejo-700-frontal_web@2x.png */,
-				0746013620CDDF70006EABE9 /* averna_700ml@2x.png */,
-				0746014420CDDFC9006EABE9 /* aviation_750ml@2x.png */,
-				0746011E20CDDEDD006EABE9 /* baileys_750ml@2x.png */,
-				0746012B20CDDF2D006EABE9 /* barcelo_anejo_700ml@2x.png */,
-				0746014A20CDDFEE006EABE9 /* barcelo_gran_anejo_700ml@2x.png */,
-				0746012A20CDDF27006EABE9 /* barcelo_imperial_700ml@2x.png */,
-				0746014E20CDE007006EABE9 /* belvedere_750ml@2x.png */,
-				0746013D20CDDF9D006EABE9 /* black_label_750ml@2x.png */,
-				0746012E20CDDF3F006EABE9 /* bohemia_330ml@2x.png */,
-				0746014320CDDFC2006EABE9 /* bombay_750ml@2x.png */,
-				0746013B20CDDF90006EABE9 /* brugal_blanco_700ml@2x.png */,
-				0746013520CDDF6A006EABE9 /* brugal_extra_viejo_700ml@2x.png */,
-				0746013C20CDDF96006EABE9 /* brugal_xv_700ml@2x.png */,
-				0746014920CDDFE8006EABE9 /* buchanan_750ml@2x.png */,
-				0746013320CDDF5E006EABE9 /* campari_750ml@2x.png */,
-				0746014520CDDFCF006EABE9 /* chivas_regal_750ml@2x.png */,
-				0746014620CDDFD5006EABE9 /* coca_cola_light_20oz@2x.png */,
-				0746013020CDDF4C006EABE9 /* cointreau_700ml@2x.png */,
-				0746014720CDDFDC006EABE9 /* coka_cola_20oz@2x.png */,
-				0746015020CDE014006EABE9 /* corona_330ml@2x.png */,
-				0746011F20CDDEE4006EABE9 /* dasani_500ml@2x.png */,
-				0746012920CDDF21006EABE9 /* dewars_750ml@2x.png */,
-				0746013E20CDDFA3006EABE9 /* fernet_branca_750ml@2x.png */,
-				0746012D20CDDF39006EABE9 /* fireball_750ml@2x.png */,
-				0746011C20CDDED6006EABE9 /* grand_marnier_700ml@2x.png */,
-				0746011D20CDDED6006EABE9 /* greygoose_750ml@2x.png */,
-				0746014B20CDDFF5006EABE9 /* greygoose_magnum@2x.png */,
-				0746012220CDDEF6006EABE9 /* hennessy_vsop_700ml@2x.png */,
-				0746012820CDDF1B006EABE9 /* jack_daniels_750ml@2x.png */,
-				0746014020CDDFB0006EABE9 /* jaegermeister_750ml@2x.png */,
-				0746013220CDDF58006EABE9 /* jose_cuervo_blanco_750ml@2x.png */,
-				0746013A20CDDF8A006EABE9 /* jose_cuervo_dorado_700ml@2x.png */,
-				0746014120CDDFB6006EABE9 /* kahlua_700ml@2x.png */,
-				0746014820CDDFE2006EABE9 /* ladoga_700ml@2x.png */,
-				0746012320CDDEFC006EABE9 /* malibu_750ml@2x.png */,
-				0746014C20CDDFFB006EABE9 /* marlboro_blanco@2x.png */,
-				0746012120CDDEF0006EABE9 /* marlboro_rojo@2x.png */,
-				0746014220CDDFBC006EABE9 /* martini_bianco_750ml@2x.png */,
-				0746014D20CDE001006EABE9 /* patron_silver_750ml@2x.png */,
-				0746012C20CDDF33006EABE9 /* perrier_330ml@2x.png */,
-				0746012020CDDEEA006EABE9 /* red_bull@2x.png */,
-				0746013F20CDDFAA006EABE9 /* ricard_750ml@2x.png */,
-				0746012420CDDF02006EABE9 /* sambuca_750ml@2x.png */,
-				0746012720CDDF15006EABE9 /* social_330ml@2x.png */,
-				0746014F20CDE00E006EABE9 /* sprite_20oz@2x.png */,
-				0746013420CDDF65006EABE9 /* stella_artois_330ml@2x.png */,
-				0746012620CDDF0E006EABE9 /* stolichnaya_750ml@2x.png */,
-			);
-			path = ItemImages;
-			sourceTree = "<group>";
-		};
 		07E9E509236012760023CA50 /* Bgmusic */ = {
 			isa = PBXGroup;
 			children = (
@@ -848,8 +471,8 @@
 		C43430441DCCC58C00239E17 /* OJOv1 */ = {
 			isa = PBXGroup;
 			children = (
+				9BEB6C3C270A09EB00B69DE4 /* ItemImages */,
 				07E9E509236012760023CA50 /* Bgmusic */,
-				07DC6D7D20CB33790053FB5B /* ItemImages */,
 				07E274361FA82AB10036E6B8 /* Assets.xcassets */,
 				C4B0F8891DCD1BBE004946B7 /* Constant */,
 				C4B0F88B1DCD1D8B004946B7 /* Client */,
@@ -1302,143 +925,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07FF220720E1957E00F19836 /* manzana_jugo@2x.png in Resources */,
-				077A6BB925E855C9007F59F4 /* d'usse_750ml@2x.png in Resources */,
-				0746017A20CDE01A006EABE9 /* chivas_regal_750ml@2x.png in Resources */,
-				07FF220D20E1957E00F19836 /* blue_curacao_700ml@2x.png in Resources */,
-				0746018020CDE01A006EABE9 /* greygoose_magnum@2x.png in Resources */,
-				077A6BD125E855C9007F59F4 /* brugal_leyenda_700ml@2x.png in Resources */,
-				077A6BC625E855C9007F59F4 /* canadien_club_750ml@2x.png in Resources */,
-				07FF222720E1957E00F19836 /* barcelo_gran_a_700ml@2x.png in Resources */,
-				07FF221320E1957E00F19836 /* guineo_700ml@2x.png in Resources */,
-				0746018520CDE01A006EABE9 /* corona_330ml@2x.png in Resources */,
-				077A6BC125E855C9007F59F4 /* cafe_porciones@2x.png in Resources */,
-				0746017B20CDE01A006EABE9 /* coca_cola_light_20oz@2x.png in Resources */,
-				0746015620CDE01A006EABE9 /* marlboro_rojo@2x.png in Resources */,
 				C40D6BC91E127AC600373224 /* LNNumberpad.xib in Resources */,
-				0746017020CDE01A006EABE9 /* brugal_blanco_700ml@2x.png in Resources */,
-				07FF223420E459E200F19836 /* presidente_light_330m@2x.png in Resources */,
-				0746016720CDE01A006EABE9 /* jose_cuervo_blanco_750ml@2x.png in Resources */,
-				0746017F20CDE01A006EABE9 /* barcelo_gran_anejo_700ml@2x.png in Resources */,
 				C4B0F8C91DCE22EB004946B7 /* LICENSE in Resources */,
-				077A6BBC25E855C9007F59F4 /* presidente_gold@2x.png in Resources */,
-				0746015F20CDE01A006EABE9 /* barcelo_imperial_700ml@2x.png in Resources */,
-				0746016320CDE01A006EABE9 /* bohemia_330ml@2x.png in Resources */,
-				0746015320CDE01A006EABE9 /* baileys_750ml@2x.png in Resources */,
-				07FF221F20E1957E00F19836 /* veuve_cliquot_750ml@2x.png in Resources */,
-				0746017520CDE01A006EABE9 /* jaegermeister_750ml@2x.png in Resources */,
 				C43430551DCCC58C00239E17 /* LaunchScreen.storyboard in Resources */,
-				0746017320CDE01A006EABE9 /* fernet_branca_750ml@2x.png in Resources */,
-				0746017720CDE01A006EABE9 /* martini_bianco_750ml@2x.png in Resources */,
-				07FF222A20E1957E00F19836 /* riondo_prosecco_750ml@2x.png in Resources */,
-				0746017220CDE01A006EABE9 /* black_label_750ml@2x.png in Resources */,
-				077A6BD025E855C9007F59F4 /* jagermeister_1000ml@2x.png in Resources */,
 				076CD649235B7ED500B5670D /* Moon_Regular.otf in Resources */,
-				0746015120CDE01A006EABE9 /* grand_marnier_700ml@2x.png in Resources */,
-				077A6BBF25E855C9007F59F4 /* frangelico_700ml@2x.png in Resources */,
-				077A6BCB25E855C9007F59F4 /* disaronno_750ml@2x.png in Resources */,
-				07FF220E20E1957E00F19836 /* chinola_jugo@2x.png in Resources */,
-				0746018A20D2A647006EABE9 /* coming_soon@2x.png in Resources */,
-				0746017120CDE01A006EABE9 /* brugal_xv_700ml@2x.png in Resources */,
-				07FF222D20E1957E00F19836 /* clamato_163ml@2x.png in Resources */,
-				0746017D20CDE01A006EABE9 /* ladoga_700ml@2x.png in Resources */,
-				077A6BD525E855C9007F59F4 /* brugal_extra_v_700ml@2x.png in Resources */,
-				0746017620CDE01A006EABE9 /* kahlua_700ml@2x.png in Resources */,
 				07E9E50D236038620023CA50 /* bluetooth_beef.mp3 in Resources */,
-				07FF222E20E1957E00F19836 /* moet_chandon_750ml@2x.png in Resources */,
-				0746016220CDE01A006EABE9 /* fireball_750ml@2x.png in Resources */,
-				07FF222620E1957E00F19836 /* jarana_blanco_1000ml@2x.png in Resources */,
-				0746015420CDE01A006EABE9 /* dasani_500ml@2x.png in Resources */,
-				077A6BD825E855C9007F59F4 /* barcelo_imp_700ml@2x.png in Resources */,
 				C40D6BC71E127AC600373224 /* LNHexNumberpad.xib in Resources */,
-				077A6BCA25E855C9007F59F4 /* coorslight@2x.png in Resources */,
-				0746017420CDE01A006EABE9 /* ricard_750ml@2x.png in Resources */,
-				07FF223220E459E200F19836 /* presidente_black_330ml@2x.png in Resources */,
-				07FF220C20E1957E00F19836 /* cranberry_jugo@2x.png in Resources */,
-				0746018120CDE01A006EABE9 /* marlboro_blanco@2x.png in Resources */,
 				076CD648235B7ED500B5670D /* Moon-Light.otf in Resources */,
-				077A6BC925E855C9007F59F4 /* brugal_extra_v_350ml@2x.png in Resources */,
-				077A6BBD25E855C9007F59F4 /* brugal_blanco_1000ml@2x.png in Resources */,
-				077A6BCF25E855C9007F59F4 /* barcelo_anejo_1000ml@2x.png in Resources */,
-				07FF221720E1957E00F19836 /* coca_cola_20oz@2x.png in Resources */,
-				07FF222020E1957E00F19836 /* copa_vino_blanco@2x.png in Resources */,
-				0746015D20CDE01A006EABE9 /* jack_daniels_750ml@2x.png in Resources */,
-				07FF222B20E1957E00F19836 /* menta_700ml@2x.png in Resources */,
-				0746015520CDE01A006EABE9 /* red_bull@2x.png in Resources */,
-				07FF221B20E1957E00F19836 /* club_soda_16oz@2x.png in Resources */,
-				0746015920CDE01A006EABE9 /* sambuca_750ml@2x.png in Resources */,
-				07FF222920E1957E00F19836 /* peroni_330ml@2x.png in Resources */,
-				07FF221520E1957E00F19836 /* hennessy_white_700ml@2x.png in Resources */,
-				077A6BC025E855C9007F59F4 /* tanqueray_750ml@2x.png in Resources */,
-				0746016F20CDE01A006EABE9 /* jose_cuervo_dorado_700ml@2x.png in Resources */,
-				0746015820CDE01A006EABE9 /* malibu_750ml@2x.png in Resources */,
-				0746016C20CDE01A006EABE9 /* amaretto_750ml@2x.png in Resources */,
-				0746018420CDE01A006EABE9 /* sprite_20oz@2x.png in Resources */,
-				07FF220B20E1957E00F19836 /* melocoton_700ml@2x.png in Resources */,
-				0746016520CDE01A006EABE9 /* cointreau_700ml@2x.png in Resources */,
-				0746017820CDE01A006EABE9 /* bombay_750ml@2x.png in Resources */,
-				077A6BC325E855C9007F59F4 /* barcelo_blanco700@2x.png in Resources */,
-				0746016020CDE01A006EABE9 /* barcelo_anejo_700ml@2x.png in Resources */,
-				0746016120CDE01A006EABE9 /* perrier_330ml@2x.png in Resources */,
-				0746016A20CDE01A006EABE9 /* brugal_extra_viejo_700ml@2x.png in Resources */,
 				C4B0F89C1DCD37F5004946B7 /* FontAwesome.otf in Resources */,
-				077A6BCD25E855C9007F59F4 /* bermudez_700ml@2x.png in Resources */,
-				0746016920CDE01A006EABE9 /* stella_artois_330ml@2x.png in Resources */,
-				07FF222220E1957E00F19836 /* mamajuana@2x.png in Resources */,
-				077A6BBB25E855C9007F59F4 /* presidente_light_330@2x.png in Resources */,
-				0746017920CDE01A006EABE9 /* aviation_750ml@2x.png in Resources */,
-				0746015C20CDE01A006EABE9 /* social_330ml@2x.png in Resources */,
-				0746015E20CDE01A006EABE9 /* dewars_750ml@2x.png in Resources */,
 				07E9E50B236012760023CA50 /* supermario_coin.mp3 in Resources */,
-				0746018220CDE01A006EABE9 /* patron_silver_750ml@2x.png in Resources */,
-				077A6BD925E855C9007F59F4 /* modelo_rubia@2x.png in Resources */,
-				0746015B20CDE01A006EABE9 /* stolichnaya_750ml@2x.png in Resources */,
-				0746015720CDE01A006EABE9 /* hennessy_vsop_700ml@2x.png in Resources */,
-				07FF220F20E1957E00F19836 /* lemon_jugo@2x.png in Resources */,
-				0746015220CDE01A006EABE9 /* greygoose_750ml@2x.png in Resources */,
-				07FF221820E1957E00F19836 /* jose_c_blanco_750ml@2x.png in Resources */,
-				0746016D20CDE01A006EABE9 /* absolut_750ml@2x.png in Resources */,
-				077A6BC825E855C9007F59F4 /* jagermeister_750ml@2x.png in Resources */,
-				07FF221920E1957E00F19836 /* barbera_dalba_750ml@2x.png in Resources */,
-				0746015A20CDE01A006EABE9 /* anejo-700-frontal_web@2x.png in Resources */,
 				C4B0F89B1DCD37F5004946B7 /* fontawesome-webfont.ttf in Resources */,
-				077A6BD225E855C9007F59F4 /* brutal_151@2x.png in Resources */,
 				07E274371FA82AC50036E6B8 /* Assets.xcassets in Resources */,
-				0746017C20CDE01A006EABE9 /* coka_cola_20oz@2x.png in Resources */,
-				07FF222420E1957E00F19836 /* tomate_jugoNice-to-meet-you!.png in Resources */,
-				077A6BC525E855C9007F59F4 /* stolichnaya_375ml@2x.png in Resources */,
-				0746018320CDE01A006EABE9 /* belvedere_750ml@2x.png in Resources */,
-				0746016B20CDE01A006EABE9 /* averna_700ml@2x.png in Resources */,
-				07FF221C20E1957E00F19836 /* pina_jugo@2x.png in Resources */,
-				077A6BC225E855C9007F59F4 /* modelo_negra@2x.png in Resources */,
-				077A6BC725E855C9007F59F4 /* jagermeister_755ml@2x.png in Resources */,
-				07FF223320E459E200F19836 /* presidente_330ml@2x.png in Resources */,
-				077A6BBA25E855C9007F59F4 /* pina_unidades@2x.png in Resources */,
-				07FF221120E1957E00F19836 /* imperial_gold_700ml@2x.png in Resources */,
-				07FF221220E1957E00F19836 /* riondo_magnum@2x.png in Resources */,
-				077A6BD425E855C9007F59F4 /* gold_label_750ml@2x.png in Resources */,
-				07FF222120E1957E00F19836 /* nero_davola_750ml@2x.png in Resources */,
+				9BEB6C3D270A09EB00B69DE4 /* ItemImages in Resources */,
 				C43430501DCCC58C00239E17 /* Main.storyboard in Resources */,
-				07FF221A20E1957E00F19836 /* copa_vino_tinto@2x.png in Resources */,
-				077A6BD725E855C9007F59F4 /* brugal_xv_350ml@2x.png in Resources */,
-				07FF222C20E1957E00F19836 /* strawberry_700ml@2x.png in Resources */,
-				07FF222820E1957E00F19836 /* naranja_jugo@2x.png in Resources */,
-				07FF221E20E1957E00F19836 /* triple_sec_700ml@2x.png in Resources */,
-				077A6BD625E855C9007F59F4 /* redbull_sinazucar@2x.png in Resources */,
-				07FF220620E1957E00F19836 /* jose_c_dorado_700ml@2x.png in Resources */,
-				0746017E20CDE01A006EABE9 /* buchanan_750ml@2x.png in Resources */,
-				07FF220820E1957E00F19836 /* pinot_grigio_750ml@2x.png in Resources */,
 				076CD647235B7ED500B5670D /* Moon-Bold.otf in Resources */,
-				07FF221020E1957E00F19836 /* montepulciano_750ml@2x.png in Resources */,
-				077A6BCC25E855C9007F59F4 /* coronita@2x.png in Resources */,
-				07FF220920E1957E00F19836 /* 151_1000ml@2x.png in Resources */,
-				077A6BBE25E855C9007F59F4 /* coors_banquet@2x.png in Resources */,
-				07FF222520E1957E00F19836 /* tonica_16oz@2x.png in Resources */,
-				07FF221420E1957E00F19836 /* chianti_classico_750ml@2x.png in Resources */,
-				077A6BCE25E855C9007F59F4 /* heineken_lata@2x.png in Resources */,
-				0746016820CDE01A006EABE9 /* campari_750ml@2x.png in Resources */,
-				077A6BC425E855C9007F59F4 /* pellegrino_750ml@2x.png in Resources */,
-				07FF220A20E1957E00F19836 /* tomate_jugo@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1744,7 +1244,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 46;
+				CURRENT_PROJECT_VERSION = 49;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 2F9673MCG5;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1777,7 +1277,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 46;
+				CURRENT_PROJECT_VERSION = 49;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 2F9673MCG5;
 				FRAMEWORK_SEARCH_PATHS = (
