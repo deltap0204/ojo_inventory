@@ -20,6 +20,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *moveButton;
 @property (weak, nonatomic) IBOutlet UIButton *refillButton;
 @property (weak, nonatomic) IBOutlet UIButton *movedItemToday;
+@property (weak, nonatomic) IBOutlet UIButton *refilledItemToday;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *buttonsTopConstraint;
 
 @property (strong, nonatomic) NSString *role;
 @property (strong, nonatomic) NSUserDefaults *userDefaults;
@@ -76,6 +79,7 @@
         [self getAllConfirmList];
         
     }
+    self.buttonsTopConstraint.constant = [UIScreen.mainScreen bounds].size.height - [UIScreen.mainScreen bounds].size.width / 2 - 200;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -88,6 +92,7 @@
     self.moveButton.layer.cornerRadius = self.moveButton.bounds.size.height / 2;
     self.refillButton.layer.cornerRadius = self.refillButton.bounds.size.height / 2;
     self.movedItemToday.layer.cornerRadius = self.movedItemToday.bounds.size.height / 2;
+    self.refilledItemToday.layer.cornerRadius = self.refilledItemToday.bounds.size.height / 2;
     
     self.almacenButton.layer.cornerRadius = 10.0f;
     self.neverasButton.layer.cornerRadius = 10.0f;

@@ -42,7 +42,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *barlaxImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *stockImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *bardjImageView;
-@property (weak, nonatomic) IBOutlet UIImageView *eventoImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *barRedBullImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *barvipImageView;
 
 
@@ -176,6 +176,7 @@
                 for (int i = 0; i < count; i++) {
                     
                     NSDictionary *userDict = (NSDictionary *) response[i];
+                    NSInteger itemId = [[userDict objectForKey:ITEM_ID] intValue];
                     NSString *itemName = [userDict objectForKey:ITEM_NAME];
                     NSString *categoryName = [userDict objectForKey:ITEM_CATEGORY];
                     NSInteger fullOpen = [[userDict objectForKey:FULL_OPEN] integerValue];
@@ -196,17 +197,18 @@
 //                    }
                                      
                     
-                    itemFullModel = [[ItemFull alloc] initWithItemName:itemName
-                                                    andWithFullAndOpen:fullOpen
-                                                   andWithCategoryName:categoryName
-                                                      andWithBtFullWet:btFullWet
-                                                       andWithBtEmpWet:btEmpWet
-                                                         andWithLiqWet:ligWet
-                                                         andWithServBt:servBt
-                                                        andWithServWet:serveWet
-                                                          andWithprice:price
-                                                      andWithFrequence:frequency
-                                           andWithActivedLocationArray:locationArray];
+                    itemFullModel = [[ItemFull alloc] initWithItemId:itemId
+                                                     andWithItemName: itemName
+                                                  andWithFullAndOpen:fullOpen
+                                                 andWithCategoryName:categoryName
+                                                    andWithBtFullWet:btFullWet
+                                                     andWithBtEmpWet:btEmpWet
+                                                       andWithLiqWet:ligWet
+                                                       andWithServBt:servBt
+                                                      andWithServWet:serveWet
+                                                        andWithprice:price
+                                                    andWithFrequence:frequency
+                                         andWithActivedLocationArray:locationArray];
                     
                     
                     
@@ -358,8 +360,8 @@
             self.stockImageView.image = [UIImage imageNamed:@"location_selected"];;
         } else if([activeLocation isEqual:@"BAR DJ"]){
             self.bardjImageView.image = [UIImage imageNamed:@"location_selected"];
-        } else if([activeLocation isEqual:@"EVENTO"]){
-            self.eventoImageView.image = [UIImage imageNamed:@"location_selected"];;
+        } else if([activeLocation isEqual:@"BAR RED BULL"]){
+            self.barRedBullImageView.image = [UIImage imageNamed:@"location_selected"];;
         } else if([activeLocation isEqual:@"BAR VIP"]){
             self.barvipImageView.image = [UIImage imageNamed:@"location_selected"];
         } else {
@@ -643,7 +645,7 @@
     self.barlaxImageView.image = [UIImage imageNamed:@"location_unselected"];;
     self.stockImageView.image = [UIImage imageNamed:@"location_unselected"];;
     self.bardjImageView.image = [UIImage imageNamed:@"location_unselected"];
-    self.eventoImageView.image = [UIImage imageNamed:@"location_unselected"];;
+    self.barRedBullImageView.image = [UIImage imageNamed:@"location_unselected"];;
     self.barvipImageView.image = [UIImage imageNamed:@"location_unselected"];
     
     [self.itemDetailView setHidden:YES];
@@ -658,17 +660,18 @@
     
     if (sender == self.addButton){
         
-        itemFullModel = [[ItemFull alloc] initWithItemName:@""
-                                   andWithFullAndOpen:0
-                                  andWithCategoryName:@""
-                                     andWithBtFullWet:@""
-                                      andWithBtEmpWet:@""
-                                        andWithLiqWet:@""
-                                        andWithServBt:@""
-                                            andWithServWet:@""
-                                         andWithprice:@""
-                                     andWithFrequence:0
-                          andWithActivedLocationArray:nil];
+        itemFullModel = [[ItemFull alloc] initWithItemId:0
+                                         andWithItemName:@""
+                                      andWithFullAndOpen:0
+                                     andWithCategoryName:@""
+                                        andWithBtFullWet:@""
+                                         andWithBtEmpWet:@""
+                                           andWithLiqWet:@""
+                                           andWithServBt:@""
+                                          andWithServWet:@""
+                                            andWithprice:@""
+                                        andWithFrequence:0
+                             andWithActivedLocationArray:nil];
         
     } else {
         

@@ -315,6 +315,13 @@
     [hud show:YES];
     
     NSString * addItemNameString = self.addItemName.text;
+    NSString * priceString = self.addTotalPriceField.text;
+    NSString * distributor = self.addDistributor.text;
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"MM-dd-yyyy HH:mm"];
+
+    NSDate *currentDate = [NSDate date];
+    NSString *dateString = [formatter stringFromDate:currentDate];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         OJOClient *ojoClient = [OJOClient sharedWebClient];
@@ -322,6 +329,10 @@
         [ojoClient refill:url
               andItemName:addItemNameString
              andAddAmount:addAmount
+                  andTime:dateString
+                 andPrice:priceString
+           andDistributor:distributor
+              andUsername:self.appDelegate.currentUserName
            andFinishBlock:^(NSArray *data) {
                NSDictionary *dicData = (NSDictionary *)data;
                NSString *stateCode = [dicData objectForKey:STATE];

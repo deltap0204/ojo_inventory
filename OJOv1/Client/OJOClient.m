@@ -285,6 +285,7 @@ static OJOClient *webClient = nil;
        andServBt:(NSString *) servBt
       andServWet:(NSString *) servWet
         andPrice:(NSString *) price
+       andItemId:(NSString *) _id
    onFinishBlock:(WebClientOnFinish) finishBlock
      onFailBlock:(WebClientOnFail) failBlock{
     NSDictionary *dicParam = @{ITEM_NAME : itemName,
@@ -295,6 +296,18 @@ static OJOClient *webClient = nil;
                                SERVE_BOTTLE : servBt,
                                SERVE_WET : servWet,
                                PRICE : price};
+    if (_id != nil) {
+        dicParam = @{
+            ITEM_ID: _id,
+            ITEM_NAME : itemName,
+            ITEM_CATEGORY : itemCategory,
+           BT_FULL_WET : btFullWet,
+           BT_EMP_WET : btEmpWet,
+           LIQ_WET : liqWet,
+           SERVE_BOTTLE : servBt,
+           SERVE_WET : servWet,
+           PRICE : price};
+    }
     NSString *addItemURL = [NSString stringWithFormat:@"%@%@", BASE_URL, method];
     
     [WebClient requestPostUrl:addItemURL parameters:dicParam suceess:^(NSArray *response) {
@@ -421,6 +434,28 @@ static OJOClient *webClient = nil;
     
     NSString *refillURL = [NSString stringWithFormat:@"%@%@", BASE_URL, method];
     NSDictionary *dicParam = @{ITEM_NAME : itemName, INVENTORY_AMOUNT : addAmount};
+    
+    [WebClient requestPostUrl:refillURL parameters:dicParam suceess:^(NSArray *response) {
+        finishBlock(response);
+    } failure:^(NSError *error) {
+        if (failBlock) {
+            failBlock(error);
+        }
+    }];
+}
+
+- (void) refill:(NSString *) method
+    andItemName:(NSString *) itemName
+   andAddAmount:(NSString *) addAmount
+        andTime: (NSString *) time
+       andPrice: (NSString *) price
+ andDistributor: (NSString *) distributor
+    andUsername: (NSString *) username
+ andFinishBlock:(WebClientOnFinish) finishBlock
+   andFailBlock:(WebClientOnFail) failBlock{
+    
+    NSString *refillURL = [NSString stringWithFormat:@"%@%@", BASE_URL, method];
+    NSDictionary *dicParam = @{ITEM_NAME : itemName, INVENTORY_AMOUNT : addAmount, INVENTORY_TIME: time, INVENTORY_PRICE: price, INVENTORY_DISTRIBUTOR: distributor, USERNAME: username};
     
     [WebClient requestPostUrl:refillURL parameters:dicParam suceess:^(NSArray *response) {
         finishBlock(response);

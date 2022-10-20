@@ -157,7 +157,7 @@
         
         [UIView animateWithDuration:0.25 animations:^{
             
-            if(_DirectionDown)
+            if(self->_DirectionDown)
                 self.tblView.frame = CGRectMake(self.frame.origin.x + self.superview.frame.origin.x, self.frame.origin.y + self.superview.frame.origin.y + self.frame.size.height+5, self.frame.size.width, height);
             else
                 self.tblView.frame = CGRectMake(self.frame.origin.x + self.superview.frame.origin.x, self.frame.origin.y + self.superview.frame.origin.y - 5 - height, self.frame.size.width, height);
@@ -182,7 +182,7 @@
     if(self.isCollapsed){
         [UIView animateWithDuration:0.25 animations:^{
             
-            if(_DirectionDown)
+            if(self->_DirectionDown)
                 self.tblView.frame = CGRectMake(self.frame.origin.x + self.superview.frame.origin.x, self.frame.origin.y + self.superview.frame.origin.y + self.frame.size.height+5, self.frame.size.width, 0);
             else
                 self.tblView.frame = CGRectMake(self.frame.origin.x + self.superview.frame.origin.x, self.frame.origin.y + self.superview.frame.origin.y, self.frame.size.width, 0);

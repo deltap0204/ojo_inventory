@@ -10,6 +10,7 @@
 
 @implementation ConfirmTVC
 
+
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
@@ -41,6 +42,7 @@
     [self.movedTimeMark setFont:[UIFont fontWithName:@"fontawesome" size:self.fontSize]];
     [self.movedTimeMark setText:@"\uf017"];
     [self.movedTimeMark setTextColor:[UIColor whiteColor]];
+    self.currentStatus = @"accept";
 
 }
 
@@ -51,6 +53,7 @@
     [self.acceptButton.titleLabel setFont:[UIFont fontWithName:@"fontawesome" size:self.fontSize]];
     [self.acceptButton setTitle:[NSString stringWithFormat:@"%@%@", @"\uf164", @"     ACCEPTED"] forState:UIControlStateNormal];
     [self.acceptButton setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
+    self.currentStatus = @"accepted";
 }
 
 - (void) rejectState{
@@ -60,6 +63,7 @@
     [self.rejectButton.titleLabel setFont:[UIFont fontWithName:@"fontawesome" size:self.fontSize]];
     [self.rejectButton setTitle:[NSString stringWithFormat:@"%@%@", @"\uf165", @"     REJECT"] forState:UIControlStateNormal];
     [self.rejectButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    self.currentStatus = @"reject";
 
 }
 
@@ -70,7 +74,7 @@
     [self.rejectButton.titleLabel setFont:[UIFont fontWithName:@"fontawesome" size:self.fontSize]];
     [self.rejectButton setTitle:[NSString stringWithFormat:@"%@%@", @"\uf165", @"     REJECTED"] forState:UIControlStateNormal];
     [self.rejectButton setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
-
+    self.currentStatus = @"rejected";
 }
 
 @end

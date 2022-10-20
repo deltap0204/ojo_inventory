@@ -35,7 +35,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *barlaxImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *stockImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *bardjImageView;
-@property (weak, nonatomic) IBOutlet UIImageView *eventoImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *barRedBullImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *barvipImageView;
 
 @property (weak, nonatomic) IBOutlet UIView *locationChangeConfirmView;
@@ -50,7 +50,7 @@
 @property (assign, nonatomic) BOOL barlaxSelected;
 @property (assign, nonatomic) BOOL stockSelected;
 @property (assign, nonatomic) BOOL bardjSelected;
-@property (assign, nonatomic) BOOL eventoSelected;
+@property (assign, nonatomic) BOOL barRedBullSelected;
 @property (assign, nonatomic) BOOL barvipSelected;
 
 @property (strong, nonatomic) NSString *selectedLoctionString;
@@ -107,7 +107,7 @@
             if ([activeLocation isEqual:@"BAR CENTRAL"]) {
                 self.barcentralImageView.image = [UIImage imageNamed:@"location_selected"];
                 self.barcentralSelected = YES;
-            } else if([activeLocation isEqual:@"BAR OFFIC"]) {
+            } else if([activeLocation isEqual:@"BAR OFFICE"]) {
                 self.barofficeImageView.image = [UIImage imageNamed:@"location_selected"];
                 self.barofficeSelected = YES;
             } else if([activeLocation isEqual:@"BAR LAX"]){
@@ -119,9 +119,9 @@
             } else if([activeLocation isEqual:@"BAR DJ"]){
                 self.bardjImageView.image = [UIImage imageNamed:@"location_selected"];
                 self.bardjSelected = YES;
-            } else if([activeLocation isEqual:@"EVENTO"]){
-                self.eventoImageView.image = [UIImage imageNamed:@"location_selected"];;
-                self.eventoSelected = YES;
+            } else if([activeLocation isEqual:@"BAR RED BULL"]){
+                self.barRedBullImageView.image = [UIImage imageNamed:@"location_selected"];;
+                self.barRedBullSelected = YES;
             } else if([activeLocation isEqual:@"BAR VIP"]){
                 self.barvipImageView.image = [UIImage imageNamed:@"location_selected"];
                 self.barvipSelected = YES;
@@ -130,13 +130,14 @@
             }
             
         }
-        } else {
-            // AddView
-            
-            [self dataIniaitalization];
-            
-            
-        }
+        self.itemNameTextField.userInteractionEnabled = false;
+    } else {
+        // AddView
+        self.itemNameTextField.userInteractionEnabled = true;
+        [self dataIniaitalization];
+        
+        
+    }
     
     [self.categorySelectView setHidden:YES];
     [self loadAllCategory];
@@ -152,7 +153,7 @@
     self.barlaxSelected = NO;
     self.stockSelected = NO;
     self.bardjSelected = NO;
-    self.eventoSelected = NO;
+    self.barRedBullSelected = NO;
     self.barvipSelected = NO;
     
     // TextField & ImageView initialization
@@ -176,7 +177,7 @@
     self.barlaxImageView.image = [UIImage imageNamed:@"location_unselected"];;
     self.stockImageView.image = [UIImage imageNamed:@"location_unselected"];;
     self.bardjImageView.image = [UIImage imageNamed:@"location_unselected"];
-    self.eventoImageView.image = [UIImage imageNamed:@"location_unselected"];;
+    self.barRedBullImageView.image = [UIImage imageNamed:@"location_unselected"];;
     self.barvipImageView.image = [UIImage imageNamed:@"location_unselected"];
     
         
@@ -312,6 +313,7 @@
              andServBt:self.sevPerBottle
             andServWet:self.wetServing
               andPrice:self.salePrice
+             andItemId: [self.fromVC isEqualToString:@"add"] ? nil : [NSString stringWithFormat:@"%ld", (long)self.selectedItem.itemId]
          onFinishBlock:^(NSArray *data) {
              
              NSDictionary *dicData = (NSDictionary *)data;
@@ -519,8 +521,8 @@
 }
 
 - (IBAction)onBarOfficeAction:(id)sender {
-    if (self.barofficeSelected) [self locationChangeViewInitialization:@"BAR CENTRAL" withActiveValue:NO];
-    else [self locationChangeViewInitialization:@"BAR CENTRAL" withActiveValue:YES];
+    if (self.barofficeSelected) [self locationChangeViewInitialization:@"BAR OFFICE" withActiveValue:NO];
+    else [self locationChangeViewInitialization:@"BAR OFFICE" withActiveValue:YES];
 }
 
 - (IBAction)onBarLaxAction:(id)sender {
@@ -536,9 +538,9 @@
     if (self.bardjSelected) [self locationChangeViewInitialization:@"BAR DJ" withActiveValue:NO];
     else [self locationChangeViewInitialization:@"BAR DJ" withActiveValue:YES];
 }
-- (IBAction)onEventoAction:(id)sender {
-    if (self.eventoSelected) [self locationChangeViewInitialization:@"EVENTO" withActiveValue:NO];
-    else [self locationChangeViewInitialization:@"EVENTO" withActiveValue:YES];
+- (IBAction)onBarRedBullAction:(id)sender {
+    if (self.barRedBullSelected) [self locationChangeViewInitialization:@"BAR RED BULL" withActiveValue:NO];
+    else [self locationChangeViewInitialization:@"BAR RED BULL" withActiveValue:YES];
 }
 - (IBAction)onVIPAction:(id)sender {
     if (self.barvipSelected) [self locationChangeViewInitialization:@"BAR VIP" withActiveValue:NO];
@@ -595,7 +597,7 @@
                 
                 self.barcentralSelected = !self.barcentralSelected;
                 
-            } else if ([self.selectedLoctionString isEqualToString:@"BAR OFFIC"]) {
+            } else if ([self.selectedLoctionString isEqualToString:@"BAR OFFICE"]) {
                 if (self.barofficeSelected) self.barofficeImageView.image = [UIImage imageNamed:@"location_unselected"];
                 else self.barofficeImageView.image = [UIImage imageNamed:@"location_selected"];
                 
@@ -619,11 +621,11 @@
                 
                 self.bardjSelected = !self.bardjSelected;
                 
-            } else if ([self.selectedLoctionString isEqualToString:@"EVENTO"]) {
-                if (self.eventoSelected) self.eventoImageView.image = [UIImage imageNamed:@"location_unselected"];
-                else self.eventoImageView.image = [UIImage imageNamed:@"location_selected"];
+            } else if ([self.selectedLoctionString isEqualToString:@"BAR RED BULL"]) {
+                if (self.barRedBullSelected) self.barRedBullImageView.image = [UIImage imageNamed:@"location_unselected"];
+                else self.barRedBullImageView.image = [UIImage imageNamed:@"location_selected"];
                 
-                self.eventoSelected = !self.eventoSelected;
+                self.barRedBullSelected = !self.barRedBullSelected;
                 
             } else if ([self.selectedLoctionString isEqualToString:@"BAR VIP"]) {
                 if (self.barvipSelected) self.barvipImageView.image = [UIImage imageNamed:@"location_unselected"];

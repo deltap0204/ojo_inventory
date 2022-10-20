@@ -150,6 +150,21 @@
 		07FF223220E459E200F19836 /* presidente_black_330ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07FF222F20E459E100F19836 /* presidente_black_330ml@2x.png */; };
 		07FF223320E459E200F19836 /* presidente_330ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07FF223020E459E200F19836 /* presidente_330ml@2x.png */; };
 		07FF223420E459E200F19836 /* presidente_light_330m@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07FF223120E459E200F19836 /* presidente_light_330m@2x.png */; };
+		7262EECC28FDBE6B00387FCD /* TodayRefilledItemVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7262EECB28FDBE6B00387FCD /* TodayRefilledItemVC.m */; };
+		7262EECF28FDE0CE00387FCD /* RefilledItemTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7262EECE28FDE0CE00387FCD /* RefilledItemTVC.m */; };
+		7262EED228FDF37C00387FCD /* TodayRefilledItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7262EED128FDF37C00387FCD /* TodayRefilledItemModel.m */; };
+		72B6205F28E860B000C8425F /* heineken_330ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 72B6205028E860AA00C8425F /* heineken_330ml@2x.png */; };
+		72B6206228E860B000C8425F /* old_parr_750ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 72B6205328E860AB00C8425F /* old_parr_750ml@2x.png */; };
+		72B6206328E860B000C8425F /* zver@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 72B6205428E860AB00C8425F /* zver@2x.png */; };
+		72B6206428E860B000C8425F /* averna_750ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 72B6205528E860AC00C8425F /* averna_750ml@2x.png */; };
+		72B6206528E860B000C8425F /* brugal_doble_res_700@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 72B6205628E860AC00C8425F /* brugal_doble_res_700@2x.png */; };
+		72B6206628E860B000C8425F /* aperol_750ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 72B6205728E860AC00C8425F /* aperol_750ml@2x.png */; };
+		72B6206828E860B000C8425F /* clamato@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 72B6205928E860AD00C8425F /* clamato@2x.png */; };
+		72B6206928E860B000C8425F /* smirnoff_ice@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 72B6205A28E860AD00C8425F /* smirnoff_ice@2x.png */; };
+		72B6206A28E860B000C8425F /* smirnoff_manzana@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 72B6205B28E860AE00C8425F /* smirnoff_manzana@2x.png */; };
+		72B6206B28E860B000C8425F /* donjulio_silver_750ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 72B6205C28E860AE00C8425F /* donjulio_silver_750ml@2x.png */; };
+		72B6206C28E860B000C8425F /* taittinger_750ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 72B6205D28E860AF00C8425F /* taittinger_750ml@2x.png */; };
+		72B6206D28E860B000C8425F /* absolut_700ml@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 72B6205E28E860AF00C8425F /* absolut_700ml@2x.png */; };
 		C4035BC31DF033DA0009FB9E /* Confirm.m in Sources */ = {isa = PBXBuildFile; fileRef = C4035BC21DF033DA0009FB9E /* Confirm.m */; };
 		C4035BC61DF033F90009FB9E /* ConfirmVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C4035BC51DF033F90009FB9E /* ConfirmVC.m */; };
 		C4035BC91DF034200009FB9E /* ConfirmTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C4035BC81DF034200009FB9E /* ConfirmTVC.m */; };
@@ -207,7 +222,6 @@
 		C4B0F8D01DCE22EB004946B7 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B0F8BB1DCE22EB004946B7 /* UIImageView+AFNetworking.m */; };
 		C4B0F8D11DCE22EB004946B7 /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B0F8BE1DCE22EB004946B7 /* UIProgressView+AFNetworking.m */; };
 		C4B0F8D21DCE22EB004946B7 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B0F8C01DCE22EB004946B7 /* UIRefreshControl+AFNetworking.m */; };
-		C4B0F8D31DCE22EB004946B7 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B0F8C21DCE22EB004946B7 /* UIWebView+AFNetworking.m */; };
 		C4B0F8D61DCE2E81004946B7 /* OJOClient.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B0F8D51DCE2E81004946B7 /* OJOClient.m */; };
 		C4B0F8E21DCFBBC1004946B7 /* UserMainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B0F8E11DCFBBC1004946B7 /* UserMainVC.m */; };
 		C4B0F8E51DCFCCF8004946B7 /* BartInventory.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B0F8E41DCFCCF8004946B7 /* BartInventory.m */; };
@@ -415,6 +429,27 @@
 		07FF222F20E459E100F19836 /* presidente_black_330ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "presidente_black_330ml@2x.png"; sourceTree = "<group>"; };
 		07FF223020E459E200F19836 /* presidente_330ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "presidente_330ml@2x.png"; sourceTree = "<group>"; };
 		07FF223120E459E200F19836 /* presidente_light_330m@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "presidente_light_330m@2x.png"; sourceTree = "<group>"; };
+		7262EECA28FDBE6B00387FCD /* TodayRefilledItemVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayRefilledItemVC.h; sourceTree = "<group>"; };
+		7262EECB28FDBE6B00387FCD /* TodayRefilledItemVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayRefilledItemVC.m; sourceTree = "<group>"; };
+		7262EECD28FDE0CE00387FCD /* RefilledItemTVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RefilledItemTVC.h; sourceTree = "<group>"; };
+		7262EECE28FDE0CE00387FCD /* RefilledItemTVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RefilledItemTVC.m; sourceTree = "<group>"; };
+		7262EED028FDF37C00387FCD /* TodayRefilledItemModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayRefilledItemModel.h; sourceTree = "<group>"; };
+		7262EED128FDF37C00387FCD /* TodayRefilledItemModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayRefilledItemModel.m; sourceTree = "<group>"; };
+		72B6205028E860AA00C8425F /* heineken_330ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "heineken_330ml@2x.png"; sourceTree = "<group>"; };
+		72B6205128E860AA00C8425F /* aviation_750ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "aviation_750ml@2x.png"; path = "../../../../../../../../Volumes/VMware Shared Folders/PROJECTS-2/OJO/NewImages/aviation_750ml@2x.png"; sourceTree = "<group>"; };
+		72B6205228E860AB00C8425F /* d'usse_750ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "d'usse_750ml@2x.png"; path = "../../../../../../../../Volumes/VMware Shared Folders/PROJECTS-2/OJO/NewImages/d'usse_750ml@2x.png"; sourceTree = "<group>"; };
+		72B6205328E860AB00C8425F /* old_parr_750ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "old_parr_750ml@2x.png"; sourceTree = "<group>"; };
+		72B6205428E860AB00C8425F /* zver@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zver@2x.png"; sourceTree = "<group>"; };
+		72B6205528E860AC00C8425F /* averna_750ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "averna_750ml@2x.png"; sourceTree = "<group>"; };
+		72B6205628E860AC00C8425F /* brugal_doble_res_700@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "brugal_doble_res_700@2x.png"; sourceTree = "<group>"; };
+		72B6205728E860AC00C8425F /* aperol_750ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "aperol_750ml@2x.png"; sourceTree = "<group>"; };
+		72B6205828E860AD00C8425F /* tanqueray_750ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tanqueray_750ml@2x.png"; path = "../../../../../../../../Volumes/VMware Shared Folders/PROJECTS-2/OJO/NewImages/tanqueray_750ml@2x.png"; sourceTree = "<group>"; };
+		72B6205928E860AD00C8425F /* clamato@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clamato@2x.png"; sourceTree = "<group>"; };
+		72B6205A28E860AD00C8425F /* smirnoff_ice@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "smirnoff_ice@2x.png"; sourceTree = "<group>"; };
+		72B6205B28E860AE00C8425F /* smirnoff_manzana@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "smirnoff_manzana@2x.png"; sourceTree = "<group>"; };
+		72B6205C28E860AE00C8425F /* donjulio_silver_750ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "donjulio_silver_750ml@2x.png"; sourceTree = "<group>"; };
+		72B6205D28E860AF00C8425F /* taittinger_750ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "taittinger_750ml@2x.png"; sourceTree = "<group>"; };
+		72B6205E28E860AF00C8425F /* absolut_700ml@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "absolut_700ml@2x.png"; sourceTree = "<group>"; };
 		C4035BC11DF033DA0009FB9E /* Confirm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Confirm.h; sourceTree = "<group>"; };
 		C4035BC21DF033DA0009FB9E /* Confirm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Confirm.m; sourceTree = "<group>"; };
 		C4035BC41DF033F90009FB9E /* ConfirmVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfirmVC.h; sourceTree = "<group>"; };
@@ -528,8 +563,6 @@
 		C4B0F8BE1DCE22EB004946B7 /* UIProgressView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIProgressView+AFNetworking.m"; sourceTree = "<group>"; };
 		C4B0F8BF1DCE22EB004946B7 /* UIRefreshControl+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIRefreshControl+AFNetworking.h"; sourceTree = "<group>"; };
 		C4B0F8C01DCE22EB004946B7 /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
-		C4B0F8C11DCE22EB004946B7 /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
-		C4B0F8C21DCE22EB004946B7 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
 		C4B0F8D41DCE2E81004946B7 /* OJOClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OJOClient.h; sourceTree = "<group>"; };
 		C4B0F8D51DCE2E81004946B7 /* OJOClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OJOClient.m; sourceTree = "<group>"; };
 		C4B0F8E01DCFBBC1004946B7 /* UserMainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserMainVC.h; sourceTree = "<group>"; };
@@ -670,6 +703,8 @@
 				077A6B9D25E855C7007F59F4 /* coors_banquet@2x.png */,
 				077A6BA925E855C8007F59F4 /* coorslight@2x.png */,
 				077A6BAB25E855C8007F59F4 /* coronita@2x.png */,
+				72B6205628E860AC00C8425F /* brugal_doble_res_700@2x.png */,
+				72B6205928E860AD00C8425F /* clamato@2x.png */,
 				077A6B9825E855C6007F59F4 /* d'usse_750ml@2x.png */,
 				077A6BAA25E855C8007F59F4 /* disaronno_750ml@2x.png */,
 				077A6B9E25E855C7007F59F4 /* frangelico_700ml@2x.png */,
@@ -686,6 +721,9 @@
 				077A6B9A25E855C7007F59F4 /* presidente_light_330@2x.png */,
 				077A6BB525E855C9007F59F4 /* redbull_sinazucar@2x.png */,
 				077A6BA425E855C7007F59F4 /* stolichnaya_375ml@2x.png */,
+				72B6205A28E860AD00C8425F /* smirnoff_ice@2x.png */,
+				72B6205B28E860AE00C8425F /* smirnoff_manzana@2x.png */,
+				72B6205D28E860AF00C8425F /* taittinger_750ml@2x.png */,
 				077A6B9F25E855C7007F59F4 /* tanqueray_750ml@2x.png */,
 				07FF223020E459E200F19836 /* presidente_330ml@2x.png */,
 				07FF222F20E459E100F19836 /* presidente_black_330ml@2x.png */,
@@ -731,6 +769,16 @@
 				0746018920D2A647006EABE9 /* coming_soon@2x.png */,
 				0746013820CDDF7D006EABE9 /* absolut_750ml@2x.png */,
 				0746013720CDDF77006EABE9 /* amaretto_750ml@2x.png */,
+				72B6205E28E860AF00C8425F /* absolut_700ml@2x.png */,
+				72B6205728E860AC00C8425F /* aperol_750ml@2x.png */,
+				72B6205528E860AC00C8425F /* averna_750ml@2x.png */,
+				72B6205128E860AA00C8425F /* aviation_750ml@2x.png */,
+				72B6205228E860AB00C8425F /* d'usse_750ml@2x.png */,
+				72B6205C28E860AE00C8425F /* donjulio_silver_750ml@2x.png */,
+				72B6205028E860AA00C8425F /* heineken_330ml@2x.png */,
+				72B6205328E860AB00C8425F /* old_parr_750ml@2x.png */,
+				72B6205828E860AD00C8425F /* tanqueray_750ml@2x.png */,
+				72B6205428E860AB00C8425F /* zver@2x.png */,
 				0746012520CDDF08006EABE9 /* anejo-700-frontal_web@2x.png */,
 				0746013620CDDF70006EABE9 /* averna_700ml@2x.png */,
 				0746014420CDDFC9006EABE9 /* aviation_750ml@2x.png */,
@@ -940,6 +988,8 @@
 				C4B0F8931DCD2FE6004946B7 /* ManagerMainVC.m */,
 				C419D46B1EC2579C00F03F40 /* TodayMovedItemVC.h */,
 				C419D46C1EC2579C00F03F40 /* TodayMovedItemVC.m */,
+				7262EECA28FDBE6B00387FCD /* TodayRefilledItemVC.h */,
+				7262EECB28FDBE6B00387FCD /* TodayRefilledItemVC.m */,
 			);
 			name = Manager;
 			sourceTree = "<group>";
@@ -1022,6 +1072,8 @@
 				07F540941F9DF59E004602D6 /* BartenderCommentModel.m */,
 				D90086FC254F1320008EAFAF /* BLEDeviceModel.h */,
 				D90086FD254F1320008EAFAF /* BLEDeviceModel.m */,
+				7262EED028FDF37C00387FCD /* TodayRefilledItemModel.h */,
+				7262EED128FDF37C00387FCD /* TodayRefilledItemModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1070,6 +1122,8 @@
 				07DC6D7B20C9FDC00053FB5B /* BartenderCommentTHVC.m */,
 				D9D81870254B2C3100312385 /* DeviceTVC.h */,
 				D9D81871254B2C3100312385 /* DeviceTVC.m */,
+				7262EECD28FDE0CE00387FCD /* RefilledItemTVC.h */,
+				7262EECE28FDE0CE00387FCD /* RefilledItemTVC.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1186,8 +1240,6 @@
 				C4B0F8BE1DCE22EB004946B7 /* UIProgressView+AFNetworking.m */,
 				C4B0F8BF1DCE22EB004946B7 /* UIRefreshControl+AFNetworking.h */,
 				C4B0F8C01DCE22EB004946B7 /* UIRefreshControl+AFNetworking.m */,
-				C4B0F8C11DCE22EB004946B7 /* UIWebView+AFNetworking.h */,
-				C4B0F8C21DCE22EB004946B7 /* UIWebView+AFNetworking.m */,
 			);
 			path = "UIKit+AFNetworking";
 			sourceTree = "<group>";
@@ -1255,7 +1307,7 @@
 		C434303A1DCCC58C00239E17 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = MilosHavel;
 				TargetAttributes = {
 					C43430411DCCC58C00239E17 = {
@@ -1324,8 +1376,10 @@
 				077A6BBC25E855C9007F59F4 /* presidente_gold@2x.png in Resources */,
 				0746015F20CDE01A006EABE9 /* barcelo_imperial_700ml@2x.png in Resources */,
 				0746016320CDE01A006EABE9 /* bohemia_330ml@2x.png in Resources */,
+				72B6206628E860B000C8425F /* aperol_750ml@2x.png in Resources */,
 				0746015320CDE01A006EABE9 /* baileys_750ml@2x.png in Resources */,
 				07FF221F20E1957E00F19836 /* veuve_cliquot_750ml@2x.png in Resources */,
+				72B6206D28E860B000C8425F /* absolut_700ml@2x.png in Resources */,
 				0746017520CDE01A006EABE9 /* jaegermeister_750ml@2x.png in Resources */,
 				C43430551DCCC58C00239E17 /* LaunchScreen.storyboard in Resources */,
 				0746017320CDE01A006EABE9 /* fernet_branca_750ml@2x.png in Resources */,
@@ -1336,11 +1390,13 @@
 				076CD649235B7ED500B5670D /* Moon_Regular.otf in Resources */,
 				0746015120CDE01A006EABE9 /* grand_marnier_700ml@2x.png in Resources */,
 				077A6BBF25E855C9007F59F4 /* frangelico_700ml@2x.png in Resources */,
+				72B6206228E860B000C8425F /* old_parr_750ml@2x.png in Resources */,
 				077A6BCB25E855C9007F59F4 /* disaronno_750ml@2x.png in Resources */,
 				07FF220E20E1957E00F19836 /* chinola_jugo@2x.png in Resources */,
 				0746018A20D2A647006EABE9 /* coming_soon@2x.png in Resources */,
 				0746017120CDE01A006EABE9 /* brugal_xv_700ml@2x.png in Resources */,
 				07FF222D20E1957E00F19836 /* clamato_163ml@2x.png in Resources */,
+				72B6206C28E860B000C8425F /* taittinger_750ml@2x.png in Resources */,
 				0746017D20CDE01A006EABE9 /* ladoga_700ml@2x.png in Resources */,
 				077A6BD525E855C9007F59F4 /* brugal_extra_v_700ml@2x.png in Resources */,
 				0746017620CDE01A006EABE9 /* kahlua_700ml@2x.png in Resources */,
@@ -1355,6 +1411,7 @@
 				0746017420CDE01A006EABE9 /* ricard_750ml@2x.png in Resources */,
 				07FF223220E459E200F19836 /* presidente_black_330ml@2x.png in Resources */,
 				07FF220C20E1957E00F19836 /* cranberry_jugo@2x.png in Resources */,
+				72B6205F28E860B000C8425F /* heineken_330ml@2x.png in Resources */,
 				0746018120CDE01A006EABE9 /* marlboro_blanco@2x.png in Resources */,
 				076CD648235B7ED500B5670D /* Moon-Light.otf in Resources */,
 				077A6BC925E855C9007F59F4 /* brugal_extra_v_350ml@2x.png in Resources */,
@@ -1388,10 +1445,12 @@
 				077A6BBB25E855C9007F59F4 /* presidente_light_330@2x.png in Resources */,
 				0746017920CDE01A006EABE9 /* aviation_750ml@2x.png in Resources */,
 				0746015C20CDE01A006EABE9 /* social_330ml@2x.png in Resources */,
+				72B6206528E860B000C8425F /* brugal_doble_res_700@2x.png in Resources */,
 				0746015E20CDE01A006EABE9 /* dewars_750ml@2x.png in Resources */,
 				07E9E50B236012760023CA50 /* supermario_coin.mp3 in Resources */,
 				0746018220CDE01A006EABE9 /* patron_silver_750ml@2x.png in Resources */,
 				077A6BD925E855C9007F59F4 /* modelo_rubia@2x.png in Resources */,
+				72B6206928E860B000C8425F /* smirnoff_ice@2x.png in Resources */,
 				0746015B20CDE01A006EABE9 /* stolichnaya_750ml@2x.png in Resources */,
 				0746015720CDE01A006EABE9 /* hennessy_vsop_700ml@2x.png in Resources */,
 				07FF220F20E1957E00F19836 /* lemon_jugo@2x.png in Resources */,
@@ -1401,6 +1460,7 @@
 				077A6BC825E855C9007F59F4 /* jagermeister_750ml@2x.png in Resources */,
 				07FF221920E1957E00F19836 /* barbera_dalba_750ml@2x.png in Resources */,
 				0746015A20CDE01A006EABE9 /* anejo-700-frontal_web@2x.png in Resources */,
+				72B6206B28E860B000C8425F /* donjulio_silver_750ml@2x.png in Resources */,
 				C4B0F89B1DCD37F5004946B7 /* fontawesome-webfont.ttf in Resources */,
 				077A6BD225E855C9007F59F4 /* brutal_151@2x.png in Resources */,
 				07E274371FA82AC50036E6B8 /* Assets.xcassets in Resources */,
@@ -1415,12 +1475,16 @@
 				07FF223320E459E200F19836 /* presidente_330ml@2x.png in Resources */,
 				077A6BBA25E855C9007F59F4 /* pina_unidades@2x.png in Resources */,
 				07FF221120E1957E00F19836 /* imperial_gold_700ml@2x.png in Resources */,
+				72B6206A28E860B000C8425F /* smirnoff_manzana@2x.png in Resources */,
 				07FF221220E1957E00F19836 /* riondo_magnum@2x.png in Resources */,
 				077A6BD425E855C9007F59F4 /* gold_label_750ml@2x.png in Resources */,
 				07FF222120E1957E00F19836 /* nero_davola_750ml@2x.png in Resources */,
 				C43430501DCCC58C00239E17 /* Main.storyboard in Resources */,
+				72B6206328E860B000C8425F /* zver@2x.png in Resources */,
 				07FF221A20E1957E00F19836 /* copa_vino_tinto@2x.png in Resources */,
 				077A6BD725E855C9007F59F4 /* brugal_xv_350ml@2x.png in Resources */,
+				72B6206428E860B000C8425F /* averna_750ml@2x.png in Resources */,
+				72B6206828E860B000C8425F /* clamato@2x.png in Resources */,
 				07FF222C20E1957E00F19836 /* strawberry_700ml@2x.png in Resources */,
 				07FF222820E1957E00F19836 /* naranja_jugo@2x.png in Resources */,
 				07FF221E20E1957E00F19836 /* triple_sec_700ml@2x.png in Resources */,
@@ -1515,6 +1579,7 @@
 				D9D81872254B2C3100312385 /* DeviceTVC.m in Sources */,
 				C43A03851DDBB9A7003AF4AF /* InventoryListVC.m in Sources */,
 				C432607B1DDCB08B00195370 /* InventoryCreateVC.m in Sources */,
+				7262EED228FDF37C00387FCD /* TodayRefilledItemModel.m in Sources */,
 				C44940481DE7A71E00DDAA04 /* ManagerInventoryCommentVC.m in Sources */,
 				C449404E1DE8A74900DDAA04 /* RefillTVC.m in Sources */,
 				C434304A1DCCC58C00239E17 /* AppDelegate.m in Sources */,
@@ -1527,7 +1592,9 @@
 				07F540981F9DF5BD004602D6 /* BartenderCommentTVC.m in Sources */,
 				C4DC3B1A1DD22B7800369A36 /* LocationTVC.m in Sources */,
 				C4C626681DE691CD00C0ED0C /* ManagerInventoryCreateVC.m in Sources */,
+				7262EECF28FDE0CE00387FCD /* RefilledItemTVC.m in Sources */,
 				C40D6BC81E127AC600373224 /* LNNumberpad.m in Sources */,
+				7262EECC28FDBE6B00387FCD /* TodayRefilledItemVC.m in Sources */,
 				C4B0F8941DCD2FE6004946B7 /* ManagerMainVC.m in Sources */,
 				C4B0F8D01DCE22EB004946B7 /* UIImageView+AFNetworking.m in Sources */,
 				C4B84A4E1DDA2005008E2FAA /* ACFloatingTextField.m in Sources */,
@@ -1563,7 +1630,6 @@
 				C4C9455B1DEDEFA200A61A14 /* MoveItem.m in Sources */,
 				071B2111238CC97200BBFB1B /* AddDeviceVC.m in Sources */,
 				C4C945641DEE037A00A61A14 /* MovedItemTVC.m in Sources */,
-				C4B0F8D31DCE22EB004946B7 /* UIWebView+AFNetworking.m in Sources */,
 				C4C945611DEDFCB400A61A14 /* MovedItemVC.m in Sources */,
 				C4B0F8C71DCE22EB004946B7 /* AFURLResponseSerialization.m in Sources */,
 				C4DA559B1DD503AE0077FBC0 /* Category.m in Sources */,
@@ -1648,6 +1714,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1674,7 +1741,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1707,6 +1774,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1727,7 +1795,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
@@ -1744,7 +1812,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 50;
+				CURRENT_PROJECT_VERSION = 16;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 2F9673MCG5;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1754,11 +1822,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/OJOv1-Prefix.pch";
 				INFOPLIST_FILE = OJOv1/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.9.7;
+				MARKETING_VERSION = 1.0.1;
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.inventory.OJOv1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.inventory.OJOv3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1777,7 +1845,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 50;
+				CURRENT_PROJECT_VERSION = 16;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 2F9673MCG5;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1787,11 +1855,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/OJOv1-Prefix.pch";
 				INFOPLIST_FILE = OJOv1/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.9.7;
+				MARKETING_VERSION = 1.0.1;
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.inventory.OJOv1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.inventory.OJOv3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";

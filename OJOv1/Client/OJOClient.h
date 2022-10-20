@@ -94,6 +94,7 @@ typedef void (^WebClientOnFail)(NSError *);
        andServBt:(NSString *) servBt
       andServWet:(NSString *) servWet
         andPrice:(NSString *) price
+       andItemId: (NSString *) _idß
    onFinishBlock:(WebClientOnFinish) finishBlock
      onFailBlock:(WebClientOnFail) failBlock;
 
@@ -138,6 +139,16 @@ typedef void (^WebClientOnFail)(NSError *);
 - (void) refill:(NSString *) method
     andItemName:(NSString *) itemName
    andAddAmount:(NSString *) addAmount
+ andFinishBlock:(WebClientOnFinish) finishBlock
+   andFailBlock:(WebClientOnFail) failBlock;
+
+- (void) refill:(NSString *) method
+    andItemName:(NSString *) itemName
+   andAddAmount:(NSString *) addAmount
+        andTime: (NSString *) time
+       andPrice: (NSString *) price
+ andDistributor: (NSString *) distributor
+    andUsername: (NSString *) username
  andFinishBlock:(WebClientOnFinish) finishBlock
    andFailBlock:(WebClientOnFail) failBlock;
 

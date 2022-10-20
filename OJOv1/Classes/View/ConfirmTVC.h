@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *movingAmount;
 @property (weak, nonatomic) IBOutlet UILabel *receiver;
 @property (assign, nonatomic) CGFloat fontSize;
+@property (strong, nonatomic) NSString *currentStatus;
 
 
 - (void) acceptState;

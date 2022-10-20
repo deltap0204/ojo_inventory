@@ -134,6 +134,7 @@
     
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[sender tag] inSection:0];
     ConfirmTVC *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    if ([cell.currentStatus isEqual:@"accepted"]) return;
     self.selectedRow = indexPath.row;
     
     Confirm *selectedConfirmModel = self.confirmArray[self.selectedRow];
@@ -239,6 +240,7 @@
     
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[sender tag] inSection:0];
     ConfirmTVC *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    if ([cell.currentStatus isEqual:@"rejected"]) return;
     self.selectedRow = indexPath.row;
     
     Confirm *selectedConfirmModel = self.confirmArray[self.selectedRow];

@@ -11,6 +11,7 @@
 
 @interface ItemFull : NSObject
 
+@property (assign, nonatomic) NSInteger itemId;
 @property (strong, nonatomic) NSString *itemName;
 @property (assign, nonatomic) NSInteger fullAndOpen;
 @property (strong, nonatomic) NSString *categoryName;
@@ -25,7 +26,8 @@
 
 
 
-- (instancetype) initWithItemName:(NSString*)itemName
+- (instancetype) initWithItemId: (NSInteger) itemid
+                andWithItemName:(NSString*)itemName
                andWithFullAndOpen:(NSInteger)fullAndOpen
               andWithCategoryName:(NSString*)categoryName
                  andWithBtFullWet:(NSString*)btFullWet

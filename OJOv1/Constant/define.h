@@ -16,6 +16,9 @@
 #pragma mark - User Management
 
 #define BASE_URL                @"http://ojoinventory.com/ojo/"
+
+//#define BASE_URL                @"http://192.168.0.149:8080/ojo_test/"
+//#define BASE_URL                @"http://ojoinventory.com/ojo_test/"
 #define LOGIN_URL               @"mobile/users/login"
 #define GET_ALL_USER_URL        @"mobile/users/getAllUser"
 #define ADD_USER                @"mobile/users/addUser"
@@ -62,6 +65,7 @@
 #define ADD_ITEM                @"mobile/items/addItem"
 #define EDIT_ITEM               @"mobile/items/editItem"
 #define DELETE_ITEM             @"mobile/items/deleteItem"
+#define ITEM_ID                 @"item_id"
 #define ITEM_NAME               @"item_name"
 #define ITEM_CATEGORY           @"item_category"
 #define BT_FULL_WET             @"bt_full_wet"
@@ -70,6 +74,7 @@
 #define SERVE_BOTTLE            @"serv_bt"
 #define SERVE_WET               @"serv_wet"
 #define PRICE                   @"price"
+#define _ID                     @"id"
 
 
 #pragma mark - inventory management
@@ -80,6 +85,9 @@
 #define INVENTORY_NEW_OPEN_BOTTLE_WET @"news_open_bt_wet"
 #define INVENTORY_PAR           @"par"
 #define INVENTORY_AMOUNT        @"amount"
+#define INVENTORY_TIME          @"time"
+#define INVENTORY_PRICE         @"price"
+#define INVENTORY_DISTRIBUTOR   @"distributor"
 #define INVENTORY_NEW_AMOUNT    @"news_amount"
 #define INVENTORY_FULL_OPEN     @"full_open"
 #define INVENTORY_BT_FULL_WET   @"item_bt_full_wet"
@@ -114,6 +122,14 @@
 #define MOVE_ALLOW_URL          @"mobile/almacens/inventoryItemReceive"
 #define MOVE_URL                @"mobile/moves/moveItem"
 #define TODAY_MOVE_TIME_URL     @"mobile/almacens/searchMovedItemToday"
+#define TODAY_REFILLED_TIME_URL     @"mobile/almacens/getRefilledItemToday"
+
+#define ITEM_NAME               @"item_name"
+#define ITEM_PRICE              @"item_price"
+#define REFILLED_AMOUNT         @"refilled_amount"
+#define TOTAL_PRICE             @"total_price"
+#define DISTRIBUTOR             @"distributor"
+#define TIME                    @"time"
 
 
 #pragma mark - item receive search

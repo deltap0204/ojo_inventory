@@ -31,21 +31,23 @@
     return self;
 }
 
-- (instancetype) initWithItemName:(NSString*)itemName
-               andWithFullAndOpen:(NSInteger)fullAndOpen
-              andWithCategoryName:(NSString*)categoryName
-                 andWithBtFullWet:(NSString*)btFullWet
-                  andWithBtEmpWet:(NSString*)btEmpWet
-                    andWithLiqWet:(NSString*)liqWet
-                    andWithServBt:(NSString*)servBt
-                   andWithServWet:(NSString*)servWet
-                     andWithprice:(NSString*)price
-                 andWithFrequence:(NSInteger)frequency
-      andWithActivedLocationArray:(NSMutableArray*)activedLocationArray{
+- (instancetype) initWithItemId: (NSInteger) itemId
+                andWithItemName:(NSString*)itemName
+             andWithFullAndOpen:(NSInteger)fullAndOpen
+            andWithCategoryName:(NSString*)categoryName
+               andWithBtFullWet:(NSString*)btFullWet
+                andWithBtEmpWet:(NSString*)btEmpWet
+                  andWithLiqWet:(NSString*)liqWet
+                  andWithServBt:(NSString*)servBt
+                 andWithServWet:(NSString*)servWet
+                   andWithprice:(NSString*)price
+               andWithFrequence:(NSInteger)frequency
+    andWithActivedLocationArray:(NSMutableArray*)activedLocationArray{
     
     
     self = [super init];
     if (self) {
+        self.itemId = itemId;
         self.itemName = itemName;
         self.fullAndOpen = fullAndOpen;
         self.categoryName = categoryName;
